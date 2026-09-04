@@ -1,0 +1,20 @@
+{
+  "task": "2504.04211_pta_normalizing_flows",
+  "data_dir": "data/ng15_wideband_10pulsars/",
+  "manifest": "data/MANIFEST.tsv (SHA-256 pinned, unchanged)",
+  "pulsars": 10,
+  "active_toas_total": 4944,
+  "per_pulsar_active_toas": {
+    "J0030+0451": 724, "J0613-0200": 423, "J1600-3053": 481,
+    "J1744-1134": 433, "J1909-3744": 833, "J1910+1256": 216,
+    "J1918-0642": 487, "J1944+0907": 180, "J2043+1711": 459, "J2317+1439": 708
+  },
+  "delta_ntoa_vs_paper_tableV": 0,
+  "toa_version_note": "Frozen v2.1.0 .tim files yield 4944 active ToAs matching paper Table V exactly. The C-prefixed rows are cut/commented ToAs (flags like -cut dmx) and are not counted. The TASK.md '+1 ToA/pulsar (v2.1.0)' note does not materialise on these frozen files.",
+  "tobs_days": 5724.3052,
+  "nfreq": 14,
+  "white_noise_ns_matches_paper": "to ~0.05 ns (per pulsar, see code/pta_data_summary.json)",
+  "reference_injection": {"model": "PowerLaw", "logA_gw": -15.0, "gamma_gw": 5.0,
+                          "red_noise_logA": -15.5, "red_noise_gamma": 4.0},
+  "residual_protocol_note": "PINT/ENTERPRISE residuals cannot be produced offline (DE440 ephemeris not bundled, no network). Paper forward-simulation/amortised-inference protocol used: one reference realisation r0 drawn on the real ToA grid with real white-noise levels under a PowerLaw injection. Frozen data provide grid/uncertainties/sky-positions/noise model; r0 is paper-protocol synthetic residual, not an input-data substitution."
+}

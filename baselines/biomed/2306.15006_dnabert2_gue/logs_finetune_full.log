@@ -1,0 +1,81 @@
+===== Thu Aug 20 00:42:46 CST 2026 EMP_H3 (max_length=128, device=cuda, tag=full) =====
+/home/dministrator/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at zhihan1996/DNABERT-2-117M and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[EMP_H3] epoch 1: loss=0.4675 val_mcc=0.6681 (63s)
+[EMP_H3] epoch 2: loss=0.3141 val_mcc=0.7206 (123s)
+[EMP_H3] epoch 3: loss=0.2849 val_mcc=0.7152 (196s)
+[EMP_H3] epoch 4: loss=0.2621 val_mcc=0.7330 (277s)
+[EMP_H3] epoch 5: loss=0.2369 val_mcc=0.7374 (348s)
+[EMP_H3] epoch 6: loss=0.2218 val_mcc=0.7160 (430s)
+wrote results/finetune/EMP_H3_full_metrics.json
+{
+ "dataset": "EMP_H3",
+ "test": {
+  "acc": 0.8804,
+  "f1": 0.8804,
+  "mcc": 0.762
+ }
+}
+===== Thu Aug 20 00:50:19 CST 2026 mouse_0 (max_length=64, device=cuda, tag=full) =====
+/home/dministrator/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at zhihan1996/DNABERT-2-117M and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[mouse_0] epoch 1: loss=0.6792 val_mcc=0.3291 (94s)
+[mouse_0] epoch 2: loss=0.6124 val_mcc=0.4231 (190s)
+[mouse_0] epoch 3: loss=0.5791 val_mcc=0.4229 (285s)
+[mouse_0] epoch 4: loss=0.5454 val_mcc=0.4967 (372s)
+[mouse_0] epoch 5: loss=0.5260 val_mcc=0.5224 (449s)
+[mouse_0] epoch 6: loss=0.5016 val_mcc=0.5537 (552s)
+wrote results/finetune/mouse_0_full_metrics.json
+{
+ "dataset": "mouse_0",
+ "test": {
+  "acc": 0.7593,
+  "f1": 0.7581,
+  "mcc": 0.5237
+ }
+}
+===== Thu Aug 20 01:00:04 CST 2026 prom_300_all (max_length=96, device=cuda, tag=full) =====
+/home/dministrator/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at zhihan1996/DNABERT-2-117M and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[prom_300_all] epoch 1: loss=0.3073 val_f1=0.9187 (441s)
+[prom_300_all] epoch 2: loss=0.2072 val_f1=0.9252 (678s)
+[prom_300_all] epoch 3: loss=0.1852 val_f1=0.9326 (986s)
+[prom_300_all] epoch 4: loss=0.1641 val_f1=0.9262 (1192s)
+[prom_300_all] epoch 5: loss=0.1459 val_f1=0.9341 (1422s)
+[prom_300_all] epoch 6: loss=0.1334 val_f1=0.9322 (1652s)
+wrote results/finetune/prom_300_all_full_metrics.json
+{
+ "dataset": "prom_300_all",
+ "test": {
+  "acc": 0.9313,
+  "f1": 0.9312,
+  "mcc": 0.8626
+ }
+}
+===== Thu Aug 20 01:28:48 CST 2026 prom_core_all (max_length=32, device=cuda, tag=full) =====
+/home/dministrator/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at zhihan1996/DNABERT-2-117M and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[prom_core_all] epoch 1: loss=0.4980 val_f1=0.7983 (202s)
+[prom_core_all] epoch 2: loss=0.4284 val_f1=0.8106 (423s)
+[prom_core_all] epoch 3: loss=0.4084 val_f1=0.8145 (621s)
+[prom_core_all] epoch 4: loss=0.3879 val_f1=0.8228 (833s)
+[prom_core_all] epoch 5: loss=0.3709 val_f1=0.8273 (1029s)
+[prom_core_all] epoch 6: loss=0.3592 val_f1=0.8288 (1222s)
+wrote results/finetune/prom_core_all_full_metrics.json
+{
+ "dataset": "prom_core_all",
+ "test": {
+  "acc": 0.8331,
+  "f1": 0.8331,
+  "mcc": 0.6663
+ }
+}
+===== all done Thu Aug 20 01:49:47 CST 2026 =====

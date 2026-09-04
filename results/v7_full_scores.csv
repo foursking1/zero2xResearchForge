@@ -1,0 +1,126 @@
+﻿source,domain,card,total,A1,A2,A3,A,B,conclusion,n_anchors,submission_class,enforce_note,ok
+main,astro,2211.01901_neznet_vipers_photoz,95.0,19.0,24.0,14.0,57.0,38.0,supported,10,a,,True
+main,astro,2111.10009_exominer_tess_vetting,100.0,20.0,25.0,15.0,60.0,40,supported,4,a,,True
+main,astro,1903.02557_dash_supernova_class,75.0,15.0,13.0,11.0,39.0,36.0,partially_supported,6,a,,True
+main,astro,1905.02738_evryscope_variable_stars,100.0,20.0,25.0,15.0,60.0,40,supported,4,a,,True
+main,astro,2308.05572_gaia_wd_xp_class,100.0,20.0,25.0,15.0,60.0,40,supported,4,a,,True
+main,astro,2305.05782_lotss_deep_source_class,100.0,20.0,25.0,15.0,60.0,40,supported,4,a,,True
+main,astro,2409.14508_sn_gw_classification_eval,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,5,not_submitted,empty agent_solution -> not_submitted,True
+main,astro,2211.03400_fermi_4fgl_jetted_agn,95.0,20.0,20.0,15.0,55.0,40,partially_supported,7,a,,True
+main,astro,2401.10290_kp3h_geomagnetic_storm,86.0,19.0,18.0,11.0,48.0,38.0,partially_supported,3,a,,True
+main,astro,2303.08092_solar_energetic_particle_ensemble,71.0,16.0,12.0,5.0,33.0,38.0,partially_supported,22,a,,True
+main,astro,2412.14502_radio_galaxy_zoo_dr1,100.0,20.0,25.0,15.0,60.0,40,supported,10,a,,True
+main,astro,2505.03385_solar_flare_ml_compare,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,8,not_submitted,empty agent_solution -> not_submitted,True
+main,astro,2410.06922_exoplanet_mass_incomplete,77.0,18.0,13.0,14.0,45.0,32.0,partially_supported,4,a,,True
+main,astro,2504.04211_pta_normalizing_flows,64.0,18.0,6.0,5.0,29.0,35.0,partially_supported,3,a,,True
+main,astro,2508.14107_suryabench_flare,84.0,19.0,12.0,15.0,46.0,38.0,partially_supported,6,a,,True
+main,astro,2510.27032_deepdisc_jwst_photoz,71.0,12.0,14.0,10.0,36.0,35.0,partially_supported,4,a,,True
+main,astro,2512.06316_frb_repeater_semisupervised,100.0,20.0,25.0,15.0,60.0,40,supported,3,a,,True
+main,astro,2509.08224_grb_restframe_unsupervised,100.0,20.0,25.0,15.0,60.0,40,supported,17,a,,True
+main,biomed,1703.00564_moleculenet_benchmark,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,5,not_submitted,empty agent_solution -> not_submitted,True
+main,astro,2604.15560_exonet,88.0,20.0,13.0,15.0,48.0,40,partially_supported,9,a,,True
+main,astro,2608.00352_thermosphere_density,100.0,20.0,25.0,15.0,60.0,40,supported,8,a,,True
+main,biomed,1801.10193_deepdta,0.0,0.0,0.0,0.0,0.0,0,inconclusive,6,b,,True
+main,biomed,2005.00687_ogb_molhiv,67.0,19.0,14.0,14.0,47.0,20.0,partially_supported,5,a,,True
+main,biomed,2110.14795_medmnist_v2,92.0,19.0,24.0,11.0,54.0,38.0,supported,6,a,,True
+main,biomed,1906.08230_tape_protein_tasks,58.0,14.0,12.0,12.0,38.0,20.0,partially_supported,4,a,,True
+main,biomed,1809.03393_ludb_ecg_delineation,85.0,19.0,14.0,14.0,47.0,38.0,partially_supported,8,a,,True
+main,biomed,2205.13760_tranception_proteingym,95.0,19.0,24.0,14.0,57.0,38.0,supported,4,a,,True
+main,biomed,2112.10074_qubrats_uncertainty_seg,100.0,20.0,25.0,15.0,60.0,40,supported,6,a,,True
+main,biomed,2307.11958_transferability_estimation_seg,79.0,19.0,13.0,11.0,43.0,36.0,partially_supported,5,a,,True
+main,biomed,2306.15006_dnabert2_gue,90.0,20.0,18.0,12.0,50.0,40,partially_supported,5,a,,True
+main,biomed,2209.07805_covid_ehr_bench,84.0,19.0,13.0,14.0,46.0,38.0,partially_supported,6,a,,True
+main,biomed,2206.02096_peer_protein_bench,93.0,20.0,18.0,15.0,53.0,40,partially_supported,7,a,,True
+main,biomed,2407.01791_ubench_microscopy,81.0,19.0,12.0,14.0,45.0,36.0,partially_supported,4,a,,True
+main,biomed,2406.10292_cto_trial_outcomes,84.0,19.0,13.0,14.0,46.0,38.0,partially_supported,4,a,,True
+main,biomed,2308.09639_leakproof_pdbbind,80.0,19.0,12.0,11.0,42.0,38.0,partially_supported,6,a,,True
+main,biomed,2502.20784_arseg_next_scale_seg,73.0,19.0,8.0,11.0,38.0,35.0,partially_supported,5,a,,True
+main,biomed,2509.10151_benchecg_xecg,73.0,15.0,8.0,14.0,37.0,36.0,inconclusive,6,a,,True
+main,biomed,2505.06646_chexnet_reproduction,83.0,19.0,12.0,14.0,45.0,38.0,partially_supported,5,a,,True
+main,biomed,2508.04441_mitotic_benchmark,94.0,19.0,23.0,14.0,56.0,38.0,supported,6,a,,True
+main,cs,2101.02118_gbrt_vs_dnn,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,5,not_submitted,empty agent_solution -> not_submitted,True
+main,biomed,2606.12651_physics_aware_gnn_ood,85.0,19.0,14.0,14.0,47.0,38.0,partially_supported,6,a,,True
+main,biomed,2607.16250_multiomics_breast_cancer_er,46.0,8.0,8.0,8.0,24.0,22.0,partially_supported,7,a,,True
+main,cs,2103.12057_tsf_experimental_review,41.0,6.0,13.0,10.0,29.0,12.0,partially_supported,4,b,,True
+main,cs,2401.04266_attention_vs_contrastive,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,,not_submitted,empty agent_solution -> not_submitted,True
+main,cs,2312.01792_wildtab,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,4,not_submitted,empty agent_solution -> not_submitted,True
+main,cs,2308.13068_mvts_flawed_eval,100.0,20.0,25.0,15.0,60.0,40,partially_supported,4,a, | downgraded: 1 anchors out of tolerance,True
+main,cs,2311.04765_voraus_ad,60.0,12.0,15.0,8.0,35.0,25.0,partially_supported,6,a,,True
+main,cs,2406.00775_constrained_attack,100.0,20.0,25.0,15.0,60.0,40,supported,3,a,,True
+main,cs,2406.12747_tsibench,100.0,20.0,25.0,15.0,60.0,40,supported,7,a,,True
+main,cs,2408.07579_tabularbench_adv_robustness,100.0,20.0,25.0,15.0,60.0,40,supported,5,a,,True
+main,cs,2501.14238_pointln,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,2,not_submitted,empty agent_solution -> not_submitted,True
+main,cs,2406.16590_beyond_avg_forecast,82.0,19.0,12.0,13.0,44.0,38.0,partially_supported,7,a,,True
+main,cs,2506.18046_tab_tsad_bench,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,4,not_submitted,empty agent_solution -> not_submitted,True
+main,cs,2502.05832_compression_ood,97.0,19.0,23.0,15.0,57.0,40,partially_supported,5,a,,True
+main,cs,2505.01415_everglades_water_level,79.0,18.0,14.0,11.0,43.0,36.0,partially_supported,8,a,,True
+main,cs,2507.12295_textadbench,93.0,18.0,23.0,14.0,55.0,38.0,supported,4,a,,True
+main,cs,2509.16616_risky_investors_ranking,50.0,18.0,2.0,14.0,34.0,38.0,contradicted,4,a,,True
+main,cs,2507.05730_had_survey,100.0,20.0,25.0,15.0,60.0,40,supported,17,a,,True
+main,cs,2602.13288_cloud_telemetry_ad,87.0,19.0,16.0,14.0,49.0,38.0,partially_supported,5,a,,True
+main,cs,2604.08131_gnn_misinfo,50.0,19.0,2.0,15.0,36.0,40,contradicted,4,a,,True
+main,cs,2607.18127_cloudens,90.0,19.0,18.0,15.0,52.0,38.0,partially_supported,12,a,,True
+main,earth,1509.03602_deepsat,100.0,20.0,25.0,15.0,60.0,40,supported,3,a,,True
+main,earth,1608.05167_aid,63.0,15.0,18.0,5.0,38.0,25.0,partially_supported,3,a,,True
+main,earth,1705.10450_rsi_cb256,100.0,20.0,25.0,15.0,60.0,40,supported,3,a,,True
+main,earth,1706.03424_patternnet,100.0,20.0,25.0,15.0,60.0,40,supported,3,a,,True
+main,earth,1709.00029_eurosat,80.0,19.0,12.0,11.0,42.0,38.0,partially_supported,3,a,,True
+main,earth,1703.00121_resisc45,54.0,5.0,14.0,10.0,29.0,25.0,partially_supported,3,a,,True
+main,earth,1810.08468_oscd,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,4,not_submitted,empty agent_solution -> not_submitted,True
+main,earth,1712.07835_rsicd,7.0,2.0,0.0,0.0,2.0,5.0,inconclusive,11,b,,True
+main,earth,1912.12171_so2sat,50.0,19.0,8.0,14.0,41.0,38.0,contradicted,8,a," | systematic failure: all numeric anchors out of tolerance (>=3, no MISSING), max relative deviation >=25% -> contradicted",True
+main,earth,1902.06701_hybridsn,79.0,19.0,8.0,14.0,41.0,38.0,partially_supported,7,a,,True
+main,earth,2005.02264_landcover_ai,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,3,not_submitted,empty agent_solution -> not_submitted,True
+main,earth,2003.07333_rsvqa,42.0,12.0,8.0,12.0,32.0,10.0,partially_supported,7,a,,True
+main,earth,2103.10368_msmatch_ucmerced,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,3,not_submitted,empty agent_solution -> not_submitted,True
+main,earth,2010.00243_mlrsnet,16.0,3.0,2.0,3.0,8.0,8.0,inconclusive,9,b,,True
+main,earth,2012.02951_floodnet,78.0,19.0,12.0,11.0,42.0,36.0,partially_supported,5,a,,True
+main,earth,2110.08733_loveda,28.0,4.0,8.0,8.0,20.0,8.0,partially_supported,3,b,,True
+main,earth,2206.00515_landslide4sense,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,4,not_submitted,empty agent_solution -> not_submitted,True
+main,earth,2104.02846_multiscene,50.0,18.0,6.0,8.0,32.0,38.0,contradicted,5,a," | systematic failure: all numeric anchors out of tolerance (>=3, no MISSING), max relative deviation >=25% -> contradicted",True
+main,earth,2506.07080_flair_hub,0.0,0.0,0.0,0.0,0.0,0.0,inconclusive,4,not_submitted,empty agent_solution -> not_submitted,True
+main,earth,2304.11619_satin,76.0,18.0,8.0,12.0,38.0,38.0,partially_supported,3,a,,True
+main,materials,1811.08425_small_xrd_classification,84.0,18.0,14.0,14.0,46.0,38.0,partially_supported,3,a,,True
+main,materials,1906.08888_mliap_performance_cost,89.0,19.0,18.0,14.0,51.0,38.0,partially_supported,8,a,,True
+main,materials,2101.00269_shannon_ionic_radii_ml,84.0,19.0,13.0,14.0,46.0,38.0,partially_supported,7,a,,True
+main,materials,2001.10591_stability_ml_predictions,100.0,20.0,25.0,15.0,60.0,40,supported,11,a,,True
+main,materials,2203.14090_radonpy_polymer_informatics,100.0,20.0,25.0,15.0,60.0,40,supported,8,a,,True
+main,materials,2111.05557_piezoelectric_ml,91.0,19.0,20.0,14.0,53.0,38.0,partially_supported,8,a,,True
+main,materials,2207.04009_mg_mtp_defect_training,55.0,8.0,18.0,9.0,35.0,20.0,partially_supported,8,a,,True
+main,materials,2210.11343_mala_size_transfer,82.0,18.0,13.0,15.0,46.0,36.0,partially_supported,8,a,,True
+main,materials,2401.11052_llm_materials_mining,63.0,16.0,12.0,7.0,35.0,28.0,partially_supported,8,a,,True
+main,materials,2401.15089_pst_matbench,70.0,14.0,8.0,13.0,35.0,35.0,partially_supported,11,a,,True
+main,materials,2211.15895_bertos_oxidation_state,86.0,19.0,24.0,14.0,57.0,29,supported,8,a,,True
+main,materials,2507.11806_mofsim_benchmark,100.0,20.0,25.0,15.0,60.0,40,supported,3,a,,True
+main,materials,2501.02144_gen_discovery_baselines,100.0,20.0,25.0,15.0,60.0,40,supported,15,a,,True
+main,materials,2509.20164_lowdim_materials_screening,95.0,20.0,20.0,15.0,55.0,40,partially_supported,7,a,,True
+main,materials,2509.07417_zeolite_mlip_bench,100.0,20.0,25.0,15.0,60.0,40,supported,3,a,,True
+main,materials,2511.22885_mech_props_mlip,100.0,20.0,25.0,15.0,60.0,40,supported,5,a,,True
+main,materials,2604.13897_molcryst_mlips,63.0,10.0,8.0,13.0,31.0,32.0,partially_supported,8,a,,True
+main,materials,2607.06645_batterymat,100.0,20.0,25.0,15.0,60.0,40,supported,7,a,,True
+main,materials,2606.23725_comp_refs_not_experiments,100.0,20.0,25.0,15.0,60.0,40,supported,5,a,,True
+main,materials,2608.06662_mlip_cross_geometry,54.0,10.0,14.0,8.0,32.0,22.0,partially_supported,5,a,,True
+legacy,legacy,08_tapley_2004,80.0,19.0,12.0,14.0,45.0,35.0,partially_supported,24,a,,True
+legacy,legacy,2604.04477v1,50.0,19.0,2.0,15.0,36.0,38.0,contradicted,14,a,,True
+legacy,legacy,2604.04518v1,79.0,18.0,13.0,12.0,43.0,36.0,partially_supported,15,a,,True
+legacy,legacy,2604.04673v1,83.0,19.0,15.0,14.0,48.0,35.0,partially_supported,7,a,,True
+legacy,legacy,2604.04832v1,85.0,19.0,13.0,15.0,47.0,38.0,partially_supported,6,a,,True
+legacy,legacy,2604.04681v1,76.0,18.0,8.0,14.0,40.0,36.0,partially_supported,13,a,,True
+legacy,legacy,2604.04842v1,54.0,18.0,8.0,14.0,40.0,14.0,partially_supported,20,b,,True
+legacy,legacy,2604.04868v1,83.0,19.0,13.0,15.0,47.0,36.0,partially_supported,17,a,,True
+legacy,legacy,2604.04871v1,70.0,18.0,6.0,14.0,38.0,32.0,partially_supported,18,a,,True
+legacy,legacy,2604.04858v1,48.0,16.0,6.0,6.0,28.0,20.0,partially_supported,34,a,,True
+legacy,legacy,2604.04878v1,81.0,19.0,12.0,14.0,45.0,36.0,partially_supported,14,a,,True
+legacy,legacy,2604.04898v1,64.0,16.0,7.0,13.0,36.0,28.0,inconclusive,21,a,,True
+legacy,legacy,2604.04891v1,85.0,19.0,13.0,15.0,47.0,38.0,partially_supported,10,a,,True
+legacy,legacy,2604.04895v1,64.0,16.0,12.0,11.0,39.0,25.0,partially_supported,16,b,,True
+legacy,legacy,2604.04911v1,52.0,17.0,6.0,14.0,37.0,15.0,partially_supported,12,b,,True
+legacy,legacy,2604.04915v1,100.0,20.0,25.0,15.0,60.0,40,supported,4,a,,True
+legacy,legacy,2604.04923v1,84.0,19.0,14.0,15.0,48.0,36.0,partially_supported,20,a,,True
+legacy,legacy,2604.04914v1,51.0,18.0,6.0,12.0,36.0,15.0,partially_supported,11,b,,True
+legacy,legacy,2604.04930v1,71.0,18.0,6.0,13.0,37.0,34.0,partially_supported,5,a,,True
+legacy,legacy,bensen_2007,69.0,18.0,8.0,13.0,39.0,30.0,partially_supported,25,a,,True
+legacy,legacy,gehlen_2019,79.0,19.0,8.0,14.0,41.0,38.0,partially_supported,11,a,,True
+legacy,legacy,bonjean_2002,74.0,18.0,6.0,14.0,38.0,36.0,partially_supported,26,a,,True
+legacy,legacy,pages2k_2019,37.0,10.0,5.0,2.0,17.0,20.0,partially_supported,27,a,,True
+legacy,legacy,wong_2020,74.0,18.0,8.0,13.0,39.0,35.0,partially_supported,22,a,,True

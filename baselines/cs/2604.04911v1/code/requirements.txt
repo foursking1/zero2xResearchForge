@@ -1,0 +1,8 @@
+# Dependencies for the frozen-data analysis of 2604.04911v1.
+# The analysis is data-only (no model inference). Model-based metrics
+# (YOLO framing error, VGGT viewpoint error) were produced by the prior
+# reproduction pipeline; only their frozen per-sample CSV outputs are used here.
+pandas>=1.5
+numpy>=1.23
+scipy>=1.10
+Pillow>=9.0

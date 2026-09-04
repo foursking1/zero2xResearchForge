@@ -1,0 +1,248 @@
+
+===== PAGE 1 =====
+Reproducibility study on how to find Spurious Correlations,
+Shortcut Learning, Clever Hans or Group-Distributional non-
+robustness and how to fix them
+Ole Delzer
+ole.delzer@campus.tu-berlin.de
+Machine Learning Group
+Technische Universität Berlin
+Sidney Bender
+s.bender@tu-berlin.de
+Machine Learning Group
+Technische Universität Berlin
+Abstract
+Deep Neural Networks (DNNs) are increasingly utilized in high-stakes domains like med-
+ical diagnostics and autonomous driving where model reliability is critical. However, the
+research landscape for ensuring this reliability is terminologically fractured across commu-
+nities that pursue the same goal of ensuring models rely on causally relevant features rather
+than confounding signals. While frameworks such as distributionally robust optimization
+(DRO), invariant risk minimization (IRM), shortcut learning, simplicity bias, and the Clever
+Hans effect all address model failure due to spurious correlations, researchers typically only
+reference work within their own domains. This reproducibility study unifies these perspec-
+tives through a comparative analysis of correction methods under challenging constraints
+like limited data availability and severe subgroup imbalance. We evaluate recently proposed
+correction methods based on explainable artificial intelligence (XAI) techniques alongside
+popular non-XAI baselines using both synthetic and real-world datasets. Findings show that
+XAI-based methods generally outperform non-XAI approaches, with Counterfactual Knowl-
+edge Distillation (CFKD) proving most consistently effective at improving generalization.
+Our experiments also reveal that the practical application of many methods is hindered
+by a dependency on group labels, as manual annotation is often infeasible and automated
+tools like Spectral Relevance Analysis (SpRAy) struggle with complex features and severe
+imbalance. Furthermore, the scarcity of minority group samples in validation sets renders
+model selection and hyperparameter tuning unreliable, posing a significant obstacle to the
+deployment of robust and trustworthy models in safety-critical areas.
+1
+Introduction and Motivation
+Over the past decade, machine learning has made tremendous progress in many different domains, with
+landmark results such as large performance jumps across computer vision, speech recognition, and natural
+language processing. Deep Neural Networks (DNNs), in particular, have achieved state-of-the-art perfor-
+mance in the fields of visual recognition (image classification, object detection, image segmentation) (He
+et al., 2016a; Liu et al., 2022; Tan & Le, 2021; Zhang et al., 2023; Cheng et al., 2022), speech recognition and
+synthesis (Gulati et al., 2020; Baevski et al., 2020; Kim et al., 2021), natural language processing (He et al.,
+2023; Costa-jussà et al., 2024), and playing games (Silver et al., 2016; Schrittwieser et al., 2020). These ad-
+vances accelerated the adoption of machine learning models in practical systems across industry and science.
+Consequently, their deployment is no longer limited to low-risk consumer applications, but starts to expand
+into high-stakes, safety-critical domains, such as medical diagnostics (Tiu et al., 2022; Esteva et al., 2017),
+autonomous driving (Hu et al., 2023; Li et al., 2022), fault detection and traffic management in aviation
+(Al-Haddad et al., 2024; Pinto Neto et al., 2023; Du et al., 2025), risk and market modeling in finance
+1
+arXiv:2604.04518v1  [cs.LG]  6 Apr 2026
+
+===== PAGE 2 =====
+(Kesharwani & Shukla, 2024; Cheng et al., 2025; Zhou et al., 2025), cybersecurity (Nazim et al., 2025; Ataa
+et al., 2024), and legal technology (Ansari et al., 2024; Medvedeva & Mcbride, 2023).
+In these contexts, predictive accuracy alone is insufficient. Model reliability and accountability are equally
+critical, since reliance on spurious correlations, often referred to as the Clever Hans effect, can not only intro-
+duce systematic bias, but also harm patients or compromise safety. This creates an urgent need for methods
+that detect and mitigate the effect of such spurious correlations to ensure that models base their predictions
+on causally relevant features rather than confounding signals. While a wide range of correction strategies
+has been proposed over the last years, each approach carries distinct assumptions, supervision requirements,
+and computational costs, which complicates the design of fair comparative evaluations. Furthermore, the
+research landscape is fractured by different terminology, e.g. distributionally robust optimization (DRO),
+invariant risk minimization (IRM), shortcut learning, simplicity bias, or Clever Hans. While all communi-
+ties try to address the same fundamental goal of ensuring that models prioritize causally relevant features
+over confounding signals, researchers too often remain confined to their own field, predominantly referencing
+work within their own community. This reproducibility study aims to unify their perspectives by providing a
+comprehensive comparative analysis of correction methods under the realistic, challenging constraints often
+found in safety-critical domains.
+Specifically, we contribute:
+• A re-implementation and comparative evaluation of a diverse selection of correction strategies for
+imaging tasks, including recent XAI-based methods that have not yet been comprehensively tested
+independently.
+• An evaluation design that mimics practical constraints in safety-critical applications, i.e. highly
+limited data availability and strongly pronounced spurious correlations, using both synthetic and
+real-world datasets with varying complexity of the causal and the confounding feature.
+• A practical approach to subgroup labeling by applying Spectral Relevance Analysis (SpRAy), re-
+moving the common but unrealistic assumption of prior access to group labels.
+• A discussion of advantages and possible pitfalls practitioners might come across during the imple-
+mentation and application of the evaluated correction methods.
+1.1
+From identifying towards correcting Clever Hans
+To raise trust and support experts in their decision-making, model behavior should be transparent to humans.
+For a long time, however, neural networks were considered black boxes, inherently difficult to interpret at
+the level required for operational assurance. This has motivated a large body of work in the field of XAI,
+which aims to unveil the decision strategies learned by models and make them easier to understand. Local
+XAI methods explain individual model decisions by revealing what input features or human-level concepts
+the model considered to be important in a specific input sample. Important representatives are attribution-
+based methods such as Layerwise Relevance Propagation (LRP) (Bach et al., 2015), Integrated Gradients
+(Sundararajan et al., 2017), or Concept Relevance Propagation (CRP) (Achtibat et al., 2023), which assign
+real-valued attribution scores to each input feature that indicate how strongly the feature contributed to
+the decision. These attributions can be visualized as heatmaps, quickly highlighting relevant regions in the
+input sample. Alternatively, counterfactual explainers (e.g. (Karimi et al., 2020; Rodríguez et al., 2021;
+Jeanneret et al., 2023; Weng et al., 2025; Bender et al., 2026)) construct a minimally changed counterfactual
+that would flip the model’s decision. By comparing the counterfactual to the original sample, we can again
+uncover important features on which the model relies for its decision. In contrast to these local techniques,
+global XAI methods characterize model behavior at a more general level, not with respect to one individual
+decision. Important approaches include activation maximization (Erhan et al., 2009; Nguyen et al., 2016)
+and Relevance Maximization (Achtibat et al., 2023), which synthesize inputs that maximize neuron or class
+scores, thereby informing us about the model’s idea of a prototypical example for a specific class or concept.
+Other noteworthy approaches are Concept Activation Vectors (CAVs) (Kim et al., 2018; Pahde et al., 2025)
+that quantify sensitivity to human-defined concepts, and related global analyses such as Network Dissection
+2
+
+===== PAGE 3 =====
+(Bau et al., 2017) that links internal units to semantic concepts. SpRAy (Lapuschkin et al., 2019) combines
+both local and global XAI by clustering attribution maps for a large amount of samples to reveal distinct
+decision strategies learned by a model.
+XAI audits have repeatedly uncovered non-obvious failure modes in otherwise high-accuracy models. A
+central shortcoming is simplicity bias: when multiple predictive cues are available, DNNs tend to prefer simple
+features that are easy to fit under empirical risk minimization (ERM). In images, they often rely on low-level
+signals such as background textures, color casts, watermarks, or other dataset-specific artifacts while ignoring
+more complex but semantically relevant features. Such models can achieve high accuracy by exploiting the
+simple features as shortcuts (shortcut learning) without actually learning a valid decision strategy for solving
+the underlying task. Hence, they will usually fail under distribution shifts, especially when the simple features
+are confounders lacking a causal link to the target and only correlating spuriously. Because validation and
+test splits often contain the same spurious correlations as the training data, high performance persists during
+model selection and evaluation with standard metrics such as average accuracy over all samples (referred
+to as empirical accuracy hereinafter), overestimating the model’s ability to generalize. When the model is
+deployed to a new environment where the confounder changes distribution or disappears, performance can
+drop sharply, especially on minority subpopulations. This behavior is known as the Clever Hans effect, by
+analogy to the historical case where a horse appeared to answer arithmetic questions by exploiting signals
+unrelated to the task (Shah et al., 2020; Geirhos et al., 2020; Valle-Pérez et al., 2019; Yang et al., 2024;
+Beery et al., 2018; Taori et al., 2020; Johnson, 1911).
+Such spurious correlations are common across popular datasets and tasks (Geirhos et al., 2020; Lapuschkin
+et al., 2019; Anders et al., 2022; Sagawa et al., 2020; Steinmann et al., 2024; Kirichenko et al., 2023; Scimeca
+et al., 2021). In image classification, popular examples include predicting horse because of a copyright tag
+in the corner (Lapuschkin et al., 2019), or wolf because of snow in the background (Ribeiro et al., 2016),
+rather than relying on object shape. Alarmingly, Clever Hans predictors also commonly occur in safety-
+critical medical tasks (Oakden-Rayner et al., 2020; Banerjee et al., 2023; Badgeley et al., 2019; Klauschen
+et al., 2024; Zech et al., 2018). For instance, a deep model for pneumonia detection on chest X-rays was
+found to base its predictions on hospital-specific markers in the images (which differed between hospitals
+and correlated with pneumonia prevalence) rather than on the actual lung pathology.
+Likewise, DNNs
+have "detected" cancer by picking up scanner- or lab-specific staining patterns associated with malignant
+samples, instead of the histological signs of cancer. Data limitations amplify these risks in medical imaging
+and other high-stakes areas: available training data are often scarce, costly to obtain, and acquired with
+varying protocols and equipment (Litjens et al., 2017; Kelly et al., 2019; Varoquaux & Cheplygina, 2022).
+Such constraints increase the chance that a single non-causal shortcut dominates learning, while minority
+subgroups (lacking that shortcut) are underrepresented, resulting in overfitting, domain shift, and evaluation
+pitfalls.
+In these settings, recognizing and mitigating shortcut learning is crucial for building DNNs that generalize
+reliably under real-world distribution shifts. While methods for evaluating model behavior are by now well-
+established and commonly used, it is apparent that there is also a need for interventions that can prevent
+or correct Clever Hans models without requiring large, perfectly curated datasets. In this context, work on
+robust optimization in statistics and operations research has laid an early foundation (Kouvelis & Yu, 1997;
+Ben-Tal & Nemirovski, 1997; 1998; El Ghaoui & Lebret, 1997; El Ghaoui et al., 1998). Building on this,
+a large body of research has refined the distributionally robust optimization (DRO) framework (Duchi &
+Namkoong, 2021; Delage & Ye, 2010; Ben-Tal et al., 2013; Hashimoto et al., 2018; Duchi et al., 2021; Oren
+et al., 2019; Duchi & Namkoong, 2019; Shafieezadeh Abadeh et al., 2015; Zhang et al., 2020; Jin et al., 2021;
+Zhang et al., 2025). Rather than following the standard approach of optimizing the average loss via empirical
+risk minimization (ERM), DRO defines an uncertainty set around the empirical training distribution and
+minimizes the worst-case loss. A prominent instance, which is often considered to be state-of-the-art in the
+field of robust learning, is Group Distributionally Robust Optimization (Group DRO) (Sagawa et al., 2020;
+Hu et al., 2018). Group DRO optimizes the worst group loss by assuming access to subgroup annotations for
+training samples. Another approach is used by Deep Feature Reweighting (DFR) (Kirichenko et al., 2023):
+while similarly relying on group labels, it uses them to assemble a small balanced set for fine-tuning the final
+linear layer, thereby reducing reliance on confounding features.
+3
+
+===== PAGE 4 =====
+Methods based on Invariant Risk Minimization (IRM) (Arjovsky et al., 2020; Wang et al., 2025; Lin et al.,
+2022; Liu et al., 2021b; Krueger et al., 2021; Zhou et al., 2022; Tan et al., 2023) modify the learning objective
+so that the model learns to only extract features that are stable across different environments, where an
+environment denotes a subset of data that shares a distinct data-generating process. By promoting invari-
+ance across environments, IRM aims to suppress features that occur only in specific subgroups, including
+spuriously correlated confounders. Other approaches, such as Just Train Twice (JTT), first train a weaker
+auxiliary model, treat its wrongly classified samples as proxies for underrepresented groups, and then up-
+weight those samples when training the final predictor (Liu et al., 2021a; Nam et al., 2020; Yaghoobzadeh
+et al., 2019; Dagaev et al., 2023; Zhang et al., 2022).
+A recent line of work tries to directly leverage results from XAI for correcting Clever Hans predictors.
+Weber et al. (Weber et al., 2023) offer a detailed overview as well as a qualitative comparison of XAI-
+based techniques to improve various model qualities beyond generalization capabilities. They also provide
+a framework to categorize different approaches depending on which step of the training loop they target,
+e.g. data augmentation or modification of the training objective. For instance, Right for the Right Reasons
+(RRR) (Ross et al., 2017) and similar methods (Shao et al., 2021; Rieger et al., 2020) adapt the loss function
+to penalize large attribution scores for features in regions of the input sample deemed irrelevant to the
+task, given sufficient domain knowledge. The Class Artifact Compensation (ClArC) family uses CAVs to
+capture the direction associated with a confounder. Augmentative ClArC (A-ClArC) and Projective ClArC
+(P-ClArC) then either add or suppress this component in each sample through projection (Anders et al.,
+2022), while Right Reason ClArC (RR-ClArC) adds a penalty to the objective that discourages model
+sensitivity towards the confounder (Dreyer et al., 2024).
+Finally, Counterfactual Knowledge Distillation
+(CFKD) (Bender et al., 2023) integrates a counterfactual explainer that systematically augments the training
+dataset with counterfactual examples in order to remove spurious correlations in the dataset.
+This is just a small overview of the plethora of techniques that have been proposed in recent years under um-
+brella terms such as robust learning or domain generalization. Each approach carries distinct assumptions,
+supervision requirements, and computational costs, which complicates the design of fair comparative evalua-
+tions. Original method papers typically compare against a limited set of baselines and use different datasets,
+metrics, architectures, and training protocols. As a result, reported improvements are often sensitive to
+the chosen experimental setup. Independent studies have introduced standardized benchmarks to reduce
+this variability and to evaluate many methods side by side, often reporting mixed results and sometimes
+even finding that standard ERM can match or exceed the performance of current state-of-the-art mitigation
+methods (Gulrajani & Lopez-Paz, 2021; Koh et al., 2021; Yang et al., 2023; Yu et al., 2024; Qiao & Low,
+2024). However, to our knowledge, these benchmark suites do not yet include CFKD and RR-ClArC, both
+of which are plausible contenders to reach or surpass the performance of currently popular approaches. A
+systematic and fair comparison of both XAI-based and non-XAI-based correction strategies under realistic
+data constraints is therefore needed to assess their effectiveness and guide their practical adoption.
+1.2
+Research scope
+We aim to systematically re-evaluate and compare current state-of-the-art methods for mitigating Clever
+Hans behavior in image classification under standardized and fair test conditions. In contrast to prior studies,
+our comparative analysis is designed to approximate practical constraints in safety-critical applications such
+as computer-aided diagnosis. Specifically, we evaluate methods in a scenario where the training and validation
+data are highly limited and the spurious correlation between the confounder and the class labels is extremely
+strong. Importantly, this spurious correlation also persists in the validation split, with the consequence that
+minority subgroups are severely underrepresented during hyperparameter tuning. Previous evaluations, in
+particular those presented in original method papers (e.g. (Sagawa et al., 2020; Liu et al., 2021a)), often
+validate on splits with ample minority group coverage, either through manual curation or simply by using
+large datasets.
+Such setups (artificially) simplify hyperparameter tuning and overestimate the practical
+robustness of correction methods. By contrast, our design mirrors realistic deployments in domains where
+only scarce and biased data are available. This ensures that the comparative analysis not only measures
+theoretical potential but also provides insights into the practical feasibility of applying these correction
+methods in high-stakes domains.
+4
+
+===== PAGE 5 =====
+We assess performance on both synthetic and real-world datasets that vary in the complexity of the causal
+and the confounding feature. For each dataset, we create two poisoned versions: in the first version, the
+confounder is symmetrically distributed across the target classes, and in the second version (visualized in
+Figure 1), the distribution is asymmetrical. The setting is described in detail in Section 3.
+In addition, a lot of popular correction methods (Kirichenko et al., 2023; Sagawa et al., 2020; Anders et al.,
+2022; Pahde et al., 2025; Dreyer et al., 2024) require group labels for at least a subset of samples, which
+are usually just assumed to be known in advance. Because such annotations are rarely available in practice,
+each of these methods were evaluated twice: once with ground truth group labels and once with group labels
+obtained via SpRAy. This design tests robustness to a realistic degree of label noise and simultaneously
+assesses how well SpRAy can support data group discovery in a setting with extremely small minority
+groups. To our knowledge, apart from manual annotation, there is currently no broadly suitable alternative
+to SpRAy for this purpose, so the applicability of these methods in a practical scenario also depends on the
+quality of SpRAy results.
+This work focuses on recently proposed XAI-based correction methods that have not yet been extensively
+evaluated, but seem to be promising candidates to achieve state-of-the-art performance. Accordingly, we
+include CFKD and RR-ClArC in our method selection. Due to its comparatively low computational costs,
+we further add P-ClArC, as it can give perspective to the trade-off between computational expenses and
+correction quality. Moreover, implementing RR-ClArC already provides most components required to imple-
+ment P-ClArC, which limits additional engineering effort. As non-XAI baselines, we select Group DRO and
+DFR, both well-established methods in robust learning research. Although Group DRO is typically applied
+during initial model training, we employ it post hoc on a fixed biased predictor to ensure comparability
+across methods. While Group DRO is often considered to be a seminal contribution in the field, DFR is
+particularly attractive in practice, as it is fast and easy to implement.
+Together, the methods in our selection represent a broad spectrum of strategies for mitigating Clever Hans be-
+havior. They differ fundamentally in how they intervene in the learning process: by modifying the dataset to
+remove imbalance, either through sub-sampling (DFR) or data augmentation with counterfactuals (CFKD);
+by altering latent representations through projection to suppress confounder directions (P-ClArC); or by
+adapting the learning objective, either prioritizing minority-group performance (Group DRO) or penalizing
+sensitivity to confounding features (RR-ClArC). Figure 1 visualizes these conceptual differences and also
+provides a compact overview of our evaluation methodology.
+5

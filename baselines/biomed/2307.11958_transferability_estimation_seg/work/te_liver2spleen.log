@@ -1,0 +1,6 @@
+[te] liver/l16_s1: CC-FV=0.3221 (CC_x=0.7598 CC_xgt=0.7527 CC=0.7080 FV=0.4239)  LogME=143278.29  LEEP=-0.5176  GBC=-0.1913
+[te] liver/l08_s1: CC-FV=0.2905 (CC_x=0.6659 CC_xgt=0.6556 CC=0.6183 FV=0.4363)  LogME=120105.49  LEEP=-0.6179  GBC=-0.0008
+[te] liver/l16_s2: CC-FV=0.3696 (CC_x=0.7142 CC_xgt=0.7188 CC=0.6789 FV=0.5175)  LogME=146165.47  LEEP=-0.5954  GBC=-0.1139
+[te] liver/l16_short: CC-FV=0.2997 (CC_x=0.6735 CC_xgt=0.6610 CC=0.6407 FV=0.4451)  LogME=141410.84  LEEP=-0.5653  GBC=-0.3344
+[te] liver/scratch: CC-FV=0.3680 (CC_x=0.9979 CC_xgt=0.9982 CC=0.9958 FV=0.3688)  LogME=150488.96  LEEP=-0.6853  GBC=-0.0070
+saved /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/results/te_liver2spleen.json

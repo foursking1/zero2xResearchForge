@@ -1,0 +1,10 @@
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:37: RuntimeWarning: divide by zero encountered in log
+  gamma = 1.5 * x * np.log(x) - x / 4.0 + 0.5
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:37: RuntimeWarning: invalid value encountered in multiply
+  gamma = 1.5 * x * np.log(x) - x / 4.0 + 0.5
+The chain is shorter than 50 times the integrated autocorrelation time for 22 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 1;
+tau: [6.52937709 6.50310653 6.87245396 6.38649826 6.56466182 6.65365018
+ 6.70384726 6.76109993 6.42779198 6.39684346 6.97079151 7.18955178
+ 6.80156543 6.52836104 6.48036421 6.47996781 5.84799838 6.11878467
+ 6.58123645 6.28119564 5.69541778 5.78445212]

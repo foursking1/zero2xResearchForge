@@ -1,0 +1,61 @@
+[ft] spleen_l16_s1: initialised from spleen-pretrained weights
+[ft] spleen_l16_s1: encoder frozen; trainable = 172577 params (decoder+head)
+[ft] spleen_l16_s1: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/30 loss=1.3818 dice=0.2744
+    ep6/30 loss=1.0254 dice=0.3720
+    ep11/30 loss=0.9667 dice=0.3832
+    ep16/30 loss=0.9225 dice=0.4057
+    ep21/30 loss=0.9489 dice=0.4044
+    ep26/30 loss=0.9380 dice=0.4215
+    ep30/30 loss=0.8310 dice=0.4464
+[ft] spleen_l16_s1: ft_dice(test)=0.0113  wall=15.8s
+[ft] spleen_l08_s1: initialised from spleen-pretrained weights
+[ft] spleen_l08_s1: encoder frozen; trainable = 43345 params (decoder+head)
+[ft] spleen_l08_s1: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/30 loss=1.4172 dice=0.2609
+    ep6/30 loss=1.0679 dice=0.3618
+    ep11/30 loss=1.0039 dice=0.3815
+    ep16/30 loss=0.9700 dice=0.3907
+    ep21/30 loss=1.0031 dice=0.3819
+    ep26/30 loss=0.9825 dice=0.4006
+    ep30/30 loss=0.8947 dice=0.4215
+[ft] spleen_l08_s1: ft_dice(test)=0.0000  wall=7.1s
+[ft] spleen_l16_s2: initialised from spleen-pretrained weights
+[ft] spleen_l16_s2: encoder frozen; trainable = 172577 params (decoder+head)
+[ft] spleen_l16_s2: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/30 loss=1.3738 dice=0.2502
+    ep6/30 loss=1.0695 dice=0.3113
+    ep11/30 loss=0.9889 dice=0.3424
+    ep16/30 loss=0.9148 dice=0.3709
+    ep21/30 loss=0.8671 dice=0.3945
+    ep26/30 loss=0.8387 dice=0.4054
+    ep30/30 loss=0.7478 dice=0.4410
+[ft] spleen_l16_s2: ft_dice(test)=0.4296  wall=13.3s
+[ft] spleen_l16_short: initialised from spleen-pretrained weights
+[ft] spleen_l16_short: encoder frozen; trainable = 172577 params (decoder+head)
+[ft] spleen_l16_short: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/30 loss=1.4081 dice=0.2770
+    ep6/30 loss=1.0817 dice=0.3641
+    ep11/30 loss=1.0265 dice=0.3743
+    ep16/30 loss=0.9948 dice=0.3839
+    ep21/30 loss=1.0171 dice=0.3795
+    ep26/30 loss=0.9889 dice=0.3976
+    ep30/30 loss=0.9378 dice=0.4020
+[ft] spleen_l16_short: ft_dice(test)=0.0029  wall=14.6s
+[ft] spleen_scratch: starting from RANDOM init
+[ft] spleen_scratch: encoder frozen; trainable = 172577 params (decoder+head)
+[ft] spleen_scratch: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/30 loss=1.4365 dice=0.2504
+    ep6/30 loss=1.3092 dice=0.2849
+    ep11/30 loss=1.2280 dice=0.3126
+    ep16/30 loss=1.1422 dice=0.3387
+    ep21/30 loss=1.0861 dice=0.3577
+    ep26/30 loss=1.0371 dice=0.3680
+    ep30/30 loss=0.9990 dice=0.3843
+[ft] spleen_scratch: ft_dice(test)=0.6311  wall=14.8s
+saved /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/results/finetune_spleen2liver.json
+   spleen_l16_s1 0.01129
+   spleen_l08_s1 0.0
+   spleen_l16_s2 0.42961
+   spleen_l16_short 0.00287
+   spleen_scratch 0.63106

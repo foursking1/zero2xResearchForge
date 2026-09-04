@@ -1,0 +1,44 @@
+[data] clean rows 24570, SEP 74
+[split 0] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8532 HSS=0.0478 AUC=0.9219 tp=21 fn=1 fp=745 tn=6604 thr=1.000 [9.9s]
+    Committee TSS=0.8592 HSS=0.0510 AUC=0.9600 tp=21 fn=1 fp=701 tn=6648 thr=0.803 [29.4s]
+    RH_v1     TSS=0.8857 HSS=0.0442 AUC=0.9895 tp=22 fn=0 fp=840 tn=6509 thr=0.460 [70.9s]
+    RH_v2     TSS=0.8706 HSS=0.1182 AUC=0.9883 tp=20 fn=2 fp=283 tn=7066 thr=0.698 [63.4s]
+
+=== CoNN ===
+  TSS        mean±std 0.8532±0.0000  med±MAD 0.8532±0.0000
+  HSS        mean±std 0.0478±0.0000  med±MAD 0.0478±0.0000
+  precision  mean±std 0.0274±0.0000  med±MAD 0.0274±0.0000
+  recall     mean±std 0.9545±0.0000  med±MAD 0.9545±0.0000
+  accuracy   mean±std 0.8988±0.0000  med±MAD 0.8988±0.0000
+  AUC        mean±std 0.9219±0.0000  med±MAD 0.9219±0.0000
+  confusion med±MAD: TP 21.0±0.0 FN 1.0±0.0 FP 745.0±0.0 TN 6604.0±0.0
+
+=== Committee ===
+  TSS        mean±std 0.8592±0.0000  med±MAD 0.8592±0.0000
+  HSS        mean±std 0.0510±0.0000  med±MAD 0.0510±0.0000
+  precision  mean±std 0.0291±0.0000  med±MAD 0.0291±0.0000
+  recall     mean±std 0.9545±0.0000  med±MAD 0.9545±0.0000
+  accuracy   mean±std 0.9048±0.0000  med±MAD 0.9048±0.0000
+  AUC        mean±std 0.9600±0.0000  med±MAD 0.9600±0.0000
+  confusion med±MAD: TP 21.0±0.0 FN 1.0±0.0 FP 701.0±0.0 TN 6648.0±0.0
+
+=== RH_v1 ===
+  TSS        mean±std 0.8857±0.0000  med±MAD 0.8857±0.0000
+  HSS        mean±std 0.0442±0.0000  med±MAD 0.0442±0.0000
+  precision  mean±std 0.0255±0.0000  med±MAD 0.0255±0.0000
+  recall     mean±std 1.0000±0.0000  med±MAD 1.0000±0.0000
+  accuracy   mean±std 0.8860±0.0000  med±MAD 0.8860±0.0000
+  AUC        mean±std 0.9895±0.0000  med±MAD 0.9895±0.0000
+  confusion med±MAD: TP 22.0±0.0 FN 0.0±0.0 FP 840.0±0.0 TN 6509.0±0.0
+
+=== RH_v2 ===
+  TSS        mean±std 0.8706±0.0000  med±MAD 0.8706±0.0000
+  HSS        mean±std 0.1182±0.0000  med±MAD 0.1182±0.0000
+  precision  mean±std 0.0660±0.0000  med±MAD 0.0660±0.0000
+  recall     mean±std 0.9091±0.0000  med±MAD 0.9091±0.0000
+  accuracy   mean±std 0.9613±0.0000  med±MAD 0.9613±0.0000
+  AUC        mean±std 0.9883±0.0000  med±MAD 0.9883±0.0000
+  confusion med±MAD: TP 20.0±0.0 FN 2.0±0.0 FP 283.0±0.0 TN 7066.0±0.0
+
+DONE. results in D:\project\paper-bench\tasks\astro\2303.08092_solar_energetic_particle_ensemble\agent_solution\results

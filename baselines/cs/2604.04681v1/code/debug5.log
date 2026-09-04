@@ -1,0 +1,77 @@
+==> BLS_InfoBatch: ratio=0.3, delta=0.875
+==> BLS: alpha=0.7
+
+|--| #sampled: 600 #saved: 0.00%
+
+|--| #sampled: 496 #saved: 17.33%
+|--| #sampled: 600 #saved: 0.00%
+==================== final ====================
+===> saved_ratio:  0.057777777777777775
+===> pruned_count:  104
+==================== final ====================
+BLS_InfoBatch best=13.83 final=13.83 saved_ratio=0.058 time=94.7s
+==> InfoBatch pruning: ratio=0.3
+
+|--| #sampled: 600 #saved: 0.00%
+
+|--| #sampled: 452 #saved: 24.67%
+|--| #sampled: 600 #saved: 0.00%
+==================== final ====================
+===> saved_ratio:  0.08222222222222222
+===> pruned_count:  148
+==================== final ====================
+InfoBatch best=11.50 final=11.00 saved_ratio=0.082 time=76.8s
+==> BLS_SeTa: ratio=0.3, group=5, window_scale=0.9, delta=0.875
+==> BLS: alpha=0.7
+
+
+|--| each group size: [84, 84, 84, 84, 84]
+|--| selected each group size: [84, 84, 84, 84, 84]
+|--| #sampled: 420 #saved: 30.00%
+
+
+|--| each group size: [131, 43, 48, 130, 68]
+|--| selected each group size: [43, 48, 130, 68]
+|--| #sampled: 289 #saved: 51.83%
+|--| #sampled: 600 #saved: 0.00%
+
+
+|--| each group size: None
+|--| selected each group size: None
+|--| #sampled: 420 #saved: 30.00%
+==================== final ====================
+===> saved_ratio:  0.37277777777777776
+===> pruned_count:  671
+==================== final ====================
+BLS_SeTa best=11.50 final=11.33 saved_ratio=0.373 time=74.8s
+==> SeTa pruning: ratio=0.3, group=5, window_scale=0.9
+
+
+|--| each group size: [84, 84, 84, 84, 84]
+|--| selected each group size: [84, 84, 84, 84, 84]
+|--| #sampled: 420 #saved: 30.00%
+
+
+|--| each group size: [105, 259, 45, 10, 1]
+|--| selected each group size: [259, 45, 10, 1]
+|--| #sampled: 315 #saved: 47.50%
+|--| #sampled: 600 #saved: 0.00%
+
+
+|--| each group size: None
+|--| selected each group size: None
+|--| #sampled: 420 #saved: 30.00%
+==================== final ====================
+===> saved_ratio:  0.35833333333333334
+===> pruned_count:  645
+==================== final ====================
+SeTa best=11.50 final=7.67 saved_ratio=0.358 time=63.8s
+==> No pruning
+|--| #sampled: 600 #saved: 0.00%
+|--| #sampled: 600 #saved: 0.00%
+|--| #sampled: 600 #saved: 0.00%
+==================== final ====================
+===> saved_ratio:  0.0
+===> pruned_count:  0
+==================== final ====================
+full best=12.17 final=12.17 saved_ratio=0.000 time=41.7s

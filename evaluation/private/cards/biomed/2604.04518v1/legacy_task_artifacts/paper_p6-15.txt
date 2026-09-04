@@ -1,0 +1,637 @@
+
+===== PAGE 6 =====
+0
+1
+Causal Feature
+Causal Feature
+0
+1
+Confounder
+Class A (no confounder)
+Class A (confounder)
+Class B (no confounder)
+Class B (confounder)
+Decision Boundary
+0
+1
+Square Intensity
+0
+1
+Background Intensity
+0
+1
+0
+1
+0
+1
+#Granulosa Cell Layers
+0
+1
+Size
+0
+1
+Healthy or Cancerous Tissue
+0
+1
+Color Cast
+0
+1
+Blond or Not Blond
+0
+1
+Gender
+0
+1
+Smiling or Not Smiling
+0
+1
+Watermark Opacity
+0
+1
+0
+1
+0
+1
+0
+0
+1
+0
+1
+0
+1
+0
+1
+DFR: Small, balanced ﬁne-tuning set 
+Group DRO: Upweighng
+worst group loss
+CFKD: Removing imbalance with
+counterfactual explanaons
+P-ClArC: Removing confounder
+through projecon
+RR-ClArC: Penalizing sensivity towards
+confounder in loss funcon  
+Before Correcon: High empircal
+accuracy, low worst and
+average group accuracy
+Aer Correcon: Beer generalizaon,
+possibly lower empircal accuracy
+A: Group imbalance
+→ Clever Hans behavior  
+poor minority group
+generalizaon
+confounder direcon
+for measuring
+model sensivity
+B: Conceptual visualizaons of the correcon methods
+Projecon
+Hyperplane
+D: Idenfying diﬀerent decision
+strategies, acquiring group labels 
+E: Applying correcon methods, evaluang correcon quality
+C: Biased datasets used for the comparave analysis
+Causal Feature
+Confounder
+Confounder
+Squares
+CelebA Smiling
+CelebA Blond
+Camelyon17
+Follicles
+Figure 1: Research scope overview. A: Sketch illustrating how a confounder that is spuriously correlated
+with the class labels due to group imbalance can lead to Clever Hans behavior. Majority groups (green
+area) generalize well, while unseen minority group data (red area) is systematically misclassified. The few
+training samples in the minority group can easily be overfitted and hence do not prevent the classifier
+from learning a Clever Hans strategy. B: Conceptual visualization of the selected correction methods. C:
+Overview of the datasets used in our experiments, highlighting the distinction between the causal (x-axis)
+and the confounding (y-axis) feature. D: Identification of valid and Clever Hans decision strategies with
+the help of LRP and SpRAy; corresponding annotation of whole data point clusters with group labels. E:
+Application of the correction methods, followed by an evaluation and comparison of the correction quality.
+This specific example shows the decision boundary and confidence regions of the classifier trained on biased
+Squares before and after applying RR-ClArC. The ideal decision boundary would be a vertical line in the
+center, perfectly separating the samples by the value of the causal feature.
+6
+
+===== PAGE 7 =====
+2
+Method Review
+Building on the method selection outlined in Section 1.2, this section provides a comprehensive overview of
+the approaches examined in this study. We first describe techniques for detecting spurious correlations that
+ML models may exploit, and then present correction strategies designed to prevent or mitigate the resulting
+Clever Hans behavior.
+Since all correction methods except for CFKD used in our comparative analysis require group labels, we
+will provide a brief explanations how the terms confounder label and group label are used throughout this
+study: In addition to a class label ti ∈C (with C denoting the set of class indices), each sample i is
+also characterized by a confounder label qi ∈{0, 1}. For confounders such as watermarks or other dataset
+artifacts, the confounder label indicates whether the respective artifact is present (q = 1) or absent (q = 0).
+For concepts like background color or object size, where there is no natural way of assigning the confounder
+labels, we arbitrarily assign to all samples with a specific color or size the label q = 1, and to all other samples
+q = 0. Although confounding features may be continuous, they are discretized for the experiments in this
+study so that the resulting confounder label is a binary variable. We will also only regard a single confounder
+at a time, even though it is possible for multiple confounders to be active simultaneously. The group label of
+a sample i is defined as the tuple containing both its class and confounder label (ti, qi). Accordingly, samples
+with an equal group label form a data group. Note that the original ClArC paper (Anders et al., 2022) uses
+the term artifact label, but we prefer the more general term confounder label, since the confounding features
+in our experiments are not necessarily artifacts.
+2.1
+Layer-Wise Relevance Propagation (LRP)
+Layer-Wise Relevance Propagation (LRP) (Bach et al., 2015) is an attribution-based method that assigns
+each input feature, e.g. each pixel of an image, an attribution score (relevance) indicating its contribution
+to a model’s output. The result can be visualized as a heatmap, highlighting the regions of the input that
+the model relied on most strongly. Such visualizations offer insights into the model’s decision process and
+can reveal spurious correlations indicative of Clever Hans behavior, as can be seen in Figure 2.
+Not
+Smiling
+Smiling
+Figure 2: Selected samples from the CelebA dataset paired with their respective heatmaps as an overlay
+over the original image. The classifier was trained to distinguish between images of smiling and non-smiling
+persons. A watermark was added in the bottom right of each image, but the transparency of the watermark
+is correlated with the class labels. For images with the label Smiling, the watermark is bolder in most cases,
+and for images with the label Not Smiling, it is usually more transparent. Thus, the model learns to exploit
+the watermark as a Clever Hans feature, which can clearly be seen in the heatmap overlays: For the image
+on the very right in the Not Smiling row, we can see that the model correctly considered the mouth of
+the person to contribute to the Not Smiling class. However, the bold watermark actually had a negative
+contribution, possibly leading to a false classification. Conversely, for the Smiling class, a bold watermark
+acts as a strong positive indicator, sometimes leading the model to ignore the shape of the mouth completely,
+as e.g. in the first and second images in the bottom row.
+Formally, LRP redistributes relevance from each subsequent layer of the neural network to its predecessor,
+starting at the model output f(x) and ending at the individual pixels of input x. The relevance of the output
+7
+
+===== PAGE 8 =====
+layer L is defined as RL = f(x). Then, for a single neuron j in the previous layer L −1, its relevance can be
+computed as
+RL−1
+j
+=
+zj
+P
+j′ zj′ RL
+(1)
+with zj being the neurons pre-activation (i.e. its activation is aj = σ(zj) with activation function σ). As
+we can see, we normalize the relevance by dividing by the sum of the pre-activations of all neurons in L −1
+that our output neuron is connected to. Analogous, the relevance a neuron i in layer L −2 receives from a
+neuron j in layer L −1 is:
+RL−2
+ij
+=
+zij
+P
+i′ zi′j
+RL−1
+j
+(2)
+To compute the total relevance of neuron i, we have to sum up the relevances that are distributed from all
+the neurons in layer L −1 to neuron i:
+RL−2
+i
+=
+X
+j
+RL−2
+ij
+(3)
+This process is continued until we arrive at the input layer, where the relevances of the individual input
+neurons (i.e. pixels) can be visualized as a heatmap. An important property of LRP is that relevance is
+conserved between layers, so that:
+f(x) =
+X
+i
+RL−1
+i
+=
+X
+i
+RL−2
+i
+= . . . =
+X
+i
+R1
+i =
+X
+i
+R(xi)
+(4)
+This means the network decision is directly rewritten as a sum of easy-to-interpret attributions from each
+pixel (instead of writing R1
+i for the relevance of pixel i, we can also write R(xi)).
+Conditional Relevance Propagation (CRP) also makes use of the same backpropagation, but additionally
+allows to condition the relevance not only on a specific class (e.g. Smiling), but also on human-interpretable
+concepts (such as Mouth or Watermark) by supplying a set of conditions θ = {c1, c2, . . . , cn} to the process
+(R(x|θ)). These conditions can be thought of as rules that direct the flow of the backpropagation only
+through specific parts of the neural network. In practice, this is done by selecting one or more channels in a
+layer that we are interested in. All relevance is then only distributed through these channels. Especially in
+deeper layers, channels are assumed to encode for high-level, human-understandable concepts (see e.g. (Bau
+et al., 2020; Zhou et al., 2015)), so this procedure allows for the generation of heatmaps regarding these
+individual concepts. By repeating the process with alternating condition sets, we can systematically search
+for concepts important to the model’s decision making. It is also possible to select only a certain output
+neuron in the case of multiclass classification, thereby receiving attribution values supporting or opposing a
+model’s decision with respect to a particular class.
+2.2
+Spectral Relevance Analysis (SpRAy)
+While LRP explanations can be helpful to discover undesirable decision strategies, examining heatmaps for
+individual predictions does not allow us to conclude that a model consistently avoids Clever Hans behavior.
+Explanations for some samples may appear valid even when the model relies on spurious correlations, because
+not all inputs contain the confounding feature. Without prior knowledge of the confounder’s presence or
+distribution, a large number of LRP explanations would need to be examined manually until we can deduce
+with sufficient certainty that a model did not learn any invalid decision strategies.
+SpRAy (Lapuschkin et al., 2019) addresses this limitation by combining local and global approaches. Instead
+of analyzing explanations sample by sample, SpRAy is able to process large amounts of attribution maps
+and arrange them into clusters by similarity. With sufficient domain knowledge, this allows us to identify
+8
+
+===== PAGE 9 =====
+all distinct decision-making strategies learned by the model, including Clever Hans strategies. This pro-
+cedure reveals at scale for which samples the model uses valid features and for which it relies on spurious
+confounders, enabling the assignment of confounder labels for all samples in a dataset. These labels are
+essential for correction techniques such as DFR, Group DRO, or ClArC methods. When ground-truth labels
+are unavailable, SpRAy allows us to avoid the extensive human labor that comes with manual annotation.
+The first step of SpRAy is to generate relevance heatmaps h1, . . . , hn ∈Rd using LRP or CRP for all samples
+of interest. As these heatmaps indicate which input features are important for the model’s classification
+decision, clusters of similar heatmaps intuitively represent the different decision strategies learned by the
+model. In order to identify these clusters, SpRAy uses Spectral Clustering, which is described in detail in
+(von Luxburg, 2007). In short, Spectral Clustering is performed by creating a similarity graph, where each
+heatmap is modeled as a vertex, and the similarity between two heatmaps is used as the weight of the edge
+connecting them. This graph can be represented by a weighted adjacency matrix S, with each entry sij
+containing the pairwise similarity between heatmaps i and j. There are different methods to construct the
+similarity graph. One possibility is to apply the (sparse) k-Nearest Neighbors algorithm to the heatmaps.
+If a heatmap is not among the k nearest neighbors of another heatmap, the respective entry is set to 0.
+Otherwise, we set it to their similarity score, which can e.g. be calculated with the gaussian kernel:
+sij = exp(−∥hi −hj∥2
+2σ2
+)
+(5)
+The hyperparameter σ can be used to modify the widths of the neighborhood. From the weighted adjacency
+matrix S, we compute the (normalized) graph Laplacian L := I −D−1S, with D denoting the degree matrix
+of the graph. The next step is to compute the first k eigenvectors u1, . . . , uk ∈Rn (i.e.
+the eigenvectors
+corresponding to the first k eigenvalues ordered by size, starting from the smallest).
+The eigenvectors
+form the columns of a matrix U ∈Rn×k, whose rows y1, . . . , yn can be used as low-dimensional (k << d)
+representations for our heatmaps. Accordingly, U constitutes the Spectral Embedding of the heatmaps.
+Now, we can apply conventional clustering algorithms like k-Means or DBSCAN to the representations,
+and optionally use further embedding methods such as t-SNE to visualize and explore the distribution of
+the heatmaps to hopefully identify the decision strategies learned by our model. Figure 3 shows a t-SNE
+visualization of the Spectral Embedding using real data from a colored version of the MNIST dataset.
+Figure 3: Result of a Spectral Relevance Analysis on Class ’0’ samples of the Colored MNIST dataset,
+where 50% of samples from Class ’0’ are colored red, while all other samples are colored white. The spectral
+embedding is visualized with the help of t-SNE. It is clearly visible that the samples are arranged in two
+distinct clusters, representing the two decision strategies learned by the model: classification by coloring
+(left side), which constitutes a Clever Hans effect, and classification by the shape of the depicted digit (right
+side), which is the correct, causal concept that we actually want our model to base its decision on.
+9
+
+===== PAGE 10 =====
+Lapuschkin et al. (Lapuschkin et al., 2019) don’t explicitly specify a reason why they apply Spectral Cluster-
+ing to the relevance maps instead of applying other clustering techniques. One reason might be that Spectral
+Clustering is a well-established method that also works well in cases where the clusters don’t have convex
+shapes, as opposed to e.g. directly using k-Means, and can also be used with large, complex datasets (von
+Luxburg, 2007).
+In practice, it can be beneficial to downsize the relevance maps before applying SpRAy, because it can
+speed up the process and make it more robust (Lapuschkin et al., 2019). In addition, it is not necessary to
+use the relevance maps of the input layer. As high-level concepts usually are better captured and become
+more disentangled in the deeper layers of the model (i.e. captured by distinct channels (Bau et al., 2020;
+Zhou et al., 2015; Zeiler & Fergus, 2014; Anders et al., 2022)), using the attribution maps of these layers
+can produce better results. This is also another advantage over using LRP without SpRAy, because only
+attribution scores in input space (or for the first few shallow layers) can be visualized as heatmaps in a way
+that is meaningful to and interpretable by humans. This makes it hard to assess the importance of concepts
+that overlap in input space, especially (but not exclusively) if we have multiple non-local concepts such
+as background texture and color cast. By choosing an appropriate layer for computing attribution scores,
+SpRAy can still successfully cluster samples by the importance of the overlapping concepts, allowing us to
+identify distinct strategies learned by the model that would be hard or impossible to detect when manually
+examining heatmaps.
+2.3
+Concept Activation Vectors (CAVs)
+Concept Activation Vectors (CAVs) were first introduced by Kim et al. (Kim et al., 2018) as a global XAI-
+tool that measures a model’s response to a specific concept, i.e. it quantifies how important a concept c
+is for reaching a particular classification. Given our trained model as a composite of its individual layers
+f = fL ◦. . . ◦f1, we can also view the model as the composite of 1) a feature extractor f(l)
+fe = fl ◦. . . ◦f1
+that extracts informative, high-level features from the raw input features, i.e. it computes meaningful latent
+representations for the input samples, and 2) a downstream head f(l)
+dh = fL ◦. . . ◦fl+1 which performs the
+actual classification task based on these latent representations, so that f = f(l)
+dh ◦f (l)
+fe . Then, the CAV of a
+concept is defined as the vector orthogonal to a linear decision boundary (i.e. a hyperplane) separating the
+representations al = f (l)
+fe (x) (layer l activations) of inputs containing the concept and the representations
+of inputs that do not. Layer l at which the model is "split" will usually be one of the deeper layers of the
+model, e.g. the penultima layer, because as already mentioned in section 2.2, deeper layers often extract
+and disentangle the high-level concepts we are interested in. However, the exact choice highly depends on
+the nature of the concept and the model architecture, and some concepts may be better represented in the
+activations of shallower layers (see e.g. (Kim et al., 2018; Anders et al., 2022)).
+In our case, the concept we are interested in is the respective confounder.
+Given that each sample is
+annotated with a confounder label indicating the presence of a Clever Hans feature, computing a CAV for
+that Clever Hans feature is simple: We train a linear classifier, e.g. a linear SVM, to differentiate between the
+representations al of Clever Hans samples and clean samples by using their respective confounder labels as the
+classification targets. The classifier weights then constitute a CAV for the Clever Hans feature: vc,l
+svm = wsvm.
+Since we want the CAV to only be aligned with the confounding concept’s direction and, accordingly, be
+orthogonal to the directions of all other causal concepts, it is usually necessary that all samples used to
+train the linear classifier are from the same class. If both the Clever Hans samples and the clean samples
+are sufficiently representative for the general data distribution in the chosen target class, it can be assumed
+that the causal concepts do not influence the decision boundary of the linear classifier and are therefore not
+captured by the CAV. Now, we can compute the conceptual sensitivity Sc,l with
+Sc,l = ∇al[f (l)
+dh (al)] · vc,l
+(6)
+to get a measurement of how sensitive the model is towards the concept of interest.
+However, according to Pahde et al. (Pahde et al., 2025), using the weight vector of a linear classifier as a
+CAV might make it susceptible to noise, potentially leading to poor alignment with the direction of the
+10
+
+===== PAGE 11 =====
+concept in latent space. Instead, they propose a different kind of CAV called Pattern Concept Activation
+Vector (PCAV). An estimation of the PCAV for concept c at layer l is given by
+vc,l
+pat = cov[al, q]
+σ2q
+,
+(7)
+i.e. the (empirical) covariance between latent representations al and their confounder labels q divided by
+the (empirical) variance of q. Pahde et al. experimentally show that PCAVs better capture the confounder’s
+direction in latent space in the presence of noise compared to CAVs acquired by training a linear classifier
+(Pahde et al., 2025). Again, we only want to consider activations of samples from the same target class. Oth-
+erwise, since the confounder labels are also correlated with the actual causal concepts, the PCAV would not
+be aligned with the confounding concept’s direction in latent space, but with the direction of a superposition
+of confounding and causal concepts.
+Alternatively to directly using the activations al as latent representations of x when computing a (P)CAV,
+Dreyer et al. also try to first either perform max-pooling or take the mean over the spatial dimensions, i.e.
+the width w and the height h, of the activations (Dreyer et al., 2024). Given that layer l has k channels,
+al is in Rm×w×h. After max-pooling or taking the mean, the new dimensionality would simply be Rm, so
+we end up with a single score per channel. There is no explicit reason stated for this in (Dreyer et al.,
+2024), but presumably it was done as a way to reduce noise in the representations. Also, when assuming
+that each channel carries information about one specific concept, the new representation can be seen as
+a set of indicator values for each individual concept. In addition, reducing the dimensionality can reduce
+memory requirements and computation times. Whether max-pooling or averaging should be performed will
+be determined in our experiments by a hyperparameter that will be referred to as the CAV mode.
+2.4
+Class Artifact Compensation (ClArC)
+Class Artifact Compensation (ClArC) refers to a family of correction methods developed to mitigate Clever
+Hans behavior in ML models. First, Anders et al. introduced Augmentative ClArC (A-ClArC) and Projective
+ClArC (P-ClArC) (Anders et al., 2022), which were later further refined by Pahde et al. (Pahde et al.,
+2025). Subsequently, Dreyer et al. introduced Right Reason ClArC (RR-ClArC) (Dreyer et al., 2024), which
+generally achieves superior performance compared with A-ClArC and P-ClArC. The most recent variant,
+Reactive ClArC (R-ClArC) (Bareeva et al., 2024), further advances this approach but appeared too recently
+to be included in this study. All ClArC variants are applied post-hoc to an already trained predictor rather
+than modifying the training process itself.
+ClArC requires access to confounder labels q ∈{0, 1} for a representative subset of samples. When ground-
+truth labels are unavailable, they can be inferred automatically using SpRAy. Based on these labels, we
+choose a target class y and partition the data into two disjoint subsets, X−= {xi | qi = 0 ∧ti = y} and
+X+ = {xi | qi = 1 ∧ti = y}. A CAV vc is then computed to capture the direction associated with the
+confounding concept c in latent space.
+As discussed in section 2.3, PCAVs are generally preferred over
+weight vectors obtained from a linear classifier because they are more reliable under noisy conditions. From
+this step onward, the procedure diverges between the different ClArC variants.
+P-ClArC.
+For P-ClArC, we construct a suppressive artifact model that removes the confounding compo-
+nent from each sample representation. The model is defined as
+hsup(x) = (I −vcvT
+c )x + vcvT
+c zsup
+(8)
+where zsup represents the non-artifact reference point computed as the mean of all non-confounder samples,
+zsup =
+1
+|X−|
+X
+x−∈X−
+x−
+(9)
+As already established, it can often improve the quality of the CAV when it is derived from activations
+acting as latent representations al = f (l)
+fe (x) instead of the raw inputs x. In that case, the suppressive model
+operates on the feature space of layer l: hsup(al).
+11
+
+===== PAGE 12 =====
+Figure 4b shows a sketch of the original setting for P-ClArC as described in (Anders et al., 2022): The
+task is a typical classification problem, but one class contains a spurious artifact, such as a watermark or
+rounded image corners, that never appears in the other class(es).
+To correct the resulting Clever Hans
+behavior, the suppressive model hsup uses the CAV to project all data points onto a hyperplane orthogonal
+to the direction related to the confounding feature.
+This projection removes the confounder from each
+representation, preventing the classifier from exploiting it as a shortcut. The hyperplane is anchored at
+reference point zsup.
+The suppressive model, and thereby the projection, is integrated as an additional layer within the model
+architecture. When defined on the inputs x directly, we place it before the first model layer: fcorrected =
+f ◦hsup. When instead defined on the activations of layer l, the suppressive model has to be inserted between
+layer l and layer l + 1: fcorrected = f (l)
+dh ◦hsup ◦f (l)
+fe . After the projection, all representations approximate
+non-confounder samples, effectively neutralizing the bias in the model’s decision function. The intention
+behind defining reference point zsup as the mean of all non-confounder samples is that they should ideally
+remain (nearly) unchanged by the projection.
+0
+1
+Causal Feature
+0
+1
+Confounder
+CAV
+Class A (no confounder)
+Class A (confounder)
+Class B (no confounder)
+Ideal Decision Boundary
+Clever Hans Decision Boundary
+Projection Hyperplane
+Reference Point z
+(a) A-ClArC sketch
+0
+1
+Causal Feature
+0
+1
+Confounder
+CAV
+(b) P-ClArC sketch
+Figure 4: Sketch illustrating how A-ClArC and P-ClArC use a CAV to (a) add the confounder to or (b)
+remove the confounder from all samples. During training, there are no examples from class B containing
+the confounder available, so the model strongly associates the confounder with class A, resulting in a Clever
+Hans decision boundary. During inference, if there are new data points from class B that do contain the
+confounder, they will get misclassified.
+To fix this Clever Hans behavior, both A-ClArC and P-ClArC
+project all data points onto a hyperplane that is orthogonal to the direction associated with the confounder
+(captured by the CAV), so that it can no longer be used by the model as a discriminative feature between
+the two classes. However, in this setting, P-ClArC comes with the advantage that no additional fine-tuning
+is necessary, because for data points on the hyperplane, the true decision boundary and the confounded
+decision boundary already result in the same classification. A-ClArC requires fine-tuning, because otherwise,
+all projected data points from class B would get misclassified, since the true decision boundary and the Clever
+Hans decision boundary deviate for class B samples containing the confounder.
+12
+
+===== PAGE 13 =====
+In this particular setting, additional fine-tuning is not required, because the ideal and the Clever Hans
+decision boundaries produce identical predictions for non-confounder samples (cf. Figure 4b).
+Whether
+fine-tuning is necessary depends on the specific shape of the learned decision boundary, and hence on the
+distribution of the confounder in the dataset. When fine-tuning, only the layers following the projection
+should be updated (i.e. only fine-tune f(l)
+dh ). The earlier layers must remain frozen. Otherwise, the network
+may learn a new representation in which the direction of the confounder is no longer aligned with the
+computed Concept Activation Vector, thereby undoing the suppression effect.
+A notable limitation of this approach is that it projects all samples, regardless of whether they contain the
+confounding feature. Preserving performance on clean samples therefore requires that causal and confounding
+features are approximately orthogonal in latent space. This assumption may not hold in practice, especially
+when the dataset is small or the feature representations are highly entangled. To prevent this, choosing the
+correct projection layer l is crucial, but finding the optimal value might require extensive hyperparameter
+tuning. Moreover, a concept that acts as a confounder for one class can be part of a valid decision strategy for
+another class. Because P-ClArC applies a single projection across all classes, it cannot make this distinction,
+which may degrade overall classification accuracy.
+A-ClArC.
+A-ClArC is conceptually very similar to P-ClArC. The main difference lies in the direction of
+projection: instead of removing the confounding feature, A-ClArC projects it onto all samples. The method
+defines an inductive artifact model:
+hind(x) = (I −vcvT
+c )x + vcvT
+c zind
+(10)
+with the artifact reference point zind as the mean of the confounder samples
+zind =
+1
+|X+|
+X
+x+∈X+
+x+
+(11)
+Mathematically, A-ClArC differs from P-ClArC only in this choice of reference point z. The general idea
+remains the same: after projection, the classifier can no longer discriminate between confounder and non-
+confounder samples because the confounding component has been equalized across all representations. Con-
+sequently, the confounder can no longer be used as a shortcut feature. However, since the model originally
+associates the presence of the confounder with a specific class, all projected samples tend to be classified as
+that class (see Figure 4a). Fine-tuning the model layers following the projection layer is therefore necessary,
+so the network learns to rely on causal features, while the confounding signal (ideally) remains constant
+across all inputs.
+Because A-ClArC is conceptually almost identical to P-ClArC, we restricted our comparative analysis to
+P-ClArC. In addition, for the datasets we use in our experiments (described in Section 3.1), there is not
+always a natural way to allocate confounder labels q = 0 and q = 1. For example, we use confounding
+concepts like gender or different types of color casts. In such cases, the differentiation between A-ClArC and
+P-ClArC becomes blurry, as we arbitrarily decide for one of the two possible confounder values (e.g. male)
+to be considered non-confounders and the other value (e.g. female) as confounders for computing the CAV
+and reference point z.
+RR-ClArC.
+RR-ClArC adopts a different strategy from A-ClArC and P-ClArC by modifying the objec-
+tive function rather than the model’s architecture. As before, we compute a CAV vc,l that captures the
+direction of confounder c using representations al = f (l)
+fe (x). But instead of applying a fixed projection to
+these representations, RR-ClArC fine-tunes the model with an additional Right-Reason loss term LRR that
+penalizes sensitivity to the confounder. The total loss becomes
+L = LCR + λLRR
+(12)
+where LCR denotes the standard cross-entropy loss and LRR enforces insensitivity to the Clever Hans feature
+through
+LRR =
+
+∇al
+
+m · f (l)
+dh (al)
+
+· vc,l
+2
+.
+(13)
+13
+
+===== PAGE 14 =====
+This new loss term strongly resembles the square of the conceptual sensitivity (Equation 6) used to measure
+how strongly the model reacts to a certain concept. The only difference is that RR-ClArC adds a regular-
+ization parameter m ∈R|C|, which is a class-specific weighting vector that also enables selective correction:
+setting entries at class-specific indices to zero disables correction for these classes. Alternatively, we can
+randomly fill m with values from {−1, 1}, which Dreyer et al. have found to improve regularization (Dreyer
+et al., 2024). The regularization strength λ acts as a weighting factor for the Right-Reason loss and controls
+the trade-off between prediction accuracy and confounder suppression during training.
+Alternative formulations replace the squared dot product for computing the Right-Reason loss with the
+cosine similarity or the L1 norm, or substitute the logits with the sum of log-probabilities as the gradient
+target. The choice of loss variant is treated as a hyperparameter in our experiments.
+During fine-tuning, minimizing the combined loss L reduces the model’s gradient alignment with the CAV.
+This process forces the model to become less sensitive to the confounder and to base its predictions on causal
+features instead. In contrast to P-ClArC, fine-tuning is thus not an optional step for RR-ClArC. Nevertheless,
+RR-ClArC brings the advantage of class-specific unlearning, providing more flexibility in multi-class scenar-
+ios, while P-ClArC and A-ClArC suppress the spurious correlation across all classes equally. Empirically,
+Dreyer et al. report that RR-ClArC, in most cases, outperforms both A-ClArC and P-ClArC, mitigating
+Clever Hans behavior the strongest of the examined ClArC methods (Dreyer et al., 2024). However, the
+correction quality for all ClArC methods critically depends on the accuracy of the computed CAV. If vc,l
+does not correctly represent the confounder’s direction, the projection might not sufficiently suppress the
+confounder, or may even suppress important causal information.
+An important distinction between our experimental setups and those used in the original ClArC papers
+concerns the type and distribution of confounders. While (Anders et al., 2022) and (Dreyer et al., 2024)
+primarily investigate discrete, artifact-like confounders that are either present or absent, we generalize this
+setting and additionally regard confounders that can take on any value on a continuous range.
+Another difference lies in the confounder distribution within the training and validation data. In the original
+setups for P-ClArC and RR-ClArC, the confounder appears only in one class, so that one data group is
+completely empty (as illustrated in Figure 4). In contrast, our datasets intentionally include both confounder
+and non-confounder samples for each class, as Group DRO and DFR require that sufficient instances from all
+data groups are available. Additionally, Dreyer et al. fine-tuned their models for a fixed number of ten epochs
+(Dreyer et al., 2024) when applying P-ClArC and RR-ClArC, whereas we determined the optimal number
+of epochs dynamically by monitoring the average group accuracy on the validation split. This strategy also
+required that every data group is represented by at least a few samples. More information about our specific
+implementations of the correction methods is provided in section 3.2.
+2.5
+Counterfactual Explanations
+Counterfactual Explainers offer an alternative method for investigating model behavior to feature attribution
+techniques such as LRP. Instead of assigning each input feature of a sample a score that indicates how much
+it contributed to the model’s output, Counterfactual Explainers aim to alter the sample in a minimal,
+but semantically meaningful way so that the model changes its classification decision. By comparing the
+original sample with its counterfactual, we learn what features the model considers to be important for the
+classification.
+Should the altered feature have a causal connection to the source class and target class, this can be an
+indicator that the model follows a valid decision strategy. If instead the altered feature is non-causal, this
+might indicate the model learned to shortcut the decision process due to a spurious correlation in the training
+data. An example for both cases can be found in Figure 5. In this study, we will only focus on so-called Visual
+Counterfactual Explainers for image classification (e.g. (Jeanneret et al., 2022; 2023; Bender et al., 2026;
+Bender & Morik, 2026; Zeid & Bender, 2026)), even though it is also possible to create counterfactuals in
+other domains, e.g. for tabular data Mothilal et al. (2020), natural language Sarkar et al. (2024), graphs Chen
+et al. (2023); Bechtoldt & Bender (2026) or proteins Kłos et al. (2026).
+14
+
+===== PAGE 15 =====
+(a) true counterfactual explanation
+(b) false counterfactual explanation
+Figure 5: Counterfactual Explanations generated for source class Not Smiling and target class Smiling. From
+left to right, each panel shows the original image, its counterfactual, and the per-pixel difference between
+the original and the counterfactual. (a) shows a true counterfactual explanation, i.e. the Counterfactual
+Explainer changed the causal feature that distinguishes the source and target class by altering the mouth
+area in such a way that the depicted person is now actually smiling. (b) shows a false counterfactual, as
+the causal feature remains unchanged and instead the opacity of the watermark is increased, hinting at the
+model possibly being affected by Clever Hans.
+Generating counterfactual explanations is not a trivial task, as there are multiple, sometimes contradictory,
+qualities that a good counterfactual explanation has to fulfill. First, changes to the original sample should
+be small, i.e. the counterfactual should be located close to the opposite side of the decision boundary,
+because we want to ensure that the changes mainly affect features important to the decision strategy.
+Simultaneously, the counterfactual should lie on the same data manifold M from which the original sample
+originated. Model behavior, in particular behavior of deep Neural Networks, for out-of-distribution data
+points is highly unpredictable, so if this requirement is not fulfilled, we would instead create an adversarial
+example. Compared to the original image, an adversarial example contains a minimal perturbation which is
+often barely visible and can resemble random noise patterns. While it also changes the model’s decision, it
+does not provide any information about the concepts on which the model relies (Szegedy et al., 2014; Nguyen
+et al., 2015).
+In general, changes to the original image must also not be too subtle, i.e. they need to be noticeable
+and understandable for human examiners. In addition, we also want there to be diversity when creating
+counterfactuals: for a single sample, we want to be able to create a set of counterfactual explanations
+that together reveal all relevant features and decision strategies. To make the counterfactual explanations
+more easily interpretable, they should also be sparse: ideally, only a single concept should be modified per
+generated counterfactual.
+Since it is hard to fulfill all those requirements, as there are trade-offs between them, there has been a
+lot of research on the topic, leading to the invention of multiple different approaches to counterfactual
+creation, each focusing on different qualities, e.g. Diffeomorphic Counterfactuals (DiffeoCF) (Dombrowski
+et al., 2024), Diverse Valuable Explanations (DiVE) (Rodríguez et al., 2021), LatentShift Cohen et al.
+(2023), Adversarial Visual Counterfactual Explanations (ACE) (Jeanneret et al., 2023), Diffusion Visual
+Counterfactual Explanations (DVCE) (Augustin et al., 2022), DiME (Jeanneret et al., 2022), FastDiME
+(Weng et al., 2025), Global Counterfactual Directions (GCD) (Sobieski & Biecek, 2025), CDCT Varshney
+et al. (2024), DiffAE-CF Ha & Bender (2025), LeapFactual Cao et al. (2025). The method we will concentrate
+on in this study, and that will also be used for our CFKD experiments, is called Smooth Counterfactual
+Explorer (SCE) (Bender et al., 2026). SCE tries to address all described qualities by combining and improving
+traits from existing methods with some own additions. Like other methods, SCE iteratively adapts the
+original sample x by Gradient Descent, propagating the Gradients through the decoder part of a Denoising
+Diffusion Probabilistic Model (DDPM) (Ho et al., 2020) for a better alignment with the data manifold M.
+However, unlike the other methods, SCE does not compute the gradients using the original model ∇f, but
+instead distills the original model into a surrogate model with smoother gradients ∇ˆf. The motivation for this
+is that adversarial examples can also exist within M as local generalization errors (Stutz et al., 2019), and,
+according to Bender et al., smoothing the classifier’s gradient field helps to prevent getting stuck in these local
+minima during the creation of counterfactual explanations. SCE also includes a diversifying mechanism that,
+when creating multiple counterfactuals, “locks” directions already used, so the following ones must find a
+15

@@ -1,0 +1,25 @@
+{
+  "task": "2211.01901_neznet_vipers_photoz",
+  "data_dir": "F:/dataset/astro/2211.01901_neznet_vipers_photoz/",
+  "files": {
+    "W1_PHOT-SPEC_MATCH_PDR.txt": {"rows": 40315, "note": "official NezNet repo match table"},
+    "W4_PHOT-SPEC_MATCH_PDR.txt": {"rows": 27961, "note": "official NezNet repo match table"},
+    "NezNet_README.md": "MIT license"
+  },
+  "source": "Paper official GitHub repo tos-1/NezNet; VIPERS PDR2 public data policy.",
+  "w1_rows_0p5_z_1p2": 34638,
+  "w4_rows_0p5_z_1p2": 22657,
+  "w4_safe_n": 25853,
+  "safe_sample_definition": "zflg <= 14 and zspec > 0 (robust approx of paper's 96.1% confidence; paper uses zflg=1 precisely)",
+  "metrics": "paper Eq.5-8: sigma=sqrt(mean(((zs-zp)/(1+zs))^2)), bias, |bias|, outlier=|zs-zp|>=0.15(1+zs)",
+  "physical_pair": "|dz| <= 0.08*(1+zspec) (paper Sec.4)",
+  "result_summary": {
+    "W4_safe_sigma": 0.0888,
+    "W4_safe_outlier_rate": 0.0392,
+    "W4_safe_nn_median_ang_arcsec": 23.80,
+    "W4_safe_nn_frac_physical": 0.456,
+    "paper_sigma": 0.08,
+    "paper_outlier": 0.03
+  },
+  "note": "Paper W4 test is a random ~2e4 subset; this card uses the full official match table, so sigma is ~11% higher and outlier +0.9 pt (same order). Model-improvement numbers (sigma 0.04, outlier 0.8%, ~75%) require NezNet weights not present in the frozen packet."
+}

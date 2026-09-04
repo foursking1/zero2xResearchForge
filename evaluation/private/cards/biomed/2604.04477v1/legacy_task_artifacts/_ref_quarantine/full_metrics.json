@@ -1,0 +1,120 @@
+{
+  "n_test_samples": 50,
+  "shape": [
+    16,
+    32,
+    32
+  ],
+  "max_branches": 15,
+  "noise_level": 0.1,
+  "checkpoint": {
+    "stage": "1_diverse",
+    "epoch": 174,
+    "best_dice_at_save": 0.8260539084672928,
+    "shape": [
+      16,
+      32,
+      32
+    ]
+  },
+  "table1": {
+    "MVis-Fold (small, ours)": {
+      "dice_mean": 0.8297,
+      "dice_std": 0.0808,
+      "sens_mean": 0.936,
+      "sens_std": 0.0345,
+      "spec_mean": 0.9901,
+      "spec_std": 0.0039,
+      "acc_mean": 0.9882,
+      "acc_std": 0.0043,
+      "hd95_mean": 1.0,
+      "hd95_std": 0.0,
+      "time_mean": 0.0097,
+      "time_std": 0.0021,
+      "dice_ci95": [
+        0.8071,
+        0.8525
+      ]
+    },
+    "TripoSR proxy (Tier 2 heuristic)": {
+      "dice_mean": 0.9198,
+      "dice_std": 0.0522,
+      "sens_mean": 0.8617,
+      "sens_std": 0.0907,
+      "spec_mean": 0.9997,
+      "spec_std": 0.0004,
+      "acc_mean": 0.9959,
+      "acc_std": 0.0017,
+      "hd95_mean": 0.64,
+      "hd95_std": 0.48,
+      "time_mean": 0.0007,
+      "time_std": 0.0003,
+      "dice_ci95": [
+        0.9058,
+        0.9336
+      ]
+    },
+    "OpenLRM proxy (Tier 2 heuristic)": {
+      "dice_mean": 0.7782,
+      "dice_std": 0.1853,
+      "sens_mean": 0.6935,
+      "sens_std": 0.232,
+      "spec_mean": 0.9984,
+      "spec_std": 0.002,
+      "acc_mean": 0.9906,
+      "acc_std": 0.0034,
+      "hd95_mean": 2.2186,
+      "hd95_std": 2.2991,
+      "time_mean": 0.0025,
+      "time_std": 0.0006,
+      "dice_ci95": [
+        0.725,
+        0.827
+      ]
+    }
+  },
+  "table2": {
+    "vd_error_mvis_mean": 26.9984,
+    "vd_error_mvis_std": 19.0605,
+    "vd_error_srus_mean": 89.7981,
+    "vd_error_srus_std": 17.0691,
+    "md_error_mvis_mean": 4.1043,
+    "md_error_mvis_std": 2.509,
+    "md_error_srus_mean": 2.3301,
+    "md_error_srus_std": 2.6368,
+    "vd_improvement_ratio": 3.326,
+    "md_improvement_ratio": 0.5677,
+    "pearson_vd_r": 0.1318,
+    "pearson_vd_p": 0.36159327811776365,
+    "pearson_md_r": 0.8793,
+    "pearson_md_p": 4.4843907158288004e-17,
+    "pearson_vd_srus_r": 0.0658,
+    "pearson_vd_srus_p": 0.6500266397603338,
+    "pearson_md_srus_r": 0.8926,
+    "pearson_md_srus_p": 3.133944397707263e-18,
+    "gt_vd_mean": 89.8346,
+    "gt_vd_std": 17.0707,
+    "gt_md_mean": 29.1107,
+    "gt_md_std": 7.3973
+  },
+  "internal_validation": {
+    "n_samples": 20,
+    "dice_mean": 0.8155,
+    "dice_std": 0.085,
+    "dice_ci95": [
+      0.7782,
+      0.8507
+    ]
+  },
+  "statistics": {
+    "shapiro_w": 0.9093,
+    "shapiro_p": 0.000992029533305018,
+    "wilcoxon_vd_stat": 1.0,
+    "wilcoxon_vd_p": 3.552713678800501e-15,
+    "cohens_d_vd": -3.0034,
+    "wilcoxon_dice_mvis_vs_triposr_stat": 0.0,
+    "wilcoxon_dice_mvis_vs_triposr_p": 1.7763568394002505e-15,
+    "mean_dice_diff_mvis_minus_triposr": -0.0901,
+    "label": "SYNTHETIC DATA ONLY -- NOT VALIDATED ON BIOLOGICAL TISSUE"
+  }
+}

@@ -1,0 +1,2 @@
+SGWB_model,Hellinger_direct,Hellinger_reweighted,logZ_MCMC_HME,logZ_NF_HME,logZ_NF_IS,time_MCMC_s,time_train_s,time_eval_s
+PowerLaw,0.9008,0.9037,68999.518,-638961.628,68965.609,37.4,12.4,10.9

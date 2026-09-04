@@ -1,0 +1,19 @@
+{
+  "task_id": "2604.08131_gnn_misinfo",
+  "csv_sha256": "665331424230FC452E9482C3547A6A199A2C29745ADE8D236950D1D105223773",
+  "split": "stratified 80/10/10 random_state=42 (test 0.1, val 0.2222)",
+  "tfidf_max_features": 5000,
+  "knn_k": 5,
+  "knn_metric": "cosine",
+  "graph_scope": "train-only; self-loops; D^-1 row-normalisation; val/test isolated nodes",
+  "model_hidden": "[256,128]",
+  "optimizer": "adam lr=0.0010",
+  "early_stopping": "val F1 patience=10",
+  "max_epochs": 200,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "mlp_mode": "full_batch"
+}

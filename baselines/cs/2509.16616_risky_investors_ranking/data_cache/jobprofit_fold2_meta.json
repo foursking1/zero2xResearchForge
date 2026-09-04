@@ -1,0 +1,1 @@
+{"n_rows": 14479, "n_feats": 24, "neg": 14334, "pos": 145, "pos_ratio": 0.010014503764072105, "threshold_margin": 2959.0149999999817, "dropped_cols": ["Job_Number", "Jobs_Subtotal", "Labor", "Jobs_Total", "Lead_Generated_From_Source", "Pricebook_Price", "Jobs_Gross_Margin"]}

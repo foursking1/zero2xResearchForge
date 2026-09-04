@@ -1,0 +1,38 @@
+C:\Users\Administrator\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\lightgbm\sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+C:\Users\Administrator\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\lightgbm\sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+=== 1. Data statistics ===
+Ef_train: n=59509 mean=-1.4214 std=1.0837
+Ef_val: n=12752 mean=-1.4124 std=1.0871
+Ef_test: n=12753 mean=-1.4166 std=1.0840
+Ed_train: n=59509 mean=0.0609 std=0.2306
+Ed_val: n=12752 mean=0.0588 std=0.2411
+Ed_test: n=12753 mean=0.0598 std=0.2374
+
+=== 2. Frozen reference models ===
+ElFrac     full-set dHd MAE=0.1007 test-set MAE=0.1012 RMSE=0.2038 R2=0.2362 (n_test=12753)
+Meredig    full-set dHd MAE=0.0948 test-set MAE=0.0955 RMSE=0.1920 R2=0.3224 (n_test=12753)
+Magpie     full-set dHd MAE=0.0924 test-set MAE=0.0939 RMSE=0.1819 R2=0.3915 (n_test=12753)
+AutoMat    full-set dHd MAE=0.0844 test-set MAE=0.0857 RMSE=0.1971 R2=0.2857 (n_test=12753)
+ElemNet    full-set dHd MAE=0.0755 test-set MAE=0.0762 RMSE=0.1890 R2=0.3429 (n_test=12753)
+Roost      full-set dHd MAE=0.0694 test-set MAE=0.0703 RMSE=0.1679 R2=0.4814 (n_test=12753)
+classifier ElFrac     acc=0.723 f1=0.631 precision=0.674 recall=0.593 fpr=0.191
+classifier Meredig    acc=0.745 f1=0.666 precision=0.701 recall=0.634 fpr=0.180
+classifier Magpie     acc=0.759 f1=0.683 precision=0.719 recall=0.651 fpr=0.170
+classifier AutoMat    acc=0.792 f1=0.732 precision=0.756 recall=0.709 fpr=0.153
+classifier ElemNet    acc=0.744 f1=0.683 precision=0.677 recall=0.689 fpr=0.219
+
+=== 3. Own ElFrac Ef regression ===
+Ridge Ef test MAE=0.3963 RMSE=0.5482 R2=0.7442
+LightGBM Ef test MAE=0.1495 RMSE=0.2341 R2=0.9534 (iter=500)
+
+=== 4. Own stability classification (same features) ===
+Own stability classifier: acc=0.760 f1=0.694 fpr=0.181 precision=0.716 recall=0.674 AUC=0.840
+Test stability rate (Ed<=0): 40.5%
+
+=== 5. Contrast ===
+{'ef_mae_low_le_0.2': True, 'acc_below_80': True, 'f1_below_0.75': True, 'fpr_above_0.15': True, 'any_stability_metric_bad': True}
+
+Wrote D:\project\paper-bench\tasks\materials\2001.10591_stability_ml_predictions\agent_solution\results\metrics.json
+Wrote D:\project\paper-bench\tasks\materials\2001.10591_stability_ml_predictions\agent_solution\results\evidence_table.csv

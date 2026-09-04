@@ -1,0 +1,3 @@
+# paper-bench evaluation pipeline dependencies
+# (most scripts shell out to `curl` for LLM calls; these cover analysis/reporting)
+numpy>=1.24

@@ -1,0 +1,33 @@
+Warning: You will need to install 'PyQt5' if you want to use the graphical interface. Using the automatic library will continue to work.
+Pandas module not installed. DASH will use numpy to load spectral files instead. This can be up to 10x slower.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786966202.322475   25868 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786966207.078689   25868 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:From C:\Users\Administrator\.workbuddy\binaries\python\envs\default\Lib\site-packages\astrodash\multilayer_convnet.py:3: The name tf.disable_v2_behavior is deprecated. Please use tf.compat.v1.disable_v2_behavior instead.
+
+WARNING:tensorflow:From C:\Users\Administrator\.workbuddy\binaries\python\envs\default\Lib\site-packages\tensorflow\python\compat\v2_compat.py:98: disable_resource_variables (from tensorflow.python.ops.resource_variables_toggle) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Warning: You will need to install 'PyQt5' if you want to use the graphical interface. Using the automatic library will continue to work.
+[dash] classifying 69 spectra with knownZ=True, smooth=6 ...
+WARNING:tensorflow:From C:\Users\Administrator\.workbuddy\binaries\python\envs\default\Lib\site-packages\astrodash\multilayer_convnet.py:58: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From C:\Users\Administrator\.workbuddy\binaries\python\envs\default\Lib\site-packages\tensorflow\python\util\dispatch.py:1264: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From C:\Users\Administrator\.workbuddy\binaries\python\envs\default\Lib\site-packages\astrodash\restore_model.py:58: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+I0000 00:00:1786966214.182887   25868 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+I0000 00:00:1786966214.189813   25868 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+[dash] forward pass for 69 spectra in 2.03s (model+setup 1.55s)
+
+=== DASH match summary ===
+overall match rate: 56/64 = 0.8750 (counted; 5 Ic-broad predictions excluded per paper)
+  Ia   : 49/54 = 0.9074 (icbroad_excluded=2)
+  II   : 6/8 = 0.7500 (icbroad_excluded=3)
+  Ibc  : 1/2 = 0.5000 (icbroad_excluded=0)
+time: setup 1.55s + forward 2.03s = total wall 3.59s for 69 spectra in one batch
+spot-check: {"DES16C3bq": [{"epoch": "C3", "dash_top1": "Ia-norm", "dash_broad": "Ia", "prob": 0.8846337199211121, "match": "MATCH"}, {"epoch": "C3", "dash_top1": "Ia-norm", "dash_broad": "Ia", "prob": 0.8679826855659485, "match": "MATCH"}], "DES16E2aoh": [{"epoch": "E2", "dash_top1": "Ia-91bg", "dash_broad": "Ia", "prob": 0.602594792842865, "match": "MATCH"}]}
+wrote dash_predictions.csv and metrics.json

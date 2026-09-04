@@ -1,0 +1,62 @@
+DATA STATS: {"mp_gap": {"train": 76401, "val": 8489, "test": 21223}, "mp_e_form": {"train": 95580, "val": 10621, "test": 26551}, "log_gvrh": {"train": 7910, "val": 879, "test": 2198}}
+Running mp_gap
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_gap] fold0 MAE=0.5026  (72s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_gap] fold1 MAE=0.4974  (60s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_gap] fold2 MAE=0.5085  (81s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_gap] fold3 MAE=0.5058  (87s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_gap] fold4 MAE=0.5040  (97s)
+  [mp_gap] MEAN MAE=0.5037 +- 0.0037
+Running mp_e_form
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_e_form] fold0 MAE=0.1650  (86s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_e_form] fold1 MAE=0.1662  (91s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_e_form] fold2 MAE=0.1678  (99s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_e_form] fold3 MAE=0.1695  (113s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [mp_e_form] fold4 MAE=0.1670  (113s)
+  [mp_e_form] MEAN MAE=0.1671 +- 0.0015
+Running log_gvrh
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [log_gvrh] fold0 MAE=0.1092  (64s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [log_gvrh] fold1 MAE=0.1105  (79s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [log_gvrh] fold2 MAE=0.1058  (80s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [log_gvrh] fold3 MAE=0.1086  (68s)
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [log_gvrh] fold4 MAE=0.1080  (62s)
+  [log_gvrh] MEAN MAE=0.1084 +- 0.0016
+Running band-gap ablation
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [ablation] Comp-only: MAE=0.5275
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [ablation] PDD-only: MAE=0.8142
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  [ablation] PST-ish: MAE=0.5156
+
+=== SUMMARY ===
+mp_gap: MAE=0.5037 +- 0.0037 (paper 0.21)
+mp_e_form: MAE=0.1671 +- 0.0015 (paper 0.032)
+log_gvrh: MAE=0.1084 +- 0.0016 (paper 0.074)
+ablation: {'Comp-only': 0.5274571317644614, 'PDD-only': 0.8142350024340084, 'PST-ish': 0.5155742637933034}

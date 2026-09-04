@@ -1,0 +1,107 @@
+{
+  "per_pulsar": {
+    "J0030+0451": {
+      "ntoa_frozen": 724,
+      "ntoa_paper": 724,
+      "delta_ntoa": 0,
+      "span_days": 5672.515749870006,
+      "avg_sigma_ns": 685.6574585635359,
+      "paper_white_ns": 685.7,
+      "ra_deg": 82.38572229223965,
+      "dec_deg": 4.861032566494849
+    },
+    "J0613-0200": {
+      "ntoa_frozen": 423,
+      "ntoa_paper": 423,
+      "delta_ntoa": 0,
+      "span_days": 5494.157272187658,
+      "avg_sigma_ns": 275.95035460992904,
+      "paper_white_ns": 276.0,
+      "ra_deg": 356.56676633393494,
+      "dec_deg": -2.0131159435131285
+    },
+    "J1600-3053": {
+      "ntoa_frozen": 481,
+      "ntoa_paper": 481,
+      "delta_ntoa": 0,
+      "span_days": 4555.801599965489,
+      "avg_sigma_ns": 241.71309771309774,
+      "paper_white_ns": 241.7,
+      "ra_deg": 209.78374092635246,
+      "dec_deg": -30.897067620864913
+    },
+    "J1744-1134": {
+      "ntoa_frozen": 433,
+      "ntoa_paper": 433,
+      "delta_ntoa": 0,
+      "span_days": 5724.305207656842,
+      "avg_sigma_ns": 236.2540415704388,
+      "paper_white_ns": 236.3,
+      "ra_deg": 183.8774529751958,
+      "dec_deg": -11.581878859566638
+    },
+    "J1909-3744": {
+      "ntoa_frozen": 833,
+      "ntoa_paper": 833,
+      "delta_ntoa": 0,
+      "span_days": 5715.3394528184,
+      "avg_sigma_ns": 95.36494597839135,
+      "paper_white_ns": 95.4,
+      "ra_deg": 162.55236791423744,
+      "dec_deg": -37.737407911472744
+    },
+    "J1910+1256": {
+      "ntoa_frozen": 216,
+      "ntoa_paper": 216,
+      "delta_ntoa": 0,
+      "span_days": 4173.507014392468,
+      "avg_sigma_ns": 442.1342592592592,
+      "paper_white_ns": 442.1,
+      "ra_deg": 162.45957769547314,
+      "dec_deg": 12.940391233898353
+    },
+    "J1918-0642": {
+      "ntoa_frozen": 487,
+      "ntoa_paper": 487,
+      "delta_ntoa": 0,
+      "span_days": 5653.5549892178315,
+      "avg_sigma_ns": 543.1663244353184,
+      "paper_white_ns": 543.2,
+      "ra_deg": 160.29986761190412,
+      "dec_deg": -6.7097075668699135
+    },
+    "J1944+0907": {
+      "ntoa_frozen": 180,
+      "ntoa_paper": 180,
+      "delta_ntoa": 0,
+      "span_days": 3295.996691476663,
+      "avg_sigma_ns": 664.4388888888888,
+      "paper_white_ns": 664.4,
+      "ra_deg": 153.9611128827951,
+      "dec_deg": 9.123033938390845
+    },
+    "J2043+1711": {
+      "ntoa_frozen": 459,
+      "ntoa_paper": 459,
+      "delta_ntoa": 0,
+      "span_days": 3305.9388834426645,
+      "avg_sigma_ns": 251.35294117647055,
+      "paper_white_ns": 251.4,
+      "ra_deg": 139.1629989919683,
+      "dec_deg": 17.191348860339595
+    },
+    "J2317+1439": {
+      "ntoa_frozen": 708,
+      "ntoa_paper": 708,
+      "delta_ntoa": 0,
+      "span_days": 5714.438536993228,
+      "avg_sigma_ns": 303.57203389830505,
+      "paper_white_ns": 303.6,
+      "ra_deg": 100.71151823541487,
+      "dec_deg": 14.658683208374292
+    }
+  },
+  "total_ntoa_frozen": 4944,
+  "total_ntoa_paper": 4944,
+  "note": "active ToA count matches paper Table V (4944); the C-prefixed rows are cut ToAs, not active ToAs; the +1/pulsar (v2.1.0) claim in TASK.md does not materialise for these frozen files"
+}

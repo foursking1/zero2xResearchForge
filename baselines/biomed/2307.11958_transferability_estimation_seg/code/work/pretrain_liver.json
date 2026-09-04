@@ -1,0 +1,32 @@
+[
+  {
+    "id": "l16_s1",
+    "epochs": 25,
+    "final_step_dice": 0.5618380896747113,
+    "source": "liver"
+  },
+  {
+    "id": "l08_s1",
+    "epochs": 30,
+    "final_step_dice": 0.5335798586408297,
+    "source": "liver"
+  },
+  {
+    "id": "l16_s2",
+    "epochs": 25,
+    "final_step_dice": 0.5545820407569408,
+    "source": "liver"
+  },
+  {
+    "id": "l16_short",
+    "epochs": 12,
+    "final_step_dice": 0.5072031209343358,
+    "source": "liver"
+  },
+  {
+    "id": "scratch",
+    "epochs": 0,
+    "random_init": true,
+    "source": "liver"
+  }
+]

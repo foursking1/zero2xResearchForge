@@ -1,0 +1,32 @@
+[
+  {
+    "id": "l16_s1",
+    "epochs": 25,
+    "final_step_dice": 0.5941081637516618,
+    "source": "spleen"
+  },
+  {
+    "id": "l08_s1",
+    "epochs": 30,
+    "final_step_dice": 0.4738222579471767,
+    "source": "spleen"
+  },
+  {
+    "id": "l16_s2",
+    "epochs": 25,
+    "final_step_dice": 0.5403865477070212,
+    "source": "spleen"
+  },
+  {
+    "id": "l16_short",
+    "epochs": 12,
+    "final_step_dice": 0.4022742105942023,
+    "source": "spleen"
+  },
+  {
+    "id": "scratch",
+    "epochs": 0,
+    "random_init": true,
+    "source": "spleen"
+  }
+]

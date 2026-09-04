@@ -1,0 +1,874 @@
+
+===== PAGE 16 =====
+different route, i.e. they cannot again modify a feature that was already adapted in previous counterfactual
+explanations. Lastly, SCE uses a sparsifier that focuses the explanation on an individual feature, i.e. it
+prevents multiple features from being adapted simultaneously in a single counterfactual.
+2.6
+Counterfactual Knowledge Distillation (CFKD)
+Counterfactual Knowledge Distillation (CFKD) (Bender et al., 2023; 2025; Hackstein & Bender, 2025) follows
+a different paradigm than the ClArC methods described above. It corrects biased models through an iterative
+student-teacher framework by distilling knowledge from an unbiased teacher onto a biased student model
+with the help of counterfactual explanations.
+As with the ClArC methods, we start with a biased student model that was trained on a dataset containing a
+spurious correlation between some confounding feature and the class labels. The teacher would in practice be
+a human domain expert, but can be substituted with an unbiased oracle model, making it easier to conduct
+large-scale experiments and reproduce results. Based on the student, we generate counterfactual explanations
+for each sample in the dataset using the SCE algorithm described above. Since the student is affected by
+Clever Hans, a portion of the counterfactual explanations will be false, i.e. the modified feature is a non-
+causal confounder. The teacher now evaluates all generated counterfactuals. If, according to the teacher,
+the counterfactual still belongs to the source class, we know it is a false counterfactual and it is assigned the
+source class label (i.e. same class label as the factual). If the teacher instead agrees that the counterfactual
+belongs to the target class, it is considered a true counterfactual. The identified false counterfactuals are
+then added to the original dataset, helping to reduce the bias in the dataset by re-balancing the sizes of the
+different data groups. This process is illustrated in Figure 6: Creating counterfactual explanation can be
+imagined as "pushing" a sample just across the model’s decision boundary. Since the student’s boundary is
+skewed by the Clever Hans effect, this process frequently generates false counterfactuals that land within
+the sparse, underrepresented minority groups, effectively increasing their population. True counterfactuals,
+i.e. counterfactuals that actually modify the causal feature, are discarded. Due to the shape of the Clever
+Hans decision boundary, they typically fall within already well-populated majority groups and would only
+increase the existing imbalance.
+Using the augmented dataset, we can either choose to fine-tune the student or train a new model from
+scratch. As the different data group sizes are now (more) balanced, the spurious correlation between the
+0
+1
+Causal Feature
+Causal Feature
+0
+1
+Confounder
+poor minority group
+generalizaon
+0
+1
+0
+1
+Confounder
+Rebalancing through
+Counterfactual Explanaons
+Class A (no confounder)
+Class A (confounder)
+Class B (no confounder)
+Class B (confounder)
+Decision Boundary
+Figure 6: Conceptual illustration of dataset rebalancing using CFKD. (Left) An imbalanced training set
+leads to a biased Clever Hans decision boundary, where the model incorrectly relies on a spurious correlation
+between the confounder and class labels. (Right) CFKD generates ’false’ counterfactuals (indicated by red
+arrows), for which only the value of the confounder is modified and the causal feature remains unchanged. By
+augmenting the dataset with these new samples, CFKD populates the sparse minority group, consequently
+weakening the spurious correlation. Fine-tuning on the augmented dataset hence allows the model to learn
+a more robust decision boundary.
+16
+
+===== PAGE 17 =====
+confounder and the class labels no longer holds or is at least weakened, so the student has to learn to rely
+on causal features for classification. Should the model still display Clever Hans behavior, this process can
+be repeated for multiple iterations.
+However, getting a meaningful assessment for this is not trivial, as
+the validation data will generally come from the same, biased data distribution as the training data, so
+the empirical accuracy on the validation set is not a good estimator for the model’s ability to generalize.
+In contrast to ClArC and the other methods we examine, CFKD does not assume access to group labels,
+so we also cannot compute the average group accuracy, which would be a more reliable estimator. As an
+alternative, Bender et al. propose a new metric called feedback accuracy, which is defined as the proportion
+of true counterfactual explanations among all counterfactual explanations created. The intuition is that,
+by incorporating the teacher’s feedback in the form of counterfactual explanations labeled by the teacher
+into the dataset for the next iteration, the student’s decision boundary will more and more resemble the
+decision boundary of the teacher. The teacher will therefore more often agree with the student that the
+class label actually changed when creating a counterfactual explanation, so the feedback accuracy increases,
+approaching a value of 1. This process can be viewed as the teacher transferring its knowledge to the student,
+hence the name Counterfactual Knowledge Distillation. Since we assume that the teacher (human expert or
+oracle model) is an unbiased classifier, aligning the student’s decision boundary with the teacher results in
+the student unlearning the bias.
+Bender et al. successfully apply CFKD for varying degrees of dataset poisoning, and show that, because
+CFKD is able to augment the dataset using false counterfactuals, it can even mitigate model bias when
+the correlation between the confounder and the class targets equals 1, i.e. when the minority groups are
+completely empty (Bender et al., 2023). All other correction methods we examine can not be applied in such
+a scenario, as Group DRO and DFR require samples from all data groups, and the ClArC methods need
+at least one class represented by both confounder and non-confounder samples for computing an accurate
+CAV.
+If there are multiple confounding features present in the dataset, CFKD theoretically has no problems to
+correct for them simultaneously, as SCE creates a set of counterfactual explanations for a single sample, each
+modifying a different feature that the student thinks is relevant for classification. However, its application
+to multiclass classification remains challenging, as counterfactual explanations are typically generated for a
+single class transition at a time. Scaling to a multiclass setting would require generating multiple times more
+counterfactual explanations per sample, which could quickly become infeasible.
+2.7
+Deep Feature Reweighting (DFR)
+Deep Feature Reweighting (DFR) (Kirichenko et al., 2023) is a correction method that, in contrast to the
+previously described methods, is not XAI-based. As for the other methods, the starting point is a student
+model trained with plain ERM on a dataset D exhibiting a spurious correlation. Again, the student will be
+able to achieve high accuracy on the majority groups thanks to Clever Hans, but will fail for unseen minority
+group samples where the spurious correlation breaks. To correct the model with DFR, we create a new
+dataset ˆD, in which all data groups contain the same number of samples, so there no longer is a spurious
+correlation between the confounder and the class labels. Then, we fine-tune the last layer of the student
+model for a few epochs on ˆD, which, according to Kirichenko et al., is enough to remove or at least mitigate
+the bias learned by the model (Kirichenko et al., 2023). Similarly to the ClArC methods, DFR can be seen
+as splitting the model into a feature extractor, which extends from the input to the penultimate layer, and
+a downstream head, i.e. the last, fully connected layer acting as the classifier. The assumption is that the
+feature extractor still learns to extract the causal features when it is trained on the poisoned dataset D, but
+that the confounding feature is simply heavily upweighted in the downstream head, resulting in Clever Hans
+behavior. Fine-tuning the last layer on unbiased ˆD therefore leads to a reweighting of the extracted features
+in favor of the causal features. Unlike the ClArC method, where layer l after which to split the model is
+defined as a hyperparameter, DFR always splits the model after the penultimate layer.
+To create the unbiased dataset ˆD, we need a sufficient amount of samples annotated with groups labels.
+Similarly to the ClArC methods, these either have to be known in prior or can be obtained via SpRAy.
+According to Kirichenko et al., a small number of samples for ˆD is sufficient to noticeably reduce reliance on
+the confounder. In their own experiment, the size of ˆD was a quarter of the size of the original training dataset
+17
+
+===== PAGE 18 =====
+D, which was sufficient to yield similar results as state-of-the-arts methods like Group DRO. Preferably, ˆD
+should not be a subset of D, as this is reported to reduce the improvements that can be achieved with DFR.
+Instead, one should construct a hold-out set from the data before training the student that is reserved for
+the DFR fine-tuning.
+One possible drawback of DFR is that, since all data groups should have the same number of samples in
+ˆD, the size of the smallest minority group also dictates the size of all other groups. Depending on the total
+number of samples and the degree of poisoning, this number can be very small, especially in scenarios with
+very limited data availability and strong spurious correlations. As a consequence, ˆD might only contain very
+few samples, independent of whether ˆD is a subset of D or a held-out set. Multiclass settings or the presence
+of multiple confounders might make this problem even more severe, because the dataset is fractured into
+even smaller groups. The few samples are possibly no longer representative of the general data distribution
+within their respective groups, so using them for fine-tuning the student might fail to improve generalization.
+2.8
+Group Distributionally Robust Optimization (DRO)
+Group Distributionally Robust Optimization (Group DRO) (Hu et al., 2018; Sagawa et al., 2020) is a
+specialized, structured variant of Distributionally Robust Optimization (DRO) (Delage & Ye, 2010; Ben-
+Tal et al., 2013; Duchi et al., 2021). DRO itself is an optimization framework that acts as an alternative
+to standard ERM optimization: Instead of minimizing the average loss for the training data, DRO tries
+to minimize the worst-case loss over an uncertainty set of distributions. This uncertainty set should be
+representative for all possible data distributions that the model should be able to generalize to. This helps
+to prevent Clever Hans, as a spurious correlation that is present in the original training data will ideally
+not be present in all of the distributions of the uncertainty set. Since we optimize for the worst-case loss,
+the model is forced to learn a decision strategy that is valid for all the distributions, which should only be
+possible by relying on actual causal features.
+There are different strategies for creating the uncertainty set, e.g. using ϕ-divergences, such as the KL
+divergence, or the Wasserstein distance (Ben-Tal et al., 2013; Mohajerin Esfahani & Kuhn, 2018; Gao &
+Kleywegt, 2023). Instead, Group DRO assumes that group labels are available to us for both the training
+and validation data, and simply creates the uncertainty set by grouping the samples by their group labels.
+But in place of optimizing by only selecting samples from the group with the highest loss at each iteration
+step, we use an improved version of the training algorithm by Sagawa et al. (Sagawa et al., 2020) that
+updates the model for all groups at each step, but maintains a weighting factor wg per group g used to scale
+the individual group losses, and which is larger for groups that had larger loss in the past. According to the
+authors, this increases stability and convergence, while still focusing the model’s training on the group(s)
+for which it performs poorly.
+Following the (Group) DRO optimization framework in theory ensures low training loss for the minority
+groups. However, this does not guarantee high test accuracy for these groups as well. Powerful models such
+as large DNNs are capable of simply overfitting minority group samples, so even when they mainly rely
+on Clever Hans features, they still achieve perfect (or nearly perfect) minority group performance on the
+training data. Focusing on the group with the highest loss during optimization therefore can still yield a
+similarly biased classifier as ERM that generalizes poorly under distribution shifts. Sagawa et al. address
+this issue by applying strong regularization (in particular weight decay) and early stopping, preventing the
+model from overfitting minority group samples for decreasing worst group loss during training, so that it
+instead has to rely on actually causal concepts (Sagawa et al., 2020).
+Sagawa et al. also introduce an additional hyperparameter called model capacity C (Sagawa et al., 2020). For
+each group size ng, they compute
+C
+√ng and add the result to the loss of group g before calculating the overall
+loss and updating the model weights. This adds additional weight to the minority groups during optimization,
+giving even more priority to fitting them correctly (while preventing overfitting through regularization), as
+they usually generalize worse.
+Using ground-truth group labels, Group-DRO is reported to significantly improve worst-group performance
+on unseen data compared to standard ERM training on biased datasets, both in imaging (Waterbirds (Sagawa
+18
+
+===== PAGE 19 =====
+et al., 2020), CelebA (Liu et al., 2015)) and natural language processing (MultiNLI (Williams et al., 2018))
+tasks. However, contrary to DFR and the ClArC methods, Group DRO requires group labels for all training
+and validation samples. Again, since group labels often are not available in practice, SpRAy or manual
+labeling will often be necessary to be able to use Group DRO.
+3
+Experimental Design
+This section outlines the experimental setup that forms the basis of our comparative analysis. We begin by
+introducing the datasets used in the evaluation and emphasize the underlying data distributions regarding
+both the causal and confounding features and how they correlate with the classification targets. We then
+provide information about our implementation of each correction method, including hyperparameter tuning
+procedures and model selection criteria, to enable a transparent and reproducible comparison.
+Finally,
+we present the baseline student classifiers before correction and quantify the severity of their Clever Hans
+behavior.
+3.1
+Datasets
+We evaluate the correction methods on five datasets: Squares, CelebA Smiling, CelebA Blond, Camelyon17,
+and Follicles.
+This selection includes both synthetic and real-world data and allows us to evaluate the
+correction methods for varying degrees of complexity regarding the true causal feature and the confounding
+feature.
+By including Camelyon17 and Follicles, we also incorporate possible practical scenarios in the
+medical field, a domain where robust generalization and reliance on exclusively true, causal features are
+especially important.
+The task to be solved on all datasets is a binary classification problem, i.e. the ML model has to correctly
+predict the class label t ∈{0, 1} associated with an input sample. In conjunction with two possible values for
+the true confounder label q ∈{0, 1}, there are consequently four different data groups within each dataset:
+1. A−= {xi | ti = 0 ∧qi = 0} — non-confounder instances from class A
+2. A+ = {xi | ti = 0 ∧qi = 1} — confounder instances from class A
+3. B−= {xi | ti = 1 ∧qi = 0} — non-confounder instances from class B
+4. B+ = {xi | ti = 1 ∧qi = 1} — confounder instances from class B
+For all datasets except Follicles, we construct two poisoned variants, one with a symmetric and one with
+an asymmetric distribution of the confounding feature across the two classes. In the symmetric version,
+98% of samples in class A will have the true confounder label q = 0, while only 2% of samples have q = 1.
+Conversely, 2% of samples in class B will have q = 0, and 98% will have q = 1. Hence, the respective relative
+group sizes are [A−: 49%; A+ : 1%; B−: 1%; B+ : 49%], so the distribution of the confounding feature
+within class A is inversely symmetrical to the distribution in class B. Nevertheless, individually the true
+class and confounder labels are evenly distributed across the dataset, i.e. half of the samples belong to class
+A and the other half belongs to class B, and analogous, half the samples have the true confounding label
+q = 0 and the other half q = 1.
+In the asymmetric version, class A consists of 50% samples with q = 0 and 50% samples with q = 1, while
+class B consists of 98% samples with q = 0 and 2% samples with q = 1. This leads to relative group sizes of
+[A−: 25%; A+ : 25%; B−: 49%; B+ : 1%], making the distributions of the confounder in the two classes
+asymmetrical. In addition, while still half of the samples belong to class A and half of the samples belong
+to class B, the confounding feature is no longer evenly distributed across the dataset: Now, 74% of samples
+have the true confounder label q = 0, while only 26% of samples have q = 1.
+Figure 7 shows a sketch of the data distributions of both the symmetric and the asymmetric dataset versions.
+Additionally, it depicts the theoretically optimal decision boundary as well as the Clever Hans decision
+boundary that a model will learn due to the spurious correlation of the confounder with the class labels. Note
+19
+
+===== PAGE 20 =====
+0
+1
+Causal Feature
+0
+1
+Confounder
+Class A (no confounder)
+Class A (confounder)
+Class B (no confounder)
+Class B (confounder)
+Ideal Decision Boundary
+Clever Hans Decision Boundary
+(a) symmetric version
+0
+1
+Causal Feature
+0
+1
+Confounder
+(b) asymmetric version
+Figure 7: Generalized depictions of (a) the symmetric and (b) the asymmetric dataset distributions in the
+training and validation splits. The perfect decision boundary is a vertical line in the center, separating the
+two classes based on the value of the true, causal feature. Because of the simplicity bias, models trained on
+these datasets will prefer exploiting the confounder as a shortcut feature instead of basing their decision on
+the causal feature. Clever Hans "pushes" the decision boundary horizontally into the area of the minority
+group samples, thereby sacrificing accuracy on the minority groups in exchange for easily classifying majority
+group samples correctly. Due to their small number, minority group samples can be overfitted in order to
+achieve perfect training accuracy, with poor generalization for the minority groups as a consequence.
+that the severity of the Clever Hans effect, and therefore the deviation between the learned decision boundary
+and the optimal solution, will vary for the different datasets. Datasets with more complex confounding
+features and simpler causal features likely lead to less biased models, as complexity makes the confounder
+harder to be exploited as a shortcut feature.
+Both the symmetric and the asymmetric dataset versions are limited to only 1000 samples, of which 800
+are allocated to the train split and 200 samples are allocated to the validation split. As a consequence,
+the minority groups will be represented by only 8 samples in the train split, and only 2 samples in the
+validation split. There are multiple reasons why we chose this specific setting for our experiments. First,
+we wanted to keep the number of samples small, because in practical scenarios (e.g. in the medical domain),
+where preventing Clever Hans behavior is especially relevant, training data often will also be limited. In
+addition, methods like DFR and Group DRO have already been shown to yield good results when a sufficient
+amount of samples annotated with true confounder labels is readily available (i.e. minority groups were still
+represented by multiple hundreds of instances in the training data (Kirichenko et al., 2023; Izmailov et al.,
+2022; Koh et al., 2021; Sagawa et al., 2020)). We think it is more interesting to evaluate their performance
+in more challenging scenarios, with small group sizes and a very strong spurious correlation between the
+confounder and the target label.
+Compared to the training and validation splits, the test splits are much larger and contain a representative
+amount of minority group samples so that the reported results reflect the true generalization capabilities of
+the corrected models. The test splits of Squares, CelebA Smiling, and Camelyon17 are unpoisoned, i.e. all
+20
+
+===== PAGE 21 =====
+data groups contain the same amount of samples, with the smallest being the Squares test split with a size
+of 1600 samples (400 per group). The test split for Camelyon17 contains 6800 samples (1700 per group) and
+the one for CelebA Smiling contains 19400 samples (4850 per group). For CelebA Blond, we use 20260 of
+the remaining images to create the test set, in which the minority group is represented by 165 samples.
+As already mentioned, the only exception to the pattern described above is the Follicles dataset. The reason
+for this is that Follicles is a real-world medical dataset with a highly limited number of samples, so it is not
+possible to conduct further sub-sampling for reaching the same symmetric and asymmetric data distributions
+used with the other datasets. Instead, we will use the Follicles dataset as is. This way, we cover a real-world
+classification task containing a real spurious correlation that was not artificially created or strengthened
+by our setting. The Follicles data distribution and the sizes of the train, validation, and test split will be
+described in detail in section 3.1.5.
+3.1.1
+Squares
+The Squares dataset is a synthetic dataset that consists of 64 × 64 images with only two important features:
+The Foreground Intensity, which refers to the brightness of the small, red square, and the Background
+Intensity, which refers to the brightness of the background. Both are continuous and can take on values in
+the interval [0.0, 1.0]. The x and y coordinates of the foreground square are determined uniformly at random.
+For solving the binary classification problem, the classifier must learn to distinguish between images of Class
+A with a dark foreground (values in [0.0, 0.5)) and images of Class B with a bright foreground (values in
+[0.5, 1.0]), meaning the foreground intensity is the causal feature that the classifier should rely on. In the
+poisoned versions of this dataset, the background intensity is correlated with the class labels, so it acts as
+a Clever Hans feature that can be exploited by the classifier. Samples with a background intensity < 0.5
+are considered to have a dark background and are assigned the true confounder label q = 1. Conversely,
+samples with a background intensity ≥0.5 have a bright background and are assigned the true confounder
+label q = 0. To make the task more challenging, mild gaussian noise is added on top of all images. Figure 8
+provides randomly selected samples from the Squares dataset, illustrating the distinction between the four
+data groups.
+Class A
+low foreground intensity (< 0.5)
+low background intensity (< 0.5)
+low foreground intensity (< 0.5)
+high background intensity (> 0.5)
+Class B
+high foreground intensity (> 0.5)
+low background intensity (< 0.5)
+high foreground intensity (> 0.5)
+high background intensity (> 0.5)
+Figure 8: Randomly selected samples of the Squares dataset grouped by their respective foreground and
+background intensities.
+Class A contains samples with low foreground intensity ([0.0, 0.5]) and Class B
+contains samples with high foreground intensity ([0.5, 1.0]). In the poisoned versions of this dataset, the
+background intensity acts as a Clever Hans feature.
+21
+
+===== PAGE 22 =====
+3.1.2
+CelebA Smiling
+The original CelebFaces Attributes (CelebA) dataset (Liu et al., 2015) comprises 202599 images of faces of
+celebrities, each annotated with 40 binary labels to indicate the presence of specific facial attributes of the
+depicted person. For our experiments, we only regard the Smiling label, i.e. we convert the task to a binary
+classification problem so that the classifier has to distinguish between the two classes Not Smiling (Class
+A) and Smiling (Class B). We also downsize the images to a uniform size of 128 × 128 pixels. In addition,
+we artificially add a watermark in the lower right corner of each sample. The confounder, i.e. the feature
+spuriously correlated to the target label, is the opaqueness of this watermark. Similar to the confounder
+for the Squares dataset, the opaqueness of the watermark is continuous and can take on values in the range
+[0.0, 1.0], with 0.0 being completely transparent and 1.0 being completely opaque. Samples with a watermark
+opaqueness of < 0.5 are annotated with the true confounder label q = 0, and samples with a watermark
+opaqueness of ≥0.5 will have confounder label q = 1. The four distinct data groups are visualized in Figure
+9.
+Class A
+Not Smiling
+Transparent Copyright Tag
+Not Smiling
+Opaque Copyright Tag
+Class B
+Smiling
+Transparent Copyright Tag
+Smiling
+Opaque Copyright Tag
+Figure 9: Randomly selected samples of the CelebA dataset, where we added a watermark of varying opacity
+to each sample in order to artificially introduce a confounding feature. The samples are grouped by the two
+target classes, Smiling and Not Smiling, and by the opacity of their watermark (< 0.5 as transparent and
+≥0.5 as opaque)
+3.1.3
+CelebA Blond
+Like CelebA Smiling, CelebA Blond is based on the original CelebA dataset. Again, we downsize the images
+to 128 × 128 pixels and create a binary classification task by selecting the attribute label Blond as the
+classification target our model should learn to predict. Class A is comprised of images showing non-blond
+persons, and Class B contains the blond persons’ images.
+To introduce a spurious correlation for the model to exploit, we no longer artificially create a confounder,
+such as a watermark of varying opaqueness. Instead, we simply use another of the provided attribute labels:
+the Male label, with q = 0 indicating a female person and q = 1 indicating a male person. While the labels
+Blond and Male are already correlated in the original dataset, we still perform sub-sampling in a controlled
+way until the sizes of the data groups match the specifications described earlier. Randomly selected samples
+from each data group are shown in Figure 10.
+Compared to the confounders in the other datasets, the spurious feature in CelebA Blond, i.e. the gender,
+is arguably the most complex. When deriving the gender from facial attributes, a multitude of simpler
+features, which individually are not necessarily associated with one specific gender, have to be examined
+and weighted. Among others, the simpler features include the presence of a beard, hairstyle, shape of the
+chin, shape of the eyebrows, and presence of makeup. This complexity presumably makes it harder for a
+22
+
+===== PAGE 23 =====
+Class A
+Not Blond
+Female
+Not Blond
+Male
+Class B
+Blond
+Female
+Blond
+Male
+Figure 10: Randomly selected samples of the CelebA dataset, grouped by the two target classes Not Blond
+(Class A) and Blond (Class B), and by the confounding feature, which is the gender of the depicted person.
+model trained on CelebA Blond to exploit gender as a shortcut feature, so we expect the student models
+to be affected less severely by Clever Hans. As we will see, it also negatively impacts the quality of SpRAy
+results, because the different decision-making strategies represented by LRP attribution maps cannot be
+as easily and unambiguously clustered. Further difficulty is introduced by the fact that the ground-truth
+attribute labels provided with CelebA are known to be inconsistent and even inaccurate to some degree (see
+e.g. Lingenfelter et al. (2022); Wu et al. (2023)), so our classifiers and the applied correction methods need
+to possess a certain robustness to noisy labels.
+3.1.4
+Camelyon17
+Camelyon17 is a histopathological dataset that contains microscopic images of either healthy tissue (Class
+A) or tissue containing breast cancer metastases (Class B). Before conducting the experiments, we scale the
+images to sizes of 128 × 128 pixels. In the original dataset, there are four different possible hospitals from
+which the images can originate, but for our experiments, we only use the samples from two of the hospitals.
+Figure 11 shows that, depending on their hospital of origin, there is a clear distinction in the coloring of the
+images. This coloring is spuriously correlated with the presence of cancer metastases in the image, i.e. it is
+correlated with the target label, and therefore acts as a Clever Hans feature.
+Note that this is a scenario that could reasonably occur when applying computer-aided diagnosis in practice.
+One could imagine that one of the hospitals mainly conducts preventive medical examinations, so most
+microscopic images from this hospital would depict healthy tissue. The other hospital could be specialized
+in the treatment of breast cancer and therefore have mostly patients who already tested positive for the
+disease. Tissue samples from this hospital would show signs of cancer metastases at a much higher rate.
+When images from both hospitals are used in the same dataset, and the hospitals do not produce the images
+under the same conditions, there is a risk that equipment-specific artifacts, such as e.g. a color cast, strongly
+correlate with the task-relevant histological signs of cancer. A model trained on this dataset will use this
+confounding feature as a shortcut to distinguish between healthy and cancerous tissue, while actually learning
+to distinguish between different lab equipment. This kind of model would probably fail in the event of a
+distribution shift, e.g. when confronted with images from hospitals not represented in the dataset. As the
+test split for assessing the model’s generalization capabilities would likely come from the same distribution as
+the training and validation data, this Clever Hans effect might easily be overlooked, with possibly disastrous
+consequences for the patients. Similar behavior has been observed already in ML models that were trained
+to diagnose pneumonia (Zech et al., 2018).
+23
+
+===== PAGE 24 =====
+Class A
+Healthy Tissue
+Hospital A
+Healthy Tissue
+Hospital B
+Class B
+Cancerous Tissue
+Hospital A
+Cancerous Tissue
+Hospital B
+Figure 11: Randomly selected samples of the CAMELYON17 dataset grouped by presence of cancer metas-
+tases (classification target) and hospital of origin (confounder). Images from hospital A depict a pink color
+cast, while images from hospital B tend to be more purple.
+3.1.5
+Follicles
+The Follicles dataset consists of microscopic images of ovarian follicles and was originally introduced in
+Bender et al. (2023). The task is to classify the maturation stage of each follicle as either primordial (Class
+A) or growing (Class B). The correct causal feature for this distinction is the number of granulosa cell layers:
+a single ring-layer indicates a primordial follicle, while additional cells inside the ring or multiple ring-layers
+indicate a growing follicle. However, the maturation stage is strongly correlated with the size of the follicle,
+even though the size itself is not a valid criterion on which to rely for classification and therefore acts as a
+naturally occurring confounder. The four data groups can be seen in Figure 12
+As already mentioned, unlike the other datasets in this study, Follicles is relatively small and therefore
+cannot be resampled into the symmetric and asymmetric poisoned variants described above. Instead, we
+will use the Follicles dataset in its original form. The full dataset contains 1507 images downsized to a shape
+of 256 × 256 pixels, with 931 images of primordial follicles and 576 images of growing follicles. Among the
+primordial follicles, 776 are small (confounder label q = 0) and 155 are large (q = 1). Among the growing
+follicles, 117 are small (q = 0) and 459 are large (q = 1). Hence, the relative group sizes within the dataset
+are approximately [A−: 51.5%; A+ : 10.3%; B−: 7.8%; B+ : 30.5%]. This distribution results in a strong
+group imbalance, with the majority of primordial follicles being small and the majority of growing follicles
+being large.
+Because of the limited number of samples, we cannot construct large test sets like we did for the other
+datasets without impeding the training process by reducing the size of the training split. Instead, we adopt
+a more standard split strategy: 80% of the data for training, 10% for validation, and 10% for testing.
+24
+
+===== PAGE 25 =====
+Class A
+Growing
+Large
+Growing
+Small
+Class B
+Primordial
+Large
+Primordial
+Small
+Figure 12: Randomly selected samples from the Follicles dataset, grouped by the two target classes Pri-
+mordial (Class A) and Growing (Class B), and by the confounding feature, which is the size of the depicted
+follicle. Surrounding tissue is covered by a mask in order to help the model focus on the follicle.
+3.2
+Implementation details
+For the comparative analysis, we apply the XAI-based correction methods CFKD, P-ClArC, and RR-ClArC
+to mitigate Clever Hans behavior in biased student models. Both P-ClArC and RR-ClArC are evaluated
+twice, once using the true confounder labels and once using labels obtained via SpRAy, to assess how
+label quality influences correction performance and to determine each method’s robustness to imperfect
+supervision.
+As non-XAI-based baselines, we additionally correct with DFR and Group DRO, applying
+the same dual-evaluation protocol with true and SpRAy-derived group labels.
+All correction techniques
+are applied to the identical student models to ensure strict comparability and to isolate the effects of the
+correction procedures from architectural or initialization variance. The source code is provided alongside our
+study.
+Evaluation Metrics.
+Instead of relying on the empirical test accuracy, i.e. overall accuracy across all test
+samples, as the primary evaluation metric, we report the average group accuracy (AGA) on the test data.
+This metric is obtained by calculating the classification accuracy within each of the four data groups (A−,
+A+, B−, B+) and then taking the arithmetic mean of these values. In addition, we compute the worst
+group accuracy (WGA), defined as the minimum accuracy among the four groups. These metrics provide
+a more reliable measure of generalization under distribution shifts, as they explicitly account for subgroup
+performance. In contrast, empirical accuracy is often misleading in biased datasets because it is dominated
+by majority groups, which benefit from the spurious correlations that the correction methods are designed to
+remove. Consequently, models that achieve high empirical accuracy may still generalize poorly to minority
+subgroups or new environments where these correlations no longer hold. The main objective for all correction
+methods is therefore to maximize the average group accuracy, as it reflects balanced performance across all
+groups without making any assumptions about their individual importance.
+Training the students.
+We trained one student model for each of the poisoned datasets introduced
+in Section 3.1. All classifiers follow the ResNet-18 architecture (He et al., 2016b) as implemented in the
+PyTorch Torchvision library1. We did not use any precomputed weights for initialization, i.e. all weights
+were initialized randomly. Each model was trained using standard ERM for a maximum of 300 epochs, with
+the regularization strength gradually increasing over time. After each epoch, we computed the empirical
+1https://docs.pytorch.org/vision/main/models/generated/torchvision.models.resnet18.html
+25
+
+===== PAGE 26 =====
+accuracy on the validation set and eventually retained the model achieving the highest validation accuracy
+as the biased baseline.
+These baseline models serve as the starting point for all subsequent correction
+procedures, ensuring a consistent comparison of the effectiveness of each method in mitigating Clever Hans
+behavior.
+SpRAy Implementation.
+When the true confounder labels were not assumed to be available, we first
+applied Spectral Relevance Analysis (SpRAy) for obtaining them. The first step is to compute attribution
+scores for all training and validation samples. Although we can theoretically use any attribution-based XAI
+technique for this purpose, we decided to use CRP (Achtibat et al., 2023) as implemented in the zennit-crp
+Python package2. This choice aligns with the implementation used in the RR-ClArC experiments provided by
+Dreyer et al., which can be found at https://github.com/frederikpahde/rrclarc and which we adopted
+as a reference because SpRAy had previously been applied only in the original P-ClArC paper (Anders et al.,
+2022), for which no official implementation was released.
+To obtain high-quality labels with minimal misclassification, we experimented with different model layers l
+(starting from the penultimate layer) for computing attribution scores and with varying numbers of eigen-
+values k for generating the spectral embedding. We also compared different preprocessing strategies, such as
+using raw attribution scores, channel-wise averaging, or downsampling for potentially improving robustness.
+We then apply different clustering techniques (k-Means, Agglomerative Clustering, DBSCAN, HDBSCAN)
+to the Spectral Embedding to automatically generate the SpRAy labels. Additionally, we manually explored
+the embedded data by computing t-SNE and UMAP visualizations, so that we can judge the quality of the
+automatic labeling. When required, these visualizations also allowed for manual annotation of clusters using
+ViRelAy (Anders et al., 2026). We assume enough prior knowledge about the data domain to be able to
+determine if the computed clusters reflect a valid or a Clever Hans decision strategy.
+We generated confounder labels for both the training and validation sets. In case we were unable to achieve
+a satisfactory separation between confounders and non-confounders for a dataset, neither automatically nor
+manually, we conducted experiments only with the true confounder labels. For some datasets, acceptable
+clusters were eventually identified, but their discovery required extensive hyperparameter tuning. Conse-
+quently, it is questionable whether a practitioner without prior knowledge about the nature and distribution
+of the confounder, or even its presence, could reproduce the same results. We elaborate this problem in more
+detail in section 4.1.
+P-ClArC and RR-ClArC Implementation.
+After acquiring group labels through SpRAy, we computed
+the Concept Activation Vector (CAV) required for both P-ClArC and RR-ClArC. When true confounder
+labels were assumed to be known, we directly began from this step. For both methods, we conducted an
+extensive grid search to identify optimal hyperparameters. P-ClArC and RR-ClArC share the hyperparam-
+eters regarding CAV computation. These included the layer l at which the base model f was divided into a
+feature extractor f(l)
+fe
+and a downstream head f(l)
+dh , the CAV mode (max pooling, mean aggregation, or no
+reduction), the target class, and the CAV type (a linear SVM-based vector or a PCAV).
+In datasets where there is no natural way to label samples as confounders or non-confounders (e.g. for
+the color cast due to different hospitals of origin in Camelyon17), we treated the label orientation, i.e.
+deciding which confounder variant corresponded to q = 0 or q = 1, as an additional hyperparameter, as it
+determines the CAV’s direction and the reference point z for the P-ClArC projection. P-ClArC introduced
+no further hyperparameters, as the position at which to add the projection layer (projection location) is
+already determined by l. For RR-ClArC, we additionally optimized the regularization parameters λ and m
+as well as the function type (square of the dot product or cosine similarity) for the RR-ClArC loss term.
+Both methods involved fine-tuning the corrected model for up to 100 epochs. After completing the hyperpa-
+rameter search, including the optimal number of epochs for fine-tuning, we selected the configuration that
+achieved the highest average group accuracy on the validation set. Preliminary comparisons of validation-
+based selection using average group accuracy versus average group loss showed no substantial differences.
+2https://github.com/rachtibat/zennit-crp
+26
+
+===== PAGE 27 =====
+CFKD Implementation.
+For CFKD, we first trained a generative model based on a Denoising Diffusion
+Probabilistic Model (DDPM) on the same poisoned subset that was used for training the student model.
+Additionally, we trained an oracle model on an unpoisoned dataset version (i.e. all data groups contain the
+same number of instances) to act as a substitute for a human expert. The oracle solves the same classification
+task as the biased student but is unaffected by spurious correlations, allowing it to serve as a reliable reference
+for evaluating counterfactuals generated with the help of the DDPM. Accordingly, we assume a practitioner
+would have enough domain knowledge to manually classify samples, even those from minority groups, with
+high accuracy.
+During the CFKD procedure, we generated four counterfactual explanations per training and validation
+sample using SCE (Bender et al., 2026).
+The oracle then evaluated each counterfactual: if the oracle’s
+prediction matched the class label of the source sample (i.e. the factual), the counterfactual was labeled false
+and retained the source label; if the oracle’s prediction switched, it was labeled true and assigned the target
+class label. Only the false counterfactual explanations were used to augment the dataset, as they primarily
+increase the representation of minority groups and thereby mitigate the spurious correlation between the
+confounder and the target class. But even if they should not belong to the minority group, they still live
+in regions of the data distributions for which the student and the teacher disagree, i.e. where the student
+classifies samples wrongly. Increasing training and validation data density for these regions improves model
+performance for these regions, thereby improving generalization for regions that were underrepresented in
+the training and validation data before.
+We then fine-tuned the last layer of the student model on the augmented dataset for up to 20 epochs
+while monitoring the performance on the validation set. Because CFKD does not assume knowledge about
+group labels, we could not compute the average group accuracy for model selection as in other correction
+methods.
+Instead, we chose the optimal number of fine-tuning epochs based on the feedback accuracy.
+We conducted only a single iteration of the CFKD process, because this is usually sufficient to notably
+enhance generalization for minority groups, and additional iterations offer diminishing returns.
+Despite
+this restriction, CFKD remains the most computationally demanding method in our analysis due to the
+counterfactual generation process, so limiting the process to a single iteration also improved fairness regarding
+resource utilization.
+This design choice, as well as all other hyperparameter settings for CFKD and SCE, closely followed the
+reference implementation provided by Bender et al. (2023), which can be found at https://github.com/
+Explainable-AI-Berlin/pytorch_explain_and_adapt_library.
+DFR Implementation.
+As described in section 2.7, it is highly recommended to use held-out data for
+constructing the balanced fine-tuning set when applying DFR. However, in our setting, the data is intention-
+ally very limited, so reserving some samples for later use with DFR would mean training the original student
+on a smaller dataset with even fewer minority group samples. Since all correction methods are applied to
+the exact them students for comparability, they would be impacted by this decision as well, even though
+they have no use for the additional held-out data. As an alternative, we could provide DFR with additional
+samples just for fine-tuning, but having additional data available would also constitute an unfair advantage
+over the other methods. The task for all examined methods should be identical and simulate real-world
+scenarios: they should mitigate the student’s Clever Hans behavior, receiving only the student model and
+the original training and validation data as input. Consequently, we decided to use a balanced subset of the
+student’s training data for DFR fine-tuning. While ensuring methodological consistency, this design choice
+likely reduced DFR’s effectiveness, which should be kept in mind.
+For all datasets except Follicles, each of the four data groups in the DFR fine-tuning set consisted of eight
+samples, which corresponds to the size of the minority groups in the original training data, resulting in
+32 samples in total. For Follicles, the smallest group contains 93 training samples, yielding a total of 372
+samples for DFR fine-tuning. During fine-tuning, we monitored the AGA on the validation data after each
+epoch and selected the best-performing model.
+27
+
+===== PAGE 28 =====
+DFR does not introduce any additional hyperparameters beyond those used for standard ERM training, e.g.
+learning rate and weight decay. We used the default Pytorch SGD optimizer3 with a learning rate of 0.01
+and no regularization.
+Group DRO Implementation.
+While Group DRO is normally used as an alternative to ERM when
+training a model from scratch, we instead used it post hoc on the already biased students to ensure compa-
+rability with the other correction methods. In contrast to DFR, Group DRO updates the parameters in all
+model layers rather than only the final layer, enabling the method to adjust internal representations as well
+as the classification head.
+The key hyperparameters for Group DRO are the weight decay factor λ and the model capacity C. We
+evaluated several values for λ ∈{1.0, 0.5, 0.1, 0.05, 0.01} and found that λ = 0.1 generally yielded the best
+results. This might seem like an unusually large weight decay factor, but as explained in Section 2.8, Group
+DRO benefits from strong regularization to reduce the likelihood of overfitting minority group samples. For
+C, we adopted an algorithm by Sagawa et al. which dynamically adjusts C during training. The algorithm
+itself is not described by Sagawa et al. (2020), but can be found in the provided implementation at https:
+//github.com/kohpangwei/group_DRO. This code served as the main reference for our own implementation,
+also regarding other hyperparameter choices: Consequently, we used the PyTorch SGD optimizer and set
+the learning rate to 0.0001, together with a momentum factor of 0.9.
+While applying Grup DRO to the student, we tracked the AGA on the validation data after each epoch and
+selected the model with the highest validation AGA as the final corrected version. The maximum validation
+performance was typically reached after several hundred epochs.
+3.3
+Uncorrected classifiers
+Table 1 summarizes the performance of the uncorrected student models before applying any correction
+method. All students achieved high empirical accuracies on both the training and validation data. However,
+due to the spurious correlations present in the datasets, tuning by empirical accuracy on the validation set
+yielded models exhibiting pronounced Clever Hans behavior. Performance on minority groups, where the
+confounder cannot be exploited as a shortcut feature, is consistently poor, leading to low average group
+accuracies (AGA) and worst group accuracies (WGA) on validation and test data. Nevertheless, on the
+training set, students often still achieved perfect accuracy scores for minority groups due to overfitting. On
+unseen data, however, WGA was in several cases below 10%, illustrating the severity of the model bias.
+This effect was particularly strong for the symmetric dataset versions, where the confounder–target correla-
+tion is more pronounced and there are two data groups underrepresented in the training data. In contrast,
+models trained on asymmetric versions, where the correlation is weaker and where there is only one mi-
+nority group, tended to achieve higher AGA. The complexity of the confounding feature also influenced
+model behavior: when the confounder was simple (e.g., background intensity in Squares or watermark opac-
+ity in CelebA Smiling), models relied almost exclusively on it, resulting in steep accuracy drops for minority
+groups and hence especially low WGAs. Conversely, datasets with more complex confounders (e.g., gender
+in CelebA Blond) produced models that were less severely affected by Clever Hans effects. As described
+earlier, this aligns with findings by Shah et al. (2020) that neural networks often depict a simplicity bias,
+i.e. they tend to prefer simpler features and to ignore the more complex ones.
+Figure 13 visualizes the decision boundaries learned by the uncorrected models trained on symmetric and
+asymmetric Squares. The Squares data are synthetic and defined by only two numerical features, so we can
+create new images in a grid pattern and plot the respective confidence scores (i.e. output logits), making it
+possible to represent the classifier’s behavior in two-dimensional space. The plots show that both models
+strongly rely on the confounding feature. For the symmetric case (Figure 13a), the decision boundary is
+nearly horizontal, indicating that the model disregards the causal feature entirely. This finding is consistent
+with the scores in Table 1, as an AGA of approximately 50% and a WGA of almost 0% on the test split
+indicate nearly perfect accuracy for majority groups (A+ and B−) and complete failure for the minority
+groups (A−and B+). Similarly, the model trained on asymmetric Squares (figure 13b) also classified nearly
+3https://docs.pytorch.org/docs/stable/generated/torch.optim.SGD.html
+28
+
+===== PAGE 29 =====
+Table 1: Accuracies achieved by the uncorrected student models on training, validation, and test data. The
+test splits for Squares, CelebA Smiling, and Camelyon17 are balanced, i.e. all data groups have the same size,
+so here the empirical accuracy and the AGA are equal. In contrast, the data distributions in the test splits
+for CelebA Blond and Follicles are more similar to the distribution on the validation and training splits.
+Dataset
+Train accuracy
+Validation accuracy
+Test accuracy
+empirical
+AGA
+WGA
+empirical
+AGA
+WGA
+empirical
+AGA
+WGA
+Squares
+symmetric
+100.0
+100.0
+100.0
+97.5
+49.7
+0.0
+51.1
+51.1
+1.8
+Squares
+asymmetric
+100.0
+100.0
+100.0
+92.0
+68.7
+0.0
+68.1
+68.1
+12.0
+Smiling
+symmetric
+89.8
+55.0
+12.5
+94.0
+48.0
+0.0
+51.3
+51.3
+7.3
+Smiling
+asymmetric
+100.0
+100.0
+100.0
+77.5
+56.7
+0.0
+59.4
+59.4
+1.0
+Blond
+symmetric
+100.0
+100.0
+100.0
+92.0
+71.4
+50.0
+80.3
+72.7
+38.2
+Blond
+asymmetric
+100.0
+100.0
+100.0
+89.0
+79.2
+50.0
+86.9
+76.2
+40.6
+Camelyon17
+symmetric
+100.0
+100.0
+100.0
+99.0
+75.0
+0.0
+55.3
+55.3
+9.2
+Camelyon17
+asymmetric
+100.0
+100.0
+100.0
+88.5
+77.5
+0.5
+75.4
+75.4
+42.1
+Follicles
+89.4
+77.2
+49.4
+89.3
+79.2
+54.2
+84.5
+72.5
+48.1
+all minority group samples (B+) incorrectly. In addition, the unequal sizes of the majority groups also
+reduced the model’s confidence for data in A−that lie close to the distribution of B−.
+These results confirm that models trained under standard ERM systematically exploit confounding features
+as shortcuts when strong spurious correlations are present. This baseline evaluation thus provides a reference
+point for assessing the effectiveness of the correction methods, which we evaluate and compare in the following
+section.
+4
+Results and Discussion
+Building upon the experimental setup outlined in Section 3, this section presents the outcomes of our
+comparative evaluation of the selected correction methods. We report quantitative results for all datasets,
+analyze the impact of each method on group-balanced generalization, and discuss qualitative findings that
+provide further insight into the strengths and limitations of the individual approaches.
+Performance was evaluated on the test splits introduced in Section 3.1 using two complementary metrics:
+average group accuracy (AGA) and worst group accuracy (WGA). Both metrics explicitly account for sub-
+group performance and thus provide a more reliable estimate of generalization under distribution shifts than
+empirical accuracy, which is dominated by majority groups.
+Table 2 shows the results when providing DFR, Group DRO, P-ClArC, and RR-ClArC with ground-truth
+group labels. In nearly all cases, applying the correction methods improved AGA, indicating an overall
+enhancement in the ability to generalize across different data groups compared to the uncorrected students.
+However, the magnitude of improvement varied substantially between methods. Non-XAI-based approaches,
+particularly Deep Feature Reweighting (DFR), achieved only moderate gains in AGA. In contrast, the
+XAI-based methods P-ClArC, RR-ClArC, and CFKD produced considerably larger improvements in most
+settings. Except for asymmetric Camelyon17, the best-performing method on every dataset was one of these
+XAI-based approaches. Among them, CFKD achieved the strongest results most consistently, reaching the
+highest AGA in six out of nine cases and ranking second in two additional ones. It was also the only method
+that substantially improved generalization on CelebA Blond, the dataset with arguably the most complex
+29
+
+===== PAGE 30 =====
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(a) symmetric Squares
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(b) asymmetric Squares
+Figure 13: Decision boundaries and confidence regions of the uncorrected student models trained on (a)
+symmetric and (b) asymmetric Squares. Training samples from Class A with low foreground intensity are
+depicted as red triangles, training samples from Class B with high foreground intensity as blue triangles.
+Likewise, new data in the red area is classified as Class A, and in the blue area as Class B. Color saturation
+reflects the model’s confidence.
+A perfect decision boundary would be a vertical line at 0.5 foreground
+intensity, as that would separate the two classes by the true causal feature, rendering the model completely
+insensible towards the confounder (the background intensity).
+Due to Clever Hans, the actual decision
+boundaries deviate heavily from the perfect solution in both cases.
+confounder gender. RR-ClArC performed second best overall and surpassed CFKD on two datasets. Both
+RR-ClArC and CFKD, however, failed to mitigate Clever Hans behavior on asymmetric Camelyon17, making
+P-ClArC the only XAI-based method that improved performance on every dataset. The poor performance of
+the XAI-based methods for asymmetric Camelyon17 led to DFR ranking best here, albeit its AGA increase
+is smaller than for the symmetric version. DFR also performed relatively well on Follicles, likely due to the
+larger size of the fine-tuning set.
+The WGA results largely confirmed the findings for AGA. Again, XAI-based methods on average achieved
+the highest scores, with CFKD ranking first and RR-ClArC second. P-ClArC and Group DRO were more
+competitive in WGA than in AGA, but since model selection was based on AGA, this remains the primary
+evaluation metric. We still report WGA for completeness, as an increase in AGA may occur without a
+corresponding improvement in minority group performance or even with a decline. For example, applying
+DFR to the student trained on symmetric CelebA Blond increased AGA but slightly reduced WGA. Because
+no group was considered more important than another, an overall increase in mean group accuracy was
+still regarded as an improvement.
+In most cases, however, enhancements in AGA and WGA occurred
+simultaneously.
+Moreover, no clear pattern emerged to suggest that some correction methods perform systematically better
+on either the symmetric or asymmetric dataset variants.
+The effectiveness of each method varied, with
+examples of stronger performance on both versions. Overall, the magnitude of improvement was largely
+consistent between the two configurations. Although the final AGA for asymmetric datasets was typically
+higher, this was proportional to the higher baseline AGA of the uncorrected student, resulting in a similar
+net performance gain.
+We conducted the same experiments again with group labels provided by SpRAy to assess how label quality
+influences the correction performance, determining the robustness of each method to imperfect supervision.
+The corresponding results are summarized in Table 3.
+We do not report results for symmetric CelebA
+Smiling, both symmetric and asymmetric CelebA Blond, as well as symmetric Camelyon17, because for
+30

@@ -1,0 +1,64 @@
+[pretrain] liver_l16_s1_pretrained: ntrain=58 params=318929 lr=0.0003
+    ep1/25 loss=1.3093 dice=0.3750
+    ep6/25 loss=1.1093 dice=0.4312
+    ep11/25 loss=0.9129 dice=0.5252
+    ep16/25 loss=0.8652 dice=0.5415
+    ep21/25 loss=0.7959 dice=0.5721
+    ep25/25 loss=0.8018 dice=0.5591
+[pretrain] liver_l16_s1_pretrained: final_traj_dice=0.5618 wall=35.9s
+[pretrain] liver_l08_s1_pretrained: ntrain=58 params=80233 lr=0.0003
+    ep1/30 loss=1.3920 dice=0.3710
+    ep6/30 loss=1.2306 dice=0.3963
+    ep11/30 loss=1.0337 dice=0.4921
+    ep16/30 loss=1.0094 dice=0.4951
+    ep21/30 loss=0.9470 dice=0.5216
+    ep26/30 loss=0.8882 dice=0.5422
+    ep30/30 loss=0.8698 dice=0.5458
+[pretrain] liver_l08_s1_pretrained: final_traj_dice=0.5336 wall=18.3s
+[pretrain] liver_l16_s2_pretrained: ntrain=58 params=318929 lr=0.0003
+    ep1/25 loss=1.3754 dice=0.4005
+    ep6/25 loss=1.1002 dice=0.4732
+    ep11/25 loss=0.9998 dice=0.5095
+    ep16/25 loss=0.9915 dice=0.4985
+    ep21/25 loss=0.8905 dice=0.5389
+    ep25/25 loss=0.8135 dice=0.5743
+[pretrain] liver_l16_s2_pretrained: final_traj_dice=0.5546 wall=34.9s
+[pretrain] liver_l16_short_pretrained: ntrain=58 params=318929 lr=0.0003
+    ep1/12 loss=1.3093 dice=0.3750
+    ep6/12 loss=1.1093 dice=0.4312
+    ep11/12 loss=0.9129 dice=0.5252
+    ep12/12 loss=0.9302 dice=0.5122
+[pretrain] liver_l16_short_pretrained: final_traj_dice=0.5072 wall=17.0s
+[pretrain] liver_scratch_pretrained: random-init saved (no pretraining)
+[pretrain] summary -> /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/code/work/pretrain_liver.json [
+  {
+    "id": "l16_s1",
+    "epochs": 25,
+    "final_step_dice": 0.5618380896747113,
+    "source": "liver"
+  },
+  {
+    "id": "l08_s1",
+    "epochs": 30,
+    "final_step_dice": 0.5335798586408297,
+    "source": "liver"
+  },
+  {
+    "id": "l16_s2",
+    "epochs": 25,
+    "final_step_dice": 0.5545820407569408,
+    "source": "liver"
+  },
+  {
+    "id": "l16_short",
+    "epochs": 12,
+    "final_step_dice": 0.5072031209343358,
+    "source": "liver"
+  },
+  {
+    "id": "scratch",
+    "epochs": 0,
+    "random_init": true,
+    "source": "liver"
+  }
+]

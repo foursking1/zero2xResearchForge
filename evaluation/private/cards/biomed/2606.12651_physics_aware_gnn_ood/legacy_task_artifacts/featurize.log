@@ -1,0 +1,999 @@
+[1/3] HIV props ...
+[20:34:35] UFFTYPER: Unrecognized charge state for atom: 8
+[20:34:35] UFFTYPER: Unrecognized atom type: Se5+2 (8)
+[20:34:35] UFFTYPER: Unrecognized charge state for atom: 8
+[20:34:35] UFFTYPER: Unrecognized atom type: Se5+2 (8)
+[20:34:35] UFFTYPER: Unrecognized charge state for atom: 8
+[20:34:35] UFFTYPER: Unrecognized atom type: Se5+2 (8)
+[20:34:35] UFFTYPER: Unrecognized charge state for atom: 13
+[20:34:35] UFFTYPER: Unrecognized atom type: Se2+2 (13)
+[20:34:35] UFFTYPER: Unrecognized charge state for atom: 16
+[20:34:35] UFFTYPER: Unrecognized atom type: Se2+2 (16)
+[20:34:35] UFFTYPER: Unrecognized charge state for atom: 13
+[20:34:35] UFFTYPER: Unrecognized atom type: Se2+2 (13)
+[20:34:35] UFFTYPER: Unrecognized charge state for atom: 16
+[20:34:35] UFFTYPER: Unrecognized atom type: Se2+2 (16)
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:37] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:37] UFFTYPER: Unrecognized charge state for atom: 2
+[20:34:37] UFFTYPER: Unrecognized charge state for atom: 5
+[20:34:38] Explicit valence for atom # 3 Al, 6, is greater than permitted
+[20:34:39] Explicit valence for atom # 5 B, 5, is greater than permitted
+[20:34:42] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:34:42] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:34:42] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:34:43] UFFTYPER: Unrecognized atom type: Se2+2 (10)
+[20:34:43] UFFTYPER: Unrecognized atom type: Se2+2 (10)
+[20:34:43] UFFTYPER: Unrecognized atom type: Se2+2 (10)
+[20:34:44] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:34:44] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:34:44] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:34:44] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:34:45] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:45] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:45] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:45] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:45] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:45] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:45] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:45] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:46] UFFTYPER: Unrecognized charge state for atom: 5
+[20:34:46] UFFTYPER: Unrecognized charge state for atom: 5
+[20:34:47] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:47] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:47] UFFTYPER: Warning: hybridization set to SP3 for atom 2
+[20:34:47] UFFTYPER: Warning: hybridization set to SP3 for atom 2
+[20:34:49] UFFTYPER: Unrecognized atom type: Se2+2 (0)
+[20:34:49] UFFTYPER: Unrecognized atom type: Se2+2 (0)
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:49] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[20:34:50] UFFTYPER: Unrecognized charge state for atom: 7
+[20:34:50] UFFTYPER: Unrecognized charge state for atom: 7
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:50] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[20:34:51] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:34:51] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:34:52] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:34:52] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:34:52] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:52] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:53] UFFTYPER: Unrecognized charge state for atom: 5
+[20:34:53] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:53] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:34:53] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:53] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:34:53] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:53] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:53] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:53] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:34:54] UFFTYPER: Unrecognized charge state for atom: 10
+[20:34:54] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:34:54] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:34:54] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:54] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:54] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:54] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:54] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:54] UFFTYPER: Unrecognized charge state for atom: 5
+[20:34:55] UFFTYPER: Unrecognized charge state for atom: 6
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 7[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 
+3
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 18
+[20:34:55] UFFTYPER: Warning: hybridization set to SP3 for atom 18
+[20:34:56] UFFTYPER: Warning: hybridization set to SP3 for atom 18
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:57] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:34:58] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:34:59] UFFTYPER: Unrecognized charge state for atom: 5
+[20:34:59] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 18
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 18
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 18
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:00] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:00] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:00] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:00] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:00] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 
+4
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:01] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[20:35:01] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[20:35:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 2
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 2
+[20:35:02] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:03] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:03] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:04] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:04] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:04] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:04] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:04] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:05] UFFTYPER: Unrecognized atom type: S_5+6 (1)
+[20:35:05] UFFTYPER: Unrecognized atom type: S_5+6 (1)
+[20:35:05] UFFTYPER: Unrecognized atom type: S_5+6 (1)
+[20:35:05] 
+
+****
+Pre-condition Violation
+bad params pointer
+Violation occurred on line 78 in file /project/build/temp.linux-x86_64-cpython-312/rdkit/Code/ForceField/UFF/AngleBend.cpp
+Failed Expression: at2Params
+----------
+Stacktrace:
+----------
+****
+
+[20:35:05] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:05] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:05] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:06] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:06] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:06] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:06] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:07] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:07] UFFTYPER: Unrecognized charge state for atom: 6
+[20:35:07] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:07] UFFTYPER: Unrecognized charge state for atom: 6
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 14
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 14
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:08] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:09] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:09] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:09] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:09] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:09] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:10] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:10] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[20:35:10] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:10] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[20:35:11] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[20:35:11] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:12] UFFTYPER: Unrecognized charge state for atom: 8
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:12] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:12] UFFTYPER: Unrecognized charge state for atom: 8
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 25
+[20:35:12] UFFTYPER: Unrecognized charge state for atom: 25
+[20:35:12] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:12] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:12] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:12] UFFTYPER: Warning: hybridization set to SP3 for atom 25
+[20:35:12] UFFTYPER: Unrecognized charge state for atom: 25
+[20:35:12] UFFTYPER: Unrecognized charge state for atom: 8
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 8
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 26
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 26
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 24
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 28
+[20:35:13] UFFTYPER: Unrecognized charge state for atom: 28
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:13] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:14] [20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom UFFTYPER: Unrecognized charge state for atom: 5
+5
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:14] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:14] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 25
+[20:35:14] UFFTYPER: Unrecognized charge state for atom: 25
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:14] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:15] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:15] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:15] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:15] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:15] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:35:15] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:35:15] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:35:15] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:35:15] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:35:16] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:16] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:16] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:16] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:16] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:16] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:16] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:17] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:18] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[20:35:18] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:18] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:18] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:18] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:35:18] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:35:18] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:35:18] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:35:18] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:35:18] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:35:18] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:18] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:18] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:18] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:19] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:19] UFFTYPER: Unrecognized charge state for atom: 10
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:19] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:19] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:19] UFFTYPER: Unrecognized charge state for atom: 10
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:19] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:19] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:19] UFFTYPER: Unrecognized charge state for atom: 10
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 41
+[20:35:19] UFFTYPER: Unrecognized charge state for atom: 41
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:19] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:20] UFFTYPER: Unrecognized atom type: S_5+4 (18)
+[20:35:20] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:20] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:20] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:21] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:21] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[20:35:21] UFFTYPER: Unrecognized atom type: Se2+2 (11)
+[20:35:21] UFFTYPER: Unrecognized atom type: Se2+2 (11)
+[20:35:21] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:35:21] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:35:21] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:21] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:21] UFFTYPER: Unrecognized atom type: Se2+2 (6)
+[20:35:21] UFFTYPER: Unrecognized atom type: Se2+2 (6)
+[20:35:21] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:21] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:22] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:22] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:22] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:22] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:22] UFFTYPER: Unrecognized charge state for atom: 9
+[20:35:22] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:22] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:23] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:23] UFFTYPER: Unrecognized charge state for atom: 9
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:23] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:23] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:23] UFFTYPER: Unrecognized charge state for atom: 9
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 40
+[20:35:23] UFFTYPER: Unrecognized charge state for atom: 40
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:23] Can't kekulize mol.  Unkekulized atoms: 4 11 13 15
+[20:35:23] Can't kekulize mol.  Unkekulized atoms: 4 11 13 15
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:23] UFFTYPER: Warning: hybridization set to SP3 for atom 14
+[20:35:24] UFFTYPER: Warning: hybridization set to SP3 for atom 14
+[20:35:25] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:35:25] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:35:25] UFFTYPER: Unrecognized atom type: Se2+2 (7)
+[20:35:25] UFFTYPER: Unrecognized atom type: Se2+2 (7)
+[20:35:25] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:25] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+[20:35:26] UFFTYPER: Unrecognized charge state for atom: 7
+[20:35:26] UFFTYPER: Unrecognized charge state for atom: 7
+[20:35:26] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:26] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:35:26] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:26] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:26] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:26] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:35:27] UFFTYPER: Warning: hybridization set to SP3 for atom 19
+[20:35:28] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:28] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:28] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:28] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:28] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:28] UFFTYPER: Unrecognized charge state for atom: 5
+[20:35:28] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:35:28] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:28] UFFTYPER: Unrecognized charge state for atom: 12
+[20:35:30] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:30] UFFTYPER: Unrecognized atom type: Se2+2 (2)
+[20:35:32] UFFTYPER: Unrecognized charge state for atom: 3
+    10000/41127 props done (61s)
+[20:35:35] Can't kekulize mol.  Unkekulized atoms: 3 6 7 8 9 10 11 12 13 14
+[20:35:35] Can't kekulize mol.  Unkekulized atoms: 3 6 7 8 9 10 11 12 13 14
+[20:35:35] Can't kekulize mol.  Unkekulized atoms: 3 6 7 8 12 13 14 15
+[20:35:35] Can't kekulize mol.  Unkekulized atoms: 3 6 7 8 12 13 14 15
+[20:35:35] Can't kekulize mol.  Unkekulized atoms: 3 4 5 9 10 14 15 19
+[20:35:35] Can't kekulize mol.  Unkekulized atoms: 3 4 5 9 10 14 15 19
+[20:35:36] UFFTYPER: Unrecognized charge state for atom: 2
+[20:35:36] UFFTYPER: Unrecognized charge state for atom: 2
+[20:35:36] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 3
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 3
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 3
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 2
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 2
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 10
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 2
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 2
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 11
+[20:35:37] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:37] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:37] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:38] UFFTYPER: Unrecognized charge state for atom: 12
+[20:35:38] UFFTYPER: Unrecognized charge state for atom: 12
+[20:35:39] UFFTYPER: Unrecognized charge state for atom: 3
+[20:35:39] UFFTYPER: Unrecognized charge state for atom: 22
+[20:35:40] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:40] UFFTYPER: Unrecognized charge state for atom: 1
+[20:35:42] UFFTYPER: Unrecognized charge state for atom: 11
+[20:35:42] UFFTYPER: Unrecognized charge state for atom: 11
+[20:35:42] UFFTYPER: Unrecognized charge state for atom: 10
+[20:35:42] UFFTYPER: Unrecognized charge state for atom: 10
+[20:35:43] UFFTYPER: Unrecognized charge state for atom: 11
+[20:35:43] UFFTYPER: Unrecognized charge state for atom: 11
+[20:35:44] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:44] UFFTYPER: Unrecognized charge state for atom: 8
+[20:35:44] UFFTYPER: Unrecognized charge state for atom: 4
+[20:35:44] UFFTYPER: Unrecognized charge state for atom: 8
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (7)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (7)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (6)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (6)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (13)
+[20:35:46] UFFTYPER: Unrecognized atom type: Se2+2 (13)
+[20:35:49] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:35:49] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:35:51] UFFTYPER: Unrecognized atom type: Se2+2 (7)
+[20:35:51] UFFTYPER: Unrecognized atom type: Se2+2 (7)
+[20:35:54] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:54] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:54] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[20:35:54] Explicit valence for atom # 16 Al, 9, is greater than permitted
+[20:35:56] UFFTYPER: Unrecognized charge state for atom: 2
+[20:35:56] UFFTYPER: Unrecognized charge state for atom: 19
+[20:35:56] UFFTYPER: Unrecognized charge state for atom: 35
+[20:35:56] UFFTYPER: Unrecognized charge state for atom: 51
+[20:36:03] UFFTYPER: Unrecognized atom type: S_5+4 (2)
+[20:36:03] UFFTYPER: Unrecognized atom type: S_5+4 (2)
+[20:36:05] UFFTYPER: Unrecognized atom type: S_5+6 (12)
+[20:36:05] UFFTYPER: Unrecognized atom type: S_5+6 (12)
+[20:36:05] UFFTYPER: Unrecognized atom type: S_5+6 (12)
+[20:36:05] 
+
+****
+Pre-condition Violation
+bad params pointer
+Violation occurred on line 78 in file /project/build/temp.linux-x86_64-cpython-312/rdkit/Code/ForceField/UFF/AngleBend.cpp
+Failed Expression: at2Params
+----------
+Stacktrace:
+----------
+****
+
+[20:36:11] UFFTYPER: Unrecognized charge state for atom: 4
+[20:36:12] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:36:13] UFFTYPER: Unrecognized charge state for atom: 5
+[20:36:13] UFFTYPER: Unrecognized charge state for atom: 30
+[20:36:18] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:36:18] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:36:18] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:36:18] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:36:18] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:36:18] UFFTYPER: Unrecognized atom type: Se2+2 (13)
+[20:36:18] UFFTYPER: Unrecognized atom type: Se2+2 (13)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (13)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (19)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (19)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (19)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (19)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (19)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (5)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (6)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (6)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (6)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:36:19] UFFTYPER: Unrecognized atom type: Se2+2 (9)
+[20:36:19] UFFTYPER: Unrecognized charge state for atom: 8
+[20:36:19] UFFTYPER: Unrecognized charge state for atom: 8
+[20:36:19] UFFTYPER: Unrecognized charge state for atom: 21
+[20:36:19] UFFTYPER: Unrecognized charge state for atom: 21
+[20:36:19] UFFTYPER: Unrecognized charge state for atom: 21
+[20:36:19] UFFTYPER: Unrecognized charge state for atom: 27
+[20:36:19] UFFTYPER: Unrecognized charge state for atom: 27
+[20:36:20] UFFTYPER: Unrecognized charge state for atom: 27
+[20:36:22] UFFTYPER: Unrecognized charge state for atom: 3
+[20:36:22] UFFTYPER: Unrecognized charge state for atom: 3
+[20:36:22] UFFTYPER: Unrecognized charge state for atom: 9
+[20:36:22] UFFTYPER: Unrecognized charge state for atom: 20
+[20:36:22] UFFTYPER: Unrecognized charge state for atom: 6
+[20:36:22] UFFTYPER: Unrecognized charge state for atom: 17
+[20:36:22] UFFTYPER: Unrecognized charge state for atom: 6
+[20:36:22] UFFTYPER: Unrecognized charge state for atom: 17
+[20:36:23] Explicit valence for atom # 4 Al, 9, is greater than permitted
+[20:36:34] UFFTYPER: Unrecognized charge state for atom: 6
+[20:36:36] Can't kekulize mol.  Unkekulized atoms: 11
+[20:36:36] Can't kekulize mol.  Unkekulized atoms: 11
+[20:36:36] Can't kekulize mol.  Unkekulized atoms: 11
+[20:36:36] Can't kekulize mol.  Unkekulized atoms: 11
+[20:36:36] Can't kekulize mol.  Unkekulized atoms: 11
+[20:36:36] Can't kekulize mol.  Unkekulized atoms: 11
+    20000/41127 props done (123s)
+[20:36:38] UFFTYPER: Unrecognized charge state for atom: 6
+[20:36:41] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:36:41] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:36:41] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:36:41] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:36:42] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:36:42] UFFTYPER: Warning: hybridization set to SP3 for atom 13
+[20:36:42] UFFTYPER: Unrecognized charge state for atom: 1
+[20:36:42] UFFTYPER: Unrecognized charge state for atom: 1
+[20:36:45] UFFTYPER: Unrecognized charge state for atom: 5
+[20:36:45] UFFTYPER: Unrecognized charge state for atom: 5
+[20:36:48] UFFTYPER: Unrecognized charge state for atom: 8
+[20:36:53] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:36:55] UFFTYPER: Unrecognized charge state for atom: 4
+[20:36:55] UFFTYPER: Unrecognized charge state for atom: 13
+[20:36:56] UFFTYPER: Unrecognized charge state for atom: 4
+[20:36:56] UFFTYPER: Unrecognized charge state for atom: 13
+[20:36:56] UFFTYPER: Unrecognized charge state for atom: 4
+[20:36:56] UFFTYPER: Unrecognized charge state for atom: 13
+[20:36:56] UFFTYPER: Unrecognized charge state for atom: 4
+[20:36:56] UFFTYPER: Unrecognized charge state for atom: 13
+[20:36:57] UFFTYPER: Unrecognized charge state for atom: 1
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 2
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 2
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 3
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:37:03] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[20:37:04] UFFTYPER: Unrecognized charge state for atom: 1
+[20:37:06] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:37:06] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:37:06] UFFTYPER: Warning: hybridization set to SP3 for atom 7
+[20:37:08] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 12
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 13
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 13
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 11
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 11
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 11
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:19] UFFTYPER: Unrecognized charge state for atom: 11
+[20:37:20] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:20] UFFTYPER: Unrecognized charge state for atom: 12
+[20:37:27] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:27] UFFTYPER: Unrecognized charge state for atom: 21
+[20:37:30] UFFTYPER: Unrecognized charge state for atom: 13
+[20:37:30] Can't kekulize mol.  Unkekulized atoms: 13 14 15 16 17 18 19 21 22 23 24 25 26
+[20:37:30] Can't kekulize mol.  Unkekulized atoms: 13 14 15 16 17 18 19 21 22 23 24 25 26
+[20:37:31] UFFTYPER: Unrecognized charge state for atom: 5
+[20:37:31] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:31] UFFTYPER: Unrecognized charge state for atom: 21
+[20:37:33] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:33] UFFTYPER: Unrecognized charge state for atom: 13
+[20:37:33] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:33] UFFTYPER: Unrecognized charge state for atom: 13
+[20:37:37] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:37] UFFTYPER: Unrecognized charge state for atom: 1
+[20:37:43] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:43] UFFTYPER: Unrecognized charge state for atom: 13
+[20:37:43] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:43] UFFTYPER: Unrecognized charge state for atom: 13
+[20:37:43] UFFTYPER: Unrecognized charge state for atom: 5
+[20:37:43] UFFTYPER: Unrecognized charge state for atom: 14
+[20:37:44] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:44] UFFTYPER: Unrecognized charge state for atom: 11
+[20:37:44] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:44] UFFTYPER: Unrecognized charge state for atom: 11
+[20:37:46] UFFTYPER: Unrecognized charge state for atom: 4
+[20:37:46] UFFTYPER: Unrecognized charge state for atom: 4
+    30000/41127 props done (194s)
+[20:37:51] Explicit valence for atom # 12 Al, 7, is greater than permitted
+[20:37:51] Explicit valence for atom # 13 Al, 7, is greater than permitted
+[20:37:52] UFFTYPER: Unrecognized charge state for atom: 10
+[20:37:52] UFFTYPER: Unrecognized charge state for atom: 3
+[20:37:52] UFFTYPER: Unrecognized charge state for atom: 37
+[20:37:52] UFFTYPER: Unrecognized charge state for atom: 3
+[20:37:52] UFFTYPER: Unrecognized charge state for atom: 37
+[20:37:54] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:37:54] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:37:55] UFFTYPER: Unrecognized charge state for atom: 11
+[20:37:55] UFFTYPER: Unrecognized charge state for atom: 11
+[20:37:56] UFFTYPER: Unrecognized atom type: Se2+2 (16)
+[20:37:56] UFFTYPER: Unrecognized atom type: Se2+2 (21)
+[20:37:56] UFFTYPER: Unrecognized atom type: Se2+2 (16)
+[20:37:56] UFFTYPER: Unrecognized atom type: Se2+2 (21)
+[20:37:56] UFFTYPER: Unrecognized atom type: Se2+2 (16)
+[20:37:56] UFFTYPER: Unrecognized atom type: Se2+2 (21)
+[20:38:02] UFFTYPER: Unrecognized atom type: Se2+2 (0)
+[20:38:02] UFFTYPER: Unrecognized atom type: Se2+2 (0)
+[20:38:02] UFFTYPER: Unrecognized atom type: Se2+2 (0)
+[20:38:05] UFFTYPER: Unrecognized charge state for atom: 2
+[20:38:05] UFFTYPER: Unrecognized charge state for atom: 2
+[20:38:05] UFFTYPER: Unrecognized charge state for atom: 2
+[20:38:05] UFFTYPER: Unrecognized charge state for atom: 2
+[20:38:05] UFFTYPER: Unrecognized charge state for atom: 2
+[20:38:05] UFFTYPER: Unrecognized charge state for atom: 2
+[20:38:11] UFFTYPER: Unrecognized atom type: B_1 (8)
+[20:38:12] UFFTYPER: Unrecognized atom type: B_1 (8)
+[20:38:12] UFFTYPER: Unrecognized atom type: B_1 (8)
+[20:38:13] UFFTYPER: Unrecognized atom type: B_1 (8)
+[20:38:13] UFFTYPER: Unrecognized atom type: B_1 (8)
+[20:38:13] UFFTYPER: Unrecognized atom type: B_1 (8)
+[20:38:16] UFFTYPER: Unrecognized charge state for atom: 4
+[20:38:16] UFFTYPER: Unrecognized charge state for atom: 4
+[20:38:17] UFFTYPER: Unrecognized charge state for atom: 7
+[20:38:17] UFFTYPER: Unrecognized charge state for atom: 7
+[20:38:17] WARNING: not removing hydrogen atom without neighbors
+[20:38:17] WARNING: not removing hydrogen atom without neighbors
+[20:38:21] UFFTYPER: Unrecognized charge state for atom: 2
+[20:38:21] UFFTYPER: Unrecognized charge state for atom: 2
+[20:38:22] Explicit valence for atom # 6 Ge, 5, is greater than permitted
+[20:38:35] UFFTYPER: Unrecognized charge state for atom: 2
+[20:38:35] UFFTYPER: Unrecognized charge state for atom: 3
+[20:38:36] UFFTYPER: Unrecognized charge state for atom: 4
+[20:38:36] UFFTYPER: Unrecognized atom type: B_ (0)
+[20:38:36] UFFTYPER: Unrecognized atom type: B_ (0)
+[20:38:42] UFFTYPER: Warning: hybridization set to SP3 for atom 19
+[20:38:45] UFFTYPER: Unrecognized charge state for atom: 15
+[20:38:45] UFFTYPER: Unrecognized charge state for atom: 1
+[20:38:51] UFFTYPER: Unrecognized charge state for atom: 4
+[20:38:51] UFFTYPER: Unrecognized charge state for atom: 4
+[20:38:52] UFFTYPER: Unrecognized atom type: S_5+4 (5)
+[20:39:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:39:01] UFFTYPER: Warning: hybridization set to SP3 for atom 22
+[20:39:01] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:39:01] UFFTYPER: Warning: hybridization set to SP3 for atom 22
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 6
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 22
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 22
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 22
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 22
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[20:39:02] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[20:39:04] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+    40000/41127 props done (282s)
+[2/3] tox21 props ...
+[20:39:49] UFFTYPER: Unrecognized charge state for atom: 4
+[20:39:49] UFFTYPER: Unrecognized charge state for atom: 4
+[20:39:50] UFFTYPER: Unrecognized charge state for atom: 8
+[20:39:50] UFFTYPER: Unrecognized charge state for atom: 8
+[20:39:53] UFFTYPER: Unrecognized charge state for atom: 14
+[20:39:53] WARNING: not removing hydrogen atom without neighbors
+[20:39:54] UFFTYPER: Unrecognized charge state for atom: 1
+[20:39:56] Explicit valence for atom # 8 Al, 6, is greater than permitted
+[20:39:56] UFFTYPER: Unrecognized charge state for atom: 4
+[20:39:56] UFFTYPER: Unrecognized charge state for atom: 4
+[20:40:03] UFFTYPER: Unrecognized charge state for atom: 14
+[20:40:03] UFFTYPER: Unrecognized charge state for atom: 14
+[20:40:04] UFFTYPER: Unrecognized charge state for atom: 2
+[20:40:04] UFFTYPER: Unrecognized charge state for atom: 2
+[20:40:04] UFFTYPER: Unrecognized charge state for atom: 2
+[20:40:04] Explicit valence for atom # 3 Al, 6, is greater than permitted
+[20:40:04] Explicit valence for atom # 4 Al, 6, is greater than permitted
+[20:40:06] UFFTYPER: Unrecognized charge state for atom: 2
+[20:40:07] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:40:07] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:40:07] UFFTYPER: Unrecognized charge state for atom: 4
+[20:40:07] UFFTYPER: Unrecognized charge state for atom: 4
+[20:40:09] UFFTYPER: Unrecognized charge state for atom: 1
+[20:40:09] UFFTYPER: Unrecognized charge state for atom: 1
+[20:40:10] UFFTYPER: Unrecognized charge state for atom: 4
+[20:40:10] UFFTYPER: Unrecognized charge state for atom: 4
+[20:40:11] UFFTYPER: Unrecognized charge state for atom: 17
+[20:40:11] UFFTYPER: Unrecognized charge state for atom: 17
+[20:40:12] Explicit valence for atom # 4 Al, 6, is greater than permitted
+[20:40:13] UFFTYPER: Unrecognized charge state for atom: 4
+[20:40:20] Explicit valence for atom # 9 Al, 6, is greater than permitted
+[20:40:21] Explicit valence for atom # 5 Al, 6, is greater than permitted
+[20:40:25] UFFTYPER: Unrecognized charge state for atom: 7
+[20:40:26] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:40:26] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:40:26] UFFTYPER: Unrecognized atom type: Se2+2 (8)
+[20:40:27] Explicit valence for atom # 16 Al, 6, is greater than permitted
+[20:40:28] UFFTYPER: Unrecognized charge state for atom: 1
+[20:40:28] UFFTYPER: Unrecognized charge state for atom: 1
+[20:40:28] UFFTYPER: Unrecognized atom type: Se2+2 (3)
+[20:40:28] UFFTYPER: Unrecognized atom type: Se2+2 (3)
+[20:40:31] Explicit valence for atom # 20 Al, 6, is greater than permitted
+[20:40:34] UFFTYPER: Unrecognized charge state for atom: 1
+[20:40:34] UFFTYPER: Unrecognized atom type: Se2+2 (1)
+[20:40:34] UFFTYPER: Unrecognized charge state for atom: 1
+[20:40:34] UFFTYPER: Unrecognized atom type: Se2+2 (1)
+[20:40:34] UFFTYPER: Unrecognized charge state for atom: 14
+[20:40:34] UFFTYPER: Unrecognized charge state for atom: 14
+[20:40:37] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:40:37] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:40:43] UFFTYPER: Unrecognized charge state for atom: 6
+[20:40:46] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[20:40:46] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[3/3] COCONUT props (sascore+complexity only) ...
+    10000/30000 props done (4s)
+    20000/30000 props done (7s)
+[20:40:58] Unusual charge on atom 42 number of radical electrons set to zero
+    30000/30000 props done (10s)
+props done 386.3 s
+[20:41:00] Explicit valence for atom # 3 Al, 6, is greater than permitted
+[20:41:02] Explicit valence for atom # 5 B, 5, is greater than permitted
+[20:41:21] Explicit valence for atom # 16 Al, 9, is greater than permitted
+  HIV graphs 15000 (26s)
+[20:41:33] Explicit valence for atom # 4 Al, 9, is greater than permitted
+  HIV graphs 30000 (61s)
+[20:42:03] Explicit valence for atom # 12 Al, 7, is greater than permitted
+[20:42:03] Explicit valence for atom # 13 Al, 7, is greater than permitted
+[20:42:16] WARNING: not removing hydrogen atom without neighbors
+[20:42:16] WARNING: not removing hydrogen atom without neighbors
+[20:42:17] Explicit valence for atom # 6 Ge, 5, is greater than permitted
+[20:42:34] WARNING: not removing hydrogen atom without neighbors
+[20:42:36] Explicit valence for atom # 8 Al, 6, is greater than permitted
+[20:42:37] Explicit valence for atom # 3 Al, 6, is greater than permitted
+[20:42:37] Explicit valence for atom # 4 Al, 6, is greater than permitted
+[20:42:40] Explicit valence for atom # 4 Al, 6, is greater than permitted
+[20:42:41] Explicit valence for atom # 9 Al, 6, is greater than permitted
+[20:42:41] Explicit valence for atom # 5 Al, 6, is greater than permitted
+[20:42:43] Explicit valence for atom # 16 Al, 6, is greater than permitted
+[20:42:46] Explicit valence for atom # 20 Al, 6, is greater than permitted
+  COCONUT graphs 10000 (36s)
+  COCONUT graphs 20000 (72s)
+[20:44:09] Unusual charge on atom 42 number of radical electrons set to zero
+  COCONUT graphs 30000 (106s)
+saved train 43274 / test 22287 molecules
+{
+  "train_kept": 43274,
+  "train_easy": 40151,
+  "train_hard": 3123,
+  "train_band_dropped": 5684,
+  "test_kept": 22287,
+  "test_easy": 13401,
+  "test_hard": 8886,
+  "test_band_dropped": 7713,
+  "easy_total": 53552,
+  "hard_total": 12009,
+  "nan_strain_train": 2142,
+  "nan_strain_test": 22287,
+  "comp_mean": 6.458479248653664,
+  "comp_std": 0.7478528509278708,
+  "strain_mean_clip": 2.482321647809263,
+  "strain_std_clip": 2.0444540558638207,
+  "strain_cap": 60.0,
+  "sascore_band": {
+    "easy": "sascore<4",
+    "hard": "sascore>5",
+    "drop": "4<=sascore<=5"
+  }
+}
+TOTAL 608.8 s

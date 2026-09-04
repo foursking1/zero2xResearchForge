@@ -1,0 +1,8 @@
+/mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/code/04_te.py:59: SyntaxWarning: invalid escape sequence '\i'
+  """Pixel-level sample of model features, aligned with (a) down-sampled GT
+[te] liver/l16_s1: CC-FV=0.5278 (CC_x=0.9283 CC_xgt=0.8433 CC=0.9180 FV=0.5686)  LogME=264746.32  LEEP=-0.5027  GBC=-0.0079
+[te] liver/l08_s1: CC-FV=0.5738 (CC_x=0.9747 CC_xgt=0.8830 CC=0.9695 FV=0.5887)  LogME=259551.25  LEEP=-0.5151  GBC=-0.0006
+[te] liver/l16_s2: CC-FV=0.4985 (CC_x=0.9006 CC_xgt=0.7920 CC=0.9075 FV=0.5535)  LogME=260501.48  LEEP=-0.5411  GBC=-0.0109
+[te] liver/l16_short: CC-FV=0.5652 (CC_x=0.9340 CC_xgt=0.8286 CC=0.9226 FV=0.6052)  LogME=267161.79  LEEP=-0.5315  GBC=-0.0099
+[te] liver/scratch: CC-FV=0.4209 (CC_x=0.9952 CC_xgt=0.9968 CC=0.9927 FV=0.4229)  LogME=225105.40  LEEP=-0.6853  GBC=-0.0038
+saved /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/results/te_liver2spleen.json

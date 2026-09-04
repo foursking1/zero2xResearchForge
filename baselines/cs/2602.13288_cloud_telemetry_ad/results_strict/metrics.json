@@ -1,0 +1,1556 @@
+{
+  "seed": 0,
+  "models": [
+    "GRU",
+    "TCN",
+    "Transformer",
+    "TSMixer",
+    "IsolationForest"
+  ],
+  "th_grid": "3.5,4.0,4.5,5.0",
+  "n_jobs": 300,
+  "n_ok": 300,
+  "n_failed": 0,
+  "elapsed_seconds": 364.6,
+  "frozen_data_facts": {
+    "nab_series_csv": 58,
+    "nab_subgroups": 7,
+    "microsoft_series_csv": 60,
+    "microsoft_domains": 9,
+    "microsoft_total_rows": 225445,
+    "microsoft_label1": 4555
+  },
+  "subgroup_summary": [
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "IsolationForest",
+      "nab_score": 26.478508470696006,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 9.549807692307693,
+        "fp": 6.875,
+        "tn": 1372.0,
+        "fn": 23,
+        "n_windows": 32,
+        "weighted": 287.63355769230765
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.20000000000001,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "GRU",
+      "nab_score": 30.741567460317476,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 10.713333333333333,
+        "fp": 0.5,
+        "tn": 1372.0,
+        "fn": 22,
+        "n_windows": 32,
+        "weighted": 290.49833333333333
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.2,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "TCN",
+      "nab_score": 30.443948412698447,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 10.678333333333333,
+        "fp": 2.0,
+        "tn": 1372.0,
+        "fn": 22,
+        "n_windows": 32,
+        "weighted": 290.2983333333333
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.2,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "Transformer",
+      "nab_score": 21.36408730158731,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 7.5216666666666665,
+        "fp": 1.5,
+        "tn": 1372.0,
+        "fn": 25,
+        "n_windows": 32,
+        "weighted": 284.19666666666666
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.20000000000001,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "TSMixer",
+      "nab_score": 20.87301587301591,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 7.5216666666666665,
+        "fp": 4.5,
+        "tn": 1372.0,
+        "fn": 25,
+        "n_windows": 32,
+        "weighted": 283.8666666666666
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.20000000000001,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "GRU",
+      "nab_score": 56.818313961171135,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 15.984614829614827,
+        "fp": 10.5,
+        "tn": 3136.0,
+        "fn": 10,
+        "n_windows": 25,
+        "weighted": 694.7496148296148
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.500000000000004,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "IsolationForest",
+      "nab_score": 47.538443038443006,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 13.690182595182595,
+        "fp": 15.750000000000002,
+        "tn": 3136.0,
+        "fn": 12,
+        "n_windows": 25,
+        "weighted": 689.8776825951826
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.500000000000004,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.75 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "TCN",
+      "nab_score": 47.67395725967152,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 13.81632756132756,
+        "fp": 16.25,
+        "tn": 3136.0,
+        "fn": 12,
+        "n_windows": 25,
+        "weighted": 689.9488275613276
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.500000000000007,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.25 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "TSMixer",
+      "nab_score": 53.09363863649574,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 14.974160284160284,
+        "fp": 10.0,
+        "tn": 3136.0,
+        "fn": 11,
+        "n_windows": 25,
+        "weighted": 692.7941602841603
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.500000000000004,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "Transformer",
+      "nab_score": 60.2966023394595,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 17.030716228216228,
+        "fp": 12.5,
+        "tn": 3136.0,
+        "fn": 9,
+        "n_windows": 25,
+        "weighted": 696.5757162282162
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.5,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=50,W'=1,theta=3.25 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "GRU",
+      "nab_score": 84.43310657596334,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 4.302380952380952,
+        "fp": 11.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 490.39238095238096
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "IsolationForest",
+      "nab_score": 17.117346938775242,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.042857142857143,
+        "fp": 5.5,
+        "tn": 2215.0,
+        "fn": 3,
+        "n_windows": 4,
+        "weighted": 484.73785714285714
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "TSMixer",
+      "nab_score": 42.0124716553286,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 3.1690476190476193,
+        "fp": 24.0,
+        "tn": 2215.0,
+        "fn": 1,
+        "n_windows": 4,
+        "weighted": 486.8290476190476
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=2,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "TCN",
+      "nab_score": 53.86621315192753,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 3.1747619047619047,
+        "fp": 15.0,
+        "tn": 2215.0,
+        "fn": 1,
+        "n_windows": 4,
+        "weighted": 487.82476190476194
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "Transformer",
+      "nab_score": -24.88095238095198,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 19.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 481.21000000000004
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=45,W'=1,theta=2.75 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "GRU",
+      "nab_score": -126.78571428571544,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.1,
+        "fp": 67.5,
+        "tn": 23708.0,
+        "fn": 1,
+        "n_windows": 2,
+        "weighted": 5208.435
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "TCN",
+      "nab_score": -101.815476190478,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.19375,
+        "fp": 77.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5209.48375
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "IsolationForest",
+      "nab_score": -22.2619047618936,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 8.5,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5212.825
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "TSMixer",
+      "nab_score": -95.45739348371022,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 36.44736842105263,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5209.750789473685
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=3,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "Transformer",
+      "nab_score": -109.76190476190172,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.1,
+        "fp": 61.0,
+        "tn": 23708.0,
+        "fn": 1,
+        "n_windows": 2,
+        "weighted": 5209.150000000001
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "IsolationForest",
+      "nab_score": 35.19433719433697,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.0700000000000003,
+        "fp": 3.4054054054054053,
+        "tn": 1820.0,
+        "fn": 3,
+        "n_windows": 5,
+        "weighted": 399.09540540540536
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=74,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "GRU",
+      "nab_score": 34.40283790283783,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 5.359595959595959,
+        "fp": 28.5,
+        "tn": 4846.0,
+        "fn": 5,
+        "n_windows": 10,
+        "weighted": 1063.344595959596
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "TSMixer",
+      "nab_score": 50.539373325086885,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 9.698268398268398,
+        "fp": 73.5,
+        "tn": 4846.0,
+        "fn": 1,
+        "n_windows": 10,
+        "weighted": 1066.7332683982686
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "IsolationForest",
+      "nab_score": 65.9636415172123,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 9.56861471861472,
+        "fp": 42.875,
+        "tn": 4846.0,
+        "fn": 1,
+        "n_windows": 10,
+        "weighted": 1069.972364718615
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "TCN",
+      "nab_score": 54.06668728097278,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 8.579004329004329,
+        "fp": 47.5,
+        "tn": 4846.0,
+        "fn": 2,
+        "n_windows": 10,
+        "weighted": 1067.4740043290044
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "Transformer",
+      "nab_score": 60.0979523122381,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 8.635569985569985,
+        "fp": 36.5,
+        "tn": 4846.0,
+        "fn": 2,
+        "n_windows": 10,
+        "weighted": 1068.7405699855701
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "GRU",
+      "nab_score": 31.867132438561015,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.095238095238095,
+        "fp": 6.8108108108108105,
+        "tn": 1820.0,
+        "fn": 3,
+        "n_windows": 5,
+        "weighted": 398.7460489060489
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=18,W'=3,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "TCN",
+      "nab_score": 14.393086964515707,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.0285714285714285,
+        "fp": 4.702702702702703,
+        "tn": 1820.0,
+        "fn": 4,
+        "n_windows": 5,
+        "weighted": 396.9112741312741
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=18,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "Transformer",
+      "nab_score": 34.9619415333699,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.1035714285714286,
+        "fp": 3.9324324324324325,
+        "tn": 1820.0,
+        "fn": 3,
+        "n_windows": 5,
+        "weighted": 399.0710038610038
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=74,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "TSMixer",
+      "nab_score": 15.200036771465246,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.0285714285714285,
+        "fp": 3.9324324324324325,
+        "tn": 1820.0,
+        "fn": 4,
+        "n_windows": 5,
+        "weighted": 396.9960038610038
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=37,W'=3,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "IsolationForest",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 21.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4179.45
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=3.75 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "GRU",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 59.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4175.27
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=2,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "TCN",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 83.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4172.63
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "TSMixer",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 55.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4175.71
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=71,W'=3,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "Transformer",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 66.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4174.5
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=2,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "IsolationForest",
+      "nab_score": -1.1640211640213027,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 2.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.32
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=60,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "GRU",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "GRU",
+      "nab_score": 26.101430976430887,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 3.254545454545455,
+        "fp": 12.0125,
+        "tn": 6007.0,
+        "fn": 6,
+        "n_windows": 9,
+        "weighted": 1317.4731704545454
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=60,W'=3,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "TCN",
+      "nab_score": 15.56283068783118,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.1500000000000004,
+        "fp": 10.987499999999999,
+        "tn": 6007.0,
+        "fn": 7,
+        "n_windows": 9,
+        "weighted": 1315.481375
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=241,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "TCN",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "Transformer",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "TSMixer",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "IsolationForest",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "Transformer",
+      "nab_score": 4.359788359788705,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.1,
+        "fp": 11.6,
+        "tn": 6007.0,
+        "fn": 8,
+        "n_windows": 9,
+        "weighted": 1313.364
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=60,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "TSMixer",
+      "nab_score": 4.4067460317463185,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.025,
+        "fp": 10.837499999999999,
+        "tn": 6007.0,
+        "fn": 8,
+        "n_windows": 9,
+        "weighted": 1313.372875
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=60,W'=1,theta=4.00 (grid on val)"
+    }
+  ],
+  "failed": []
+}

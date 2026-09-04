@@ -1,0 +1,2746 @@
+{
+  "seed": 7,
+  "models": [
+    "GRU",
+    "TCN",
+    "Transformer",
+    "TSMixer",
+    "IsolationForest"
+  ],
+  "th_grid": "",
+  "n_jobs": 590,
+  "n_ok": 590,
+  "n_failed": 0,
+  "elapsed_seconds": 1104.4,
+  "frozen_data_facts": {
+    "nab_series_csv": 58,
+    "nab_subgroups": 7,
+    "microsoft_series_csv": 60,
+    "microsoft_domains": 9,
+    "microsoft_total_rows": 225445,
+    "microsoft_label1": 4555
+  },
+  "subgroup_summary": [
+    {
+      "dataset": "nab",
+      "subgroup": "artificialNoAnomaly",
+      "model": "IsolationForest",
+      "nab_score": 0.0,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 1.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1330.89
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "n_failed": 0,
+      "calibration": "W=24,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "artificialNoAnomaly",
+      "model": "GRU",
+      "nab_score": 0.0,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "n_failed": 0,
+      "calibration": "W=48,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "artificialNoAnomaly",
+      "model": "TCN",
+      "nab_score": 0.0,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 3.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1330.67
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "n_failed": 0,
+      "calibration": "W=12,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "artificialNoAnomaly",
+      "model": "TSMixer",
+      "nab_score": 0.0,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "n_failed": 0,
+      "calibration": "W=12,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "artificialNoAnomaly",
+      "model": "Transformer",
+      "nab_score": 0.0,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 3.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1330.67
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6050.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1331.0
+      },
+      "n_failed": 0,
+      "calibration": "W=12,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "artificialWithAnomaly",
+      "model": "GRU",
+      "nab_score": -14.66666666666632,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 14.0,
+        "tn": 5581.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 1221.28
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 1222.82
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 1233.32
+      },
+      "n_failed": 0,
+      "calibration": "W=12,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "artificialWithAnomaly",
+      "model": "IsolationForest",
+      "nab_score": 16.66991047100055,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.0253405994550409,
+        "fp": 2.5,
+        "tn": 5581.0,
+        "fn": 4,
+        "n_windows": 5,
+        "weighted": 1224.570340599455
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 1222.82
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 1233.32
+      },
+      "n_failed": 0,
+      "calibration": "W=24,W'=1,theta=3.75 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "artificialWithAnomaly",
+      "model": "TCN",
+      "nab_score": 0.0,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 1222.82
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 1222.82
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 1233.32
+      },
+      "n_failed": 0,
+      "calibration": "W=12,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "artificialWithAnomaly",
+      "model": "TSMixer",
+      "nab_score": -2.095238095238355,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 2.0,
+        "tn": 5581.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 1222.6
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 1222.82
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 1233.32
+      },
+      "n_failed": 0,
+      "calibration": "W=12,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "artificialWithAnomaly",
+      "model": "Transformer",
+      "nab_score": 14.156202608431894,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.0914012738853502,
+        "fp": 5.5,
+        "tn": 5581.0,
+        "fn": 4,
+        "n_windows": 5,
+        "weighted": 1224.3064012738853
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 1222.82
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 5581.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 1233.32
+      },
+      "n_failed": 0,
+      "calibration": "W=24,W'=1,theta=3.75 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAdExchange",
+      "model": "GRU",
+      "nab_score": 64.23611111111174,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 4.219166666666666,
+        "fp": 25.666666666666668,
+        "tn": 2624.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 578.6758333333333
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 573.28
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 581.68
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAdExchange",
+      "model": "IsolationForest",
+      "nab_score": 3.43253968254063,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.0483333333333333,
+        "fp": 16.0,
+        "tn": 2624.0,
+        "fn": 3,
+        "n_windows": 4,
+        "weighted": 573.5683333333333
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 573.28
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 581.68
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.75 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAdExchange",
+      "model": "TCN",
+      "nab_score": 72.67857142857184,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 4.213333333333333,
+        "fp": 19.166666666666668,
+        "tn": 2624.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 579.385
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 573.28
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 581.68
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.75 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAdExchange",
+      "model": "TSMixer",
+      "nab_score": 60.892857142857416,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 4.213333333333333,
+        "fp": 28.166666666666668,
+        "tn": 2624.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 578.395
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 573.28
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 581.68
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.25 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAdExchange",
+      "model": "Transformer",
+      "nab_score": 66.78571428571463,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 4.213333333333333,
+        "fp": 23.666666666666668,
+        "tn": 2624.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 578.89
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 573.28
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2624.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 581.68
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.75 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAWSCloudwatch",
+      "model": "GRU",
+      "nab_score": 11.264226486612946,
+      "n_series": 17,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 4.250487562189055,
+        "fp": 53.5,
+        "tn": 18411.0,
+        "fn": 6,
+        "n_windows": 10,
+        "weighted": 4042.7854875621892
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 4040.42
+      },
+      "ideal_total": {
+        "tp": 11.0,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 4061.42
+      },
+      "n_failed": 0,
+      "calibration": "W=24,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAWSCloudwatch",
+      "model": "TCN",
+      "nab_score": 6.433333333331705,
+      "n_series": 17,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.1559999999999997,
+        "fp": 25.5,
+        "tn": 18411.0,
+        "fn": 8,
+        "n_windows": 10,
+        "weighted": 4041.771
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 4040.42
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 4061.42
+      },
+      "n_failed": 0,
+      "calibration": "W=12,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAWSCloudwatch",
+      "model": "IsolationForest",
+      "nab_score": 7.828950216450418,
+      "n_series": 17,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 3.160954545454546,
+        "fp": 41.0625,
+        "tn": 18411.0,
+        "fn": 7,
+        "n_windows": 10,
+        "weighted": 4042.0640795454547
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 4040.42
+      },
+      "ideal_total": {
+        "tp": 11.0,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 4061.42
+      },
+      "n_failed": 0,
+      "calibration": "W=48,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAWSCloudwatch",
+      "model": "TSMixer",
+      "nab_score": -7.407723288322034,
+      "n_series": 17,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.0743781094527363,
+        "fp": 33.0,
+        "tn": 18411.0,
+        "fn": 9,
+        "n_windows": 10,
+        "weighted": 4038.864378109453
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 4040.42
+      },
+      "ideal_total": {
+        "tp": 11.0,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 4061.42
+      },
+      "n_failed": 0,
+      "calibration": "W=13,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realAWSCloudwatch",
+      "model": "Transformer",
+      "nab_score": -19.385714285716034,
+      "n_series": 17,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.124,
+        "fp": 74.5,
+        "tn": 18411.0,
+        "fn": 8,
+        "n_windows": 10,
+        "weighted": 4036.349
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 4040.42
+      },
+      "ideal_total": {
+        "tp": 11.0,
+        "fp": 0.0,
+        "tn": 18411.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 4061.42
+      },
+      "n_failed": 0,
+      "calibration": "W=48,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realKnownCause",
+      "model": "IsolationForest",
+      "nab_score": 11.64310231300504,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.064556634304207,
+        "fp": 12.5,
+        "tn": 16961.0,
+        "fn": 9,
+        "n_windows": 11,
+        "weighted": 3723.109556634304
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 11,
+        "n_windows": 11,
+        "weighted": 3720.42
+      },
+      "ideal_total": {
+        "tp": 12.100000000000001,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 0,
+        "n_windows": 11,
+        "weighted": 3743.52
+      },
+      "n_failed": 0,
+      "calibration": "W=54,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realKnownCause",
+      "model": "GRU",
+      "nab_score": 28.34107509023237,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 5.314851870433742,
+        "fp": 34.25512295081967,
+        "tn": 16961.0,
+        "fn": 6,
+        "n_windows": 11,
+        "weighted": 3726.9667883458437
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 11,
+        "n_windows": 11,
+        "weighted": 3720.42
+      },
+      "ideal_total": {
+        "tp": 12.100000000000001,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 0,
+        "n_windows": 11,
+        "weighted": 3743.52
+      },
+      "n_failed": 0,
+      "calibration": "W=30,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realKnownCause",
+      "model": "TCN",
+      "nab_score": 27.596964636186062,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 5.230575573878656,
+        "fp": 35.051606753812635,
+        "tn": 16961.0,
+        "fn": 6,
+        "n_windows": 11,
+        "weighted": 3726.7948988309595
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 11,
+        "n_windows": 11,
+        "weighted": 3720.42
+      },
+      "ideal_total": {
+        "tp": 12.1,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 0,
+        "n_windows": 11,
+        "weighted": 3743.52
+      },
+      "n_failed": 0,
+      "calibration": "W=61,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realKnownCause",
+      "model": "Transformer",
+      "nab_score": 43.444462217666015,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 7.442628566454615,
+        "fp": 40.063252674306476,
+        "tn": 16961.0,
+        "fn": 4,
+        "n_windows": 11,
+        "weighted": 3730.455670772281
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 11,
+        "n_windows": 11,
+        "weighted": 3720.42
+      },
+      "ideal_total": {
+        "tp": 12.100000000000001,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 0,
+        "n_windows": 11,
+        "weighted": 3743.52
+      },
+      "n_failed": 0,
+      "calibration": "W=54,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realKnownCause",
+      "model": "TSMixer",
+      "nab_score": 32.29527023628287,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 5.3879699074817164,
+        "fp": 26.616022571819425,
+        "tn": 16961.0,
+        "fn": 6,
+        "n_windows": 11,
+        "weighted": 3727.880207424582
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 11,
+        "n_windows": 11,
+        "weighted": 3720.42
+      },
+      "ideal_total": {
+        "tp": 12.100000000000001,
+        "fp": 0.0,
+        "tn": 16961.0,
+        "fn": 0,
+        "n_windows": 11,
+        "weighted": 3743.52
+      },
+      "n_failed": 0,
+      "calibration": "W=54,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTraffic",
+      "model": "GRU",
+      "nab_score": 57.674940944119584,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 5.349390078612089,
+        "fp": 6.0,
+        "tn": 3685.0,
+        "fn": 3,
+        "n_windows": 8,
+        "weighted": 812.3893900786121
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 8,
+        "n_windows": 8,
+        "weighted": 802.7
+      },
+      "ideal_total": {
+        "tp": 8.8,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 0,
+        "n_windows": 8,
+        "weighted": 819.5
+      },
+      "n_failed": 0,
+      "calibration": "W=20,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTraffic",
+      "model": "IsolationForest",
+      "nab_score": 53.92374369102455,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 5.302188940092166,
+        "fp": 11.3,
+        "tn": 3685.0,
+        "fn": 3,
+        "n_windows": 8,
+        "weighted": 811.7591889400923
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 8,
+        "n_windows": 8,
+        "weighted": 802.7
+      },
+      "ideal_total": {
+        "tp": 8.8,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 0,
+        "n_windows": 8,
+        "weighted": 819.5
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTraffic",
+      "model": "TCN",
+      "nab_score": 31.415618666821743,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 3.138181078883166,
+        "fp": 7.821428571428571,
+        "tn": 3685.0,
+        "fn": 5,
+        "n_windows": 8,
+        "weighted": 807.9778239360261
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 8,
+        "n_windows": 8,
+        "weighted": 802.7
+      },
+      "ideal_total": {
+        "tp": 8.8,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 0,
+        "n_windows": 8,
+        "weighted": 819.5
+      },
+      "n_failed": 0,
+      "calibration": "W=10,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTraffic",
+      "model": "TSMixer",
+      "nab_score": 11.532613045217587,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.0474789915966387,
+        "fp": 1.0,
+        "tn": 3685.0,
+        "fn": 7,
+        "n_windows": 8,
+        "weighted": 804.6374789915967
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 8,
+        "n_windows": 8,
+        "weighted": 802.7
+      },
+      "ideal_total": {
+        "tp": 8.8,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 0,
+        "n_windows": 8,
+        "weighted": 819.5
+      },
+      "n_failed": 0,
+      "calibration": "W=10,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTraffic",
+      "model": "Transformer",
+      "nab_score": 0.0,
+      "n_series": 7,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 8,
+        "n_windows": 8,
+        "weighted": 802.7
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 8,
+        "n_windows": 8,
+        "weighted": 802.7
+      },
+      "ideal_total": {
+        "tp": 8.8,
+        "fp": 0.0,
+        "tn": 3685.0,
+        "fn": 0,
+        "n_windows": 8,
+        "weighted": 819.5
+      },
+      "n_failed": 0,
+      "calibration": "W=10,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTweets",
+      "model": "IsolationForest",
+      "nab_score": 24.52463864291713,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 4.2601044690082555,
+        "fp": 47.0,
+        "tn": 44548.0,
+        "fn": 2,
+        "n_windows": 6,
+        "weighted": 9797.650104469009
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 6,
+        "n_windows": 6,
+        "weighted": 9794.56
+      },
+      "ideal_total": {
+        "tp": 6.6000000000000005,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 0,
+        "n_windows": 6,
+        "weighted": 9807.16
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTweets",
+      "model": "GRU",
+      "nab_score": -22.36313000614706,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 6.452906313515546,
+        "fp": 138.8241881298992,
+        "tn": 44548.0,
+        "fn": 0,
+        "n_windows": 6,
+        "weighted": 9791.742245619225
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 6,
+        "n_windows": 6,
+        "weighted": 9794.56
+      },
+      "ideal_total": {
+        "tp": 6.6,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 0,
+        "n_windows": 6,
+        "weighted": 9807.16
+      },
+      "n_failed": 0,
+      "calibration": "W=190,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTweets",
+      "model": "TCN",
+      "nab_score": -28.288354654051883,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 6.519170113142835,
+        "fp": 146.21366181410974,
+        "tn": 44548.0,
+        "fn": 0,
+        "n_windows": 6,
+        "weighted": 9790.99566731359
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 6,
+        "n_windows": 6,
+        "weighted": 9794.56
+      },
+      "ideal_total": {
+        "tp": 6.6000000000000005,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 0,
+        "n_windows": 6,
+        "weighted": 9807.16
+      },
+      "n_failed": 0,
+      "calibration": "W=190,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTweets",
+      "model": "TSMixer",
+      "nab_score": -32.667095468288394,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 6.4479935633812575,
+        "fp": 150.5822508398656,
+        "tn": 44548.0,
+        "fn": 0,
+        "n_windows": 6,
+        "weighted": 9790.443945970996
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 6,
+        "n_windows": 6,
+        "weighted": 9794.56
+      },
+      "ideal_total": {
+        "tp": 6.6,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 0,
+        "n_windows": 6,
+        "weighted": 9807.16
+      },
+      "n_failed": 0,
+      "calibration": "W=87.5,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "nab",
+      "subgroup": "realTweets",
+      "model": "Transformer",
+      "nab_score": -38.040458254760395,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 6.447720848927073,
+        "fp": 156.7347144456887,
+        "tn": 44548.0,
+        "fn": 0,
+        "n_windows": 6,
+        "weighted": 9789.7669022599
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 6,
+        "n_windows": 6,
+        "weighted": 9794.56
+      },
+      "ideal_total": {
+        "tp": 6.6,
+        "fp": 0.0,
+        "tn": 44548.0,
+        "fn": 0,
+        "n_windows": 6,
+        "weighted": 9807.16
+      },
+      "n_failed": 0,
+      "calibration": "W=190,W'=1,theta=3.75 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "GRU",
+      "nab_score": 30.741567460317476,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 10.713333333333333,
+        "fp": 0.5,
+        "tn": 1372.0,
+        "fn": 22,
+        "n_windows": 32,
+        "weighted": 290.49833333333333
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.2,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "TCN",
+      "nab_score": 20.91579861111115,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 7.536666666666666,
+        "fp": 4.375,
+        "tn": 1372.0,
+        "fn": 25,
+        "n_windows": 32,
+        "weighted": 283.8954166666666
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.2,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "IsolationForest",
+      "nab_score": 36.035180097680104,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 12.738141025641024,
+        "fp": 4.75,
+        "tn": 1372.0,
+        "fn": 20,
+        "n_windows": 32,
+        "weighted": 294.055641025641
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.2,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "Transformer",
+      "nab_score": 21.36408730158731,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 7.5216666666666665,
+        "fp": 1.5,
+        "tn": 1372.0,
+        "fn": 25,
+        "n_windows": 32,
+        "weighted": 284.19666666666666
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.2,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-1",
+      "model": "TSMixer",
+      "nab_score": 20.87301587301591,
+      "n_series": 9,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 7.5216666666666665,
+        "fp": 4.5,
+        "tn": 1372.0,
+        "fn": 25,
+        "n_windows": 32,
+        "weighted": 283.8666666666666
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 32,
+        "n_windows": 32,
+        "weighted": 269.84
+      },
+      "ideal_total": {
+        "tp": 35.2,
+        "fp": 0.0,
+        "tn": 1372.0,
+        "fn": 0,
+        "n_windows": 32,
+        "weighted": 337.03999999999996
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "GRU",
+      "nab_score": 56.923075865932944,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 15.984614829614827,
+        "fp": 10.0,
+        "tn": 3136.0,
+        "fn": 10,
+        "n_windows": 25,
+        "weighted": 694.8046148296148
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.500000000000004,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "IsolationForest",
+      "nab_score": 51.258658801515956,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 14.670795870795871,
+        "fp": 16.0,
+        "tn": 3136.0,
+        "fn": 11,
+        "n_windows": 25,
+        "weighted": 691.8307958707958
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.500000000000007,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.75 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "TSMixer",
+      "nab_score": 57.28000940858073,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 16.007004939504938,
+        "fp": 8.5,
+        "tn": 3136.0,
+        "fn": 10,
+        "n_windows": 25,
+        "weighted": 694.9920049395049
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.500000000000004,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.25 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "TCN",
+      "nab_score": 47.58192812478521,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 13.703845598845598,
+        "fp": 15.666666666666666,
+        "tn": 3136.0,
+        "fn": 12,
+        "n_windows": 25,
+        "weighted": 689.9005122655122
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.500000000000007,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=55,W'=1,theta=3.75 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "application-crash-rate-2",
+      "model": "Transformer",
+      "nab_score": 29.76202844774276,
+      "n_series": 10,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 8.505064935064935,
+        "fp": 8.0,
+        "tn": 3136.0,
+        "fn": 17,
+        "n_windows": 25,
+        "weighted": 680.5450649350649
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 25,
+        "n_windows": 25,
+        "weighted": 664.92
+      },
+      "ideal_total": {
+        "tp": 27.500000000000004,
+        "fp": 0.0,
+        "tn": 3136.0,
+        "fn": 0,
+        "n_windows": 25,
+        "weighted": 717.42
+      },
+      "n_failed": 0,
+      "calibration": "W=10,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "GRU",
+      "nab_score": 88.36167800453457,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 4.302380952380952,
+        "fp": 8.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 490.72238095238095
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "IsolationForest",
+      "nab_score": 25.450680272109086,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.062857142857143,
+        "fp": 17.5,
+        "tn": 2215.0,
+        "fn": 2,
+        "n_windows": 4,
+        "weighted": 485.4378571428571
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "TSMixer",
+      "nab_score": 56.53628117913839,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 3.179047619047619,
+        "fp": 13.0,
+        "tn": 2215.0,
+        "fn": 1,
+        "n_windows": 4,
+        "weighted": 488.04904761904766
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "TCN",
+      "nab_score": 59.15532879818565,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 3.179047619047619,
+        "fp": 11.0,
+        "tn": 2215.0,
+        "fn": 1,
+        "n_windows": 4,
+        "weighted": 488.2690476190476
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=50,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "consumer-purchase-rate",
+      "model": "Transformer",
+      "nab_score": -9.166666666666412,
+      "n_series": 6,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 7.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 482.53000000000003
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 4,
+        "n_windows": 4,
+        "weighted": 483.3
+      },
+      "ideal_total": {
+        "tp": 4.4,
+        "fp": 0.0,
+        "tn": 2215.0,
+        "fn": 0,
+        "n_windows": 4,
+        "weighted": 491.7
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "GRU",
+      "nab_score": -132.02380952381696,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.1,
+        "fp": 69.5,
+        "tn": 23708.0,
+        "fn": 1,
+        "n_windows": 2,
+        "weighted": 5208.215
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "TCN",
+      "nab_score": -159.5238095238121,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.1,
+        "fp": 80.0,
+        "tn": 23708.0,
+        "fn": 1,
+        "n_windows": 2,
+        "weighted": 5207.06
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "TSMixer",
+      "nab_score": -92.73809523810965,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.1,
+        "fp": 54.5,
+        "tn": 23708.0,
+        "fn": 1,
+        "n_windows": 2,
+        "weighted": 5209.865
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "IsolationForest",
+      "nab_score": -27.49999999999513,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 10.5,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5212.6050000000005
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "data-ingress-rate",
+      "model": "Transformer",
+      "nab_score": -151.76691729323127,
+      "n_series": 5,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 57.94736842105263,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5207.385789473685
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 2,
+        "n_windows": 2,
+        "weighted": 5213.76
+      },
+      "ideal_total": {
+        "tp": 2.2,
+        "fp": 0.0,
+        "tn": 23708.0,
+        "fn": 0,
+        "n_windows": 2,
+        "weighted": 5217.96
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "IsolationForest",
+      "nab_score": 16.975546975546813,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.05,
+        "fp": 2.4324324324324325,
+        "tn": 1820.0,
+        "fn": 4,
+        "n_windows": 5,
+        "weighted": 397.1824324324324
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=74,W'=1,theta=3.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "GRU",
+      "nab_score": 42.26121761836068,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 6.449855699855699,
+        "fp": 32.5,
+        "tn": 4846.0,
+        "fn": 4,
+        "n_windows": 10,
+        "weighted": 1064.9948556998559
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "TCN",
+      "nab_score": 63.1622861265712,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 9.736580086580085,
+        "fp": 49.75,
+        "tn": 4846.0,
+        "fn": 1,
+        "n_windows": 10,
+        "weighted": 1069.3840800865803
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "Transformer",
+      "nab_score": 46.60778705421568,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 7.531385281385281,
+        "fp": 43.125,
+        "tn": 4846.0,
+        "fn": 3,
+        "n_windows": 10,
+        "weighted": 1065.9076352813854
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "TSMixer",
+      "nab_score": 57.69326771112446,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 9.619336219336219,
+        "fp": 59.125,
+        "tn": 4846.0,
+        "fn": 1,
+        "n_windows": 10,
+        "weighted": 1068.2355862193363
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=3.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "middle-tier-api-dependency-latency",
+      "model": "IsolationForest",
+      "nab_score": 62.14893836322409,
+      "n_series": 23,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 9.606277056277056,
+        "fp": 50.5,
+        "tn": 4846.0,
+        "fn": 1,
+        "n_windows": 10,
+        "weighted": 1069.1712770562772
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 10,
+        "n_windows": 10,
+        "weighted": 1056.1200000000001
+      },
+      "ideal_total": {
+        "tp": 10.999999999999998,
+        "fp": 0.0,
+        "tn": 4846.0,
+        "fn": 0,
+        "n_windows": 10,
+        "weighted": 1077.1200000000001
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "GRU",
+      "nab_score": 36.05760862903718,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.095238095238095,
+        "fp": 2.8108108108108105,
+        "tn": 1820.0,
+        "fn": 3,
+        "n_windows": 5,
+        "weighted": 399.1860489060489
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=18,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "TCN",
+      "nab_score": -2.5341055341056875,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 2.418918918918919,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.1339189189189
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=18,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "Transformer",
+      "nab_score": 35.24765581908447,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.0785714285714283,
+        "fp": 3.4324324324324325,
+        "tn": 1820.0,
+        "fn": 3,
+        "n_windows": 5,
+        "weighted": 399.10100386100385
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=18,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "ecommerce-api-incoming-rps",
+      "model": "TSMixer",
+      "nab_score": 37.79077036219914,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.1285714285714286,
+        "fp": 1.4594594594594594,
+        "tn": 1820.0,
+        "fn": 3,
+        "n_windows": 5,
+        "weighted": 399.3680308880309
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 5,
+        "n_windows": 5,
+        "weighted": 395.4
+      },
+      "ideal_total": {
+        "tp": 5.5,
+        "fp": 0.0,
+        "tn": 1820.0,
+        "fn": 0,
+        "n_windows": 5,
+        "weighted": 405.9
+      },
+      "n_failed": 0,
+      "calibration": "W=18,W'=3,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "GRU",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 66.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4174.5
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "TCN",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 76.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4173.400000000001
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=2,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "IsolationForest",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 12.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4180.4400000000005
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=63.5,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "TSMixer",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 57.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4175.49
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=3,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "IsolationForest",
+      "nab_score": -1.1640211640213027,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 2.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.32
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=80,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "GRU",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-application-rps",
+      "model": "Transformer",
+      "nab_score": 0.0,
+      "n_series": 4,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 61.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4175.05
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 19008.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 4181.76
+      },
+      "n_failed": 0,
+      "calibration": "W=118.5,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "GRU",
+      "nab_score": 24.016293891293902,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 3.2454545454545456,
+        "fp": 15.5125,
+        "tn": 6007.0,
+        "fn": 6,
+        "n_windows": 9,
+        "weighted": 1317.0790795454545
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=60,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "TCN",
+      "nab_score": 13.887345679011965,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.2,
+        "fp": 14.320833333333333,
+        "tn": 6007.0,
+        "fn": 7,
+        "n_windows": 9,
+        "weighted": 1315.1647083333332
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=60,W'=3,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "TSMixer",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "IsolationForest",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "TCN",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "service-unavailable",
+      "model": "Transformer",
+      "nab_score": 0.0,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 0,
+      "raw_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "ideal_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 4752.0,
+        "fn": 0,
+        "n_windows": 0,
+        "weighted": 1045.44
+      },
+      "n_failed": 0,
+      "calibration": "W=47,W'=1,theta=2.50 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "Transformer",
+      "nab_score": 17.721340388006972,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 2.2,
+        "fp": 7.733333333333333,
+        "tn": 6007.0,
+        "fn": 7,
+        "n_windows": 9,
+        "weighted": 1315.8893333333333
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=60,W'=1,theta=4.00 (grid on val)"
+    },
+    {
+      "dataset": "microsoft",
+      "subgroup": "mongodb-machine-rps",
+      "model": "TSMixer",
+      "nab_score": 6.888668430334528,
+      "n_series": 1,
+      "has_anomaly_in_test_any": 1,
+      "raw_total": {
+        "tp": 1.0,
+        "fp": 6.345833333333333,
+        "tn": 6007.0,
+        "fn": 8,
+        "n_windows": 9,
+        "weighted": 1313.8419583333332
+      },
+      "null_total": {
+        "tp": 0.0,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 9,
+        "n_windows": 9,
+        "weighted": 1312.54
+      },
+      "ideal_total": {
+        "tp": 9.9,
+        "fp": 0.0,
+        "tn": 6007.0,
+        "fn": 0,
+        "n_windows": 9,
+        "weighted": 1331.44
+      },
+      "n_failed": 0,
+      "calibration": "W=60,W'=3,theta=4.00 (grid on val)"
+    }
+  ],
+  "failed": []
+}

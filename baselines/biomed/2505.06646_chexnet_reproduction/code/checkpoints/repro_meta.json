@@ -1,0 +1,36 @@
+{
+  "threshold": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "best_val_auc": 0.6805479693299319,
+  "train_n_used": 920,
+  "val_n": 162,
+  "seed": "42,43",
+  "seeds": "42,43",
+  "seeds_detail": [
+    {
+      "seed": 42,
+      "best_val_mean_auc": 0.6805,
+      "epochs": 22
+    },
+    {
+      "seed": 43,
+      "best_val_mean_auc": 0.5937,
+      "epochs": 22
+    }
+  ],
+  "epochs": 22
+}

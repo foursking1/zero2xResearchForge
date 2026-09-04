@@ -1,0 +1,49 @@
+[teacher] mean=[0.48012566566467285, 0.4719851613044739, 0.4679795801639557] std=[0.25797730684280396, 0.25075873732566833, 0.24566684663295746]
+[teacher] device=cuda
+[teacher] VGG-16 params = 134.31M
+  epoch   5  train_acc 32.91  test_acc 32.20  lr 0.05000
+  epoch  10  train_acc 42.46  test_acc 39.96  lr 0.04992
+  epoch  15  train_acc 47.62  test_acc 39.53  lr 0.04968
+  epoch  20  train_acc 51.40  test_acc 45.78  lr 0.04927
+  epoch  25  train_acc 54.20  test_acc 46.72  lr 0.04871
+  epoch  30  train_acc 56.86  test_acc 41.10  lr 0.04800
+  epoch  35  train_acc 58.76  test_acc 46.91  lr 0.04714
+  epoch  40  train_acc 60.44  test_acc 48.06  lr 0.04613
+  [ckpt] saved teacher_vgg16_ep40.pt
+  epoch  45  train_acc 62.45  test_acc 45.94  lr 0.04499
+  epoch  50  train_acc 63.86  test_acc 48.56  lr 0.04371
+  epoch  55  train_acc 65.28  test_acc 49.46  lr 0.04232
+  epoch  60  train_acc 67.48  test_acc 48.12  lr 0.04081
+  epoch  65  train_acc 68.89  test_acc 48.76  lr 0.03920
+  epoch  70  train_acc 70.36  test_acc 48.46  lr 0.03750
+  epoch  75  train_acc 72.00  test_acc 47.47  lr 0.03572
+  epoch  80  train_acc 73.21  test_acc 47.52  lr 0.03387
+  [ckpt] saved teacher_vgg16_ep80.pt
+  epoch  85  train_acc 75.02  test_acc 46.28  lr 0.03196
+  epoch  90  train_acc 76.37  test_acc 46.52  lr 0.03000
+  epoch  95  train_acc 78.37  test_acc 47.16  lr 0.02801
+  epoch 100  train_acc 79.97  test_acc 49.39  lr 0.02601
+  epoch 105  train_acc 81.79  test_acc 47.13  lr 0.02399
+  epoch 110  train_acc 83.32  test_acc 48.37  lr 0.02199
+  epoch 115  train_acc 84.62  test_acc 50.72  lr 0.02000
+  epoch 120  train_acc 86.35  test_acc 51.08  lr 0.01804
+  [ckpt] saved teacher_vgg16_ep120.pt
+  epoch 125  train_acc 87.97  test_acc 50.98  lr 0.01613
+  epoch 130  train_acc 89.63  test_acc 50.08  lr 0.01428
+  epoch 135  train_acc 91.22  test_acc 50.79  lr 0.01250
+  epoch 140  train_acc 92.59  test_acc 51.61  lr 0.01080
+  epoch 145  train_acc 93.96  test_acc 52.51  lr 0.00919
+  epoch 150  train_acc 95.49  test_acc 53.13  lr 0.00768
+  epoch 155  train_acc 96.58  test_acc 52.91  lr 0.00629
+  epoch 160  train_acc 97.52  test_acc 53.31  lr 0.00501
+  [ckpt] saved teacher_vgg16_ep160.pt
+  epoch 165  train_acc 98.28  test_acc 53.40  lr 0.00387
+  epoch 170  train_acc 98.88  test_acc 54.21  lr 0.00286
+  epoch 175  train_acc 99.32  test_acc 54.36  lr 0.00200
+  epoch 180  train_acc 99.58  test_acc 54.97  lr 0.00129
+  epoch 185  train_acc 99.70  test_acc 54.94  lr 0.00073
+  epoch 190  train_acc 99.78  test_acc 55.02  lr 0.00032
+  epoch 195  train_acc 99.80  test_acc 55.18  lr 0.00008
+  epoch 200  train_acc 99.79  test_acc 55.14  lr 0.00000
+  [ckpt] saved teacher_vgg16_ep200.pt
+[teacher] done. final test_acc=55.14  best test_acc=55.21 @ep 186  checkpoint saved.

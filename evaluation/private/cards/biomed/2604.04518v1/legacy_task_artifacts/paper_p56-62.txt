@@ -1,0 +1,341 @@
+
+===== PAGE 56 =====
+Abhishek Kesharwani and Prashant Shukla. Ffdm - gnn: A financial fraud detection model using graph neural
+network. In 2024 International Conference on Computing, Sciences and Communications (ICCSC), pp.
+1–6, 2024. doi: 10.1109/ICCSC62048.2024.10830438.
+Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viegas, and Rory
+Sayres. Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vec-
+tors (TCAV). In Proceedings of the International Conference on Machine Learning, pp. 2668–2677, 2018.
+Jaehyeon Kim, Jungil Kong, and Juhee Son. Conditional variational autoencoder with adversarial learning for
+end-to-end text-to-speech. In Marina Meila and Tong Zhang (eds.), Proceedings of the 38th International
+Conference on Machine Learning, volume 139 of Proceedings of Machine Learning Research, pp. 5530–5540.
+PMLR, 07 2021.
+Polina Kirichenko, Pavel Izmailov, and Andrew Gordon Wilson. Last Layer Re-Training is Sufficient for
+Robustness to Spurious Correlations, 2023. URL https://arxiv.org/abs/2204.02937.
+Frederick Klauschen, Jonas Dippel, Philipp Keyl, Philipp Jurmeister, Michael Bockmayr, Andreas Mock,
+Oliver Buchstab, Maximilian Alber, Lukas Ruff, Grégoire Montavon, and Klaus-Robert Müller. Toward
+explainable artificial intelligence for precision pathology. Annual Review of Pathology, 19:541–570, 2024.
+ISSN 1553-4006. doi: 10.1146/annurev-pathmechdis-051222-113147. URL https://doi.org/10.1146/
+annurev-pathmechdis-051222-113147.
+Weronika Kłos, Sidney Bender, and Lukas Kades. Protein counterfactuals via diffusion-guided latent opti-
+mization. 2026.
+Pang Wei Koh, Shiori Sagawa, Henrik Marklund, Sang Michael Xie, Marvin Zhang, Akshay Balsubramani,
+Weihua Hu, Michihiro Yasunaga, Richard Lanas Phillips, Irena Gao, et al.
+Wilds: A benchmark of
+in-the-wild distribution shifts. In International conference on machine learning, pp. 5637–5664. PMLR,
+2021.
+Panos Kouvelis and Gang Yu. Robust Discrete Optimization and Its Applications. Nonconvex Optimization
+and Its Applications, Vol. 14. Springer Science+Business Media, New York, NY, 1 edition, 1997. doi:
+10.1007/978-1-4757-2620-6. URL https://doi.org/10.1007/978-1-4757-2620-6.
+David Krueger, Ethan Caballero, Joern-Henrik Jacobsen, Amy Zhang, Jonathan Binas, Dinghuai Zhang,
+Remi Le Priol, and Aaron Courville. Out-of-distribution generalization via risk extrapolation (rex). In
+International conference on machine learning, pp. 5815–5826. PMLR, 2021.
+Sebastian Lapuschkin, Stephan Wäldchen, Alexander Binder, Grégoire Montavon, Wojciech Samek, and
+Klaus-Robert Müller. Unmasking Clever Hans predictors and assessing what machines really learn. Nature
+Communications, 10:6840–6851, 2019.
+Zhiqi Li, Wenhai Wang, Hongyang Li, Enze Xie, Chonghao Sima, Tong Lu, Yu Qiao, and Jifeng Dai.
+Bevformer: Learning bird’s-eye-view representation from multi-camera images via spatiotemporal trans-
+formers. In Shai Avidan, Gabriel Brostow, Moustapha Cissé, Giovanni Maria Farinella, and Tal Hassner
+(eds.), Computer Vision – ECCV 2022, pp. 1–18, Cham, 2022. Springer Nature Switzerland. ISBN 978-
+3-031-20077-9.
+Yong Lin, Hanze Dong, Hao Wang, and Tong Zhang. Bayesian invariant risk minimization. In Proceedings
+of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 16021–16030, 2022.
+Bryson Lingenfelter, Sara R Davis, and Emily M Hand. A quantitative analysis of labeling issues in the
+celeba dataset. In International Symposium on Visual Computing, pp. 129–141. Springer, 2022.
+Geert Litjens, Thijs Kooi, Babak Ehteshami Bejnordi, Arnaud Arindra Adiyoso Setio, Francesco Ciompi,
+Mohsen Ghafoorian, Jeroen A. W. M. van der Laak, Bram van Ginneken, and Clara I. Sánchez. A survey
+on deep learning in medical image analysis. Medical Image Analysis, 42:60–88, 2017. ISSN 1361-8415. doi:
+10.1016/j.media.2017.07.005. Review article.
+56
+
+===== PAGE 57 =====
+Evan Z Liu, Behzad Haghgoo, Annie S Chen, Aditi Raghunathan, Pang Wei Koh, Shiori Sagawa, Percy Liang,
+and Chelsea Finn. Just Train Twice: Improving Group Robustness without Training Group Information.
+In Marina Meila and Tong Zhang (eds.), Proceedings of the 38th International Conference on Machine
+Learning, volume 139 of Proceedings of Machine Learning Research, pp. 6781–6792. PMLR, 2021a.
+Jiashuo Liu, Zheyuan Hu, Peng Cui, Bo Li, and Zheyan Shen. Heterogeneous risk minimization. In Inter-
+national Conference on Machine Learning, pp. 6804–6814. PMLR, 2021b.
+Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, and Saining Xie. A con-
+vnet for the 2020s. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
+(CVPR), 2022.
+Ziwei Liu, Ping Luo, Xiaogang Wang, and Xiaoou Tang. Deep learning face attributes in the wild. In
+Proceedings of International Conference on Computer Vision (ICCV), 12 2015.
+Masha Medvedeva and Pauline Mcbride. Legal judgment prediction: If you are going to do it, do it right.
+In Daniel Preot,iuc-Pietro, Catalina Goanta, Ilias Chalkidis, Leslie Barrett, Gerasimos Spanakis, and
+Nikolaos Aletras (eds.), Proceedings of the Natural Legal Language Processing Workshop 2023, pp. 73–84,
+Singapore, 12 2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.nllp-1.9. URL
+https://aclanthology.org/2023.nllp-1.9/.
+Peyman Mohajerin Esfahani and Daniel Kuhn. Data-driven distributionally robust optimization using the
+wasserstein metric: Performance guarantees and tractable reformulations. Mathematical Programming,
+171(1):115–166, 2018.
+Ramaravind K Mothilal, Amit Sharma, and Chenhao Tan. Explaining machine learning classifiers through
+diverse counterfactual explanations. In Proceedings of the 2020 conference on fairness, accountability, and
+transparency, pp. 607–617, 2020.
+Junhyun Nam, Hyuntak Cha, Sungsoo Ahn, Jaeho Lee, and Jinwoo Shin. Learning from failure: De-biasing
+classifier from biased classifier. Advances in Neural Information Processing Systems, 33:20673–20684, 2020.
+Sadia Nazim, Muhammad Mansoor Alam, Safdar Rizvi, Jawahir Che Mustapha, Syed Shujaa Hussain, and
+Mazliham Mohd Su’ud. Multimodal malware classification using proposed ensemble deep neural network
+framework. Scientific Reports, 15(1):18006, 2025. ISSN 2045-2322. doi: 10.1038/s41598-025-96203-3. URL
+https://doi.org/10.1038/s41598-025-96203-3.
+Anh Nguyen, Jason Yosinski, and Jeff Clune. Deep neural networks are easily fooled: High confidence predic-
+tions for unrecognizable images. In 2015 IEEE Conference on Computer Vision and Pattern Recognition
+(CVPR), pp. 427–436, 2015. doi: 10.1109/CVPR.2015.7298640.
+Anh Nguyen, Alexey Dosovitskiy, Jason Yosinski, Thomas Brox, and Jeff Clune. Synthesizing the preferred
+inputs for neurons in neural networks via deep generator networks. In D. Lee, M. Sugiyama, U. Luxburg,
+I. Guyon, and R. Garnett (eds.), Advances in Neural Information Processing Systems, volume 29. Curran
+Associates, Inc., 2016.
+Luke Oakden-Rayner, Jared Dunnmon, Gustavo Carneiro, and Christopher Ré. Hidden stratification causes
+clinically meaningful failures in machine learning for medical imaging. In Proceedings of the ACM Confer-
+ence on Health, Inference, and Learning, pp. 151–159, New York, NY, USA, 2020. Association for Com-
+puting Machinery. doi: 10.1145/3368555.3384468. URL https://doi.org/10.1145/3368555.3384468.
+Yonatan Oren, Shiori Sagawa, Tatsunori B. Hashimoto, and Percy Liang. Distributionally robust language
+modeling. In Kentaro Inui, Jing Jiang, Vincent Ng, and Xiaojun Wan (eds.), Proceedings of the 2019
+Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Con-
+ference on Natural Language Processing (EMNLP-IJCNLP), pp. 4227–4237, Hong Kong, China, 11 2019.
+Association for Computational Linguistics. doi: 10.18653/v1/D19-1432.
+57
+
+===== PAGE 58 =====
+Frederik Pahde, Maximilian Dreyer, Moritz Weckbecker, Leander Weber, Christopher J. Anders, Thomas
+Wiegand, Wojciech Samek, and Sebastian Lapuschkin. Navigating neural space: Revisiting concept acti-
+vation vectors to overcome directional divergence. In The Thirteenth International Conference on Learning
+Representations, 2025. URL https://openreview.net/forum?id=Q95MaWfF4e.
+Euclides Carlos Pinto Neto, Derick Moreira Baum, Jorge Rady de Almeida, João Batista Camargo, and
+Paulo Sergio Cugnasca. Deep learning in air traffic management (atm): A survey on applications, oppor-
+tunities, and open challenges. Aerospace, 10(4), 2023. ISSN 2226-4310. doi: 10.3390/aerospace10040358.
+Rui Qiao and Bryan Kian Hsiang Low. Understanding domain generalization: A noise robustness perspective.
+In The Twelfth International Conference on Learning Representations, 2024. URL https://openreview.
+net/forum?id=I2mIxuXA72.
+Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. "why should i trust you?": Explaining the predic-
+tions of any classifier. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge
+Discovery and Data Mining, KDD ’16, pp. 1135–1144, New York, NY, USA, 2016. Association for Com-
+puting Machinery. ISBN 9781450342322. doi: 10.1145/2939672.2939778.
+Laura Rieger, Chandan Singh, William Murdoch, and Bin Yu. Interpretations are useful: penalizing expla-
+nations to align neural networks with prior knowledge. In International conference on machine learning,
+pp. 8116–8126. PMLR, 2020.
+Pau Rodríguez, Massimo Caccia, Alexandre Lacoste, Lee Zamparo, Issam Laradji, Laurent Charlin, and
+David Vazquez. Beyond trivial counterfactual explanations with diverse valuable explanations. In 2021
+IEEE/CVF International Conference on Computer Vision (ICCV), pp. 1036–1045, 2021. doi: 10.1109/
+ICCV48922.2021.00109.
+Andrew Slavin Ross, Michael C Hughes, and Finale Doshi-Velez.
+Right for the right reasons: training
+differentiable models by constraining their explanations. In Proceedings of the 26th International Joint
+Conference on Artificial Intelligence, pp. 2662–2670, 2017.
+Shiori Sagawa, Pang Wei Koh, Tatsunori B. Hashimoto, and Percy Liang. Distributionally Robust Neural
+Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization.
+In
+International Conference on Learning Representations, 2020. URL https://openreview.net/forum?id=
+ryxGuJrFvS.
+Pramir Sarkar, Ashish V Prakash, and Jang Bahadur Singh. Explaining llm decisions: Counterfactual chain-
+of-thought approach. In Advanced Computing and Communications Conference, pp. 254–266. Springer,
+2024.
+Julian Schrittwieser, Ioannis Antonoglou, Thomas Hubert, Karen Simonyan, Laurent Sifre, Simon Schmitt,
+Arthur Guez, Edward Lockhart, Demis Hassabis, Thore Graepel, Timothy Lillicrap, and David Silver.
+Mastering Atari, Go, chess and shogi by planning with a learned model. Nature, 588(7839):604–609, 12
+2020. doi: 10.1038/s41586-020-03051-4.
+Luca Scimeca, Seong Joon Oh, Sanghyuk Chun, Michael Poli, and Sangdoo Yun. Which shortcut cues will
+dnns choose? a study from the parameter-space perspective. arXiv preprint arXiv:2110.03095, 2021.
+Soroosh Shafieezadeh Abadeh, Peyman M Mohajerin Esfahani, and Daniel Kuhn. Distributionally robust
+logistic regression. Advances in neural information processing systems, 28, 2015.
+Harshay Shah, Kaustav Tamuly, Aditi Raghunathan, Prateek Jain, and Praneeth Netrapalli. The pitfalls
+of simplicity bias in neural networks. Advances in Neural Information Processing Systems, 33:9573–9585,
+2020.
+Xiaoting Shao, Arseny Skryagin, Wolfgang Stammer, Patrick Schramowski, and Kristian Kersting. Right
+for better reasons: Training differentiable models by constraining their influence functions. In Proceedings
+of the AAAI Conference on Artificial Intelligence, volume 35, pp. 9533–9540, 2021.
+58
+
+===== PAGE 59 =====
+David Silver, Aja Huang, Christopher Maddison, Arthur Guez, Laurent Sifre, George Driessche, Julian Schrit-
+twieser, Ioannis Antonoglou, Veda Panneershelvam, Marc Lanctot, Sander Dieleman, Dominik Grewe,
+John Nham, Nal Kalchbrenner, Ilya Sutskever, Timothy Lillicrap, Madeleine Leach, Koray Kavukcuoglu,
+Thore Graepel, and Demis Hassabis. Mastering the game of go with deep neural networks and tree search.
+Nature, 529:484–489, 01 2016. doi: 10.1038/nature16961.
+Bartlomiej Sobieski and Przemyslaw Biecek. Global counterfactual directions. In Aleš Leonardis, Elisa Ricci,
+Stefan Roth, Olga Russakovsky, Torsten Sattler, and Gül Varol (eds.), Computer Vision – ECCV 2024,
+pp. 72–90, Cham, 2025. Springer Nature Switzerland. ISBN 978-3-031-73036-8.
+David Steinmann, Felix Divo, Maurice Kraus, Antonia Wüst, Lukas Struppek, Felix Friedrich, and Kristian
+Kersting. Navigating shortcuts, spurious correlations, and confounders: From origins via detection to
+mitigation, 2024. URL https://arxiv.org/abs/2412.05152.
+David Stutz, Matthias Hein, and Bernt Schiele. Disentangling adversarial robustness and generalization. In
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE Computer Society, 2019.
+Mukund Sundararajan, Ankur Taly, and Qiqi Yan. Axiomatic attribution for deep networks. In Doina
+Precup and Yee Whye Teh (eds.), Proceedings of the 34th International Conference on Machine Learning,
+volume 70 of Proceedings of Machine Learning Research, pp. 3319–3328. PMLR, 08 2017.
+Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian Goodfellow, and Rob
+Fergus. Intriguing properties of neural networks. In International Conference on Learning Representations,
+2014. URL http://arxiv.org/abs/1312.6199.
+Mingxing Tan and Quoc Le.
+Efficientnetv2: Smaller models and faster training.
+In Marina Meila and
+Tong Zhang (eds.), Proceedings of the 38th International Conference on Machine Learning, volume 139 of
+Proceedings of Machine Learning Research, pp. 10096–10106. PMLR, 07 2021.
+Xiaoyu Tan, Lin Yong, Shengyu Zhu, Chao Qu, Xihe Qiu, Xu Yinghui, Peng Cui, and Yuan Qi. Provably
+invariant learning without domain information.
+In International conference on machine learning, pp.
+33563–33580. PMLR, 2023.
+Rohan Taori, Achal Dave, Vaishaal Shankar, Nicholas Carlini, Benjamin Recht, and Ludwig Schmidt. Mea-
+suring robustness to natural distribution shifts in image classification.
+In H. Larochelle, M. Ranzato,
+R. Hadsell, M.F. Balcan, and H. Lin (eds.), Advances in Neural Information Processing Systems, vol-
+ume 33, pp. 18583–18599. Curran Associates, Inc., 2020.
+Ekin Tiu, Ellie Talius, Pujan Patel, Curtis P. Langlotz, Andrew Y. Ng, and Pranav Rajpurkar. Expert-
+level detection of pathologies from unannotated chest x-ray images via self-supervised learning. Nature
+Biomedical Engineering, 6(12):1399–1406, 2022. doi: 10.1038/s41551-022-00936-9.
+Guillermo Valle-Pérez, Chico Q. Camargo, and Ard A. Louis.
+Deep learning generalizes because the
+parameter-function map is biased towards simple functions, 2019. URL https://arxiv.org/abs/1805.
+08522.
+Gaël Varoquaux and Veronika Cheplygina. Machine learning for medical imaging: methodological failures
+and recommendations for the future. npj Digital Medicine, 5(1):48, 2022. ISSN 2398-6352. doi: 10.1038/
+s41746-022-00592-y.
+Payal Varshney, Adriano Lucieri, Christoph Balada, Andreas Dengel, and Sheraz Ahmed. Generating coun-
+terfactual trajectories with latent diffusion models for concept discovery. In International Conference on
+Pattern Recognition, pp. 138–153. Springer, 2024.
+Ulrike von Luxburg. A Tutorial on Spectral Clustering. Statistics and Computing, 17:395–416, 2007. doi:
+10.1007/s11222-007-9033-z.
+Yuanchao Wang, Zhao-Rong Lai, and Tianqi Zhong. Out-of-distribution generalization for total variation
+based invariant risk minimization. In The Thirteenth International Conference on Learning Representa-
+tions, 2025. URL https://openreview.net/forum?id=c4wEKJOjY3.
+59
+
+===== PAGE 60 =====
+Leander Weber, Sebastian Lapuschkin, Alexander Binder, and Wojciech Samek. Beyond explaining: Oppor-
+tunities and challenges of xai-based model improvement. Information Fusion, 92:154–176, 2023.
+Nina Weng, Paraskevas Pegios, Eike Petersen, Aasa Feragen, and Siavash Bigdeli.
+Fast diffusion-based
+counterfactuals for shortcut removal and generation. In European Conference on Computer Vision, pp.
+338–357. Springer, 2025.
+Adina Williams, Nikita Nangia, and Samuel Bowman.
+A broad-coverage challenge corpus for sentence
+understanding through inference. In Proceedings of the 2018 Conference of the North American Chapter
+of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers),
+pp. 1112–1122, 2018.
+Haiyu Wu, Grace Bezold, Manuel Günther, Terrance Boult, Michael C King, and Kevin W Bowyer. Consis-
+tency and accuracy of celeba attribute values. In Proceedings of the IEEE/CVF Conference on Computer
+Vision and Pattern Recognition, pp. 3258–3266, 2023.
+Yadollah Yaghoobzadeh, Soroush Mehri, Remi Tachet, Timothy J Hazen, and Alessandro Sordoni. Increasing
+robustness to spurious correlations using forgettable examples. arXiv preprint arXiv:1911.03861, 2019.
+Yu Yang, Eric Gan, Gintare Karolina Dziugaite, and Baharan Mirzasoleiman. Identifying spurious biases
+early in training through the lens of simplicity bias. In Sanjoy Dasgupta, Stephan Mandt, and Yingzhen Li
+(eds.), Proceedings of The 27th International Conference on Artificial Intelligence and Statistics, volume
+238 of Proceedings of Machine Learning Research, pp. 2953–2961. PMLR, 05 2024.
+Yuzhe Yang, Haoran Zhang, Dina Katabi, and Marzyeh Ghassemi.
+Change is hard: A closer look at
+subpopulation shift. In International Conference on Machine Learning, pp. 39584–39622. PMLR, 2023.
+Han Yu, Xingxuan Zhang, Renzhe Xu, Jiashuo Liu, Yue He, and Peng Cui. Rethinking the evaluation
+protocol of domain generalization. In Proceedings of the IEEE/CVF Conference on Computer Vision and
+Pattern Recognition, pp. 21897–21908, 2024.
+John R. Zech, Marcus A. Badgeley, Manway Liu, Anthony B. Costa, Joseph J. Titano, and Eric Karl
+Oermann. Variable generalization performance of a deep learning model to detect pneumonia in chest
+radiographs: A cross-sectional study. PLoS medicine, 15(11):e1002683, 11 2018. doi: 10.1371/journal.
+pmed.1002683. URL https://doi.org/10.1371/journal.pmed.1002683.
+Ahmed Zeid and Sidney Bender. Sce-lite-hq: Smooth visual counterfactual explanations with generative
+foundation models. arXiv preprint arXiv:2603.17048, 2026.
+Matthew D. Zeiler and Rob Fergus. Visualizing and understanding convolutional networks. In David Fleet,
+Tomas Pajdla, Bernt Schiele, and Tinne Tuytelaars (eds.), Computer Vision – ECCV 2014, pp. 818–833,
+Cham, 2014. Springer International Publishing. ISBN 978-3-319-10590-1.
+Hao Zhang, Feng Li, Shilong Liu, Lei Zhang, Hang Su, Jun Zhu, Lionel Ni, and Heung-Yeung Shum.
+DINO: DETR with improved denoising anchor boxes for end-to-end object detection. In The Eleventh
+International Conference on Learning Representations, 2023. URL https://openreview.net/forum?id=
+3mRwyG5one.
+Jingzhao Zhang, Aditya Menon, Andreas Veit, Srinadh Bhojanapalli, Sanjiv Kumar, and Suvrit Sra. Coping
+with label shift via distributionally robust optimisation. arXiv preprint arXiv:2010.12230, 2020.
+Michael Zhang, Nimit S Sohoni, Hongyang R Zhang, Chelsea Finn, and Christopher Ré. Correct-n-contrast:
+A contrastive approach for improving robustness to spurious correlations. arXiv preprint arXiv:2203.01517,
+2022.
+Qi Zhang, Yi Zhou, Simon Khan, Ashley Prater-Bennette, Lixin Shen, and Shaofeng Zou. Revisiting large-
+scale non-convex distributionally robust optimization.
+In The Thirteenth International Conference on
+Learning Representations, 2025. URL https://openreview.net/forum?id=JYwVijuNA7.
+60
+
+===== PAGE 61 =====
+Bolei Zhou, Aditya Khosla, Lapedriza Agata, Oliva Aude, and Antonio Torralba. Object Detectors Emerge
+in Deep Scene CNNs. In 3rd International Conference on Learning Representations, 2015. doi: 10.48550/
+arXiv.1412.6856.
+Lei Zhou, Yuqi Zhang, Jian Yu, Guiling Wang, Zhizhong Liu, Sira Yongchareon, and Nancy Wang. Llm-
+augmented linear transformer–cnn for enhanced stock price prediction. Mathematics, 13(3), 2025. ISSN
+2227-7390. doi: 10.3390/math13030487. URL https://www.mdpi.com/2227-7390/13/3/487.
+Xiao Zhou, Yong Lin, Weizhong Zhang, and Tong Zhang. Sparse invariant risk minimization. In International
+Conference on Machine Learning, pp. 27222–27244. PMLR, 2022.
+A
+Detailed Model Architecture
+layer 1: Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+layer 2: BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+ReLU(inplace=True)
+layer 3: MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+layer 4: BasicBlock(
+(conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(relu): ReLU(inplace=True)
+(conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+)
+layer 5: BasicBlock(
+(conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(relu): ReLU(inplace=True)
+(conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+)
+layer 6: BasicBlock(
+(conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+(bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(relu): ReLU(inplace=True)
+(conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(downsample): Sequential(
+(0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+(1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+)
+)
+layer 7: BasicBlock(
+(conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(relu): ReLU(inplace=True)
+(conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+)
+layer 8: BasicBlock(
+(conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+(bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(relu): ReLU(inplace=True)
+(conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+61
+
+===== PAGE 62 =====
+(bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(downsample): Sequential(
+(0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+(1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+)
+)
+layer 9: BasicBlock(
+(conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(relu): ReLU(inplace=True)
+(conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+)
+layer 10: BasicBlock(
+(conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+(bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(relu): ReLU(inplace=True)
+(conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(downsample): Sequential(
+(0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+(1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+)
+)
+layer 11: BasicBlock(
+(conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+(relu): ReLU(inplace=True)
+(conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+(bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+)
+layer 12: AdaptiveAvgPool2d(output_size=(1, 1))
+layer 13: Linear(in_features=512, out_features=2, bias=True)
+62

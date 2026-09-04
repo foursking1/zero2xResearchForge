@@ -1,0 +1,22 @@
+{
+  "vd_error_mvis_mean": 10.781701156964976,
+  "vd_error_mvis_std": 5.736332402793877,
+  "vd_error_srus_mean": 90.46066773075577,
+  "vd_error_srus_std": 3.0235999446139488,
+  "md_error_mvis_mean": 3.419999261088717,
+  "md_error_mvis_std": 1.7848502251061784,
+  "md_error_srus_mean": 1.9304275294412079,
+  "md_error_srus_std": 2.209293146748959,
+  "vd_improvement_ratio": 8.390203587892826,
+  "md_improvement_ratio": 0.5644526159419926,
+  "pearson_vd_r": 0.353524418197534,
+  "pearson_vd_p": 0.5594388506781743,
+  "pearson_md_r": 0.8591346421921418,
+  "pearson_md_p": 0.06210749199363197,
+  "pearson_vd_srus_r": -0.8420418557920737,
+  "pearson_vd_srus_p": 0.07354946884971049,
+  "gt_vd_mean": 90.49361521946496,
+  "gt_vd_std": 3.010069163179627,
+  "gt_md_mean": 29.162984748187416,
+  "gt_md_std": 5.90260920460816
+}

@@ -1,0 +1,29 @@
+{
+  "n_test": 50,
+  "shape": [
+    16,
+    32,
+    32
+  ],
+  "checkpoint_stage": "1_diverse",
+  "results": {
+    "0.05": {
+      "dice_mean": 0.8286,
+      "dice_std": 0.082,
+      "sens_mean": 0.939,
+      "acc_mean": 0.9881
+    },
+    "0.1": {
+      "dice_mean": 0.8297,
+      "dice_std": 0.0808,
+      "sens_mean": 0.936,
+      "acc_mean": 0.9882
+    },
+    "0.3": {
+      "dice_mean": 0.8275,
+      "dice_std": 0.0783,
+      "sens_mean": 0.9211,
+      "acc_mean": 0.9881
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "method": "ElFrac-LightGBM + train-set hull reconstruction (binary/ternary)",
+  "n_systems": 109,
+  "n_compounds": 355,
+  "ef_test_mae": 0.1609,
+  "dh_mae_vs_true": 0.1595,
+  "stability_acc": 0.5775,
+  "stability_f1": 0.3478,
+  "stability_fpr": 0.375,
+  "tn": 165,
+  "fp": 99,
+  "fn": 51,
+  "tp": 40,
+  "true_stability_rate": 0.2563
+}
+Wrote D:\project\paper-bench\tasks\materials\2001.10591_stability_ml_predictions\agent_solution\code\..\results\hull_check_metrics.json

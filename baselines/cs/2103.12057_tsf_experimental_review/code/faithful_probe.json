@@ -1,0 +1,11 @@
+[
+  {"model": "mlp", "past_history": 22, "horizon": 18, "hidden_sizes": [8], "batch_size": 64, "lr": 0.001, "epochs": 5},
+  {"model": "mlp", "past_history": 22, "horizon": 18, "hidden_sizes": [32, 64, 128], "batch_size": 64, "lr": 0.001, "epochs": 5},
+  {"model": "mlp", "past_history": 22, "horizon": 18, "hidden_sizes": [64, 64], "batch_size": 64, "lr": 0.001, "epochs": 5},
+  {"model": "gru", "past_history": 22, "horizon": 18, "hidden": 64, "n_layers": 1, "dropout": 0.0, "batch_size": 64, "lr": 0.001, "epochs": 5},
+  {"model": "gru", "past_history": 22, "horizon": 18, "hidden": 128, "n_layers": 2, "dropout": 0.0, "batch_size": 64, "lr": 0.001, "epochs": 5},
+  {"model": "lstm", "past_history": 22, "horizon": 18, "hidden": 64, "n_layers": 1, "dropout": 0.0, "batch_size": 64, "lr": 0.001, "epochs": 5},
+  {"model": "lstm", "past_history": 22, "horizon": 18, "hidden": 128, "n_layers": 2, "dropout": 0.0, "batch_size": 64, "lr": 0.001, "epochs": 5},
+  {"model": "cnn", "past_history": 22, "horizon": 18, "channels": 64, "n_layers": 3, "kernel": 3, "batch_size": 64, "lr": 0.001, "epochs": 5},
+  {"model": "tcn", "past_history": 22, "horizon": 18, "channels": 64, "n_blocks": 3, "kernel": 3, "dropout": 0.0, "batch_size": 64, "lr": 0.001, "epochs": 5}
+]

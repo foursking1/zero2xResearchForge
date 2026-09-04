@@ -1,0 +1,46 @@
+[ft] spleen_l16_s1: initialised from spleen-pretrained weights
+[ft] spleen_l16_s1: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/20 loss=1.3691 dice=0.2790
+    ep6/20 loss=0.9302 dice=0.3939
+    ep11/20 loss=0.8216 dice=0.4385
+    ep16/20 loss=0.7721 dice=0.4680
+    ep20/20 loss=0.7179 dice=0.4891
+[ft] spleen_l16_s1: ft_dice(test)=0.0001  wall=18.9s
+[ft] spleen_l08_s1: initialised from spleen-pretrained weights
+[ft] spleen_l08_s1: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/20 loss=1.3565 dice=0.2637
+    ep6/20 loss=1.0243 dice=0.3755
+    ep11/20 loss=0.9244 dice=0.3992
+    ep16/20 loss=0.8608 dice=0.4161
+    ep20/20 loss=0.8459 dice=0.4278
+[ft] spleen_l08_s1: ft_dice(test)=0.0062  wall=9.5s
+[ft] spleen_l16_s2: initialised from spleen-pretrained weights
+[ft] spleen_l16_s2: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/20 loss=1.3134 dice=0.2728
+    ep6/20 loss=0.9688 dice=0.3798
+    ep11/20 loss=0.7891 dice=0.4405
+    ep16/20 loss=0.6907 dice=0.4803
+    ep20/20 loss=0.6367 dice=0.5082
+[ft] spleen_l16_s2: ft_dice(test)=0.5928  wall=12.8s
+[ft] spleen_l16_short: initialised from spleen-pretrained weights
+[ft] spleen_l16_short: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/20 loss=1.2662 dice=0.3067
+    ep6/20 loss=1.0513 dice=0.3635
+    ep11/20 loss=0.9610 dice=0.3872
+    ep16/20 loss=0.8552 dice=0.4291
+    ep20/20 loss=0.8742 dice=0.4317
+[ft] spleen_l16_short: ft_dice(test)=0.0014  wall=11.6s
+[ft] spleen_scratch: starting from RANDOM init
+[ft] spleen_scratch: n_train_slices=32 train_cases=['1'] target=liver source=spleen
+    ep1/20 loss=1.4383 dice=0.2436
+    ep6/20 loss=1.2776 dice=0.2907
+    ep11/20 loss=1.1606 dice=0.3318
+    ep16/20 loss=1.1273 dice=0.3508
+    ep20/20 loss=1.0765 dice=0.3529
+[ft] spleen_scratch: ft_dice(test)=0.5917  wall=11.9s
+saved /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/results/finetune_spleen2liver.json
+   spleen_l16_s1 6e-05
+   spleen_l08_s1 0.00617
+   spleen_l16_s2 0.59279
+   spleen_l16_short 0.0014
+   spleen_scratch 0.5917

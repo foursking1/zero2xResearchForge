@@ -1,0 +1,159 @@
+[data] 10 pulsars, 4944 active ToAs, sigma avg 0.37 us
+[data] T_obs = 5724 days, Nfreq = 14
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:37: RuntimeWarning: divide by zero encountered in log
+  gamma = 1.5 * x * np.log(x) - x / 4.0 + 0.5
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:37: RuntimeWarning: invalid value encountered in multiply
+  gamma = 1.5 * x * np.log(x) - x / 4.0 + 0.5
+[inject] loglike(true) = 69007.51
+
+===== model PowerLaw =====
+  [mcmc] loading cached chain cache_smoke\mcmc_PowerLaw.npz
+The chain is shorter than 50 times the integrated autocorrelation time for 22 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 1;
+tau: [6.52937709 6.50310653 6.87245396 6.38649826 6.56466182 6.65365018
+ 6.70384726 6.76109993 6.42779198 6.39684346 6.97079151 7.18955178
+ 6.80156543 6.52836104 6.48036421 6.47996781 5.84799838 6.11878467
+ 6.58123645 6.28119564 5.69541778 5.78445212]
+  [mcmc] n_eff=2880  logZ_HME = 68999.52  tau~6
+  [sim] 4000 forward sims in 3.1s
+  [nf] training 4000 x 10 epochs in 12.4s; loss 37.05 -> 5.16
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.8598974667000016e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.7703360783719873e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.1422744804310094e-22.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 2.7325865463484847e-21.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 3.738169792441512e-22.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 5.661703721839556e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.456778265778219e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 6.578408850560057e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 5.918464851773203e-19.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.2669182268733764e-19.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 7.617362442851416e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.16673327643889e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.1749091789634339e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.61549129673641e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 2.061558786668759e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.4541754840789063e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.9385695178007953e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.225236064256128e-22.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 7.185218821292519e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.8537321249637272e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 2.0066400107939733e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.0653467703197802e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 8.120341825149777e-23.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.443194170221695e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 2.8354431685598014e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 3.3514677686502006e-19.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.079522925378588e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.755773770040249e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.150413670961175e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 6.256946566457929e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.4615924653870922e-19.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 8.015939785004737e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 6.751841746446969e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.7052148836496615e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 3.5792032888981583e-22.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 2.632973844033438e-22.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 2.852803053693703e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 2.4348550596365547e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.359050121780357e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.1284612941227647e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 3.957753383822459e-21.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.908389510638274e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 3.2307263596617266e-19.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 9.586762705167924e-19.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.776754271468293e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 3.373952424845209e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.151162342563588e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.3643629445227105e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.735342005620658e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 2.2051264584381505e-20.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 8.518515217851285e-24.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 8.599792864835324e-19.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.0637993484780149e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.108824397666652e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.537622989873427e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.2924556707653938e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 5.578537581594471e-21.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.7072510347806141e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.696579122974773e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 2.204433077156055e-16.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 1.0529089737121094e-18.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 3.4652338096128375e-20.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 4.4722068722341556e-17.
+  Lam_inv = inv(Lam)
+D:\project\paper-bench\tasks\astro\2504.04211_pta_normalizing_flows\agent_solution\code\pta_likelihood.py:167: LinAlgWarning: An ill-conditioned matrix detected: slice 0 has rcond = 7.587266117541552e-19.
+  Lam_inv = inv(Lam)
+  [nf] sampled 800 in 0.0s; reweight+loglike in 10.9s
+  [nf] effective sample size for reweighting = 1 / 800
+  [nf] logZ_HME = -638961.63   logZ_IS = 68965.61
+  [hellinger] direct=0.9008  reweighted=0.9037 (1d d=[0.749,0.684] r=[0.867,0.931])
+
+===== log10 evidence =====
+  PowerLaw   MCMC=68999.52  NF_HME=-638961.63  NF_IS=68965.61
+  ranking MCMC {'PowerLaw': 0}  NF {'PowerLaw': 0}  consistent=True
+  max |logBF_mcmc - logBF_nf| = 0.00
+figure failed: Fewer non-zero entries in p than size
+
+DONE. results written to ../results_smoke

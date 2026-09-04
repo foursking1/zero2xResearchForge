@@ -1,0 +1,122 @@
+# ============ paper-bench git 管理 ============
+# 原则: 只跟踪「基准定义 + 基线源码/证据 + 精选脚本」
+#   - tasks/<domain>/<card>/ 的任务元信息(TASK/PAPER_ANCHOR/SCORE_RUBRIC/CALIBRATION)
+#   - baselines/<domain>/<card>/ 的源码、报告和小型机器可读证据
+#   - cards.csv / l1l2_labels.csv 统一清单
+#   - evaluation/ 精选评测脚本, results/ 评测结果
+# 排除: 大体积二进制/临时/环境/外部数据, 避免仓库膨胀与误跟踪。
+
+# ---- git 自身 ----
+.git/
+
+# ---- 系统/项目元数据(按规范不纳入版本管理) ----
+.workbuddy/
+.omc/
+.env
+.env.*
+!.env.example
+.paperbench/
+submissions/
+__pycache__/
+
+# ---- 环境与临时文件 ----
+*.whl
+_venv*/
+_venv_*/
+_tmp_deps/
+_mala_tmp/
+data_cache/
+*.tmp
+*.tmp.*
+_dl_*.log
+_dl_*.py
+_dl_*.ps1
+watchdog_*.sh
+watchdog_*.sh.tmp.*
+
+# ---- 根目录零散垃圾(本机产物, 不纳入) ----
+power_upload.zip
+speedtest.bin
+solubility.tar.gz
+*.bin
+t4_run*.log
+L3_problem.md.txt
+dl.ps1
+
+# 根目录那个 stray agent_solution 目录(1.7G 残留副本, 不入仓)
+/agent_solution/
+
+# ---- 外部源数据(非本评测产出, 可重新获取) ----
+candidate-papers/
+papers/
+decomposed/
+truth/
+scisolvebench/
+scisolvebench-assets/
+
+# ---- 评测卡输入数据集(非本评测产出, 可重新获取) ----
+# 卡目录为两级: tasks/<domain>/<card>/data/
+tasks/*/*/data/
+# Legacy task-local solution directories are local leftovers only. The tracked
+# historical submissions live under baselines/.
+tasks/*/*/agent_solution/
+tasks/*/*/agent_solution_v*/
+tasks/*/*/submission/
+
+# ---- 大体积可再生二进制产物(全局排除: 模型权重/特征张量/大数组) ----
+# baseline 下的代码/报告/json/csv/md 仍跟踪; 以下类型视为可重算/可下载, 不入仓。
+*.pt
+*.ckpt
+*.pth
+*.pth.tar
+*.safetensors
+*.onnx
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# ---- 工作草稿目录(精选脚本已迁 evaluation/, 结果迁 results/) ----
+work/
+
+# ---- baselines: 默认忽略全部大体积产物, 仅保留源码/报告/小产物(文本类) ----
+# 基线里的模型权重/特征张量/大数据集(.dat/.memmap/.pkl/.joblib/.npy/.pt 等)
+# 均视为可重算/可下载, 不入仓; 只跟踪代码、报告、json 与小型 csv 证据。
+baselines/**
+# 重新包含目录, 使下面的文本/代码重包含规则对子目录生效
+# (gitignore 不能重包含一个父目录已被排除的文件, 故需先放开目录)
+!baselines/
+!baselines/**/
+!baselines/**/*.py
+!baselines/**/*.md
+!baselines/**/*.txt
+!baselines/**/*.json
+!baselines/**/*.yaml
+!baselines/**/*.yml
+!baselines/**/*.ipynb
+!baselines/**/*.sh
+!baselines/**/*.log
+!baselines/**/*.csv
+!baselines/**/*.html
+!baselines/**/*.tex
+!baselines/**/Makefile
+!baselines/**/Dockerfile
+!baselines/**/requirements*.txt
+# 大体积数据集/工作区子目录(外部获取, 不纳入; 覆盖上面的 csv 重包含)
+baselines/**/data/**
+baselines/**/workspace/**
+# 可重算的中间产物缓存/临时目录(含 lidc meta_* 等大 csv/大图), 覆盖上面的 csv 重包含
+baselines/**/cache/**
+baselines/**/_tmp/**
+# Generated historical baseline outputs are archived in the optional ModelScope
+# baseline-artifacts dataset rather than downloaded with the Git repository.
+baselines/**/results/**
+baselines/**/evidence/**
+baselines/**/report_fig/**
+baselines/**/figures/**
+baselines/**/figure/**
+baselines/**/artifacts/**
+
+# website 运行时产物
+website/.venv/
+website/submissions/

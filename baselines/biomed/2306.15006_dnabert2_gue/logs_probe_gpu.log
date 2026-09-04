@@ -1,0 +1,81 @@
+===== Thu Aug 20 01:10:54 CST 2026 probe mouse_0 =====
+/home/dministrator/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertModel were not initialized from the model checkpoint at zhihan1996/DNABERT-2-117M and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[mouse_0] extracting frozen features (device=cuda) ...
+  extracted 7s shapes=(6478, 768),(810, 768),(810, 768)
+{
+ "dataset": "mouse_0",
+ "val": {
+  "acc": 0.6407,
+  "f1": 0.6407,
+  "mcc": 0.2827
+ },
+ "test": {
+  "acc": 0.5975,
+  "f1": 0.5974,
+  "mcc": 0.1951
+ }
+}
+===== Thu Aug 20 01:11:13 CST 2026 probe EMP_H3 =====
+/home/dministrator/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertModel were not initialized from the model checkpoint at zhihan1996/DNABERT-2-117M and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[EMP_H3] extracting frozen features (device=cuda) ...
+  extracted 51s shapes=(11971, 768),(1497, 768),(1497, 768)
+{
+ "dataset": "EMP_H3",
+ "val": {
+  "acc": 0.7949,
+  "f1": 0.7949,
+  "mcc": 0.5905
+ },
+ "test": {
+  "acc": 0.821,
+  "f1": 0.821,
+  "mcc": 0.642
+ }
+}
+===== Thu Aug 20 01:12:17 CST 2026 probe prom_core_all =====
+/home/dministrator/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertModel were not initialized from the model checkpoint at zhihan1996/DNABERT-2-117M and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[prom_core_all] extracting frozen features (device=cuda) ...
+  extracted 42s shapes=(47356, 768),(5920, 768),(5920, 768)
+{
+ "dataset": "prom_core_all",
+ "val": {
+  "acc": 0.7669,
+  "f1": 0.7669,
+  "mcc": 0.534
+ },
+ "test": {
+  "acc": 0.7711,
+  "f1": 0.7711,
+  "mcc": 0.5425
+ }
+}
+===== Thu Aug 20 01:13:18 CST 2026 probe prom_300_all =====
+/home/dministrator/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertModel were not initialized from the model checkpoint at zhihan1996/DNABERT-2-117M and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[prom_300_all] extracting frozen features (device=cuda) ...
+  extracted 141s shapes=(47356, 768),(5920, 768),(5920, 768)
+{
+ "dataset": "prom_300_all",
+ "val": {
+  "acc": 0.8789,
+  "f1": 0.8789,
+  "mcc": 0.7579
+ },
+ "test": {
+  "acc": 0.8735,
+  "f1": 0.8735,
+  "mcc": 0.747
+ }
+}
+ALL PROBES DONE Thu Aug 20 01:15:56 CST 2026

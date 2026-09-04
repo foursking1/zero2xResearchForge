@@ -1,0 +1,1617 @@
+{
+ "hyps": {
+  "0": "many buildings are in a commercial area",
+  "1": "many green buildings and trees are located in a dense residential area",
+  "2": "many green trees are found on two sides of a curved river",
+  "3": "a church is close to several green trees and a road",
+  "4": "it's a piece of green mountain",
+  "5": "a baseball field is close to several green trees and a road",
+  "6": "many buildings and green trees are located in a dense residential area",
+  "7": "many buildings are located on two sides of a railway station",
+  "8": "a baseball field is surrounded by many green trees",
+  "9": "a bridge is over a river with several buildings on two sides of it",
+  "10": "some green trees are around a large stadium",
+  "11": "some green trees and meadows are around an irregular pond",
+  "12": "many buildings and green trees are around a stadium with a playground",
+  "13": "many buildings are located on two sides of a train station",
+  "14": "a baseball field is close to several green trees",
+  "15": "yellow beach is near a piece of green ocean",
+  "16": "many buildings and some green trees are located in an average residential area",
+  "17": "several green trees are near a piece of green meadow",
+  "18": "a large number of trees were planted around the playground",
+  "19": "many buildings and some green trees are located in an industrial area",
+  "20": "many buildings are on two sides of a river with a bridge",
+  "21": "a piece of yellow beach is near a piece of green ocean",
+  "22": "it's a piece of yellow desert",
+  "23": "many buildings and some green trees are in an industrial area",
+  "24": "a piece of yellow beach is near a piece of green ocean",
+  "25": "many storage tanks are close to several buildings and a road",
+  "26": "some cars are on a bridge over a river",
+  "27": "many buildings are around a park with many green trees and a pond",
+  "28": "many green trees and several buildings are around a playground",
+  "29": "many green buildings and trees are located in a dense residential area",
+  "30": "some green trees are near a piece of green meadow",
+  "31": "it's a piece of green mountain",
+  "32": "some buildings and cars are around a football field surrounded by white buildings",
+  "33": "some green trees are around a large building",
+  "34": "many buildings and some green trees are located on two sides of a train station",
+  "35": "many buildings and some green trees are around a stadium",
+  "36": "a church is near a road and some green trees",
+  "37": "it is a piece of yellow bareland",
+  "38": "several green buildings and trees are located on two sides of a railway station",
+  "39": "many cars are parked in a parking lot",
+  "40": "many green buildings and trees are close to a viaduct",
+  "41": "many green trees are in a piece of yellow desert",
+  "42": "yellow beach is near a piece of green ocean with white waves",
+  "43": "many trees are planted around the playground",
+  "44": "many cars are parked in a parking lot",
+  "45": "a playground is close to several green trees and a road",
+  "46": "some buildings and many green trees are in an industrial area",
+  "47": "many green trees are around a playground",
+  "48": "many green trees and meadows are around a building",
+  "49": "many cars are parked in a parking lot with some cars",
+  "50": "it's a piece of green meadow",
+  "51": "many buildings and some green trees are located in an average residential area",
+  "52": "many buildings and some green trees are located in an industrial area",
+  "53": "many storage tanks are close to several buildings and a road with cars",
+  "54": "yellow beach is near a piece of green ocean with white waves",
+  "55": "it's a big piece of bare land",
+  "56": "many buildings are around a church",
+  "57": "many green trees are around a building",
+  "58": "many buildings and some green trees are in a school",
+  "59": "some buildings and green trees are around a playground with a baseball field",
+  "60": "some buildings and many green trees are close to a viaduct",
+  "61": "a lot of cars are parked in a parking lot with some cars",
+  "62": "some green buildings and trees are around a baseball field",
+  "63": "many green trees are in two sides of a curved river",
+  "64": "many buildings and green trees are located in an average residential area",
+  "65": "many green buildings and trees are located in a dense residential area",
+  "66": "some buildings and green trees are in two sides of a river with a bridge",
+  "67": "a bridge is over a river with some green trees",
+  "68": "many green trees are found on both sides of a curved river",
+  "69": "many green trees and meadows are around a pond near a river",
+  "70": "some boats are in a port near many buildings",
+  "71": "many green trees are in two sides of a curved river",
+  "72": "a bridge is on a river with many green trees on two sides of it",
+  "73": "a playground is surrounded by some green trees and buildings",
+  "74": "many buildings are in an industrial area",
+  "75": "some green trees are near a viaduct",
+  "76": "many buildings and some green trees are located in an industrial area",
+  "77": "many buildings and some green trees are located on two sides of a curved river",
+  "78": "a basketball field is next to a road and a road",
+  "79": "some buildings and many green trees are located in an average residential area",
+  "80": "many storage tanks are close to a large building",
+  "81": "some green buildings and trees are located in an average residential area",
+  "82": "some undulations are in a piece of yellow desert",
+  "83": "several buildings and some green trees are around a pond",
+  "84": "a bridge is over a river with many green trees on two sides of it",
+  "85": "several buildings are close to a road with a parking lot",
+  "86": "it's a big piece of desert",
+  "87": "many buildings are located on two sides of a railway station",
+  "88": "many buildings with parking lots and green trees are located in a commercial area",
+  "89": "a church is surrounded by some green trees and buildings",
+  "90": "many pieces of agricultural land are together",
+  "91": "some green trees are around a large stadium",
+  "92": "a bridge is on a river with many buildings on two sides of it",
+  "93": "a bridge is over a river with many green trees on two sides of it",
+  "94": "many buildings and green trees are in a school",
+  "95": "many green trees and bare land are around an irregular green pond",
+  "96": "many white storage tanks are close to several buildings and a road",
+  "97": "a bridge is on a river with several buildings on two sides of it",
+  "98": "many buildings and some green trees are around a playground",
+  "99": "some buildings and cars are around a football field surrounded by white buildings",
+  "100": "many green trees and meadows are around a building",
+  "101": "many buildings are located on two sides of a railway station",
+  "102": "several buildings and some green trees are around a stadium",
+  "103": "many green trees are close to a large building",
+  "104": "many storage tanks are close to a large building",
+  "105": "many buildings and some green trees are located in an average residential area",
+  "106": "a piece of yellow beach is near a piece of green ocean",
+  "107": "a church is near a river with some green trees",
+  "108": "many cars are parked in a parking lot",
+  "109": "many buildings and some green trees are close to a beach in a resort",
+  "110": "many green trees are found on both sides of a curved river",
+  "111": "a football field is close to several green trees and a road",
+  "112": "a playground is surrounded by many green trees and buildings",
+  "113": "many green trees form a piece of forest",
+  "114": "many white storage tanks are together",
+  "115": "many buildings and some green trees are close to a beach in a resort",
+  "116": "some buildings are close to a crossroads in a commercial area",
+  "117": "a baseball field is surrounded by many green trees",
+  "118": "some buildings and many green trees are located in an average residential area",
+  "119": "some green trees and several buildings are around a playground with a football field",
+  "120": "many buildings are in two sides of a railway station",
+  "121": "three storage tanks are close to some green trees and a building",
+  "122": "many green trees and bare land are on two sides of a river with a river",
+  "123": "a large white building is close to several buildings and a road",
+  "124": "it's a piece of green mountain",
+  "125": "many green trees are near a viaduct with many cars",
+  "126": "some buildings and many green trees are located in an average residential area",
+  "127": "several buildings and many green trees are close to a viaduct",
+  "128": "some green buildings and trees are located in an average residential area",
+  "129": "many buildings and some green trees are in two sides of a river",
+  "130": "many buildings and some green trees are in a resort",
+  "131": "yellow beach is near a piece of green ocean",
+  "132": "some buildings and green trees are around a stadium",
+  "133": "many trees are planted around the playground",
+  "134": "a lot of white storage tanks are in a piece of water",
+  "135": "a bridge is on a river with many buildings on two sides of it",
+  "136": "many buildings and some green trees are around a stadium",
+  "137": "yellow beach is near a piece of green ocean with white waves",
+  "138": "it's a piece of green mountain",
+  "139": "it's a piece of yellow desert",
+  "140": "some green buildings and trees are located in an average residential area",
+  "141": "several buildings and some green trees are around a playground",
+  "142": "it's a big piece of yellow desert",
+  "143": "some green trees are around a large stadium",
+  "144": "a baseball field is close to a large piece of green ocean",
+  "145": "a baseball field is surrounded by some green trees and buildings",
+  "146": "some buildings and many green trees are near a river in a resort",
+  "147": "many buildings are around a park with many green trees and a pond",
+  "148": "a piece of yellow beach is near a piece of green ocean with white waves",
+  "149": "a playground is surrounded by some green trees",
+  "150": "many buildings and green trees are located in a dense residential area",
+  "151": "many buildings and green trees are located on two sides of a railway station",
+  "152": "many buildings are located in a commercial area",
+  "153": "yellow beach is near a piece of green ocean with white waves",
+  "154": "yellow beach is near a piece of green ocean",
+  "155": "some green buildings and trees are located in an industrial area",
+  "156": "a small bridge is over a river with some green trees",
+  "157": "yellow beach is near a piece of green ocean with white waves",
+  "158": "many buildings and some green trees are around a playground",
+  "159": "some buildings and many green trees are located in a commercial area",
+  "160": "many storage tanks are near a piece of land",
+  "161": "many buildings are around a square with some green trees",
+  "162": "a lot of cars are parked in a parking lot with some cars",
+  "163": "some buildings and many green trees are in a resort",
+  "164": "a baseball field is close to several green trees and a road",
+  "165": "many buildings and some green trees are around a playground",
+  "166": "a bridge is over a green river with several pieces of agricultural land",
+  "167": "many buildings and some green trees are around a square with some green trees",
+  "168": "it's a piece of green mountain",
+  "169": "a piece of yellow beach is close to a piece of green ocean",
+  "170": "many cars are parked in a parking lot",
+  "171": "many green buildings and trees are located in a dense residential area",
+  "172": "many green trees are on two sides of a curved river",
+  "173": "it's a big piece of bare land",
+  "174": "many pieces of green agricultural land are together",
+  "175": "many green trees form a piece of forest",
+  "176": "many green buildings and trees are located in a dense residential area",
+  "177": "many green trees are found on two sides of a curved river",
+  "178": "some buildings and green trees are around a playground",
+  "179": "many green trees are near a piece of green forest",
+  "180": "many buildings and some green trees are in a commercial area",
+  "181": "yellow beach is near a piece of green ocean",
+  "182": "many green buildings and trees are located in a dense residential area",
+  "183": "some buildings are near a river in a commercial area",
+  "184": "three storage tanks are close to some green trees and a building",
+  "185": "many cars are parked in a parking lot",
+  "186": "a playground is surrounded by many green trees",
+  "187": "some buildings and many green trees are located in an average residential area",
+  "188": "some cars are parked in a parking lot",
+  "189": "yellow beach is close to a piece of green ocean with white waves",
+  "190": "a bridge is over a river with some green trees and buildings",
+  "191": "many green trees are found on both sides of a curved green river",
+  "192": "many buildings and some green trees are located in a commercial area",
+  "193": "a baseball field is surrounded by many green trees",
+  "194": "a baseball field is surrounded by many green trees",
+  "195": "some green trees are in a piece of green meadow",
+  "196": "a piece of yellow beach is near a piece of green ocean with white waves",
+  "197": "many green trees form a piece of forest",
+  "198": "many green trees form a piece of forest",
+  "199": "it is a piece of yellow desert"
+ },
+ "gts": {
+  "0": [
+   "advertising is full of cars and curved paths",
+   "some buildings of different heights can be seen in this area",
+   "the commercial is full of cars and curved paths",
+   "plenty of cars are parking in this commercial area",
+   "some buildings with parking lots are in a commercial area"
+  ],
+  "1": [
+   "there's a school near the road",
+   "many trees are planted around the school",
+   "many red buildings are in the school",
+   "many red buildings are in the school",
+   "there is a school near the road"
+  ],
+  "2": [
+   "many lawns are planted on both sides of the river",
+   "the wide river has many small tributaries",
+   "the wide river has many small tributaries",
+   "a large number of grasses are planted on both sides of the river",
+   "a large number of lawns are planted on both sides of the river"
+  ],
+  "3": [
+   "a blue blue plygon building with pyramidal roof is located between the streets of other square buildings and parking lots",
+   "a ploygon blue green building with pyramidal roof is located among streets other square buildings and parking lots",
+   "the snowflake like center is near some black blocks",
+   "it is a beautiful polygonal center with esthetic blue roof",
+   "several buildings and green trees are around a cyan center building"
+  ],
+  "4": [
+   "the mountain is green and brown",
+   "the mountain is green and brown",
+   "the mountain is green and brown",
+   "this mountain range is mainly green while several ridges are bald",
+   "it is a piece of irregular green mountains"
+  ],
+  "5": [
+   "there's a house around the big baseball field",
+   "some trees were planted around the baseball field",
+   "a few trees were planted around the baseball field",
+   "there's a house around the big baseball field",
+   "there is a house around the big baseball field"
+  ],
+  "6": [
+   "the houses went closely along the straight roads",
+   "the houses varied closely along the straight roads",
+   "the houses ranged tightly along the straight roads",
+   "we can see several trees decorates this densly settled residential area",
+   "many red buildings and some green trees are in a dense residential area"
+  ],
+  "7": [
+   "the rails coming out of the huge grey rectangular ceiling are in the confluence zone",
+   "the rails coming out of the huge rectangular grey roof are in the confluence area",
+   "rails getting out of the huge gray rectangular ceiling are into confluence area",
+   "trains stay in this railway station surrounded by buildings",
+   "some buildings and green trees are in two sides of a railway station"
+  ],
+  "8": [
+   "the round ground is a baseball field",
+   "many large trees are planted around the baseball field",
+   "many tall trees are planted around the baseball field",
+   "the round terrain is a baseball field",
+   "the round ground is a baseball field"
+  ],
+  "9": [
+   "there are two bridges over the river",
+   "on both sides of the river are a large number of tall buildings",
+   "two bridges connect the two sides of the river",
+   "two bridges link two sides of the river",
+   "there are two bridges over the river"
+  ],
+  "10": [
+   "huge words of awd arena are writed int the blearchers of the stadium",
+   "there is a bowl-shaped stadium with blue stands on the square with trees and lawns",
+   "there is a bowl shaped stadium with blue stands on the square with trees and lawns",
+   "it is a huge soccer stadium whose roof spells awd arena on it",
+   "many green trees are around a gray stadium with a football field in it"
+  ],
+  "11": [
+   "there's a wide road around the lake",
+   "next to the road is a densely populated area",
+   "next to the road is a densely populated area",
+   "there's a wide road around the lake",
+   "there is a wide road around the lake"
+  ],
+  "12": [
+   "in this area at the road corner, a standard, new footballfield with two basketball courts aside can be seen",
+   "many buildings and some green trees are around a playground and two basketball fields",
+   "many buildings around a playground are next to a road",
+   "a playground with two basketball fields next to it is beside a wide road",
+   "many buildings around a playground are next to a road"
+  ],
+  "13": [
+   "there is a star like construction with planes all around lying on the parking apron",
+   "there is a star like building with planes all around lying on parking apron",
+   "many planes stop near the banch shaped boarding gate attached on the terminal",
+   "it is a round termial building with many planes waiting by the termial",
+   "many planes are around a large building in an airport"
+  ],
+  "14": [
+   "on the lawn is a baseball field and three other sports grounds are in front of a street",
+   "on the lawn is a baseball field and three other sports fields are across a street",
+   "the polygon baseball field beside some footballfields",
+   "in this picture we can see a large baseballfield alongside a basketball playground and two tennis playground",
+   "a baseball field is near several green trees"
+  ],
+  "15": [
+   "there are some strong rocks near the beach",
+   "the vast sea is hitting hard rock",
+   "the vast sea is hitting hard rock",
+   "there are some strong rocks near the beach",
+   "there are some strong rocks near the beach"
+  ],
+  "16": [
+   "there are straight lanes as well as arc lanes along which there are some houses built near each other",
+   "there are straight paths, as well as the arches along which some houses are built near each other",
+   "there is straight pathways as well as arc ones along which are some houses built close to each other",
+   "this residential area is separated by curved roads with lawns and trees",
+   "many buildings and green trees are in a dense residential area"
+  ],
+  "17": [
+   "there is a tent and other masses scattered on the prairie with a road passing by",
+   "there is a tent and some other masses scattered on the prairie with a road passing by",
+   "the meadow includes some packages and white points",
+   "several grey items are scattered on this green meadow",
+   "it is a piece of green meadow"
+  ],
+  "18": [
+   "there are three mice like grey buildings of different size located on the semi-circle square which is at the turn of the road",
+   "there is three mouse like grey buildings of different size lying on the semi circle square which is at the turning of the road",
+   "three rounded rectangle centers embrace a white block in a semicircle square",
+   "this center included three differently sized brown oval parts",
+   "a center building composed of three buildings is near many green trees"
+  ],
+  "19": [
+   "there is a factory with white trucks and blue containers next to two roads",
+   "there is a factory with white trucks and blue containers beside two roads",
+   "the industrial which includes some cyan and grey workshops is surrounded by a road",
+   "it is a prosperous industrial area surrounded by roads",
+   "many gray industrial buildings are in a factory"
+  ],
+  "20": [
+   "the two bridges with gridding steel beams joins the back covered by trees",
+   "two truss bridges cross the river parallelly",
+   "a bridge with iron trestle links the forests",
+   "two paralleled tied arch bridge traverse the wide river with rows of trees on its banks",
+   "some green trees are in two sides of a river with two parallel bridges"
+  ],
+  "21": [
+   "there are many people who play both in the sea and on the beach",
+   "there are many people playing both in the sea and on the beach",
+   "people swim inthe jade green sea and take a sunbath on the beach",
+   "lots of people are sitting on the curved edge of the beach",
+   "many people are in a yellow beach near a green ocean"
+  ],
+  "22": [
+   "there is a road across the bareland of arenaceous soil",
+   "no plants were planted on the bare earth",
+   "no plants were planted on the bare land",
+   "a bare path on the vast earth",
+   "a bare trail on the wide land"
+  ],
+  "23": [
+   "there's a factory next to a forest",
+   "there is a factory beside a forest",
+   "green and blue workshops are near the forest",
+   "large workshops with green roofs sits next to smaller ones besides this dense woods",
+   "many industrial buildings are near a piece of green trees"
+  ],
+  "24": [
+   "there are two buildings on the coast",
+   "there is two buildings on the coast",
+   "some flats are on the brown beach near the feculent sea",
+   "two simple buildings are standing on this beach",
+   "a piece of green ocean is near a yellow beach with two buildings"
+  ],
+  "25": [
+   "there are a lot of storage tanks in the plant",
+   "a large piece of grass around the storage tank",
+   "many white storage tanks are full of oil",
+   "many white storage tanks are full of oil",
+   "there are many storage tanks in the factory"
+  ],
+  "26": [
+   "we can see two parallel bridges with a railway and roads on respectively located above the river and a road along it",
+   "we can see two parallel bridges with a railway and roads on respectively is lying over the river and a road along it",
+   "two bridges are across the jade green river one of which has no any cars",
+   "a bustling wide highway bridge paralleled with a wide railway bridge spans the green river",
+   "two parallel bridges are over a green river"
+  ],
+  "27": [
+   "in addition to a road and two lines of trees, a factory is built with blue and green roofs",
+   "besides a road and two lines of trees stands a factory with blue and green roofs",
+   "the cyan plants are in a rectangle industrial",
+   "it is a dense industrial area where roofs are mostly green and blue with a bustling curved road passes by",
+   "many industrial buildings and some green trees are in an industrial area"
+  ],
+  "28": [
+   "there's an airport on the bare ground",
+   "two big planes parked on the airport",
+   "two large aircraft parked on the airport",
+   "there's an airport in the bare land",
+   "there is an airport on the bare land"
+  ],
+  "29": [
+   "here is a residential area with cars and trees around",
+   "here is residential area with cars and trees around",
+   "here is residential area with cars and trees around",
+   "this residential area is separated as rectangular blocks by cement roads",
+   "many buildings and some green trees are in a dense residential area"
+  ],
+  "30": [
+   "this vast expanse is a vast grazing area",
+   "beside the pasture is a bare land",
+   "the meadow is full of grass",
+   "the meadow is full of grass",
+   "this largeland is a vast area of pasture"
+  ],
+  "31": [
+   "a long river flows through the mountain",
+   "there is a large area of bare land in the mountain range",
+   "there is a large area of bare land in the mountain range",
+   "a long river flows through the mountain",
+   "a long river flows through the mountain"
+  ],
+  "32": [
+   "a square stage with parked car lines are located near a road",
+   "a square stadium with parked car lines are located near a road",
+   "a square stadium with lines of parked cars are located near a road",
+   "this is a rectangular soccer stadium with rows of bleachers next to a parking lot",
+   "many cars are near a white stadium with a football field in it"
+  ],
+  "33": [
+   "there is a wide road outside the stadium",
+   "there is a green football field in the gym",
+   "the stadium ceiling is open",
+   "the ceiling of the stadium is open",
+   "there is a broad road outside the stadium"
+  ],
+  "34": [
+   "at the corner of the road there is a roofed church with other buildings",
+   "at the corner of the road there is a pitched roof church together with other buildings",
+   "the balck church with a mansard is encompassed by some white buildings",
+   "this church with black roof is surrounded by houses",
+   "a church is near several building and two roads"
+  ],
+  "35": [
+   "several buildings and green trees are around a stadium with a football pitch in it",
+   "with parking around there is a stadium with blue and white stands",
+   "with parking lots around there is a stadium with blue and white stands",
+   "here lies an oval soccer stadium whose bleachers spell arseille on it",
+   "several buildings and green trees are around a stadium with a football field in it"
+  ],
+  "36": [
+   "in one of the blocks there is a church with a black and white roof",
+   "in one of the blocks there is a church with a black and white roof",
+   "the f shape church near a street is next to a dark cyan buildings",
+   "this church with black roof sits at the coner of streets",
+   "a church with several green trees is near a crossroads"
+  ],
+  "37": [
+   "on the hard yellow soil there are bare rock hills",
+   "there's a road like the way to cross the naked earth",
+   "there is a road like shape cross the bareland",
+   "a grey road is stretching the yellow bareland",
+   "it is a piece of gray and khaki bareland"
+  ],
+  "38": [
+   "here is a factory including a parking lot and a sports ground",
+   "here is a factory including a parking lot and a sports field",
+   "there grey and blue plants in the industrial",
+   "it is a bustling industrial area separated by roads",
+   "many industrial buildings are in a factory"
+  ],
+  "39": [
+   "there is a parking lot with cars sandwiched by a road and some buildings",
+   "there is a parking lot with cars sandwiched by a road and some buildings",
+   "the cars stop in order in the concrete parking",
+   "rows of cars park neatly in this parking lot next to buildings",
+   "many cars are orderly in a parking lot near several buildings"
+  ],
+  "40": [
+   "a star-shaped viaduct is surrounded by dense buildings",
+   "there is a viaduct surrounded by dense buildings",
+   "a viaduct in a star shape is surrounded by dense buildings",
+   "the highway viaduct and its side roads spans the road below separating the dense residential area",
+   "two white storage tanks and many residential buildings are near a viaduct"
+  ],
+  "41": [
+   "a road passes through the yellow meadow decorated with some green trees",
+   "a road is passing by the yellow meadow decorated with some green trees",
+   "the are some holes in the meadow which is close to a road",
+   "several black holes are set in this rather bald meadow",
+   "some trees are scattered in a circle shape in a piece of meadow next to a road"
+  ],
+  "42": [
+   "in front of the beach is a vast ocean",
+   "there's sand on the beach and nothing else",
+   "there's sand on the beach and nothing else",
+   "in front of the beach there is a vast ocean",
+   "in front of the beach is a vast ocean"
+  ],
+  "43": [
+   "the ground track playground is next to a piece of bareland",
+   "the football field surrounded by a track is lying on the concrete with some trees nearby where the bare earth is located with trees scattered around",
+   "the football field surrounded by a track is lying on the concrete with some trees nearby around which is bareland with trees scattered around",
+   "running tracks surrounding this green soccer pitch sits alongside several trees",
+   "a playground with a football field in it is near some green trees and a road with several cars"
+  ],
+  "44": [
+   "we can see a square harbour basin on the coast with boats moored side by side",
+   "we can see a square basin of the port on the coast with boats moored side by side",
+   "we can see a square harbour basin on the coast with boats moored side by side",
+   "this spectacular port is stuffed full of ships with a long parking lot on its bank",
+   "many boats are orderly in a port near a long building"
+  ],
+  "45": [
+   "two parellel streets form this block, including a grren football field, six tennis courts and different kinds of buildings",
+   "a playground with football field in it is near six tennis courts",
+   "a playground and several tennis courts are next to several buildings and two roads",
+   "a playground with six tennis courts next to it is surrounded by some buildings and two roads",
+   "a playground and several tennis courts are next to several buildings and two roads"
+  ],
+  "46": [
+   "there is a road crossing on a road and a railway with two trains along which are some factory buildings",
+   "there is a road crossing over a road and a railway with two trains along which are some factory buildings",
+   "the plants in the industrial are divided by the streets",
+   "we can see bustling roads and a railway passes through this prosperous industrial arra",
+   "many white industrial buildings are in an industrial area"
+  ],
+  "47": [
+   "next to the sea is a large port",
+   "a large number of houses are located near the port",
+   "a large number of houses are located near the harbour",
+   "by the sea there is a large port",
+   "next to the sea is a large port"
+  ],
+  "48": [
+   "the grey roof house is surrounded by large trees",
+   "there's a pool behind the gray roof of the house",
+   "there is a swimming pool behind the grey roof of house",
+   "the grey roof house is surrounded by tall trees",
+   "the house of gray roof is surrounded by tall trees"
+  ],
+  "49": [
+   "there's a lawn next to the parking lot",
+   "next to the parking lot is a house with a grey roof",
+   "different cars with different colors are in the parking lot",
+   "different cars with different colors are in the parking",
+   "there is a lawn next to the parking lot"
+  ],
+  "50": [
+   "rows of trees are planted on both sides of the road",
+   "next to the road was a large grazing area",
+   "next to the road was a large area of pasture",
+   "rows of trees are planted on both sides of the road",
+   "rows of trees are planted on both sides of the road"
+  ],
+  "51": [
+   "next to the beach is a large seaside resort",
+   "there are many large outdoor pools in the resort",
+   "there are many large open-air swimming pools in the resort",
+   "next to the beach is a large complex",
+   "next to the beach is a large resort"
+  ],
+  "52": [
+   "on both sides of the road are blue and grey roof of the factory",
+   "many trees are planted around the factory",
+   "many square houses are designed in the industrial area",
+   "many houses with square shape are designed in the industrial area",
+   "on both sides of the road are blue and grey roof of factory"
+  ],
+  "53": [
+   "there are some white storage tanks near two lines of houses with trees",
+   "there are some white storage tanks near two lines of houses with trees",
+   "there are some white storage tanks near two lines of houses with trees",
+   "a dozen of storage tanks are surrounded by paths and two rows of houses",
+   "twelve storage tanks in four lines are near some green trees and buildings"
+  ],
+  "54": [
+   "in front of the beach is a vast ocean",
+   "there's sand on the beach and nothing else",
+   "there's sand on the beach and nothing else",
+   "in front of the beach there is a vast ocean",
+   "in front of the beach is a vast ocean"
+  ],
+  "55": [
+   "there is a road across the bareland with free gullies",
+   "the naked earth with red stripes has a white fog like shadows",
+   "the bareland with red stripes has a white fog like shadows",
+   "many ruttings are on this bareland with its coner white and flat",
+   "it is a piece of gray green bareland"
+  ],
+  "56": [
+   "there's a big building in the middle of the field",
+   "there's a lot of cars on the road",
+   "there are a lot of cars on the road",
+   "there's a big building in the middle of the countryside",
+   "there is a large building in the middle of the field"
+  ],
+  "57": [
+   "there are two car stops at home with a swimming pool",
+   "there are two car stops in the house with a swimming pool",
+   "there are two car stopping at the house with a swimming pool",
+   "this house and its swimming pool are surrounded with several trees next to a dirt road",
+   "a building with a swimming pool is surrounded by many green trees and some meadows"
+  ],
+  "58": [
+   "there are tiny buildings with red roof in the school near the river",
+   "there are small buildings with red roof in the school near the river",
+   "there are tiny buildings with red roof in the school near the river",
+   "it is a beautiful campus with dense teaching buildings stand here",
+   "some red and gray buildings and many green trees are in a school near a river"
+  ],
+  "59": [
+   "next to the playground is a house with a grey roof",
+   "the playground is surrounded by a dense range of residential areas",
+   "the playground is surrounded by a dense array of residential areas",
+   "next to the playground is a house with a grey roof",
+   "next to the playground is a house with a grey roof"
+  ],
+  "60": [
+   "the viaduct with a clover leaf-shaped ramp is at the other end of the road",
+   "over the road there is a cloverleaf shaped viaduct",
+   "the viaduct with a cloverleaf shaped ramp is across the road",
+   "this traffic facility is kind of complicated with viaducts and the side roads spanning the roads below",
+   "many green trees and several buildings are near a viaduct with three circles"
+  ],
+  "61": [
+   "next to the road is a large outdoor parking lot",
+   "there's a lot of cars parked in the parking lot",
+   "there are many cars parked in the parking lot",
+   "next to the road is a large outdoor parking lot",
+   "next to the road is a large open-air parking lot"
+  ],
+  "62": [
+   "the back to back baseball fields are next to a rectangular building",
+   "there are two baseballfields of different size enclosed by a circular road outside which are some buildings and a parking lot with cars",
+   "two baseball field surrounded bysome trees and near a block",
+   "two differently sized baseballfield are surrounded by roads and rows of trees",
+   "some green trees are around two baseball fields near a building"
+  ],
+  "63": [
+   "the turtle river is crossed by greenery",
+   "the twisted river is across the green earth",
+   "the twisty river is across the greenland",
+   "this black river is curving across this green plain with bushes on its bank",
+   "many green plants are in two sides of a curved black river"
+  ],
+  "64": [
+   "advertising is surrounded by several parking lots and divided by an arterial road",
+   "there are four blocks with skyscrapers and parking lots",
+   "the commercial is surrounded by several parking lots and divided by a arterial road",
+   "there are several parking lots full of cars in this commercial area",
+   "some buildings with parking lots are in a commercial area"
+  ],
+  "65": [
+   "some trees and the cottages are in a corner of the residential",
+   "the trees surround the residential that is divided by a road",
+   "the trees surrounds the residential which is divided by a road",
+   "a straight road stretches through this smart residential area where plenty lush trees stand",
+   "several buildings and many green trees are in two sides of a road"
+  ],
+  "66": [
+   "there are four polygonal pond close to each other",
+   "there are four ponds on a bare land near a river",
+   "there are four pond on a bareland near a river",
+   "four ponds sits besides each other next to a bare land",
+   "four ponds in different multilateral are near some green plants"
+  ],
+  "67": [
+   "the suspension bridge is across the broad river",
+   "here is a double tower stayed cable bridge across the river with two ships traveling in",
+   "the cable stayed bridge crosses the dark green river",
+   "the cable stayed bridge straightly spans the river which has roads and rows of trees on its banks",
+   "some green plants are in two sides of a river with a bridge over it"
+  ],
+  "68": [
+   "there is a large area of agricultural land around the river",
+   "many large trees are planted on both sides of the river",
+   "a large number of tall trees are planted on both sides of the river",
+   "there is a large area of agricultural land around the river",
+   "there is a large area of farmland around the river"
+  ],
+  "69": [
+   "the limpid pond surrounded by yellow land with sparse trees is like a glove",
+   "next to the road is a pond of ploygon and four square ponds in a bare land with clusters of trees",
+   "beside the road here is a ploygon pond and four square ponds in a bareland with clusters of trees",
+   "water in this pond is waving while several trees stands sparsely by the bank",
+   "some sparsely distributed green trees are near an irregular green pond"
+  ],
+  "70": [
+   "there is a port with ships moored near some storage tanks and buildings",
+   "there is a port with docked ships near some storage tanks and buildings",
+   "there is a port with moored ships near some storage tanks and buildings",
+   "only several ships are in this port with buildings on its bank",
+   "several boats are in a port near several buildings and storage tanks"
+  ],
+  "71": [
+   "rows of large trees were planted on both sides of the road",
+   "n artificial lake was built in the park",
+   "n artificial lake was built in the park",
+   "rows of tall trees were planted on both sides of the road",
+   "rows of tall trees were planted on both sides of the road"
+  ],
+  "72": [
+   "a highway is built above the river",
+   "the land along the river is full of grass",
+   "a curved bridge is built above the sea and the earth",
+   "a curved bridge is built above the sea and land",
+   "a highway is built over the river"
+  ],
+  "73": [
+   "some white roof buildings and roads are surrounding a church that has a tower and a cross-shaped roof",
+   "some white roof buildings and roads are surrounding a church which has a tower and a cross shaped pitched roof",
+   "a rectangle church with a cross shape roof is caught in two white buildings",
+   "at the coner of the streets sits a cross like church which has a dark grey roof with many white dots on it",
+   "several buildings and green trees are around a church"
+  ],
+  "74": [
+   "there's a factory with cars parked around it",
+   "there is a factory with automobiles parked around",
+   "the grey plants in the industrial are divided by some roads",
+   "here we can see a bustling industrial area where roofs are grey with many cars parking here",
+   "many gray industrial buildings are in a factory"
+  ],
+  "75": [
+   "many major roads have been built on the ground",
+   "many trees were planted near the upper passageway",
+   "a large number of trees were planted near the overpass",
+   "many broad roads have been built on earth",
+   "many broad roads have been built on the land"
+  ],
+  "76": [
+   "diamond advertising is on the side of the road near a naked country",
+   "some skyscrapers are standing near roads and a bareland",
+   "the diamond commercial is by the road side near a bareland",
+   "there are edifices at roadside in this commercial area",
+   "many buildings are in a commercial area"
+  ],
+  "77": [
+   "a white boat in the vast sea",
+   "there's a lot of boats in the harbor",
+   "there are many ships in the harbour",
+   "a white ship in the vast sea",
+   "a white ship in the vast sea"
+  ],
+  "78": [
+   "the main color of this street basketball court is gray",
+   "buildings and a playground with two basketball fields in it are in two sides of a road",
+   "a playground is next to a road",
+   "a playground with two basketball fields in it is next to the intersection of two roads",
+   "a playground is next to a road"
+  ],
+  "79": [
+   "some trees and lawns are distributed in the square with a round ground floor",
+   "some trees and lawns are scattered on the square with a round garden",
+   "some trees and lawns distribute in the square with a round parterre",
+   "several large buildings sitting here surround this square",
+   "a square is surrounded by some buildings and green trees"
+  ],
+  "80": [
+   "there are many white columnar tanks of different sizes near a stretch of saddle shaped road",
+   "surrounded by two roads it builds some storage tanks connected by pipes",
+   "surrounded by two roads there build some storage tanks linked by pipes",
+   "several storage tanks stands here connected with pipes at the coner of the roads",
+   "some storage tanks are near two roads and some green trees"
+  ],
+  "81": [
+   "the narrow port is built between buildings with boats moored in",
+   "the narrow port is built between buildings with ships docked in",
+   "the narrow port is built between buildings with boats docked in",
+   "here lies a narrow port surrounded by roads and houses",
+   "some boats are in a port near many buildings and some green trees"
+  ],
+  "82": [
+   "there's a dry lake in the desert",
+   "there is a dry lake in the desert",
+   "the desert has some rough path and stratified texture",
+   "several sand hills scetch across this desert",
+   "many ripples are in a piece of yellow desert"
+  ],
+  "83": [
+   "there are three baseball fields on the field",
+   "there are purple roof houses around the baseball field",
+   "there are purple roofed houses around the baseball field",
+   "there are three baseball fields on earth",
+   "there are three baseball fields on the land"
+  ],
+  "84": [
+   "here is a road and a railway bridge across the river and two roads on a shoreline",
+   "here is a road and a railway bridge cross the river and two road on one bank",
+   "two bridges set up on the dark green river",
+   "the highway bridge paralleled with the railway bridge spans the river and two roads on its bank",
+   "some green trees and two roads are in two sides of a river with two parallel bridges over it"
+  ],
+  "85": [
+   "an oval square surrounded by cars and apartments contains two long oval paths crossing",
+   "an oval square surrounded by some cars and flats contains two long oval paths crossing",
+   "an oval square which is surrounded by some cars and flats contains two long oval paths crossing",
+   "there is an oval park stands in the middle of this square where cars are parking",
+   "an oval square is surrounded by several buildings and cars"
+  ],
+  "86": [
+   "both bacterial colonies and green dots are dispersed on residual land",
+   "bacterial colony as the green dots are scattered in the desert",
+   "bacteria colony like green points are scattered on the wasteland",
+   "the half of the bareland has many dark green grassland with crossing roads and the smaller half is just dirt",
+   "it is a piece of gray green bareland"
+  ],
+  "87": [
+   "near the station is a densely populated area",
+   "a large number of trees were planted around the residential area",
+   "many railways to a different direction are located in the station",
+   "many railways to different direction are in the railway station",
+   "near the train station is a densely populated area"
+  ],
+  "88": [
+   "white advertising with surrounding trees is next to a main road and some apartments",
+   "between a beach and a road some buildings are standing with swimming pool",
+   "the white commercial with trees surrounding is next to a main road and some flats",
+   "malls in this commercial area have light colored roofs",
+   "many buildings are in a commercial area"
+  ],
+  "89": [
+   "in a block there is a roof church shaped like a cross",
+   "in one block there is a cross shaped roof church",
+   "a black bone shape church with cruciform roof is in a neighborhood",
+   "at the coner of the streets sits a cross like church which has a dark grey roof",
+   "several buildings are around a church"
+  ],
+  "90": [
+   "the agricultural land that is clear green looks like a leaf",
+   "here is a farmland with two residential sites",
+   "the farmland which is light green looks like a sheet",
+   "it is a spectacular farmland neatly devided as squared blocks",
+   "some pieces of green farmlands are together"
+  ],
+  "91": [
+   "some green trees are around an oval stadium with a football pitch in it",
+   "there is a stage whose roof is grey with white stripes near a sports pitch",
+   "there is a stadium whose roof is grey with white stripes near a sports field",
+   "it is an oval soccer stadium with grey roof located at the coner of bustling streets",
+   "some green trees are around an oval stadium with a football field in it"
+  ],
+  "92": [
+   "on the coast of the city there are several ports with boats and boats moored",
+   "on the city coast there are several ports with boats and boats docked",
+   "on the coast of the city there are several ports with docked boats and ships",
+   "dense buildings are situated on the land surrounding this crammed port",
+   "many boats are in a port near urban areas and some green trees"
+  ],
+  "93": [
+   "here is a road and a railway bridge across the river and two roads on a shoreline",
+   "here is a road and a railway bridge cross the river and two road on one bank",
+   "two bridges set up on the dark green river",
+   "the highway bridge paralleled with the railway bridge spans the river and two roads on its bank",
+   "some green trees and two roads are in two sides of a river with two parallel bridges over it"
+  ],
+  "94": [
+   "there are unique buildings with red roofs",
+   "there are unique buildings with red roofs",
+   "there are unique buildings with red roofs",
+   "there are many builidngs densly stand in this campus",
+   "many buildings and many green trees are in a school"
+  ],
+  "95": [
+   "a pond with some trees around it is located at the end of a road",
+   "a pond with some trees around it is at the end of a road",
+   "a pond with some trees around is located at the end of a road",
+   "it is a green pond with bald bank surrounded by sparse rows of trees",
+   "an irregular green pond is surrounded by some green trees and many yellow barelands"
+  ],
+  "96": [
+   "there are eight white columnar tanks occupies a trapezoidal area",
+   "several storage tanks are built on a trapezoid zone between a road and square buildings with some trees",
+   "several storage tanks are built on a trapezoid zone between a road and square buildings with some trees",
+   "five large storage tanks stands in line while three smaller ones stands next with pipes linked together",
+   "eight storage tanks in two lines are near some green trees"
+  ],
+  "97": [
+   "many large buildings were built on both sides of the bridge",
+   "above the river is a magnificent bridge",
+   "a long right bridge extends over the great river",
+   "a long straight bridge stretches over the wide river",
+   "many tall buildings have been built on both sides of the bridge"
+  ],
+  "98": [
+   "a swimming pool is in the corner of the resort is on the beach",
+   "there is a swimming pool lying in the corner of the resort on the beach",
+   "a swimming pool is in the corner of the resort is on the beach",
+   "three large red houses as well as a smart swimming pool sits in this resort located in the bareland",
+   "several red buildings with a swimming pool and some green trees are near a beach"
+  ],
+  "99": [
+   "a square stage with parked car lines are located near a road",
+   "a square stadium with parked car lines are located near a road",
+   "a square stadium with lines of parked cars are located near a road",
+   "this is a rectangular soccer stadium with rows of bleachers next to a parking lot",
+   "many cars are near a white stadium with a football field in it"
+  ],
+  "100": [
+   "near a farmland a house with an orange pited roof and a swimming pool is located on a lawn with coconut planting",
+   "near an agricultural land a house with a chopped orange ceiling and a swimming pool is located on a lawn with coconut planting",
+   "near a farmland a house with a pithed orange roof and a swimming pool is located on a lawn with s coconut grove",
+   "a yellow house with a swimming pool sits in this green farmland",
+   "a red building is surrounded by many different green plants"
+  ],
+  "101": [
+   "there is a large park next to the wide road",
+   "there are many large buildings in the park",
+   "there are many tall buildings in the park",
+   "there is a large park next to the wide road",
+   "there is a big park beside the broad road"
+  ],
+  "102": [
+   "there is a rectangular playground inside the ring of huge white circular ceiling",
+   "on the square there is a square stage rounded on a square",
+   "on the square there is a rounded square stadium on a square",
+   "this is an aesthetic rectangular stadium with white roofs covering its bleachers",
+   "an almost rectangular white stadium is near some trees"
+  ],
+  "103": [
+   "an oval building with glass strips on its roof is located at the turn of several paths decorated by lawns and trees",
+   "an oval building with glass stripes on its roof is lying at the turning of several pathways decorated by lawns and trees",
+   "the circle with some streaks is next to the wandering freeway",
+   "this is a well designed round center which has a grey roof with several blue stripes on it",
+   "an almost circle center building is near several roads and some green plants"
+  ],
+  "104": [
+   "there are many white columnar tanks of different sizes near a stretch of saddle shaped road",
+   "surrounded by two roads it builds some storage tanks connected by pipes",
+   "surrounded by two roads there build some storage tanks linked by pipes",
+   "several storage tanks stands here connected with pipes at the coner of the roads",
+   "some storage tanks are near two roads and some green trees"
+  ],
+  "105": [
+   "there are straight lanes as well as arc lanes along which there are some houses built near each other",
+   "there are straight paths, as well as the arches along which some houses are built near each other",
+   "there is straight pathways as well as arc ones along which are some houses built close to each other",
+   "this residential area is separated by curved roads with lawns and trees",
+   "many buildings and green trees are in a dense residential area"
+  ],
+  "106": [
+   "a small amount of grass on the beach",
+   "there is a large area of seaweed in the ocean",
+   "the beach is surrounded by green water",
+   "the beach is surrounded by the green water",
+   "a small amount of grass on the beach"
+  ],
+  "107": [
+   "the net-shaped oval building next to some square buildings is under construction",
+   "the oval netlike building beside some square buildings is under construction",
+   "the rattan like center is close to some buildings",
+   "this iron structured center looks like an egg",
+   "a center building surrounded by steel mesh is near several buildings"
+  ],
+  "108": [
+   "the trees around the parking lot cast shadows on him",
+   "the trees around the parking lot cast shadows onto it",
+   "three lists of balck and white cars stop in the parking",
+   "trees are casting large shadows on this parking lot",
+   "many cars are parked in a parking lot near several green trees"
+  ],
+  "109": [
+   "a closed swimming pool is among the ring of buildings with red roofs",
+   "a swimming pool is located among buildings with red roofs",
+   "a curly swimming pool is among the ring of buildings with red roofs",
+   "smart buildings with red roofs and rows of palm trees surround this swimming pool in this resort",
+   "some red buildings are around a swimming pool in a resort with some green tropical trees"
+  ],
+  "110": [
+   "the turbid river crosses the prairie with shrubs",
+   "while on one bank of the river is forest there is a savanna on the other",
+   "the turbid river is across the grassland with shrubs",
+   "this brown river goes through this green plain with woods on its one side",
+   "many green trees are in two sides of a brown river"
+  ],
+  "111": [
+   "there is a great stadium in the center of the earth",
+   "many large trees were planted around the stadium",
+   "a large number of tall trees were planted around the stadium",
+   "there's a big stadium in the center of the earth",
+   "there is a large stadium in the center of the land"
+  ],
+  "112": [
+   "the tennis court is near the grassland and is under a huge building",
+   "a tennis court is between a piece of farmland and several buildings",
+   "a tennis court next to an agricultural land is semi-rounded by several buildings",
+   "a tennis court is surrounded by some buildings and a parking lot and a piece of meadow",
+   "a tennis court next to a piece of farmland is semisurrounded by several buildings"
+  ],
+  "113": [
+   "these great trees are planted on earth",
+   "the forest has all kinds of forest resources",
+   "the forest has all kinds of forest resources",
+   "these tall trees are planted on earth",
+   "these tall trees are planted on the land"
+  ],
+  "114": [
+   "some storage tanks have been built on the ground",
+   "some trees and lawns are planted around the factory",
+   "many storage tanks with circle shape are held in this area",
+   "many storage tanks with circle shape stand in this area",
+   "some storage tanks were built on the land"
+  ],
+  "115": [
+   "a closed swimming pool is among the ring of buildings with red roofs",
+   "a swimming pool is located among buildings with red roofs",
+   "a curly swimming pool is among the ring of buildings with red roofs",
+   "smart buildings with red roofs and rows of palm trees surround this swimming pool in this resort",
+   "some red buildings are around a swimming pool in a resort with some green tropical trees"
+  ],
+  "116": [
+   "advertising that has several buildings with light white top is in a fan-shaped neighborhood",
+   "several high rise buildings are located in a fan shaped block",
+   "the commercial which has several buildings with light white top is in a fanshaped district",
+   "this fan shaped block has lots of edifices surrounded by wide roads",
+   "many buildings surrounded by roads are in a commercial area"
+  ],
+  "117": [
+   "the round ground is a baseball field",
+   "many large trees are planted around the baseball field",
+   "many tall trees are planted around the baseball field",
+   "the round terrain is a baseball field",
+   "the round ground is a baseball field"
+  ],
+  "118": [
+   "some trees and lawns are distributed in the square with a round ground floor",
+   "some trees and lawns are scattered on the square with a round garden",
+   "some trees and lawns distribute in the square with a round parterre",
+   "several large buildings sitting here surround this square",
+   "a square is surrounded by some buildings and green trees"
+  ],
+  "119": [
+   "there are some cars stopping under the huge stadium with a ring of red blearchers",
+   "there is a stadium on the square near a lawn with parking cars next to it",
+   "there is a stadium on the square near a lawn with cars parking beside",
+   "the white roof of this stadium is casting huge shadow on its soccer field inside",
+   "some trees and a parking lot are near a stadium with a football field in it"
+  ],
+  "120": [
+   "near a residential area there is a factory with a few small squares on its sandwiched roof between a railway and a road",
+   "near a residential area there is a factory with some small squares on its roof sandwiched between a railway and a road",
+   "the industrial includes red and grrey plants",
+   "a large workshop building with grey roof can by seen next to a residential area",
+   "many industrial buildings are in a factory"
+  ],
+  "121": [
+   "there are six silvery columnar tanks and six white columnar tanks in the grassland near a straight road",
+   "some metal spherical tanks and some white cylinder storage tanks are placed on the lawns with truck parking around",
+   "some metallic spherical tanks and some white cylinder storage tanks are placed on lawns with truck parking lots around",
+   "several tanks are linked together with pipes alongside this straight road",
+   "some storage tanks are near some green trees"
+  ],
+  "122": [
+   "the arc-shaped river drains into the right river",
+   "the river in the form of a drain arch in the straight river",
+   "the arc shaped river drains into the straight river",
+   "two green rivers join together with a bridge spans it",
+   "some green mountains are in two sides of a green river with a branch"
+  ],
+  "123": [
+   "the round white building and some square buildings are surrounded by streets and red roof houses as well as cars parked around",
+   "the round white building and some square buildings are enclosed by streets and red roof houses together with cars parked around",
+   "the white round center is near a row of red buildings and the parking lot",
+   "here lies a well designed round center with white roof besides a row of houses",
+   "a white circle center building is near two red buildings with many cars and several green trees"
+  ],
+  "124": [
+   "a long river flows through the mountain",
+   "there is a large area of bare land in the mountain range",
+   "there is a large area of bare land in the mountain range",
+   "a long river flows through the mountain",
+   "a long river flows through the mountain"
+  ],
+  "125": [
+   "cree viaducts cross the river",
+   "the viaducts crosses over the river vertically",
+   "the viaducts criss cross over the river",
+   "there are several long curved side roads spanning the wide straight flyover in this metropolitan area",
+   "a river and several buildings are near a viaduct with many cars"
+  ],
+  "126": [
+   "on both sides of the road are houses lined with grey roofs",
+   "many trees were planted around the houses",
+   "many trees were planted around the houses",
+   "on both sides of the road are houses lined with grey ceilings",
+   "on both sides of the road are houses lined with grey roofs"
+  ],
+  "127": [
+   "the viaduct with a 8 shaped ramp is across the broad road",
+   "we can see a viaduct with two diagonally arranged loops",
+   "there is a diamand shaped traffic system combined with a viaduct in the shape of figure of eight and a viaduct in the shape of cross",
+   "two viaducts spans over the wide straight road and its side road",
+   "many buildings with parking lots and some green trees are near a viaduct"
+  ],
+  "128": [
+   "two yellow roofs were built next to the road",
+   "rows of large trees were built on both sides of the road",
+   "rows of tall trees were built on both sides of the road",
+   "two yellow roofs were built next to the road",
+   "two yellow roofs were built beside the road"
+  ],
+  "129": [
+   "there is a big trapezoidal pond of green water",
+   "there are two ponds of different colors with trees on the shore",
+   "there are two ponds of different colors with trees on the bank",
+   "this green quadrilateral pond sits beside a deep colored one with many green trees on its bank",
+   "a quadrangular green pond is surrounded by many green trees"
+  ],
+  "130": [
+   "next to the road is a large seaside resort",
+   "an outdoor swimming pool was built in the resort",
+   "the station is surrounded by crowded roads",
+   "the square resort is surrounded by the crowded roads",
+   "next to the road is a large resort"
+  ],
+  "131": [
+   "waves licking the shoreline by stirring a long white spray line",
+   "waves licking the shore stirring a long line of white spray",
+   "white wide wave between beach and jade green sea",
+   "a large scale white spoondrift is patting the yellow beach",
+   "waves are between green ocean and yellow beach"
+  ],
+  "132": [
+   "outside the stadium there are rows of grey roof houses",
+   "the large rectangular building is a gymnasium",
+   "the stadium is surrounded by many seats",
+   "the stadium is surrounded by many seats",
+   "outside the stadium there are rows of grey roof houses"
+  ],
+  "133": [
+   "the ground track playground is next to a piece of bareland",
+   "the football field surrounded by a track is lying on the concrete with some trees nearby where the bare earth is located with trees scattered around",
+   "the football field surrounded by a track is lying on the concrete with some trees nearby around which is bareland with trees scattered around",
+   "running tracks surrounding this green soccer pitch sits alongside several trees",
+   "a playground with a football field in it is near some green trees and a road with several cars"
+  ],
+  "134": [
+   "many white houses were built around the storage tank",
+   "many cars are parked next to the road",
+   "many cars are parked beside the road",
+   "many white houses were built around the storage tank",
+   "many white houses were built around the storage tank"
+  ],
+  "135": [
+   "the bridge over a river and woods along it is divided at each bridge head",
+   "the bridge over a river and woods along it divides at each bridgehead",
+   "the bridge over the river links two freeway with groves on both sides",
+   "the wide bridge traverses the green river witt woods on its banks",
+   "many green trees are in two sides of a river with a bridge over it"
+  ],
+  "136": [
+   "a four-angle striped blue green building is surrounded by rows of lawn trees roads and other buildings",
+   "a quadrangle striped blue green building is surrounded by rows of trees lawns roads and other buildings",
+   "the pen liked center is near lots of trees",
+   "we can see a beautiful quadrilateral center with blue striped roof",
+   "a rectangular center building is near some green trees"
+  ],
+  "137": [
+   "a large area of water lapping at the beach",
+   "in front of the vast ocean is a large area of sand",
+   "in front of the vast ocean is a large area of sand",
+   "a large area of water lapping on the beach",
+   "a large area of water lapping at the beach"
+  ],
+  "138": [
+   "a long river flows through the mountain",
+   "there is a large area of bare land in the mountain range",
+   "there is a large area of bare land in the mountain range",
+   "a long river flows through the mountain",
+   "a long river flows through the mountain"
+  ],
+  "139": [
+   "there's a road on the bare earth",
+   "there is no plant on this vast earth",
+   "there is no plant on this vast land",
+   "there is a way in the naked land",
+   "there is a road on the bare land"
+  ],
+  "140": [
+   "the rectangular pond close to the trapezoidal pond is next to a building with a parking lot surrounded by trees",
+   "we can see several ponds near a building surrounded by trees",
+   "we can see several ponds near a building surrounded by trees",
+   "two quadrilateral ponds sit beside each other next to a house with white roof",
+   "two quadrangular green pond are near many green trees"
+  ],
+  "141": [
+   "there are three buildings and two grandstands with awnings around the football field",
+   "there are three buildings and two stands with awnings around the football field",
+   "there are three buildings and two stands with awnings around the football field",
+   "the soccer field of this stadium is partly bald near its goals",
+   "a football field is in a stadium"
+  ],
+  "142": [
+   "there are hummocks in the desert",
+   "there are some hummocks on the desert",
+   "the complex pattern in the desert is like the roots",
+   "several sand hills stands in this brown desert",
+   "some ripples are in a piece of yellow desert"
+  ],
+  "143": [
+   "on the square is a stadium with bowl shaped bleachers and an white awning",
+   "on the square is a stadium with bowl-shaped stands and a white awning",
+   "on the square is a stadium with bowl shaped stands and an white awning",
+   "it is a spectacular soccer stadium with numerous bleachers spelling un club which can contains tens of thousands of spectators",
+   "several green trees are near a stadium with a football field in it"
+  ],
+  "144": [
+   "the sea is calm and we can see that there is a building offshore",
+   "the sea is calm and we can see there is a building offshore",
+   "the arc coast between the dark blue sea and the white beach",
+   "it is a messy wild beach with curved edge",
+   "a piece of yellow beach is next to a piece of green ocean"
+  ],
+  "145": [
+   "several tennis courts are situated at the street corner, embellished by some coconut trees",
+   "two tennis courts are near a crossroads",
+   "two tennis courts are next to several trees and a crossroads",
+   "three tennis courts are next to a crossroads",
+   "two tennis courts are next to several trees and a crossroads"
+  ],
+  "146": [
+   "the is a white church in the corner of the oval shaped park",
+   "there is a park together with some other buildings",
+   "half of the park is forest and lake and another half is recreation facilities",
+   "it is a round park with some buildings whose roofs are white in it",
+   "some buildings are around a park with many green trees and a pond"
+  ],
+  "147": [
+   "there is a port near residential building lines",
+   "there is a port near residential building lines",
+   "there is a port near lines of residential buildings",
+   "it is a prosperous area full of buildings surrounds this busy port",
+   "some boats are in a port surrounded by urban areas"
+  ],
+  "148": [
+   "the waves break against the wet sands",
+   "the waves are breaking against the wet sands",
+   "the white seashore between the blue sea and the whie beach",
+   "it is a wild beach with rows of plants located at its coner",
+   "a line of white waves is between yellow beach and green ocean"
+  ],
+  "149": [
+   "a half-old is situated near the distictive buildings",
+   "a playground is near three basketball fields and several buildings",
+   "a playground is next to several large buildings",
+   "a playground is next to several buildings",
+   "a playground is next to several large buildings"
+  ],
+  "150": [
+   "there is a compact residential area with trees scattered around",
+   "there is a compact residential area with scattered trees around",
+   "there is a compact residential area with trees scattered around",
+   "we can see a rather dense residential area where roofs are mostly brown while fews are blue",
+   "many red buildings and some green trees are orderly in a dense residential area"
+  ],
+  "151": [
+   "a rectangular station platform on the pin-shaped rails",
+   "it was a rectangular station platform on the lanes in the form of a hub",
+   "thers ia a rectangular station platform over the spindle shaped rails",
+   "this smart railway station with about twenty railway tracks sits between lawns and dense buildings",
+   "some buildings and green meadows are in two sides of a railway station respectively"
+  ],
+  "152": [
+   "many cars are scattered in beige advertising which is separated by some alleys",
+   "near the cross is a commercial area with parking lots and skyscrapers",
+   "many cars scatter in the beige commercial which is separated by some alleys",
+   "edifices are casting huge shadows in this prosperous commercial area",
+   "some buildings with parking lots are in a commercial area"
+  ],
+  "153": [
+   "the waves are crashing on the beach",
+   "the waves crash up on the beach",
+   "the white wave between the reflective sea and the beach",
+   "this surge is patting the flat yellow beach",
+   "white waves are between green ocean and yellow beach"
+  ],
+  "154": [
+   "there are some strong rocks near the beach",
+   "the vast sea is hitting hard rock",
+   "the vast sea is hitting hard rock",
+   "there are some strong rocks near the beach",
+   "there are some strong rocks near the beach"
+  ],
+  "155": [
+   "there are three white huge buildings and they are integrated with exuberant plants, tennis courts and a swimming pool",
+   "four tennis courts are near three parallel white buildings",
+   "four tennis courts are next to several large buildings",
+   "four tennis courts surrounded by some green trees are next to three long buildings",
+   "four tennis courts are next to several large buildings"
+  ],
+  "156": [
+   "on one side of the river is the bare earth",
+   "a very strong bridge was built over the river",
+   "a very strong bridge was built over the river",
+   "one side of the river is bare land",
+   "one side of the river is bare land"
+  ],
+  "157": [
+   "the colour of the sea gradually changes from coast to deep sea",
+   "the color of the sea changing gradually from coastline to deep sea",
+   "the long and narrow coast between the blue sea and the mountains",
+   "we can see an undeveloped beach with rows of trees alongside it and a building at its coner",
+   "a piece of yellow beach is next to a piece of green ocean"
+  ],
+  "158": [
+   "here is a playground next to a lawn with trees growing on",
+   "here is a playground next to a lawn with trees growing in",
+   "here is a playground beside a lawn with trees growing on",
+   "several guys are plaing on this soccer field next to a dozen of cemnet basketball courts",
+   "a playground is near some green trees and several basketball fields"
+  ],
+  "159": [
+   "a large t-shaped pool and a white building are on the beach",
+   "a large t shaped swimming pool together with a white roof building are on the beach",
+   "a large t shaped swimming pool and a white building are on the beach",
+   "a cute swimming pool can be seen in this resort surrounded by sand",
+   "a large building with several cars and green trees is near a beach"
+  ],
+  "160": [
+   "there are many white storage tanks on both sides of the road",
+   "there is a large green lawn around the storage tank",
+   "there is a large green lawn around the storage tank",
+   "there are many white storage tanks on both sides of the road",
+   "there are many white storage tanks on both sides of the road"
+  ],
+  "161": [
+   "there's a factory next to the river",
+   "there are a lot of storage tanks in the plant",
+   "there are many storage tanks in the factory",
+   "there's a factory by the river",
+   "there is a factory beside the river"
+  ],
+  "162": [
+   "next to the road is a large outdoor parking lot",
+   "there's a lot of cars parked in the parking lot",
+   "there are many cars parked in the parking lot",
+   "next to the road is a large outdoor parking lot",
+   "next to the road is a large open-air parking lot"
+  ],
+  "163": [
+   "the parking lot is close to the pool next to a building in the shape of l woth a red roof on the beach",
+   "the parking lot is close to the swimming pool next to a red roof l shaped building on the beach",
+   "the parking lot is close to the swimming pool next to a l shaped building woth a red roof on the beach",
+   "several red houses next to a swimming pool as well as rows of palm trees can be found in this resort",
+   "some red buildings and green trees are in a resort near a beach"
+  ],
+  "164": [
+   "many large trees are planted on both sides of the road",
+   "there's a big baseball field next to the road",
+   "there's a big baseball field next to the road",
+   "a large number of tall trees are planted on both sides of the road",
+   "a large number of tall trees are planted on both sides of the road"
+  ],
+  "165": [
+   "the exercise yard made up of a football field and several courts are surrounded by rows of residential buildings with red roofs",
+   "many buildings are around a playground and six basketball fields",
+   "a playground with six basketball courts next door is surrounded by many buildings",
+   "a playground with several basketball fields next to it is surrounded by many buildings and some green trees",
+   "a playground with six basketball fields next to it is surrounded by many buildings"
+  ],
+  "166": [
+   "above the river is a beautiful bridge",
+   "there are many houses on both sides of the river",
+   "there are many houses on both sides of the river",
+   "above the river is a magnificent bridge",
+   "above the river is a magnificent bridge"
+  ],
+  "167": [
+   "some red flats encircle the square which includes a circular lawn and some grotesque sod",
+   "some red flats encircle the square with circle and irregular shaped lawns",
+   "some red flats encircle the square which includes a circle lawn and some grotesque sod",
+   "this square is surrounded by rows of smart houses with red roofs",
+   "some red buildings are around a square square with several green trees"
+  ],
+  "168": [
+   "the green mountain has a khaki texture of tree roots",
+   "the green mountain has a khaki texture of tree roots",
+   "the green mountain has a khaki texture of tree roots",
+   "two footpaths traverses on this deep green mountain slope",
+   "it is a piece of irregular green mountains"
+  ],
+  "169": [
+   "a lot of people play on the beach",
+   "a row of trees were planted next to the beach",
+   "a row of trees were planted beside the beach",
+   "a lot of people are playing on the beach",
+   "many people are playing on the beach"
+  ],
+  "170": [
+   "there are many storage tanks in front of the orange fact",
+   "many trees were planted near the plant",
+   "a large number of trees were planted near the factory",
+   "there are many storage tanks in front of the orange fact",
+   "there are many storage tanks in front of the orange fact"
+  ],
+  "171": [
+   "on both sides of the road were rows of grey roofs",
+   "these houses are surrounded by rows of large trees",
+   "these houses are surrounded by rows of tall trees",
+   "on both sides of the road were rows of grey roofs",
+   "on both sides of the road were rows of gray roofs"
+  ],
+  "172": [
+   "the saddle-shaped river is across the earth with cities and agricultural lands",
+   "the chair-shaped river is across the land with cities and agricultural lands",
+   "the saddle shaped river is across the land with towns and farmlands",
+   "it is a curved green river stretching across this green plain",
+   "several urban areas and many pieces of farmlands are in two sides of a curved green river"
+  ],
+  "173": [
+   "on the hard yellow soil there are bare rock hills",
+   "some brown and irregular orange shadows scattered in the naked country",
+   "some irregular shaped brown green and orange shadows scattered in the bareland",
+   "it is a light yellow bareland with several ruttings and brown area at its coner",
+   "it is a piece of gray green bareland"
+  ],
+  "174": [
+   "agricultural land with various shades of green surrounds the road and a white house",
+   "the farmland is divided into several square grounds of different shades where some buildings are scattered along two roads",
+   "the farmland with various shades of green encircles the road and some white house",
+   "a green farmland is separated by those straight roads",
+   "some pieces of green farmlands are together"
+  ],
+  "175": [
+   "many trees have been planted on this vast earth",
+   "the forest has a high rate of plants",
+   "the forest has a high rate of plants",
+   "many trees were planted in this vast land",
+   "many trees were planted on this vast land"
+  ],
+  "176": [
+   "many large buildings have been built here",
+   "there are many large trees on both sides of the road",
+   "there are many tall trees on both sides of the road",
+   "a lot of tall buildings were built here",
+   "a lot of tall buildings were built here"
+  ],
+  "177": [
+   "many lawns are planted on both sides of the river",
+   "the wide river has many small tributaries",
+   "the wide river has many small tributaries",
+   "a large number of grasses are planted on both sides of the river",
+   "a large number of lawns are planted on both sides of the river"
+  ],
+  "178": [
+   "the ground track playground is next to parking lot",
+   "there is a parking lot near some sports grounds",
+   "there is a parking lot near some sports fields",
+   "it is a large green playground surrounded by running tracks next to a parking lot full of cars",
+   "a playground is surrounded by several buildings, four tennis courts, a parking lot and two basketball fields"
+  ],
+  "179": [
+   "there's a cement trail through the denes forest",
+   "there is a road through the forest with a piece of bare land",
+   "there is a cement trail across the denes forest",
+   "a curved road stretches through this forest next to small pitches of bareland and lawns",
+   "a river is in a piece of green forest"
+  ],
+  "180": [
+   "the huge silver rectangular station is above the pin-shaped rails",
+   "the huge silver rectangular train station is on the lanes in the shape of a spindle",
+   "the huge silvery rectangular railway station is over the spindle shaped rails",
+   "the railway station with white roof is situated alongside these highway roads",
+   "a railway station with barelands and meadows in two sides is near a river"
+  ],
+  "181": [
+   "you can see seawater ripples on the sand",
+   "we can see sea water ripples over sand",
+   "the white beach near the spumy waves",
+   "messy surf is patting the light yellow beach",
+   "waves are between green ocean and yellow beach"
+  ],
+  "182": [
+   "at the corner of two roads there is a residential area with two parking lots and trees around the apartments",
+   "on the corner of two roads there is a residential area with two parking lots and trees around the apartments",
+   "at the corner of two roads there is a residential area with two parking lots and trees around the apartments",
+   "this residential area has rows of trees planted on the roadside and two parking lots full of cars",
+   "many gray buildings and some green trees are orderly in a dense residential area"
+  ],
+  "183": [
+   "high-speed public next to a large airport",
+   "many houses were built near the airport",
+   "many houses were built near the airport",
+   "high-speed public next to a large airport",
+   "high speed public next to a large airport"
+  ],
+  "184": [
+   "there are six silvery columnar tanks and six white columnar tanks in the grassland near a straight road",
+   "some metal spherical tanks and some white cylinder storage tanks are placed on the lawns with truck parking around",
+   "some metallic spherical tanks and some white cylinder storage tanks are placed on lawns with truck parking lots around",
+   "several tanks are linked together with pipes alongside this straight road",
+   "some storage tanks are near some green trees"
+  ],
+  "185": [
+   "the sandwiched terminal buildings between a circular road and a parking apron consists of a curved building and two rectangular buildings",
+   "the terminal buildings sandwiched between a circular road and a parking apron is composed of a curved building and two rectangle buildings",
+   "an arc boarding gate with two rectangles at both ends",
+   "the curved termial building separates the landside and airside",
+   "several planes are near a large building in an airport with one runway"
+  ],
+  "186": [
+   "this irregular area embraced by a footpath includes two exactly same tennis courts",
+   "two tennis courts are surrounded by green plants",
+   "two tennis courts are semi-rounded by green plants",
+   "two tennis courts are semi-surrounded by a curved road",
+   "two tennis courts are semisurrounded by green plants"
+  ],
+  "187": [
+   "a row of trees is between two lines of chalets",
+   "a row of trees is between two lines of cottages",
+   "a row of trees is betweeen two lines of cottages",
+   "several houses sits on the roadside in this green quiet community",
+   "several buildings and many green trees are in a medium residential area"
+  ],
+  "188": [
+   "parking is symmetrical with some parked cars",
+   "the parking lot is symmetrical with some parked cars",
+   "the parking include some white and red cars",
+   "dozens of cars are parking in this parking lot while plenty of spaces are vacant",
+   "many cars are parked in a parking lot"
+  ],
+  "189": [
+   "waves crash up on the beach where some plants exist",
+   "waves crash up on the beach where some plants exist",
+   "white beach next to the white sea",
+   "it's a light yellow wild beach with several trees inside it",
+   "a line of white waves is between yellow beach and green ocean"
+  ],
+  "190": [
+   "a trust bridge is built to connect between the two sides of the river",
+   "a truss bridge is built to connect between the both sides of the river",
+   "a green bridge connects a factory and a highway",
+   "a cable stayed bridge sits over the bridge with two quays on its banks and a boats crusing on it",
+   "several buildings and some green trees are in two sides of a river with a bridge over it"
+  ],
+  "191": [
+   "on either side of the river is a large area of green grass",
+   "a red roof houses a large number of trees around it",
+   "a red roof houses a large number of trees around it",
+   "on both sides of the river is a large area of green grass",
+   "on either side of the river is a large area of green grass"
+  ],
+  "192": [
+   "many trees and lawns are planted on both sides of the road",
+   "many large buildings were built on the ground",
+   "many tall buildings have been built on the land",
+   "many trees and lawns are planted on both sides of the road",
+   "many trees and lawns are planted on both sides of the road"
+  ],
+  "193": [
+   "there are two fields back to back surrounded by trees",
+   "two baseballfields are arranged in one big fan shaped court with winding pathways and trees all around",
+   "two baseball field opposite to each other with many trees",
+   "this sports park used as two baseballfield is surrounded by trees",
+   "two baseball fields are surrounded by some green trees"
+  ],
+  "194": [
+   "there are two baseball fields an athletic track four tennis courts and a swimming pool",
+   "on the lawn with trees around there are two baseballfields a swimming pool a ground track field four tennis court and other sports grounds",
+   "two baseball field in a square field with a blue bleachers",
+   "two baseballfields and several tennis courts and a track and field are in this sport park",
+   "two lines of green trees are near a playground next to two baseball fields and three tennis courts"
+  ],
+  "195": [
+   "there are a few clusters of trees that grow on the meadows of brown and green",
+   "there are some clusters of trees growing on the meadow of brown and green",
+   "the meadow with some bushes is near a forest",
+   "it is a rather bald meadow with several trees decorating here",
+   "several green trees are near a piece of green meadow"
+  ],
+  "196": [
+   "the waves break against the wet sands",
+   "the waves are breaking against the wet sands",
+   "the white seashore between the blue sea and the whie beach",
+   "it is a wild beach with rows of plants located at its coner",
+   "a line of white waves is between yellow beach and green ocean"
+  ],
+  "197": [
+   "many trees have been planted on this vast earth",
+   "the forest has a high rate of plants",
+   "the forest has a high rate of plants",
+   "many trees were planted in this vast land",
+   "many trees were planted on this vast land"
+  ],
+  "198": [
+   "the imminent river is located through the hermetic forest",
+   "in the forest there is a narrow long area with little trees",
+   "the looming river is across the airtight forest",
+   "several foot path stretches through this dark green lush forest",
+   "many green trees are in a piece of forest"
+  ],
+  "199": [
+   "there is a grey site located in the khaki desert",
+   "there is a grey site located in the khaki desert",
+   "the off white desert has some relic",
+   "we can see a construction site in this bleak desert",
+   "it is a piece of yellow desert"
+  ]
+ },
+ "metrics": {
+  "bleu": {
+   "Bleu_1": 60.02,
+   "Bleu_2": 39.25,
+   "Bleu_3": 27.25,
+   "Bleu_4": 19.56
+  },
+  "rouge_l": 42.05,
+  "meteor": 41.24,
+  "cider": 0.62
+ }
+}

@@ -1,0 +1,5 @@
+[12:25:27] split rows=109161 train=43664 test=65497
+[12:25:29] read train-00000-of-00003-3e09d55e5ab3594b.parquet: 36387 rows
+[12:25:31] read train-00001-of-00003-62a64e1c22f11cc7.parquet: 36387 rows
+[12:25:32] read train-00002-of-00003-210f510f7a0418bf.parquet: 36387 rows
+[12:25:32] merged: train=43664 test=65497

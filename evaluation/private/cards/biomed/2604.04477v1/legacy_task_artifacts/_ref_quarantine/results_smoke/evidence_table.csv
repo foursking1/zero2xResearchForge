@@ -1,0 +1,26 @@
+claim_id,metric,value,definition
+C01,MVis-Fold_dice_mean,0.8313225269317627,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_dice_std,0.07741349882106192,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_sens_mean,0.9450762510299683,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_sens_std,0.015386031083604408,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_spec_mean,0.9894596815109253,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_spec_std,0.003498354113096204,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_acc_mean,0.98797607421875,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_acc_std,0.0033173042582278303,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_hd95_mean,1.0,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_time_mean,0.01152348518371582,"Table 1 segmentation metric (mean), frozen synthetic test set"
+C01,MVis-Fold_dice_ci95,"[0.764365267753601, 0.8949512124061585]",bootstrap 95% CI on Dice (2000 resamples)
+C01,TripoSR proxy (Tier 2 heuristic)_dice_mean,0.9108976721763611,baseline Dice on the same frozen test set
+C01,OpenLRM proxy (Tier 2 heuristic)_dice_mean,0.8126145601272583,baseline Dice on the same frozen test set
+C02,vd_error_mvis_mean,10.781701156964976,Table 2 parameter accuracy / correlation
+C02,vd_error_srus_mean,90.46066773075577,Table 2 parameter accuracy / correlation
+C02,md_error_mvis_mean,3.419999261088717,Table 2 parameter accuracy / correlation
+C02,md_error_srus_mean,1.9304275294412079,Table 2 parameter accuracy / correlation
+C02,vd_improvement_ratio,8.390203587892826,Table 2 parameter accuracy / correlation
+C02,md_improvement_ratio,0.5644526159419926,Table 2 parameter accuracy / correlation
+C03,pearson_vd_r,0.353524418197534,Table 2 parameter accuracy / correlation
+C03,pearson_vd_p,0.5594388506781743,Table 2 parameter accuracy / correlation
+C03,pearson_md_r,0.8591346421921418,Table 2 parameter accuracy / correlation
+C03,pearson_md_p,0.06210749199363197,Table 2 parameter accuracy / correlation
+C04,internal_val_dice_mean,0.8262117654085159,Dice on internal validation set (training protocol)
+C04,internal_val_dice_std,0.0949482369148898,std over internal validation samples

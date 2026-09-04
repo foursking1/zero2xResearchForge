@@ -1,0 +1,17 @@
+[ft] liver_l16_s1: initialised from liver-pretrained weights
+[ft] liver_l16_s1: n_train_slices=192 train_cases=['10', '12', '14', '17', '19', '21'] target=spleen source=liver
+    ep1/20 loss=1.3640 dice=0.1895
+    ep6/20 loss=1.0945 dice=0.2379
+    ep11/20 loss=0.9733 dice=0.2804
+    ep16/20 loss=0.8834 dice=0.3157
+    ep20/20 loss=0.8110 dice=0.3521
+Traceback (most recent call last):
+  File "/mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/code/03_finetune.py", line 121, in <module>
+    main()
+  File "/mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/code/03_finetune.py", line 103, in main
+    full, per_case = full_eval_slices(a.target, test_cases)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/code/03_finetune.py", line 56, in full_eval_slices
+    model.eval()
+    ^^^^^
+NameError: name 'model' is not defined

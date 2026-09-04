@@ -1,0 +1,11 @@
+{
+  "mAP": 0.6103277847805555,
+  "p_at_5": 0.9476907894736843,
+  "p_at_10": 0.9356776315789475,
+  "num_queries": 30400,
+  "gallery_size": 30400,
+  "exclude_self": true,
+  "feature": "features_vit_b_16",
+  "seed": 0,
+  "sample_per_class": 0
+}

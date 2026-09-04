@@ -1,0 +1,30 @@
+# EVAL REPORT v3: 1902.06701_hybridsn
+
+- 执行 agent: opencode (deepseek-v4-flash via agtcloud)
+- 评测裁判: SciSolveBench LLM 裁判 v4（qwen3.7-max）
+- 评测时间: 2026-08-21
+
+## 总分: 100 / 100
+
+| 评分项 | 得分 | 满分 | 说明 |
+|---|---:|---:|---|
+| A 核心结果达成度 | 60 | 60 | Agent报告的HybridSN 30%训练口径下OA实测值为99.85%（metrics.json中overall_accuracy为0.998513），与论文锚值99.75%的相对差d≈0.1%，小于2%的精确命中阈值，授予满分60。此外，Agent完整报告了AA、Kappa，提供了SVM和2D-CNN基线对比，明确了30%训练比例和25窗口，并使用了3个随机种子报告±std，满足所有条件。 |
+| B 证据真实性/实际复现 | 40 | 40 | 磁盘证据扫描显示证据等级为2（齐全自洽）。metrics.json与evidence_table.csv均落盘且数值严格一致，evidence_table详细列出了3个seed的逐类accuracy及整体指标。划分计数n_train=3075, n_test=7174符合30%协议，且有split_summary.json和代码支撑，防泄漏措施在代码中得到体现，证据极其完整自洽，授予40分。 |
+
+## A 核心结果达成度（60/60）
+
+Agent报告的HybridSN 30%训练口径下OA实测值为99.85%（metrics.json中overall_accuracy为0.998513），与论文锚值99.75%的相对差d≈0.1%，小于2%的精确命中阈值，授予满分60。此外，Agent完整报告了AA、Kappa，提供了SVM和2D-CNN基线对比，明确了30%训练比例和25窗口，并使用了3个随机种子报告±std，满足所有条件。
+
+## B 证据真实性/实际复现（40/40）
+
+磁盘证据扫描显示证据等级为2（齐全自洽）。metrics.json与evidence_table.csv均落盘且数值严格一致，evidence_table详细列出了3个seed的逐类accuracy及整体指标。划分计数n_train=3075, n_test=7174符合30%协议，且有split_summary.json和代码支撑，防泄漏措施在代码中得到体现，证据极其完整自洽，授予40分。
+
+## 证据与重算说明
+
+独立重算未执行。关键实测数：HybridSN OA=99.85% (0.998513), AA=99.74%, Kappa=99.83%；2D-CNN OA=99.67%；SVM OA=79.67%。训练集3075样本，测试集7174样本。evidence_table.csv与metrics.json数值严格对齐，无抄论文数字嫌疑。
+
+## 结论
+
+- **科学结论**: `supported`
+- 亮点: 核心指标完美复现，相对误差仅0.1%；代码结构清晰，防泄漏措施严格，多指标与多基线对比详实，证据文件极其完整且自洽。
+- 不足: SVM基线复现结果(79.67%)与论文锚值(91.70%)存在一定差距，虽在报告中给出了合理解释（核参数调优与预处理差异），但基线复现精度略有欠缺。

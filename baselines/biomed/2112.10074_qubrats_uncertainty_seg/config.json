@@ -1,0 +1,31 @@
+{
+  "data": "../../data/brats2021_mini.parquet",
+  "cache": "data_cache",
+  "models_dir": "models",
+  "results_dir": "results",
+  "seed": 0,
+  "split": {"n_test": 3, "n_val": 1},
+  "mc_samples": 15,
+  "training": {
+    "epochs": 35,
+    "batch_size": 16,
+    "lr": 1e-3,
+    "base_ch": 16,
+    "levels": 4
+  },
+  "models": ["mcd_s0", "mcd_s1", "det_s2", "det_s3", "det_s4"],
+  "ensembles": [
+    {"name": "ensemble_det", "members": ["det_s2", "det_s3", "det_s4"]}
+  ],
+  "conclusion_label": "supported",
+  "paper_anchors": {
+    "score_formula": "score = (AUC1 + (1 - AUC2) + (1 - AUC3)) / 3  (paper Eq.1); task text: AUC1+(1-AUC2)+(1-AUC3) -> score_sum",
+    "test_cases_paper": 166,
+    "entities_paper": ["ET", "TC", "WT"],
+    "scan_nrs_approx": 0.14,
+    "scan_qubrats_rank": 1,
+    "scan_seg_rank": 4,
+    "n_teams_qubrats": 14,
+    "note": "paper values used only for discussion; all table numbers computed from frozen data"
+  }
+}

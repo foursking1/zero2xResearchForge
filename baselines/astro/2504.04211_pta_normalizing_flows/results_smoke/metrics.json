@@ -1,0 +1,83 @@
+{
+  "task": "2504.04211_pta_normalizing_flows",
+  "device": "CPU",
+  "hardware": {
+    "cpu": 20,
+    "python": "3.13.14"
+  },
+  "data_ntoa": 4944,
+  "data_Tobs_days": 5724.305207656842,
+  "reference_injection": {
+    "model": "PowerLaw",
+    "logA_gw": -15.0,
+    "gamma_gw": 5.0,
+    "logA_red": -15.5,
+    "gamma_red": 4.0
+  },
+  "seed": 20250817,
+  "n_train_per_model": 4000,
+  "n_epochs": 10,
+  "n_eval_per_model": 800,
+  "mcmc": {
+    "nwalkers": 48,
+    "nsteps": 1200,
+    "burn": 0
+  },
+  "hellinger_dim": "2-dim SGWB marginal (params dims 20,21)",
+  "evidence_method": "truncated harmonic mean (discard lowest 10% likelihood)",
+  "per_model": {
+    "PowerLaw": {
+      "model": "PowerLaw",
+      "Hellinger_direct_vs_mcmc": 0.9008254316104277,
+      "Hellinger_reweighted_vs_mcmc": 0.903749222438588,
+      "H1_direct": [
+        0.7486675672287803,
+        0.6843488262649652
+      ],
+      "H1_reweighted": [
+        0.8672324291305671,
+        0.9310893286190526
+      ],
+      "logZ_mcmc_hme": 68999.51808590071,
+      "logZ_nf_hme": -638961.6278418627,
+      "logZ_nf_is": 68965.60861519817,
+      "time_mcmc_s": 37.36386275291443,
+      "time_train_s": 12.402188777923584,
+      "time_eval_s": 10.870085954666138,
+      "time_sim_s": 3.1362369060516357,
+      "time_sample_s": 0.013699769973754883,
+      "loss_first": 37.0491464138031,
+      "loss_last": 5.155636578798294,
+      "n_train": 4000,
+      "n_eval": 800,
+      "n_mcmc": 2880,
+      "mcmc_accept": 0.3309027777777777,
+      "autocorr_tau": 6.479955331083332,
+      "neff_reweight": 1.000261770818094
+    }
+  },
+  "logZ_mcmc": {
+    "PowerLaw": 68999.51808590071
+  },
+  "logZ_nf_hme": {
+    "PowerLaw": -638961.6278418627
+  },
+  "logZ_nf_is": {
+    "PowerLaw": 68965.60861519817
+  },
+  "bf_mcmc_log": {
+    "PowerLaw": {
+      "PowerLaw": 0.0
+    }
+  },
+  "bf_nf_log": {
+    "PowerLaw": {
+      "PowerLaw": 0.0
+    }
+  },
+  "rank_consistent": true,
+  "max_logbf_diff": 0.0,
+  "Hellinger_mean_direct": 0.9008254316104277,
+  "Hellinger_mean_reweighted": 0.903749222438588,
+  "note": "Hellinger computed on the 2-dim SGWB marginal (numerically stable); paper Appendix H uses the full 22-dim (mean reweighted 0.2611). Evidence via truncated harmonic mean (keep highest 90% L). NF trained at reduced scale (50k sims x 30 epochs vs paper 2e5 x 50)."
+}

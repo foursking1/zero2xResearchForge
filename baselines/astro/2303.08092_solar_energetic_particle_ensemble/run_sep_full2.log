@@ -1,0 +1,89 @@
+[data] clean rows 24570, SEP 74
+[split 0] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8568 HSS=0.0497 AUC=0.9414 tp=21 fn=1 fp=718 tn=6631 thr=0.279 [7.8s]
+    Committee TSS=0.8804 HSS=0.0661 AUC=0.9744 tp=21 fn=1 fp=545 tn=6804 thr=0.502 [34.5s]
+    RH_v1     TSS=0.8670 HSS=0.1090 AUC=0.9848 tp=20 fn=2 fp=309 tn=7040 thr=0.520 [69.3s]
+    RH_v2     TSS=0.8676 HSS=0.1103 AUC=0.9787 tp=20 fn=2 fp=305 tn=7044 thr=0.451 [42.2s]
+[split 1] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8578 HSS=0.0903 AUC=0.9370 tp=20 fn=2 fp=377 tn=6972 thr=0.452 [3.1s]
+    Committee TSS=0.8045 HSS=0.0438 AUC=0.9504 tp=20 fn=2 fp=769 tn=6580 thr=0.493 [28.9s]
+    RH_v1     TSS=0.8567 HSS=0.0885 AUC=0.9873 tp=20 fn=2 fp=385 tn=6964 thr=0.553 [68.4s]
+    RH_v2     TSS=0.8666 HSS=0.1080 AUC=0.9849 tp=20 fn=2 fp=312 tn=7037 thr=0.503 [38.0s]
+[split 2] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8696 HSS=0.0575 AUC=0.9347 tp=21 fn=1 fp=624 tn=6725 thr=1.000 [1.7s]
+    Committee TSS=0.8909 HSS=0.0769 AUC=0.9827 tp=21 fn=1 fp=468 tn=6881 thr=0.659 [16.9s]
+    RH_v1     TSS=0.9057 HSS=0.0994 AUC=0.9905 tp=21 fn=1 fp=359 tn=6990 thr=0.532 [48.4s]
+    RH_v2     TSS=0.8759 HSS=0.1351 AUC=0.9918 tp=20 fn=2 fp=244 tn=7105 thr=0.592 [43.1s]
+[split 3] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.7795 HSS=0.0522 AUC=0.9382 tp=19 fn=3 fp=618 tn=6731 thr=0.381 [2.3s]
+    Committee TSS=0.7451 HSS=0.0361 AUC=0.9523 tp=19 fn=3 fp=871 tn=6478 thr=0.353 [23.0s]
+    RH_v1     TSS=0.8442 HSS=0.0718 AUC=0.9825 tp=20 fn=2 fp=477 tn=6872 thr=0.432 [59.4s]
+    RH_v2     TSS=0.8332 HSS=0.0613 AUC=0.9798 tp=20 fn=2 fp=558 tn=6791 thr=0.393 [41.9s]
+[split 4] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.7485 HSS=0.0598 AUC=0.9252 tp=18 fn=4 fp=512 tn=6837 thr=1.000 [3.2s]
+    Committee TSS=0.9049 HSS=0.0537 AUC=0.9855 tp=22 fn=0 fp=699 tn=6650 thr=0.442 [25.6s]
+    RH_v1     TSS=0.9090 HSS=0.1061 AUC=0.9871 tp=21 fn=1 fp=335 tn=7014 thr=0.488 [55.4s]
+    RH_v2     TSS=0.9124 HSS=0.1140 AUC=0.9884 tp=21 fn=1 fp=310 tn=7039 thr=0.509 [41.8s]
+[split 5] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8080 HSS=0.0318 AUC=0.9345 tp=21 fn=1 fp=1077 tn=6272 thr=0.521 [2.0s]
+    Committee TSS=0.8607 HSS=0.0518 AUC=0.9829 tp=21 fn=1 fp=690 tn=6659 thr=0.532 [25.9s]
+    RH_v1     TSS=0.9507 HSS=0.1033 AUC=0.9935 tp=22 fn=0 fp=362 tn=6987 thr=0.506 [59.5s]
+    RH_v2     TSS=0.9088 HSS=0.0562 AUC=0.9926 tp=22 fn=0 fp=670 tn=6679 thr=0.375 [38.4s]
+[split 6] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8879 HSS=0.0451 AUC=0.9749 tp=22 fn=0 fp=824 tn=6525 thr=0.435 [1.9s]
+    Committee TSS=0.8958 HSS=0.0832 AUC=0.9864 tp=21 fn=1 fp=432 tn=6917 thr=0.616 [25.5s]
+    RH_v1     TSS=0.9574 HSS=0.1183 AUC=0.9934 tp=22 fn=0 fp=313 tn=7036 thr=0.572 [60.6s]
+    RH_v2     TSS=0.9517 HSS=0.1052 AUC=0.9923 tp=22 fn=0 fp=355 tn=6994 thr=0.442 [38.0s]
+[split 7] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8065 HSS=0.0772 AUC=0.9242 tp=19 fn=3 fp=420 tn=6929 thr=0.473 [3.1s]
+    Committee TSS=0.7084 HSS=0.0610 AUC=0.9168 tp=17 fn=5 fp=473 tn=6876 thr=0.695 [23.1s]
+    RH_v1     TSS=0.8979 HSS=0.0863 AUC=0.9840 tp=21 fn=1 fp=416 tn=6933 thr=0.466 [55.3s]
+    RH_v2     TSS=0.8386 HSS=0.0661 AUC=0.9738 tp=20 fn=2 fp=518 tn=6831 thr=0.337 [28.2s]
+[split 8] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.7187 HSS=0.0411 AUC=0.8906 tp=18 fn=4 fp=731 tn=6618 thr=0.706 [1.5s]
+    Committee TSS=0.7199 HSS=0.0744 AUC=0.9031 tp=17 fn=5 fp=388 tn=6961 thr=0.776 [14.2s]
+    RH_v1     TSS=0.7501 HSS=0.1614 AUC=0.9771 tp=17 fn=5 fp=166 tn=7183 thr=0.689 [41.1s]
+    RH_v2     TSS=0.8683 HSS=0.1120 AUC=0.9817 tp=20 fn=2 fp=300 tn=7049 thr=0.486 [42.1s]
+[split 9] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.7335 HSS=0.0489 AUC=0.8955 tp=18 fn=4 fp=622 tn=6727 thr=0.632 [2.4s]
+    Committee TSS=0.7621 HSS=0.0744 AUC=0.8804 tp=18 fn=4 fp=412 tn=6937 thr=0.813 [20.5s]
+    RH_v1     TSS=0.8666 HSS=0.1080 AUC=0.9856 tp=20 fn=2 fp=312 tn=7037 thr=0.519 [58.9s]
+    RH_v2     TSS=0.7895 HSS=0.1387 AUC=0.9713 tp=18 fn=4 fp=211 tn=7138 thr=0.569 [40.7s]
+
+=== CoNN ===
+  TSS        mean±std 0.8067±0.0574  med±MAD 0.8072±0.0546
+  HSS        mean±std 0.0554±0.0163  med±MAD 0.0509±0.0077
+  precision  mean±std 0.0316±0.0087  med±MAD 0.0291±0.0041
+  recall     mean±std 0.8955±0.0644  med±MAD 0.8864±0.0682
+  accuracy   mean±std 0.9112±0.0261  med±MAD 0.9151±0.0149
+  AUC        mean±std 0.9296±0.0226  med±MAD 0.9346±0.0081
+  confusion med±MAD: TP 19.5±1.5 FN 2.5±1.5 FP 623.0±109.5 TN 6726.0±109.5
+
+=== Committee ===
+  TSS        mean±std 0.8173±0.0741  med±MAD 0.8326±0.0668
+  HSS        mean±std 0.0621±0.0147  med±MAD 0.0636±0.0113
+  precision  mean±std 0.0352±0.0079  med±MAD 0.0359±0.0062
+  recall     mean±std 0.8955±0.0789  med±MAD 0.9318±0.0455
+  accuracy   mean±std 0.9217±0.0217  med±MAD 0.9305±0.0146
+  AUC        mean±std 0.9515±0.0367  med±MAD 0.9634±0.0208
+  confusion med±MAD: TP 20.5±1.0 FN 1.5±1.0 FP 509.0±109.0 TN 6840.0±109.0
+
+=== RH_v1 ===
+  TSS        mean±std 0.8805±0.0564  med±MAD 0.8825±0.0261
+  HSS        mean±std 0.1052±0.0227  med±MAD 0.1047±0.0095
+  precision  mean±std 0.0589±0.0133  med±MAD 0.0581±0.0052
+  recall     mean±std 0.9273±0.0617  med±MAD 0.9318±0.0227
+  accuracy   mean±std 0.9532±0.0104  med±MAD 0.9528±0.0049
+  AUC        mean±std 0.9866±0.0048  med±MAD 0.9864±0.0031
+  confusion med±MAD: TP 20.5±0.5 FN 1.5±0.5 FP 347.0±36.5 TN 7002.0±36.5
+
+=== RH_v2 ===
+  TSS        mean±std 0.8713±0.0434  med±MAD 0.8679±0.0320
+  HSS        mean±std 0.1007±0.0280  med±MAD 0.1092±0.0154
+  precision  mean±std 0.0564±0.0157  med±MAD 0.0609±0.0087
+  recall     mean±std 0.9227±0.0500  med±MAD 0.9091±0.0000
+  accuracy   mean±std 0.9484±0.0193  med±MAD 0.9576±0.0074
+  AUC        mean±std 0.9835±0.0073  med±MAD 0.9833±0.0068
+  confusion med±MAD: TP 20.0±0.0 FN 2.0±0.0 FP 311.0±55.5 TN 7038.0±55.5
+
+DONE. results in D:\project\paper-bench\tasks\astro\2303.08092_solar_energetic_particle_ensemble\agent_solution\results

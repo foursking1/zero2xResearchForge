@@ -1,0 +1,18 @@
+/home/dministrator/.local/lib/python3.12/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at zhihan1996/DNABERT-2-117M and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[prom_300_all] epoch 1: loss=0.4252 val_f1=0.9091 (125s)
+[prom_300_all] epoch 2: loss=0.2697 val_f1=0.9165 (248s)
+[prom_300_all] epoch 3: loss=0.2446 val_f1=0.9137 (368s)
+[prom_300_all] epoch 4: loss=0.2198 val_f1=0.9095 (481s)
+wrote /tmp/opencode/capped_metrics/prom_300_all_cap8k_metrics.json
+wrote checkpoint results/models/prom_300_all/best_lora_state.pt
+{
+ "dataset": "prom_300_all",
+ "test": {
+  "acc": 0.9076,
+  "f1": 0.9074,
+  "mcc": 0.8177
+ }
+}

@@ -1,0 +1,16 @@
+class_a,class_b,centroid_cosine
+intersection,nursinghome,0.8235
+basketballcourt,tenniscourt,0.8153
+coastalmansion,denseresidential,0.8109
+nursinghome,sparseresidential,0.8009
+denseresidential,mobilehomepark,0.7910
+coastalmansion,sparseresidential,0.7865
+denseresidential,nursinghome,0.7848
+coastalmansion,swimmingpool,0.7697
+denseresidential,intersection,0.7665
+basketballcourt,parkingspace,0.7517
+intersection,mobilehomepark,0.7437
+denseresidential,sparseresidential,0.7410
+nursinghome,swimmingpool,0.7345
+ferryterminal,sparseresidential,0.7284
+runway,runwaymarking,0.7266

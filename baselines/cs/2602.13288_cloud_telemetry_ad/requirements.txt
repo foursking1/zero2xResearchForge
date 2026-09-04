@@ -1,0 +1,9 @@
+# Python dependencies for the NAB + Microsoft cloud-telemetry AD reproduction
+#
+# Core scientific stack:
+numpy>=1.24
+pandas>=1.5
+scipy>=1.9
+scikit-learn>=1.1
+# Deep models (CPU-light small autoencoders):
+torch>=2.0

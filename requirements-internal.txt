@@ -1,0 +1,3 @@
+# Dependencies for the organization-member workflow.
+# Task implementations keep their own dependency environments.
+modelscope>=1.39,<2

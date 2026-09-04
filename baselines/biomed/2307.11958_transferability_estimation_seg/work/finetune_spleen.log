@@ -1,0 +1,46 @@
+[ft] liver_l16_s1: initialised from liver-pretrained weights
+[ft] liver_l16_s1: n_train_slices=192 train_cases=['10', '12', '14', '17', '19', '21'] target=spleen source=liver
+    ep1/20 loss=1.3261 dice=0.2031
+    ep6/20 loss=1.0651 dice=0.2542
+    ep11/20 loss=0.9489 dice=0.2959
+    ep16/20 loss=0.8713 dice=0.3277
+    ep20/20 loss=0.7875 dice=0.3685
+[ft] liver_l16_s1: ft_dice(test)=0.9027  wall=126.2s
+[ft] liver_l08_s1: initialised from liver-pretrained weights
+[ft] liver_l08_s1: n_train_slices=192 train_cases=['10', '12', '14', '17', '19', '21'] target=spleen source=liver
+    ep1/20 loss=1.4649 dice=0.1760
+    ep6/20 loss=1.2357 dice=0.2140
+    ep11/20 loss=1.1517 dice=0.2407
+    ep16/20 loss=1.0821 dice=0.2636
+    ep20/20 loss=1.0203 dice=0.2913
+[ft] liver_l08_s1: ft_dice(test)=0.8385  wall=32.9s
+[ft] liver_l16_s2: initialised from liver-pretrained weights
+[ft] liver_l16_s2: n_train_slices=192 train_cases=['10', '12', '14', '17', '19', '21'] target=spleen source=liver
+    ep1/20 loss=1.5317 dice=0.1623
+    ep6/20 loss=1.2041 dice=0.2035
+    ep11/20 loss=1.1033 dice=0.2267
+    ep16/20 loss=1.0020 dice=0.2614
+    ep20/20 loss=0.9345 dice=0.2871
+[ft] liver_l16_s2: ft_dice(test)=0.8833  wall=115.1s
+[ft] liver_l16_short: initialised from liver-pretrained weights
+[ft] liver_l16_short: n_train_slices=192 train_cases=['10', '12', '14', '17', '19', '21'] target=spleen source=liver
+    ep1/20 loss=1.3868 dice=0.1822
+    ep6/20 loss=1.1487 dice=0.2282
+    ep11/20 loss=1.0425 dice=0.2605
+    ep16/20 loss=0.9332 dice=0.3004
+    ep20/20 loss=0.8578 dice=0.3336
+[ft] liver_l16_short: ft_dice(test)=0.9063  wall=643.6s
+[ft] liver_scratch: starting from RANDOM init
+[ft] liver_scratch: n_train_slices=192 train_cases=['10', '12', '14', '17', '19', '21'] target=spleen source=liver
+    ep1/20 loss=1.5181 dice=0.1243
+    ep6/20 loss=1.2097 dice=0.2026
+    ep11/20 loss=1.0575 dice=0.2467
+    ep16/20 loss=0.9190 dice=0.3008
+    ep20/20 loss=0.8254 dice=0.3463
+[ft] liver_scratch: ft_dice(test)=0.8543  wall=375.9s
+saved /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/results/finetune_liver2spleen.json
+   liver_l16_s1 0.90266
+   liver_l08_s1 0.83846
+   liver_l16_s2 0.88329
+   liver_l16_short 0.90626
+   liver_scratch 0.85433

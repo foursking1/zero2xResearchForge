@@ -1,0 +1,21 @@
+GPU available, ~16.0 GiB free, using cuda
+device: cuda
+normalization computed from TRAIN: {'bands': [3, 0, 1], 'stat_split': 'train', 'mean': [104.34519423484804, 124.22147617340086, 129.00288824081423], 'std': [47.66659503155293, 68.03518355478649, 61.86486282794694]}
+model params: 14.39M
+class weights (train-only): {'building': np.float64(1.208), 'greenhouse': np.float64(1.208), 'swimming_pool': np.float64(1.208), 'impervious': np.float64(0.854), 'pervious': np.float64(0.885), 'bare_soil': np.float64(0.456), 'water': np.float64(1.208), 'snow': np.float64(0.614), 'herbaceous': np.float64(0.757), 'agricultural': np.float64(1.124), 'plowed': np.float64(1.208), 'vineyard': np.float64(1.208), 'deciduous': np.float64(0.648), 'coniferous': np.float64(1.208), 'brushwood': np.float64(1.208)}
+  [ep 1/3] it 0/50 loss 2.8668 (1.00s/it)
+  [ep 1/3] it 20/50 loss 2.8061 (0.11s/it)
+  [ep 1/3] it 40/50 loss 2.4996 (0.09s/it)
+EPOCH 1: loss=2.6347 val_mIoU=12.91 val_OA=50.97 time=5.5s
+  ** saved best val mIoU 12.91
+  [ep 2/3] it 0/50 loss 2.5881 (0.36s/it)
+  [ep 2/3] it 20/50 loss 2.1885 (0.17s/it)
+  [ep 2/3] it 40/50 loss 2.3733 (0.12s/it)
+EPOCH 2: loss=2.3078 val_mIoU=16.89 val_OA=59.24 time=6.7s
+  ** saved best val mIoU 16.89
+  [ep 3/3] it 0/50 loss 2.2008 (0.34s/it)
+  [ep 3/3] it 20/50 loss 1.9681 (0.08s/it)
+  [ep 3/3] it 40/50 loss 2.1035 (0.08s/it)
+EPOCH 3: loss=2.1780 val_mIoU=20.66 val_OA=64.24 time=4.9s
+  ** saved best val mIoU 20.66
+DONE. best val mIoU 20.66

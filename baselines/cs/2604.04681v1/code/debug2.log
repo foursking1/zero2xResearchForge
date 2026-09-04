@@ -1,0 +1,21 @@
+==> BLS_InfoBatch: ratio=0.3, delta=0.875
+==> BLS: alpha=0.7
+
+|--| #sampled: 50 #saved: 0.00%
+=== dbg_collate called, len(batch)= 8
+batch[0] type=<class 'tuple'> len=2
+  part[0] type=<class 'torch.Tensor'> shape=torch.Size([3, 32, 32]) val=
+  part[1] type=<class 'int'> shape=None val=2
+batch[1] type=<class 'tuple'> len=2
+  part[0] type=<class 'torch.Tensor'> shape=torch.Size([3, 32, 32]) val=
+  part[1] type=<class 'int'> shape=None val=3
+batch[2] type=<class 'tuple'> len=2
+  part[0] type=<class 'torch.Tensor'> shape=torch.Size([3, 32, 32]) val=
+  part[1] type=<class 'int'> shape=None val=1
+Traceback (most recent call last):
+  File "D:\project\paper-bench\tasks_legacy\2604.04681v1\agent_solution\code\debug2.py", line 27, in <module>
+    b = next(it)
+  File "F:\dataset/2604.04681v1/code/BLS\BLS\__init__.py", line 25, in info_hack_indices
+    indices, data = self._next_data()
+    ^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)

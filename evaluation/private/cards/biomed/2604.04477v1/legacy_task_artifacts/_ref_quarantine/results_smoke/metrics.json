@@ -1,0 +1,158 @@
+{
+  "n_test_samples": 5,
+  "shape": [
+    16,
+    32,
+    32
+  ],
+  "max_branches": 15,
+  "noise_level": 0.1,
+  "checkpoint": {
+    "stage": "1_diverse",
+    "epoch": 174,
+    "best_dice_at_save": 0.8260539084672928,
+    "shape": [
+      16,
+      32,
+      32
+    ]
+  },
+  "table1": {
+    "MVis-Fold (small, ours)": {
+      "dice_mean": 0.8313225269317627,
+      "dice_std": 0.07741349882106192,
+      "sens_mean": 0.9450762510299683,
+      "sens_std": 0.015386031083604408,
+      "spec_mean": 0.9894596815109253,
+      "spec_std": 0.003498354113096204,
+      "acc_mean": 0.98797607421875,
+      "acc_std": 0.0033173042582278303,
+      "hd95_mean": 1.0,
+      "time_mean": 0.01152348518371582,
+      "time_std": 0.002094785270732765,
+      "dice_ci95": [
+        0.764365267753601,
+        0.8949512124061585
+      ]
+    },
+    "TripoSR proxy (Tier 2 heuristic)": {
+      "dice_mean": 0.9108976721763611,
+      "dice_std": 0.05426400251865867,
+      "sens_mean": 0.8437644004821777,
+      "sens_std": 0.0917871466286613,
+      "spec_mean": 0.9998593330383301,
+      "spec_std": 0.00016050133067046804,
+      "acc_mean": 0.99534912109375,
+      "acc_std": 0.0017411180986011165,
+      "hd95_mean": 0.8,
+      "time_mean": 0.0028905868530273438,
+      "time_std": 0.00413170616587086,
+      "dice_ci95": [
+        0.8615264296531677,
+        0.9562932968139648
+      ]
+    },
+    "OpenLRM proxy (Tier 2 heuristic)": {
+      "dice_mean": 0.8126145601272583,
+      "dice_std": 0.12385068412617786,
+      "sens_mean": 0.7188577890396118,
+      "sens_std": 0.1723819980458745,
+      "spec_mean": 0.9989889621734619,
+      "spec_std": 0.0009992957276580216,
+      "acc_mean": 0.99091796875,
+      "acc_std": 0.0022822252044216646,
+      "hd95_mean": 1.6578587467673074,
+      "time_mean": 0.0022286415100097657,
+      "time_std": 0.0004191571829887305,
+      "dice_ci95": [
+        0.6947215795516968,
+        0.9049032330513
+      ]
+    }
+  },
+  "table2": {
+    "vd_error_mvis_mean": 10.781701156964976,
+    "vd_error_mvis_std": 5.736332402793877,
+    "vd_error_srus_mean": 90.46066773075577,
+    "vd_error_srus_std": 3.0235999446139488,
+    "md_error_mvis_mean": 3.419999261088717,
+    "md_error_mvis_std": 1.7848502251061784,
+    "md_error_srus_mean": 1.9304275294412079,
+    "md_error_srus_std": 2.209293146748959,
+    "vd_improvement_ratio": 8.390203587892826,
+    "md_improvement_ratio": 0.5644526159419926,
+    "pearson_vd_r": 0.353524418197534,
+    "pearson_vd_p": 0.5594388506781743,
+    "pearson_md_r": 0.8591346421921418,
+    "pearson_md_p": 0.06210749199363197,
+    "pearson_vd_srus_r": -0.8420418557920737,
+    "pearson_vd_srus_p": 0.07354946884971049,
+    "gt_vd_mean": 90.49361521946496,
+    "gt_vd_std": 3.010069163179627,
+    "gt_md_mean": 29.162984748187416,
+    "gt_md_std": 5.90260920460816
+  },
+  "internal_validation": {
+    "n_samples": 20,
+    "dice_mean": 0.8262117654085159,
+    "dice_std": 0.0949482369148898,
+    "dice_ci95": [
+      0.6422867149114608,
+      0.9302764654159545
+    ]
+  },
+  "claims": {
+    "C01": {
+      "claim": "Dice>=0.95, sens>=0.94, spec>=0.95, acc>=0.95, outperform baselines",
+      "measured": {
+        "dice": 0.8313225269317627,
+        "sensitivity": 0.9450762510299683,
+        "specificity": 0.9894596815109253,
+        "accuracy": 0.98797607421875
+      },
+      "verdict": "contradicted",
+      "reason": "Dice=0.831 < 0.95 and sensitivity=0.945 < 0.94 on the frozen synthetic test set (specificity and accuracy are above threshold). The headline Dice threshold is not met."
+    },
+    "C02": {
+      "claim": "VD error<0.02 mm/mm3 AND MD error<3 um, with >1000x / >50x improvement over 2D SRUS",
+      "measured": {
+        "vd_error": 10.781701156964976,
+        "md_error": 3.419999261088717,
+        "vd_improvement_ratio": 8.390203587892826,
+        "md_improvement_ratio": 0.5644526159419926
+      },
+      "verdict": "contradicted",
+      "reason": "VD error=10.78 mm/mm3 >> 0.02; MD error=3.42 um > 3; improvement ratios are 8.4x and 0.56x, far below 1000x/50x. (2D SRUS reference is also a units-mismatched area fraction, see solution.md.)"
+    },
+    "C03": {
+      "claim": "vessel density Pearson r>=0.85 (p<0.01) vs histopathology gold standard",
+      "measured": {
+        "pearson_vd_r": 0.353524418197534,
+        "pearson_vd_p": 0.5594388506781743
+      },
+      "verdict": "contradicted",
+      "reason": "On the frozen synthetic ground truth the vessel-density Pearson r=0.354 (p=0.559) << 0.85. Note: the paper\u2019s r=0.892 is against histopathology gold standard, which is NOT part of the frozen data, so the exact claim is unverifiable; the available synthetic proxy contradicts it."
+    },
+    "C04": {
+      "claim": "internal validation Dice >= 0.95",
+      "measured": {
+        "internal_val_dice": 0.8262117654085159
+      },
+      "verdict": "contradicted",
+      "reason": "Internal-validation Dice=0.826 (n=20) < 0.95."
+    }
+  },
+  "paper_values_for_reference": {
+    "dice": 0.959,
+    "sensitivity": 0.951,
+    "specificity": 0.957,
+    "accuracy": 0.962,
+    "hausdorff95": 3.2,
+    "vd_error": 0.012,
+    "md_error": 2.16,
+    "vd_fold_improvement": 1353,
+    "md_fold_improvement": 55,
+    "pearson_vd_r": 0.892,
+    "internal_val_dice": 0.964
+  }
+}

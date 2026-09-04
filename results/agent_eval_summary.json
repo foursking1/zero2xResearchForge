@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-08-27T09:13:41",
+  "cards_total": 112,
+  "cards_scored": 109,
+  "cards_unscored": 3,
+  "agent_mean": 74.41,
+  "agent_median": 75.0,
+  "dist_ge70": 61,
+  "dist_40_69": 42,
+  "dist_lt40": 6,
+  "domain_stats": {
+    "astro": {
+      "n": 18,
+      "mean": 87.2,
+      "median": 98.5
+    },
+    "biomed": {
+      "n": 19,
+      "mean": 75.3,
+      "median": 82.0
+    },
+    "cs": {
+      "n": 15,
+      "mean": 74.3,
+      "median": 67.0
+    },
+    "earth": {
+      "n": 15,
+      "mean": 63.9,
+      "median": 62.0
+    },
+    "materials": {
+      "n": 18,
+      "mean": 85.2,
+      "median": 99.0
+    },
+    "legacy": {
+      "n": 24,
+      "mean": 62.7,
+      "median": 62.0
+    }
+  },
+  "v7_paired_n": 109,
+  "v7_paired_mean_agent": 74.41,
+  "v7_paired_mean_v7": 77.74,
+  "pearson_r": 0.858,
+  "mean_diff_agent_minus_v7": -3.33,
+  "conclusion_match": 87,
+  "conclusion_total": 109,
+  "conclusion_rate": 0.798,
+  "conclusion_matrix": {
+    "supported->supported": 29,
+    "partially_supported->supported": 16,
+    "partially_supported->partially_supported": 54,
+    "inconclusive->unverified": 4,
+    "contradicted->contradicted": 4,
+    "contradicted->partially_supported": 1,
+    "inconclusive->partially_supported": 1
+  },
+  "unscored_cards": [
+    "2205.13760_tranception_proteingym",
+    "2608.06662_mlip_cross_geometry",
+    "2211.15895_bertos_oxidation_state"
+  ]
+}

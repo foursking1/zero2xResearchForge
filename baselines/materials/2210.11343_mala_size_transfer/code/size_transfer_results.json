@@ -1,0 +1,161 @@
+{
+ "results": {
+  "256": {
+   "supercell": [
+    4,
+    4,
+    8
+   ],
+   "n_atoms": 256,
+   "grid": [
+    36,
+    36,
+    114
+   ],
+   "n_grid_points": 147744,
+   "points_per_atom": 577.125,
+   "spacing_actual": [
+    0.2517593473797149,
+    0.25175934737971484,
+    0.24915514415653262
+   ],
+   "cell_volume": 2020.6055940839349,
+   "prep_time_s": 1.2096901000004436,
+   "desc_time_s": 701.8983422720003,
+   "desc_per_point_ms": 4.750773921594111,
+   "fermi_energy_eV": -1.0988102041933763,
+   "band_energy_eV": -1009.7112125433785,
+   "band_energy_per_atom_eV": -3.944184423997572,
+   "entropy_eV": 0.002701420301745981,
+   "entropy_per_atom_eV": 1.0552423053695238e-05,
+   "total_electrons": 512.0102934966208,
+   "electrons_per_atom": 2.000040208971175,
+   "dos_integral_eV": 11731.364466594128
+  },
+  "512": {
+   "supercell": [
+    4,
+    8,
+    8
+   ],
+   "n_atoms": 512,
+   "grid": [
+    36,
+    73,
+    114
+   ],
+   "n_grid_points": 299592,
+   "points_per_atom": 585.140625,
+   "spacing_actual": [
+    0.2517593473797149,
+    0.2483105891964311,
+    0.24915514415653262
+   ],
+   "cell_volume": 4041.2111881678698,
+   "prep_time_s": 1.364253349000137,
+   "desc_time_s": 1481.470676809,
+   "desc_per_point_ms": 4.944960735964244,
+   "fermi_energy_eV": -1.1220247186942551,
+   "band_energy_eV": -2031.9212838159833,
+   "band_energy_per_atom_eV": -3.9685962574530924,
+   "entropy_eV": 0.005213766448149959,
+   "entropy_per_atom_eV": 1.0183137594042888e-05,
+   "total_electrons": 1022.4874250271046,
+   "electrons_per_atom": 1.9970457520060636,
+   "dos_integral_eV": 23797.16642582471
+  },
+  "1024": {
+   "supercell": [
+    8,
+    8,
+    8
+   ],
+   "n_atoms": 1024,
+   "grid": [
+    73,
+    73,
+    114
+   ],
+   "n_grid_points": 607506,
+   "points_per_atom": 593.267578125,
+   "spacing_actual": [
+    0.24831058919643115,
+    0.2483105891964311,
+    0.24915514415653262
+   ],
+   "cell_volume": 8082.42237633574,
+   "prep_time_s": 0.2965659470000901,
+   "desc_time_s": 1140.9158123119996,
+   "desc_per_point_ms": 1.8780321713892532,
+   "fermi_energy_eV": -1.1422178762377444,
+   "band_energy_eV": -4090.4610654732296,
+   "band_energy_per_atom_eV": -3.994590884251201,
+   "entropy_eV": 0.009871682944133417,
+   "entropy_per_atom_eV": 9.64031537513029e-06,
+   "total_electrons": 2046.426901483941,
+   "electrons_per_atom": 1.9984637709804112,
+   "dos_integral_eV": 48252.64584689225
+  },
+  "2048": {
+   "supercell": [
+    8,
+    8,
+    16
+   ],
+   "n_atoms": 2048,
+   "grid": [
+    73,
+    73,
+    227
+   ],
+   "n_grid_points": 1209683,
+   "points_per_atom": 590.66552734375,
+   "spacing_actual": [
+    0.24831058919643115,
+    0.2483105891964311,
+    0.25025274391052615
+   ],
+   "cell_volume": 16164.844752671483,
+   "prep_time_s": 0.43711365700073657,
+   "desc_time_s": 1864.3797004300004,
+   "desc_per_point_ms": 1.5412134422241202,
+   "fermi_energy_eV": -1.133648596335085,
+   "band_energy_eV": -8157.387995516354,
+   "band_energy_per_atom_eV": -3.9830996071857196,
+   "entropy_eV": 0.02011061414306929,
+   "entropy_per_atom_eV": 9.819635812045552e-06,
+   "total_electrons": 4090.6550653179,
+   "electrons_per_atom": 1.997390168612256,
+   "dos_integral_eV": 96054.56870658917
+  }
+ },
+ "drift": {
+  "256": {
+   "band_energy_per_atom_drift_eV": 0.0,
+   "band_energy_per_atom_drift_meV": 0.0,
+   "fermi_energy_drift_eV": 0.0,
+   "entropy_per_atom_drift_eV": 0.0
+  },
+  "512": {
+   "band_energy_per_atom_drift_eV": -0.024411833455520338,
+   "band_energy_per_atom_drift_meV": -24.411833455520338,
+   "fermi_energy_drift_eV": -0.023214514500878858,
+   "entropy_per_atom_drift_eV": -3.6928545965234993e-07
+  },
+  "1024": {
+   "band_energy_per_atom_drift_eV": -0.050406460253628715,
+   "band_energy_per_atom_drift_meV": -50.406460253628715,
+   "fermi_energy_drift_eV": -0.04340767204436813,
+   "entropy_per_atom_drift_eV": -9.121076785649483e-07
+  },
+  "2048": {
+   "band_energy_per_atom_drift_eV": -0.03891518318814757,
+   "band_energy_per_atom_drift_meV": -38.91518318814757,
+   "fermi_energy_drift_eV": -0.03483839214170881,
+   "entropy_per_atom_drift_eV": -7.327872416496859e-07
+  }
+ },
+ "spacing": 0.25,
+ "temperature": 298.0,
+ "seed": 42
+}

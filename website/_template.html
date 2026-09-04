@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zero2x ResearchForge · Benchmark Arena</title>
+<style>
+:root{
+  --bg:#f4f6fa; --panel:#ffffff; --line:#e4e9f1; --ink:#1e293b; --ink2:#64748b;
+  --brand:#4f46e5; --brand2:#3730a3;
+  --earth:#059669; --astro:#7c3aed; --cs:#2563eb; --biomed:#db2777; --materials:#d97706;
+  --ok:#059669; --part:#d97706; --incon:#64748b; --contra:#dc2626;
+  --radius:14px; --shadow:0 1px 2px rgba(15,23,42,.05),0 4px 14px rgba(15,23,42,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:14px/1.6 "Segoe UI",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.topbar{position:sticky;top:0;z-index:50;background:#0e1726;color:#e2e8f0;display:flex;align-items:center;gap:22px;padding:0 26px;height:56px;box-shadow:0 2px 10px rgba(2,6,23,.25)}
+.brand{font-weight:700;font-size:16px;white-space:nowrap}
+.brand span{color:#a5b4fc;font-weight:600}
+.brand em{font-style:normal;font-size:11px;background:rgba(99,102,241,.25);border:1px solid rgba(129,140,248,.4);color:#c7d2fe;border-radius:20px;padding:2px 10px;margin-left:10px;vertical-align:2px}
+.topbar nav{display:flex;gap:4px;flex:1}
+.topbar nav button{background:none;border:none;color:#94a3b8;font:inherit;font-weight:600;padding:8px 14px;border-radius:9px;cursor:pointer;transition:.15s}
+.topbar nav button:hover{color:#e2e8f0;background:rgba(148,163,184,.12)}
+.topbar nav button.active{color:#fff;background:rgba(99,102,241,.35)}
+.ver{font-size:11.5px;color:#7c8aa5;white-space:nowrap}
+main{max-width:1240px;margin:0 auto;padding:26px 26px 80px}
+section.tab{display:none}
+section.tab.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+h1{font-size:22px;margin-bottom:4px}
+.sub{color:var(--ink2);margin-bottom:22px;max-width:860px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:18px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.kpi .v{font-size:26px;font-weight:750;letter-spacing:-.5px}
+.kpi .v small{font-size:13px;font-weight:600;color:var(--ink2)}
+.kpi .k{font-size:12px;color:var(--ink2);margin-top:2px}
+.note{display:flex;gap:10px;align-items:flex-start;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:12px 16px;margin-bottom:18px;font-size:13px;color:#78350f}
+.note b{color:#92400e}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.panel h3{font-size:14.5px;margin-bottom:12px}
+.panel h3 small{font-weight:400;color:var(--ink2)}
+table.mx{width:100%;border-collapse:collapse;font-size:13px}
+table.mx th,table.mx td{padding:7px 8px;text-align:center;border-bottom:1px solid var(--line)}
+table.mx th{color:var(--ink2);font-weight:600;font-size:12px}
+table.mx td:first-child,table.mx th:first-child{text-align:left}
+table.mx tr.total-row{font-weight:700;background:#f8fafc}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:0}
+.heat{font-weight:650;border-radius:6px;padding:2px 7px}
+.bars{display:flex;flex-direction:column;gap:9px;margin-top:6px}
+.bar-row{display:grid;grid-template-columns:64px 1fr 44px;gap:10px;align-items:center;font-size:12.5px}
+.bar-track{height:16px;background:#eef1f6;border-radius:6px;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;min-width:2px}
+.concl-strip{display:flex;height:22px;border-radius:8px;overflow:hidden;margin:8px 0 10px}
+.concl-strip div{height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink2)}
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+.filters input[type=text],.filters select{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:inherit;color:var(--ink);outline:none}
+.filters input[type=text]{min-width:240px}
+.filters input:focus,.filters select:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(79,70,229,.12)}
+.count{margin-left:auto;font-size:12.5px;color:var(--ink2)}
+/* task cards */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:14px}
+.tcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px 13px;cursor:pointer;box-shadow:var(--shadow);transition:.15s;border-top:3px solid var(--dc,#94a3b8);display:flex;flex-direction:column;gap:8px}
+.tcard:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(15,23,42,.12)}
+.tcard .tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tag{font-size:11px;font-weight:650;padding:2px 9px;border-radius:20px;background:#f1f5f9;color:#475569}
+.tag.lv1{background:#e0e7ff;color:#4338ca}.tag.lv2{background:#f3e8ff;color:#7e22ce}
+.tag.dom{color:#fff}
+.tcard h4{font-size:13.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:39px}
+.tcard .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:1px dashed var(--line);padding-top:9px}
+.score-pill{font-weight:750;font-size:15px}
+.concl{font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px}
+.c-supported{background:#d1fae5;color:#047857}.c-partially_supported{background:#fef3c7;color:#b45309}
+.c-inconclusive{background:#e2e8f0;color:#475569}.c-contradicted{background:#fee2e2;color:#b91c1c}
+/* scatter + table */
+.scatter-wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.table-wrap{overflow:auto;max-height:620px;border:1px solid var(--line);border-radius:12px}
+table.dt{width:100%;border-collapse:collapse;font-size:12.8px;background:#fff}
+table.dt th{position:sticky;top:0;background:#f8fafc;color:var(--ink2);font-weight:650;padding:9px 10px;text-align:right;cursor:pointer;white-space:nowrap;border-bottom:2px solid var(--line);z-index:2}
+table.dt th:first-child,table.dt td:first-child{text-align:left;position:sticky;left:0;background:inherit}
+table.dt th:first-child{background:#f8fafc}
+table.dt td{padding:7px 10px;text-align:right;border-bottom:1px solid #f1f5f9;white-space:nowrap}
+table.dt tbody tr:hover{background:#f8faff}
+.mono{font-family:Consolas,Menlo,monospace;font-size:12px}
+.btn{background:var(--brand);border:none;color:#fff;font:inherit;font-weight:650;padding:9px 18px;border-radius:10px;cursor:pointer;transition:.15s}
+.btn:hover{background:var(--brand2)}
+.btn.ghost{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+.btn.small{padding:5px 12px;font-size:12.5px}
+/* submit */
+.submit-grid{display:grid;grid-template-columns:400px 1fr;gap:16px}
+@media(max-width:960px){.submit-grid{grid-template-columns:1fr}}
+form.subf label{display:block;font-size:12.5px;font-weight:650;color:#334155;margin:13px 0 5px}
+form.subf input,form.subf textarea,form.subf select{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font:inherit;outline:none;background:#fff}
+form.subf input:focus,form.subf textarea:focus,form.subf select:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(79,70,229,.12)}
+.demo-badge{display:inline-block;font-size:11px;font-weight:700;background:#fdf2f8;color:#be185d;border:1px solid #fbcfe8;border-radius:20px;padding:2px 10px;margin-left:8px;vertical-align:2px}
+.pipe{margin:6px 0 14px}
+.pstep{display:flex;gap:11px;align-items:flex-start;padding:7px 0;color:#94a3b8;font-size:13px}
+.pstep .ico{width:20px;height:20px;border-radius:50%;background:#e2e8f0;color:#64748b;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;margin-top:1px}
+.pstep.run{color:var(--ink)}
+.pstep.run .ico{background:#fef3c7;color:#b45309;animation:pulse 1s infinite}
+.pstep.done{color:var(--ink)}
+.pstep.done .ico{background:#d1fae5;color:#047857}
+@keyframes pulse{50%{opacity:.5}}
+.result-card{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:linear-gradient(180deg,#fff, #fafbff)}
+.res-top{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.donut{position:relative;width:130px;height:130px}
+.donut svg{transform:rotate(-90deg)}
+.donut .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.donut .num b{font-size:30px;letter-spacing:-1px}
+.donut .num span{font-size:10.5px;color:var(--ink2)}
+.abars{flex:1;min-width:250px;display:flex;flex-direction:column;gap:8px}
+.abar{display:grid;grid-template-columns:110px 1fr 66px;gap:10px;align-items:center;font-size:12px;color:#475569}
+.abar .bar-track{height:12px}
+.enf{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:12.5px;border-radius:10px;padding:9px 13px;margin-top:12px}
+.cmp{font-size:12.5px;color:var(--ink2);margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+/* modal */
+#modal{position:fixed;inset:0;background:rgba(15,23,42,.5);display:none;align-items:flex-start;justify-content:center;z-index:100;padding:44px 18px;overflow:auto}
+#modal.open{display:flex}
+.mbox{background:#fff;border-radius:16px;max-width:820px;width:100%;padding:26px 30px;box-shadow:0 24px 70px rgba(2,6,23,.35);animation:fade .2s}
+.mbox .close{float:right;background:#f1f5f9;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:15px;color:#475569}
+.mbox h2{font-size:18px;margin:8px 0 4px;padding-right:30px}
+.mmeta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.mrow{display:grid;grid-template-columns:110px 1fr;gap:10px;font-size:13px;padding:6px 0;border-bottom:1px solid #f1f5f9}
+.mrow b{color:var(--ink2);font-weight:600}
+.claim{background:#f8fafc;border-left:3px solid var(--brand);border-radius:0 10px 10px 0;padding:12px 15px;font-size:13.2px;color:#334155;margin:12px 0}
+.stack{display:flex;height:18px;border-radius:7px;overflow:hidden;margin:6px 0 4px}
+.stack div{height:100%}
+.stack-lg{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink2);margin-bottom:14px}
+.reason{font-size:12.8px;color:#475569;background:#f8fafc;border-radius:10px;padding:11px 14px;margin-top:8px}
+footer{border-top:1px solid var(--line);color:#94a3b8;font-size:12px;display:flex;justify-content:space-between;gap:12px;padding:18px 26px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">zero2x <span>ResearchForge</span><em>Benchmark Arena</em></div>
+  <nav>
+    <button data-tab="overview" class="active">概览</button>
+    <button data-tab="tasks">题目库</button>
+    <button data-tab="results">基线结果</button>
+    <button data-tab="submit">提交打分</button>
+  </nav>
+  <div class="ver">口径 v2026-08-28 ｜ 主集 125 + 地热 12 = 全量 137</div>
+</header>
+
+<main>
+<!-- ================= 概览 ================= -->
+<section class="tab active" id="tab-overview">
+  <h1>评测总览</h1>
+  <p class="sub">zero2x ResearchForge：跨 5 大学科科研复现能力基准。LLM 裁判 v7（qwen3.7-max, temperature=0 + enforce 代码级钳制）对基线 agent 提交的全量评分结果。</p>
+  <div class="kpis" id="kpis"></div>
+  <div class="note">🔵 <span><b>地热独立子集（12 张，均分 62.1）</b>按原表保留、未作改动，当前未在仓库主集内；本页除特别说明外，明细数据均基于已入库主集 <b>125 张</b>，全量口径 <b>137 张</b>已计入概览统计。</span></div>
+  <div class="grid2">
+    <div class="panel"><h3>领域 × 难度矩阵 <small>· 主集 125 张（任务数 / v7 均分）</small></h3><div id="matrix"></div></div>
+    <div class="panel"><h3>分数分布 <small>· 主集 v7 总分直方图</small></h3><div class="bars" id="hist"></div></div>
+  </div>
+  <div class="grid2">
+    <div class="panel"><h3>结论分布 <small>· 基线提交的 claim 验证判定</small></h3>
+      <div class="concl-strip" id="conclStrip"></div><div class="legend" id="conclLegend"></div>
+    </div>
+    <div class="panel"><h3>双裁判交叉核对 <small>· v7 裁判 vs 自主 agent 裁判</small></h3><div id="judgeCmp"></div></div>
+  </div>
+</section>
+
+<!-- ================= 题目库 ================= -->
+<section class="tab" id="tab-tasks">
+  <h1>题目库 <span class="demo-badge">125 张任务卡</span></h1>
+  <p class="sub">每张卡为一个独立科研复现任务：给定论文关键主张 + 冻结数据，复跑并验证。点击卡片查看题目详情、评分协议与基线得分。</p>
+  <div class="filters">
+    <input type="text" id="q" placeholder="搜索卡 ID / 标题 / 主张关键词…">
+    <select id="fDom"><option value="">全部领域</option></select>
+    <select id="fLvl"><option value="">全部层级</option><option>L1</option><option>L2</option></select>
+    <select id="fCon"><option value="">全部结论</option></select>
+    <select id="sort">
+      <option value="score-desc">按基线分 ↓</option><option value="score-asc">按基线分 ↑</option>
+      <option value="id">按卡 ID</option><option value="dom">按领域</option>
+    </select>
+    <span class="count" id="tCount"></span>
+  </div>
+  <div class="tgrid" id="tgrid"></div>
+</section>
+
+<!-- ================= 基线结果 ================= -->
+<section class="tab" id="tab-results">
+  <h1>基线复现结果与打分</h1>
+  <p class="sub">v7 裁判评分协议：A 复现保真度 60 分（A1 交付完整 20 + A2 锚点吻合 25 + A3 方法严谨 15）+ B 证据真实性 40 分。enforce 钳制在代码层强制执行（锚表不全 → A2≤12 / 总分≤70；结论 contradicted → ≤50）。</p>
+  <div class="panel" style="margin-bottom:16px">
+    <h3>难度校准散点 <small>· x = 目标分区间中值，y = 基线实际分，虚线为 y=x（点落在对角线上方 = 高于设计难度预期）</small></h3>
+    <div class="scatter-wrap"><svg id="scat" width="640" height="330" viewBox="0 0 640 330"></svg><div class="legend" id="scatLegend"></div></div>
+  </div>
+  <div class="filters">
+    <select id="rDom"><option value="">全部领域</option></select>
+    <select id="rLvl"><option value="">全部层级</option><option>L1</option><option>L2</option></select>
+    <select id="rCon"><option value="">全部结论</option></select>
+    <button class="btn ghost small" id="csvBtn">导出 CSV</button>
+    <span class="count" id="rCount"></span>
+  </div>
+  <div class="table-wrap"><table class="dt" id="dtable"><thead></thead><tbody></tbody></table></div>
+</section>
+
+<!-- ================= 提交打分 ================= -->
+<section class="tab" id="tab-submit">
+  <h1>提交并打分 <span class="demo-badge">原型演示 · 模拟评分</span></h1>
+  <p class="sub">选择任务卡并提交 solution，评测流水线将复跑提交、比对数值锚点并由 LLM 裁判打分（含 enforce 钳制）。当前为静态原型，分数为模拟生成；真实接入 = Flask 后端（参考 scisolvebench-web）+ <span class="mono">work/judge_v7_full.py</span> 评分链。</p>
+  <div class="submit-grid">
+    <form class="panel subf" id="subForm">
+      <h3>提交 solution</h3>
+      <label>任务卡</label><select id="sCard"></select>
+      <label>Agent 名称</label><input id="sAgent" value="My-Agent" maxlength="80">
+      <label>模型 / 版本</label><input id="sVer" placeholder="例如 claude-code 2.1 / gpt-5" maxlength="80">
+      <label>Solution 说明（可选）</label><textarea id="sDesc" rows="3" placeholder="代码入口、关键结果文件（claim.md / metrics.json / report.md）…"></textarea>
+      <div style="margin-top:16px;display:flex;gap:10px">
+        <button class="btn" type="submit" id="runBtn">开始评测</button>
+        <button class="btn ghost" type="button" id="resetBtn">重置</button>
+      </div>
+    </form>
+    <div class="panel">
+      <h3>评测流水线</h3>
+      <div class="pipe" id="pipe"></div>
+      <div id="resBox"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="modal"><div class="mbox" id="mbox"></div></div>
+
+<footer>
+  <span>zero2x ResearchForge · Benchmark Arena — 证据优先的科研复现评测</span>
+  <span>私有锚点（PAPER_ANCHOR / SCORE_RUBRIC / CALIBRATION）永不下发浏览器，仅裁判侧加载</span>
+</footer>
+
+<script id="DATA" type="application/json">__DATA_JSON__</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("DATA").textContent);
+const CARDS = DATA.cards, STATS = DATA.stats;
+const DOM_COLOR = {earth:"#059669",astro:"#7c3aed",cs:"#2563eb",biomed:"#db2777",materials:"#d97706"};
+const DOM_LABEL = {earth:"EARTH",astro:"ASTRO",cs:"CS",biomed:"BIO",materials:"MATERIAL"};
+const CON_LABEL = {supported:"supported 支持的",partially_supported:"partially 部分支持",inconclusive:"inconclusive 不确定",contradicted:"contradicted 矛盾的"};
+const CON_COLOR = {supported:"#059669",partially_supported:"#d97706",inconclusive:"#94a3b8",contradicted:"#dc2626"};
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fx = n => (n==null||isNaN(n))?"–":(Number.isInteger(+n)?n:(+n).toFixed(1));
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+/* ---------- tabs ---------- */
+document.querySelectorAll(".topbar nav button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".topbar nav button").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll("section.tab").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+  document.getElementById("tab-"+b.dataset.tab).classList.add("active");
+});
+
+/* ---------- KPI ---------- */
+(function(){
+  const s=STATS, sr=s.nSupported||0;
+  const sup=s.conclusions.supported||0, par=s.conclusions.partially_supported||0,
+        inc=s.conclusions.inconclusive||0, con=s.conclusions.contradicted||0;
+  document.getElementById("kpis").innerHTML=[
+    kpi(s.nFull,'全量任务 <small>主集 '+s.nMain+' + 地热 12</small>'),
+    kpi(s.nL1+" / "+(s.nL2+12),'L1 / L2 <small>全量口径（主集 L2 '+s.nL2+' + 地热 L2 12）</small>'),
+    kpi(fx(s.mean)+' <small>/ 100</small>','主集均分 <small>L1 '+fx(s.meanL1)+' · L2 '+fx(s.meanL2)+'</small>'),
+    kpi('69.0 <small>/ 100</small>','全量均分 <small>含地热 62.1×12 加权</small>'),
+    kpi(sup+" / "+s.nMain,'supported <small>'+Math.round(sup/s.nMain*100)+'%（partially '+par+' · inconcl '+inc+' · contra '+con+'）</small>'),
+  ].join("");
+  function kpi(v,k){return '<div class="kpi"><div class="v">'+v+'</div><div class="k">'+k+'</div></div>'}
+})();
+
+/* ---------- matrix ---------- */
+(function(){
+  const order=["earth","astro","cs","biomed","materials"];
+  let h='<table class="mx"><tr><th>领域</th><th>L1</th><th>L2</th><th>合计</th><th>均分</th><th>L1 均分</th><th>L2 均分</th></tr>';
+  order.forEach(d=>{
+    const x=STATS.byDomain[d]; if(!x)return;
+    h+='<tr><td><span class="dot" style="background:'+DOM_COLOR[d]+'"></span>'+DOM_LABEL[d]+'</td>'
+      +'<td>'+x.nL1+(x.meanL1!=null?' <span style="color:#94a3b8">('+fx(x.meanL1)+')</span>':'')+'</td>'
+      +'<td>'+x.nL2+(x.meanL2!=null?' <span style="color:#94a3b8">('+fx(x.meanL2)+')</span>':'')+'</td>'
+      +'<td><b>'+x.n+'</b></td><td>'+heat(x.mean)+'</td>'
+      +'<td>'+(x.meanL1!=null?heat(x.meanL1):'–')+'</td><td>'+(x.meanL2!=null?heat(x.meanL2):'–')+'</td></tr>';
+  });
+  h+='<tr><td>— 地热（独立子集）</td><td>0</td><td>12 <span style="color:#94a3b8">(62.1)</span></td><td><b>12</b></td><td>'+heat(62.1)+'</td><td>–</td><td>'+heat(62.1)+'</td></tr>';
+  h+='<tr class="total-row"><td>主集合计</td><td>'+STATS.nL1+' ('+fx(STATS.meanL1)+')</td><td>'+STATS.nL2+' ('+fx(STATS.meanL2)+')</td><td>'+STATS.nMain+'</td><td>'+heat(STATS.mean)+'</td><td>'+heat(STATS.meanL1)+'</td><td>'+heat(STATS.meanL2)+'</td></tr>';
+  h+='<tr class="total-row"><td>全量（含地热）</td><td>73</td><td>64</td><td>137</td><td>'+heat(69.0)+'</td><td>'+heat(72.1)+'</td><td>'+heat(65.5)+'</td></tr>';
+  document.getElementById("matrix").innerHTML=h+"</table>";
+  function heat(v){if(v==null)return"–";const t=Math.max(0,Math.min(1,(v-40)/55));
+    return '<span class="heat" style="background:rgba('+(v<60?"220,38,38":v<75?"217,119,6":"5,150,105")+','+(0.14+t*0.22).toFixed(2)+';color:'+ (v<60?"#b91c1c":v<75?"#b45309":"#047857")+'">'+fx(v)+'</span>'}
+})();
+
+/* ---------- histogram ---------- */
+(function(){
+  const h=STATS.hist, max=Math.max(...Object.values(h));
+  document.getElementById("hist").innerHTML=Object.entries(h).map(([k,v])=>{
+    const w=Math.max(2,Math.round(v/max*100));
+    const col=k==="0-40"?"#dc2626":k==="40-50"?"#f97316":k==="50-60"?"#f59e0b":k==="60-70"?"#eab308":k==="70-80"?"#84cc16":k==="80-90"?"#22c55e":"#059669";
+    return '<div class="bar-row"><span>'+k+'</span><div class="bar-track"><div class="bar-fill" style="width:'+w+'%;background:'+col+'"></div></div><b style="text-align:right">'+v+'</b></div>';
+  }).join("");
+})();
+
+/* ---------- conclusions ---------- */
+(function(){
+  const s=STATS.conclusions, total=s.supported+s.partially_supported+s.inconclusive+s.contradicted;
+  document.getElementById("conclStrip").innerHTML=["supported","partially_supported","inconclusive","contradicted"]
+    .filter(k=>s[k]).map(k=>'<div style="width:'+(s[k]/total*100)+'%;background:'+CON_COLOR[k]+'" title="'+k+': '+s[k]+'"></div>').join("");
+  document.getElementById("conclLegend").innerHTML=["supported","partially_supported","inconclusive","contradicted"]
+    .filter(k=>s[k]).map(k=>'<span><span class="dot" style="background:'+CON_COLOR[k]+'"></span>'+CON_LABEL[k]+' <b>'+s[k]+'</b>（'+Math.round(s[k]/total*100)+'%）</span>').join("");
+})();
+
+/* ---------- judge comparison ---------- */
+(function(){
+  const a=STATS.agentStats;
+  document.getElementById("judgeCmp").innerHTML=
+    '<p style="font-size:13px;color:#475569;margin-bottom:12px">对 <b>'+a.n+'</b> 张双裁判均覆盖的卡：</p>'
+    +'<div class="bar-row"><span>v7 裁判</span><div class="bar-track"><div class="bar-fill" style="width:'+(a.v7Mean/100*100)+'%;background:#4f46e5"></div></div><b>'+fx(a.v7Mean)+'</b></div>'
+    +'<div class="bar-row"><span>agent 裁判</span><div class="bar-track"><div class="bar-fill" style="width:'+(a.agentMean/100*100)+'%;background:#0ea5e9"></div></div><b>'+fx(a.agentMean)+'</b></div>'
+    +'<p style="font-size:12.5px;color:#64748b;margin-top:12px">系统性差值 <b>'+(a.diff>0?"+":"")+fx(a.diff)+'</b> 分：agent 裁判（DeepSeek 自主评估链）整体略保守于 v7 单次裁判，与此前抽样校准结论（free 模型对 v7 温和偏宽松、需 ~6 点校准偏移）方向一致。</p>';
+})();
+
+/* ---------- task library ---------- */
+const state={q:"",dom:"",lvl:"",con:"",sort:"score-desc"};
+function fillSel(id,opts){const el=document.getElementById(id);opts.forEach(o=>el.insertAdjacentHTML("beforeend",o))}
+fillSel("fDom",Object.keys(DOM_LABEL).map(d=>'<option>'+d+'</option>'));
+fillSel("fCon",Object.keys(CON_LABEL));
+fillSel("rDom",Object.keys(DOM_LABEL).map(d=>'<option>'+d+'</option>'));
+fillSel("rLvl",[]);
+fillSel("rCon",Object.keys(CON_LABEL));
+["q","fDom","fLvl","fCon","sort"].forEach(id=>document.getElementById(id).oninput=e=>{
+  state.q=document.getElementById("q").value.toLowerCase();
+  state.dom=document.getElementById("fDom").value;
+  state.lvl=document.getElementById("fLvl").value;
+  state.con=document.getElementById("fCon").value;
+  state.sort=document.getElementById("sort").value;
+  renderCards();
+});
+function cardList(){
+  let arr=CARDS.filter(c=>
+    (!state.dom||c.domain===state.dom)&&(!state.lvl||c.level===state.lvl)&&(!state.con||c.v7.conclusion===state.con)&&
+    (!state.q||(c.id+" "+c.title+" "+c.claim).toLowerCase().includes(state.q)));
+  const s=state.sort;
+  arr.sort((a,b)=> s==="score-asc"?(a.v7.total??-1)-(b.v7.total??-1)
+    : s==="id"?a.id.localeCompare(b.id)
+    : s==="dom"?(a.domain.localeCompare(b.domain)||(-(a.v7.total??-1))):((b.v7.total??-1)-(a.v7.total??-1)));
+  return arr;
+}
+function renderCards(){
+  const arr=cardList();
+  document.getElementById("tCount").textContent=arr.length+" / "+CARDS.length+" 张卡";
+  document.getElementById("tgrid").innerHTML=arr.map(c=>{
+    const col=DOM_COLOR[c.domain]||"#94a3b8", cc=CON_COLOR[c.v7.conclusion]||"#94a3b8";
+    return '<article class="tcard" style="--dc:'+col+'" onclick="openCard(\''+c.id+'\')">'
+      +'<div class="tags"><span class="tag dom" style="background:'+col+'">'+DOM_LABEL[c.domain]+'</span>'
+      +'<span class="tag '+(c.level==="L1"?"lv1":"lv2")+'">'+c.level+' '+(c.level==="L1"?"论文复现":"多步骤")+'</span>'
+      +'<span class="tag">'+esc(c.id.split("_")[0])+'</span></div>'
+      +'<h4>'+esc(c.title||c.id)+'</h4>'
+      +'<div class="foot"><div><span class="score-pill" style="color:'+col+'">'+fx(c.v7.total)+'</span><span style="font-size:11px;color:#94a3b8"> /100</span>'
+      +(c.agent?' <span style="font-size:11px;color:#94a3b8">· agent '+fx(c.agent.total)+'</span>':'')+'</div>'
+      +'<span class="concl" style="background:'+cc+'1a;color:'+cc+'">'+(CON_LABEL[c.v7.conclusion]||c.v7.conclusion||"–").split(" ")[0]+'</span></div></article>';
+  }).join("");
+}
+renderCards();
+
+/* ---------- modal ---------- */
+window.openCard=function(id){
+  const c=CARDS.find(x=>x.id===id); if(!c)return;
+  const col=DOM_COLOR[c.domain];
+  const seg=[["A1 "+fx(c.v7.A1)+"/20",c.v7.A1/20*20,"#6366f1"],["A2 "+fx(c.v7.A2)+"/25",c.v7.A2/25*25,"#8b5cf6"],
+             ["A3 "+fx(c.v7.A3)+"/15",c.v7.A3/15*15,"#a78bfa"],["B "+fx(c.v7.B)+"/40",c.v7.B/40*40,"#0ea5e9"]];
+  document.getElementById("mbox").innerHTML=
+    '<button class="close" onclick="document.getElementById(\'modal\').classList.remove(\'open\')">✕</button>'
+    +'<div class="tags mmeta"><span class="tag dom" style="background:'+col+'">'+DOM_LABEL[c.domain]+'</span>'
+    +'<span class="tag '+(c.level==="L1"?"lv1":"lv2")+'">'+c.level+' '+(c.level==="L1"?"论文复现":"多步骤")+'</span>'
+    +'<span class="tag mono">'+esc(c.id)+'</span>'+(c.target?'<span class="tag">目标区间 '+esc(c.target)+'</span>':'')
+    +(c.dataFiles?'<span class="tag">冻结数据 '+c.dataFiles+' 文件'+(c.dataMB?' / '+c.dataMB+' MB':'')+'</span>':'')+'</div>'
+    +'<h2>'+esc(c.title||c.id)+'</h2>'
+    +(c.claim?'<div class="claim"><b style="color:#4f46e5">关键主张：</b>'+esc(c.claim)+'</div>':'')
+    +'<div class="mrow"><b>评分协议</b><span>A 复现保真 60（A1 交付 20 · A2 锚点吻合 25 · A3 方法 15）+ B 证据真实性 40；锚点数 '+(c.v7.nAnchors??"–")+'；提交类别 '+(c.v7.subClass||"–")+'</span></div>'
+    +'<div class="mrow"><b>基线 v7 评分</b><span><b style="font-size:16px;color:'+col+'">'+fx(c.v7.total)+'</b>/100 · '+
+      '<span class="concl" style="background:'+(CON_COLOR[c.v7.conclusion]||"#94a3b8")+'1a;color:'+(CON_COLOR[c.v7.conclusion]||"#94a3b8")+'">'+(CON_LABEL[c.v7.conclusion]||c.v7.conclusion||"–")+'</span></span></div>'
+    +'<div class="stack">'+seg.map(s=>'<div style="width:'+(s[1])+'%;background:'+s[2]+'" title="'+s[0]+'"></div>').join("")+'</div>'
+    +'<div class="stack-lg">'+seg.map(s=>'<span><span class="dot" style="background:'+s[2]+'"></span>'+s[0]+'</span>').join("")+'</div>'
+    +(c.agent?'<div class="mrow"><b>agent 裁判</b><span><b>'+fx(c.agent.total)+'</b>/100 · '+(CON_LABEL[c.agent.conclusion]||c.agent.conclusion)+' <span style="color:#94a3b8">('+esc(c.agent.model)+')</span></span></div>'
+      +(c.agent.reason?'<div class="reason"><b style="color:#0284c7">裁判评语摘要：</b>'+esc(c.agent.reason)+'…</div>':'')
+      :'<div class="mrow"><b>agent 裁判</b><span style="color:#94a3b8">该卡无 agent 评分记录</span></div>')
+    +(c.v7.enforce?'<div class="enf">⚠ enforce 钳制：'+esc(c.v7.enforce)+'</div>':'')
+    +'<div style="margin-top:16px;display:flex;gap:10px">'
+    +'<button class="btn small" onclick="gotoSubmit(\''+c.id+'\')">在提交页打开此卡 →</button>'
+    +'<button class="btn ghost small" onclick="document.getElementById(\'modal\').classList.remove(\'open\')">关闭</button></div>';
+  document.getElementById("modal").classList.add("open");
+};
+document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")e.target.classList.remove("open")};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")document.getElementById("modal").classList.remove("open")});
+window.gotoSubmit=function(id){
+  document.getElementById("modal").classList.remove("open");
+  document.querySelector('.topbar nav button[data-tab="submit"]').click();
+  document.getElementById("sCard").value=id;
+};
+
+/* ---------- calibration scatter ---------- */
+(function(){
+  const W=640,H=330,L=44,R=14,T=14,B=34;
+  const pts=CARDS.filter(c=>{const m=/(\d+)\s*[–-]\s*(\d+)/.exec(c.target||"");return m&&c.v7.total!=null})
+    .map(c=>{const m=/(\d+)\s*[–-]\s*(\d+)/.exec(c.target);return{x:(+m[1]+ +m[2])/2,y:c.v7.total,c}});
+  let s='<rect x="'+L+'" y="'+T+'" width="'+(W-L-R)+'" height="'+(H-T-B)+'" fill="#fbfcfe" stroke="#e4e9f1"/>';
+  for(let g=0;g<=100;g+=25){
+    const px=T+(H-T-B)*(1-g/100), py=L+(W-L-R)*g/100;
+    s+='<line x1="'+L+'" y1="'+px+'" x2="'+(W-R)+'" y2="'+px+'" stroke="#eef2f7"/><text x="'+(L-7)+'" y="'+(px+4)+'" text-anchor="end" font-size="10" fill="#94a3b8">'+g+'</text>';
+    s+='<line x1="'+py+'" y1="'+T+'" x2="'+py+'" y2="'+(H-B)+'" stroke="#eef2f7"/><text x="'+py+'" y="'+(H-B+14)+'" text-anchor="middle" font-size="10" fill="#94a3b8">'+g+'</text>';
+  }
+  s+='<line x1="'+L+'" y1="'+(T+(H-T-B))+'" x2="'+(W-R)+'" y2="'+T+'" stroke="#cbd5e1" stroke-dasharray="5 4"/>';
+  pts.forEach(p=>{const cx=L+(W-L-R)*Math.min(100,Math.max(0,p.x))/100, cy=T+(H-T-B)*(1-p.y/100);
+    s+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="4.4" fill="'+(DOM_COLOR[p.c.domain]||"#94a3b8")+'" fill-opacity=".62" stroke="#fff"><title>'+esc(p.c.id)+'\n目标 '+esc(p.c.target)+' · 实际 '+fx(p.y)+'</title></circle>';});
+  s+='<text x="'+(W/2)+'" y="'+(H-3)+'" text-anchor="middle" font-size="11" fill="#64748b">目标分区间中值（设计难度）</text>';
+  document.getElementById("scat").innerHTML=s;
+  const skipped=CARDS.length-pts.length;
+  document.getElementById("scatLegend").innerHTML=Object.keys(DOM_LABEL).map(d=>'<span><span class="dot" style="background:'+DOM_COLOR[d]+'"></span>'+DOM_LABEL[d]+'</span>').join("")
+    +'<span style="color:#94a3b8">虚线 y=x ｜ '+skipped+' 张卡无标准区间未绘制</span>';
+})();
+
+/* ---------- results table ---------- */
+let rState={dom:"",lvl:"",con:"",sortKey:"total",sortDir:-1};
+["rDom","rLvl","rCon"].forEach(id=>document.getElementById(id).oninput=()=>{
+  rState.dom=document.getElementById("rDom").value;
+  rState.lvl=document.getElementById("rLvl").value;
+  rState.con=document.getElementById("rCon").value;
+  renderTable();
+});
+const COLS=[["id","任务卡","left"],["domain","领域"],["@level","层级"],["target","目标区间"],["v7.A1","A1/20"],["v7.A2","A2/25"],["v7.A3","A3/15"],["v7.A","A/60"],["v7.B","B/40"],["v7.total","总分"],["agent.total","agent分"],["v7.conclusion","结论"],["v7.enforce","钳制"]];
+const getV=(c,path)=>path.split(".").reduce((o,k)=>o&&o[k],c);
+function renderTable(){
+  let arr=CARDS.filter(c=>(!rState.dom||c.domain===rState.dom)&&(!rState.lvl||c.level===rState.lvl)&&(!rState.con||c.v7.conclusion===rState.con));
+  const k=rState.sortKey;
+  arr.sort((a,b)=>{const va=getV(a,k)??-1,vb=getV(b,k)??-1;
+    return typeof va==="string"?va.localeCompare(vb):(va-vb)*rState.sortDir||0;});
+  document.getElementById("rCount").textContent=arr.length+" / "+CARDS.length+" 张";
+  document.querySelector("#dtable thead").innerHTML="<tr>"+COLS.map(c=>"<th data-k='"+c[0]+"' style='"+(c[2]=="left"?"text-align:left":"")+"'>"+c[1]+(k===c[0]?(rState.sortDir<0?" ▼":" ▲"):"")+"</th>").join("")+"</tr>";
+  document.querySelector("#dtable tbody").innerHTML=arr.map(c=>{
+    const cc=CON_COLOR[c.v7.conclusion]||"#94a3b8";
+    return "<tr><td class='mono' style='text-align:left'><a href='#' onclick='openCard(\""+c.id+"\");return false' style='color:#4f46e5;text-decoration:none'>"+esc(c.id)+"</a></td>"
+      +"<td><span class='dot' style='background:"+DOM_COLOR[c.domain]+"'></span>"+DOM_LABEL[c.domain]+"</td>"
+      +"<td>"+c.level+"</td><td>"+esc(c.target||"–")+"</td>"
+      +"<td>"+fx(c.v7.A1)+"</td><td>"+fx(c.v7.A2)+"</td><td>"+fx(c.v7.A3)+"</td><td><b>"+fx(c.v7.A)+"</b></td><td>"+fx(c.v7.B)+"</td>"
+      +"<td><b style='color:"+DOM_COLOR[c.domain]+"'>"+fx(c.v7.total)+"</b></td>"
+      +"<td>"+(c.agent?fx(c.agent.total):"–")+"</td>"
+      +"<td><span class='concl' style='background:"+cc+"1a;color:"+cc+"'>"+(c.v7.conclusion||"–")+"</span></td>"
+      +"<td>"+(c.v7.enforce?"⚠":"")+"</td></tr>";
+  }).join("");
+  document.querySelectorAll("#dtable th").forEach(th=>th.onclick=()=>{
+    const key=th.dataset.k;
+    if(rState.sortKey===key)rState.sortDir*=-1;else{rState.sortKey=key;rState.sortDir=-1}
+    renderTable();
+  });
+}
+renderTable();
+document.getElementById("csvBtn").onclick=()=>{
+  const head=["card","domain","level","target","A1","A2","A3","A","B","total","conclusion","agent_total","agent_conclusion","enforce"];
+  const rows=CARDS.map(c=>[c.id,c.domain,c.level,c.target,c.v7.A1,c.v7.A2,c.v7.A3,c.v7.A,c.v7.B,c.v7.total,c.v7.conclusion,c.agent?c.agent.total:"",c.agent?c.agent.conclusion:"",c.v7.enforce].map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(","));
+  const blob=new Blob(["\ufeff"+head.join(",")+"\n"+rows.join("\n")],{type:"text/csv"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="paperbench_baseline_scores.csv";a.click();
+};
+
+/* ---------- submit demo ---------- */
+(function(){
+  const sel=document.getElementById("sCard");
+  CARDS.slice().sort((a,b)=>a.id.localeCompare(b.id)).forEach(c=>
+    sel.insertAdjacentHTML("beforeend",'<option value="'+c.id+'">'+c.id+"（"+DOM_LABEL[c.domain]+" · "+c.level+" · 基线 "+fx(c.v7.total)+"）</option>"));
+  const STEPS=["校验提交物完整性（claim / code / metrics / evidence）…","冻结数据只读挂载，干净工作区复跑提交…","数值锚点比对（逐锚容差带判定）…","LLM 裁判评分（A1+A2+A3+B）+ enforce 钳制…"];
+  let running=false;
+  document.getElementById("resetBtn").onclick=()=>{document.getElementById("pipe").innerHTML="";document.getElementById("resBox").innerHTML=""};
+  document.getElementById("subForm").onsubmit=e=>{
+    e.preventDefault();
+    if(running)return; running=true;
+    const id=document.getElementById("sCard").value, c=CARDS.find(x=>x.id===id);
+    const agent=document.getElementById("sAgent").value||"My-Agent";
+    const pipeEl=document.getElementById("pipe"), resEl=document.getElementById("resBox");
+    resEl.innerHTML=""; pipeEl.innerHTML=STEPS.map((s,i)=>'<div class="pstep" id="ps'+i+'"><span class="ico">'+(i+1)+'</span><span>'+s+'</span></div>').join("");
+    let i=0;
+    (function next(){
+      if(i>0){const p=document.getElementById("ps"+(i-1));p.classList.remove("run");p.classList.add("done");p.querySelector(".ico").textContent="✓"}
+      if(i<STEPS.length){document.getElementById("ps"+i).classList.add("run");i++;setTimeout(next,700+Math.random()*500)}
+      else{
+        running=false;
+        const rnd=mulberry32([...id].reduce((a,ch)=>a+ch.charCodeAt(0),7)*97);
+        const base=c.v7.total??65, jitter=(rnd()*14-8);
+        const total=Math.max(5,Math.min(100,Math.round((base+jitter)*10)/10));
+        const share=k=>Math.round(((c.v7[k]??0)/ (c.v7.total||1))*total*10)/10;
+        const A1=Math.min(20,share("A1")),A2=Math.min(25,share("A2")),A3=Math.min(15,share("A3"));
+        const B=Math.max(0,Math.min(40,Math.round((total-A1-A2-A3)*10)/10));
+        const concl=total>=78?"supported":total>=55?"partially_supported":total>=40?"inconclusive":"contradicted";
+        const cc=CON_COLOR[concl], col=DOM_COLOR[c.domain];
+        const clamp= total<70;
+        resEl.innerHTML='<div class="result-card"><div class="res-top">'
+          +'<div class="donut"><svg width="130" height="130"><circle cx="65" cy="65" r="54" fill="none" stroke="#eef2f7" stroke-width="13"/>'
+          +'<circle cx="65" cy="65" r="54" fill="none" stroke="'+col+'" stroke-width="13" stroke-linecap="round" stroke-dasharray="'+(total/100*339.3)+' 339.3"/></svg>'
+          +'<div class="num"><b>'+fx(total)+'</b><span>/ 100</span></div></div>'
+          +'<div class="abars">'
+          +abar("A1 交付完整",A1,20,"#6366f1")+abar("A2 锚点吻合",A2,25,"#8b5cf6")+abar("A3 方法严谨",A3,15,"#a78bfa")+abar("B 证据真实性",B,40,"#0ea5e9")
+          +'</div></div>'
+          +'<div><span class="concl" style="background:'+cc+'1a;color:'+cc+';font-size:12.5px">'+CON_LABEL[concl]+'</span>'
+          +' <span style="font-size:12px;color:#94a3b8;margin-left:8px">'+esc(agent)+' · '+esc(document.getElementById("sVer").value||"—")+'</span></div>'
+          +(clamp?'<div class="enf">⚠ enforce 钳制生效：数值锚点覆盖不全 → A2 ≤ 12、总分 ≤ 70（代码级强制，防止裁判放水）</div>':'')
+          +'<div class="cmp">与基线对比：该卡基线 v7 = <b>'+fx(c.v7.total)+'</b>，本次模拟提交 '+(total>=c.v7.total?"高于":"低于")+'基线 <b>'+fx(Math.abs(total-c.v7.total))+'</b> 分；目标区间 '+(c.target?esc(c.target):"–")+'。</div>'
+          +'<div style="margin-top:12px;font-size:11.5px;color:#f472b6">※ 演示模式：以上分数由原型按基线分布模拟生成；真实评分需部署裁判后端（work/judge_v7_full.py + agent_eval 链）。</div>'
+          +'</div>';
+        function abar(label,v,max,color){
+          const pct=Math.max(0,Math.min(100,v/max*100));
+          return '<div class="abar"><span>'+label+'</span><div class="bar-track"><div class="bar-fill" style="width:'+pct+'%;background:'+color+'"></div></div><span class="mono" style="text-align:right">'+fx(v)+" / "+max+'</span></div>';
+        }
+      }
+    })();
+  };
+})();
+</script>
+</body>
+</html>

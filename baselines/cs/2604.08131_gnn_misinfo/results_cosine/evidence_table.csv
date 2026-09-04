@@ -1,0 +1,2 @@
+model,split,n,f1,precision,recall,f1_std,f1_gap_pp
+graphsage,test,7210.0,91.91,91.31,92.51,0.07,nan

@@ -1,0 +1,17 @@
+patch active: info_hack_indices
+==> BLS_InfoBatch: ratio=0.3, delta=0.875
+==> BLS: alpha=0.7
+
+|--| #sampled: 50 #saved: 0.00%
+_next_data(): type <class 'list'> len 2
+  [0] type=<class 'torch.Tensor'> torch.Size([8, 3, 32, 32])
+  [1] type=<class 'torch.Tensor'> torch.Size([8])
+next(it): type <class 'torch.Tensor'> len 8
+  [0] type=<class 'torch.Tensor'> torch.Size([])
+  [1] type=<class 'torch.Tensor'> torch.Size([])
+  [2] type=<class 'torch.Tensor'> torch.Size([])
+  [3] type=<class 'torch.Tensor'> torch.Size([])
+  [4] type=<class 'torch.Tensor'> torch.Size([])
+  [5] type=<class 'torch.Tensor'> torch.Size([])
+  [6] type=<class 'torch.Tensor'> torch.Size([])
+  [7] type=<class 'torch.Tensor'> torch.Size([])

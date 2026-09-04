@@ -1,0 +1,818 @@
+
+===== PAGE 42 =====
+at an intermediate layer (l = 6) and was lowest when the projection was applied at the three deepest
+positions (l = 10, l = 11, l = 12). Figure 20 also reveals that the optimal projection location can differ
+substantially, even between dataset versions from the same domain with an identical confounder. While for
+symmetric CelebA Blond, the highest average group accuracy was achieved with the projection at l = 4,
+for the asymmetric version, the optimal location shifted to l = 6. Moreover, applying the projection at
+l = 1 yielded a small improvement for the asymmetric dataset but was the worst-performing option for the
+symmetric version, causing a noticeable AGA decrease.
+This analysis of the layer-wise correction performance indicates that finding the optimal layer l for computing
+the CAV and applying the projection remains challenging. Even with prior knowledge about the underlying
+dataset and the nature of the confounder, making educated guesses for finding a value for l is highly unreliable,
+making costly grid search unavoidable to exploit P-ClArC’s full potential.
+Furthermore, it becomes apparent that in our experimental setting, the AGA on the validation data serves
+as a poor estimator for the model’s true generalization ability on the test data.
+Across the board, the
+validation performance of the corrected models significantly overestimated the final test performance. Some
+degree of overestimation is expected, since we perform model selection based on validation AGA. Particularly
+for datasets with more complex confounders, however, the validation metric was not just optimistic, but
+sometimes even misleading about which hyperparameters were optimal. For asymmetric CelebA Blond, the
+test performance was highest at l = 6, but since the validation performance peaked at l = 1, our selection
+criteria led us to choose a sub-optimal model that generalized more poorly (see Figure 20d). In contrast, for
+the simpler Squares dataset, the validation AGA peaked at the same projection location as the test AGA
+(l = 1), allowing us to select the best model, as can be seen in Figures 20a and 20b.
+The discrepancy between validation and test performance likely stems from the extreme data scarcity in the
+validation set. For all datasets except Follicles, the minority groups are represented by only two samples.
+Such a small number is often insufficient to capture the full data distribution of a group, a challenge that
+intensifies with feature complexity and that we also observed for DFR and Group DRO. For a dataset like
+Squares, where features are simple, these two samples might offer a reasonable proxy for test performance,
+though they are unlikely to cover edge cases. However, for a complex confounder like gender in CelebA
+Blond, it is highly improbable that two examples can represent the diversity of relevant attributes. This
+sparsity also elevates the risk of overfitting during model selection. An extensive hyperparameter search may
+produce a model that correctly classifies the two minority samples purely by chance, leading to its selection
+despite poor generalization. Conversely, a genuinely robust model could be discarded for failing to classify
+one of these samples, which is especially likely if the respective sample is an outlier. Because the coverage of
+the minority groups within the validation set is so low, validation AGA becomes an unreliable performance
+metric, potentially leading to the selection of models that are poorly generalized.
+This issue of data scarcity also affects the computation of the CAV. P-ClArC’s success heavily relies on a
+precise CAV to isolate and suppress the confounding feature. For this, we assume that the confounder can
+be represented by a linear direction in the model’s latent space, orthogonal to causal concepts. While this
+assumption may not always hold in general, our setting makes it even more difficult to satisfy, since the CAV
+must be derived from only eight minority group samples in the training split. An unrepresentative sample
+set can produce an inaccurate CAV that is misaligned with the true confounder direction or even entangled
+with causal features. As a result, P-ClArC’s ability to neutralize the bias without corrupting important
+causal signals could be decreased.
+The described challenges are further intensified by potential mislabeling from SpRAy. Given the small size
+of the minority groups, each sample has considerable influence on the quality of the CAV, the average group
+accuracy, and, consequently, model selection. While the limited sample size already restricts the minority
+group’s representativeness, incorrect labels from SpRAy can render the samples highly unrepresentative of
+their respective data group. The combined effect of low representativeness and high impact on the selection
+metric makes it substantially harder to produce and identify a model that genuinely generalizes well. Because
+of that, it is surprising that even when using SpRAy labels that are partially highly inaccurate, P-ClArC still
+always led to an increased AGA compared to the uncorrected model. For Follicles, test performance using
+SpRAy labels even surpassed test performance using the true labels. This is likely due to the problems during
+42
+
+===== PAGE 43 =====
+model selection explained above: Using true labels, we achieved the highest AGA on the validation data with
+l = 8 using a SVM-based CAV. On the test data, this model yielded an AGA of 76.6%. If we instead selected
+a model with a PCAV projection and otherwise identical hyperparameter values, the resulting AGA on the
+test data would have been noticeably higher at 81.1%, surpassing the result for SpRAy labels. Consequently,
+the high variance in our model selection process posed the greatest challenge for P-ClArC. However, due to
+the lack of a better estimator for test AGA, selecting based on validation AGA remained the only option.
+As before, we compute the confidence scores and decision boundaries for the corrected models on Squares
+(Figure 21). For both symmetric and asymmetric Squares, P-ClArC yields a noticeable improvement, cor-
+rectly classifying a considerable portion of the minority groups that the original student failed on. Unlike
+the corrections made by Group DRO, these gains are achieved without degrading confidence or accuracy
+for the majority groups. This indicates that, at least for Squares, the few minority group samples in the
+training set were sufficient to compute a mostly accurate CAV for the confounder. However, the corrected
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(a) symmetric Squares with true confounder labels
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(b) symmetric Squares with confounder labels provided by
+SpRAy
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(c) asymmetric Squares with true confounder labels
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(d) asymmetric Squares with confounder labels provided
+by SpRAy
+Figure 21: Decision boundaries and confidence regions for Squares after applying P-ClArC to the students.
+The optimal decision boundary corresponds to a vertical line at 0.5 foreground intensity. Panels (a) and (b)
+depict results for symmetric Squares using true confounder labels and SpRAy labels, respectively. Panels (c)
+and (d) show the corresponding results for asymmetric Squares.
+43
+
+===== PAGE 44 =====
+decision boundaries still fall short of the theoretical optimum. The visualization also highlights the inconsis-
+tent results for asymmetric Squares, where the improvement with SpRAy labels is much smaller than with
+true labels, despite the near-perfect accuracy of the SpRAy annotations. This discrepancy is most likely an
+additional indicator that the flawed model selection process was a significant challenge in our experiments.
+4.5
+RR-ClArC
+In our comparative analysis, RR-ClArC mostly achieved satisfactory results, usually ranking second behind
+CFKD and outperforming the other correction methods, especially when using ground-truth group labels
+(cf. Tables 2 and 3). A key advantage of RR-ClArC is its direct approach to mitigation. By incorporating
+a penalty term into the objective function, it explicitly minimizes the model’s sensitivity to the confounding
+feature (given an accurate CAV). This contrasts with P-ClArC, which modifies sample representations with a
+projection layer rather than actually altering the student’s behavior. Additionally, RR-ClArC supports class-
+specific unlearning, offering more granular control than the class-agnostic projection of P-ClArC. However,
+this particular benefit was not relevant in our experimental setup, which only involved binary classification
+tasks where the spurious correlation affected both classes.
+In terms of computational overhead, a single epoch of fine-tuning with RR-ClArC was only moderately more
+expensive than a standard ERM epoch. The additional cost stems from the partial backpropagation required
+to compute the LRR loss term, which increases epoch time by approximately 10% to 100% depending on the
+depth of the selected layer l. While this per-epoch increase aligns with the observations of Dreyer et al. (2024),
+the total training time in our experiments was substantially longer. Unlike the fixed 10-epoch fine-tuning
+schedule used by Dreyer et al., we fine-tuned until validation AGA converged, which took over 200 epochs in
+some cases, compared to a maximum of 25 for P-ClArC. This extended convergence time, in addition to the
+larger computational cost of a single epoch, makes hyperparameter tuning considerably more expensive than
+for P-ClArC. As the optimal hyperparameters values varied widely across datasets, an extensive and therefore
+costly grid search was unavoidable to identify the best-performing model configuration. This challenge was
+intensified by the fact that RR-ClArC introduces additional hyperparameters requiring optimization: the
+regularization strength λ ∈[0.1, 107] and the choice of loss function type (i.e. squared dot product or cosine
+similarity).
+RR-ClArC was also susceptible to the same unreliable model selection process as P-ClArC, where validation
+AGA was often a poor proxy for test performance. To analyze this, we selected the top 20 corrected models
+for symmetric Squares based on their validation AGA and evaluated their corresponding test performance.
+Unlike the per-layer analysis used for P-ClArC, this approach accounts for the fact that other hyperparame-
+ters beyond layer l can cause vastly different outcomes with RR-ClArC. The results for symmetric Squares,
+shown in Figure 22, exhibit a pattern similar to the P-ClArC evaluation. Although validation performance
+consistently overestimates test performance, the two metrics generally follow the same trend. This correla-
+tion suggests that, at least for simpler datasets like Squares, selecting the model with the highest validation
+AGA remains a viable strategy for identifying one of the better-generalizing configurations. For symmetric
+Squares with true confounder labels, the top three models identified by the grid search shared an identi-
+cal validation AGA (Figure 22a). Their test AGAs were therefore averaged for reporting in Table 2. The
+outcome with SpRAy labels was stronger, as the model with the highest validation score also happened to
+achieve the best test performance (Figure 22b).
+The unreliability of the model selection is aggravated by inaccurate SpRAy labels. This effect is illustrated
+by the results for symmetric CelebA Smiling (Figure 23). When using true confounder labels, the validation
+AGA successfully guides the selection to a model that also performs well on the test data (Figure 23a).
+However, with SpRAy labels, the test performance of the top 20 models widely varied, which was not at all
+reflected by their respective validation performances (Figure 23b). Consequently, the model with the highest
+validation AGA ultimately performed worse than P-ClArC and Group DRO. However, it still improved over
+the uncorrected student, and even outperformed DFR (cf. Table 3). Interestingly, this failure cannot be
+attributed to a suboptimal CAV derived from the noisy labels. The existence of another well-performing
+model within the top candidates (model #12), which would have achieved a similar test AGA as the best
+model with true group labels, proves that an effective correction was possible, despite noisy training labels.
+The main issue was therefore the inaccurately labeled minority samples in the validation set, which provided
+44
+
+===== PAGE 45 =====
+#1
+#2
+#3
+#4
+#5
+#6
+#7
+#8
+#9
+#10 #11 #12 #13 #14 #15 #16 #17 #18 #19 #20
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+average group accuracy
+validation data
+test data
+uncorrected model
+uncorrected model
+(a) RR-ClArC correction on symmetric Squares with true confounder labels
+#1
+#2
+#3
+#4
+#5
+#6
+#7
+#8
+#9
+#10 #11 #12 #13 #14 #15 #16 #17 #18 #19 #20
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+average group accuracy
+validation data
+test data
+uncorrected model
+uncorrected model
+(b) RR-ClArC correction on symmetric Squares with SpRAy confounder labels
+Figure 22: Comparison of the validation and test AGAs on symmetric Squares for the top 20 models, which
+were selected from a grid search based on their validation performance. The results are shown for corrections
+using (a) true confounder labels and (b) confounder labels provided by SpRAy.
+a misleading signal and caused the selection of a poorly generalized model even when a better alternative
+exists.
+An even more extreme example of the problems during model selection is provided by the Follicles dataset
+(Figure 24). Even with true confounder labels, the link between validation and test performance is frag-
+ile. Models with similar validation scores can differ noticeably regarding their test AGAs, with some even
+underperforming the uncorrected student (Figure 24a). Nevertheless, the model achieving the highest val-
+idation AGA was also the one that generalized best, and the three top-ranked models based on validation
+performance yield higher test scores on average. Hence, the selection process was still effective. However,
+when using SpRAy labels with Follicles, any meaningful relationship between validation and test AGA is
+lost, rendering the selection process basically as arbitrary as choosing a model at random. (Figure 24b).
+It is plausible that SpRAy might have identified an entirely different spurious correlation, which would
+explain both the strong mismatch between validation and test scores and the low accuracy of the SpRAy
+labels (cf. Table 4). However, we cannot confirm or rule out this suspicion, as we possess no knowledge about
+the nature of this potential new confounder, and no ground-truth labels are available for the resulting data
+groups. Further investigations would be out of scope for this study. Nevertheless, during exploration with
+Virelay, the clusters seemed to be roughly distinguished by follicle sizes, i.e. the intended confounder.
+Beyond the challenges in model selection, our experiments revealed a lack of robustness in the RR-ClArC
+method itself. We found that performance is highly sensitive to hyperparameter configurations, where minor
+adjustments can cause drastic changes in both validation and test AGAs. This sensitivity makes it difficult to
+establish a reliable starting point for tuning, as optimal configurations are not transferable between datasets.
+A set of hyperparameters that performs well in one context may fail completely in another. This problem
+persists even between closely related setups, such as the symmetric and asymmetric versions of the same
+dataset, and raises concerns about the reproducibility of results obtained with RR-ClArC.
+Despite these difficulties, RR-ClArC is capable of producing results comparable to CFKD and superior to
+P-ClArC, Group DRO, and DFR when optimally tuned. Nevertheless, this high potential is consistently
+45
+
+===== PAGE 46 =====
+#1
+#2
+#3
+#4
+#5
+#6
+#7
+#8
+#9
+#10 #11 #12 #13 #14 #15 #16 #17 #18 #19 #20
+0.5
+0.6
+0.7
+0.8
+0.9
+average group accuracy
+validation data
+test data
+uncorrected model
+uncorrected model
+(a) RR-ClArC correction on symmetric CelebA Smiling with true confounder labels
+#1
+#2
+#3
+#4
+#5
+#6
+#7
+#8
+#9
+#10 #11 #12 #13 #14 #15 #16 #17 #18 #19 #20
+0.5
+0.6
+0.7
+0.8
+0.9
+average group accuracy
+validation data
+test data
+uncorrected model
+uncorrected model
+(b) RR-ClArC correction on symmetric CelebA Smiling with SpRAy confounder labels
+Figure 23: Comparison of the validation and test AGAs on symmetric CelebA Smiling for the top 20 models,
+which were selected from a grid search based on their validation performance. The results are shown for
+corrections using (a) true confounder labels and (b) confounder labels provided by SpRAy.
+#1
+#2
+#3
+#4
+#5
+#6
+#7
+#8
+#9
+#10 #11 #12 #13 #14 #15 #16 #17 #18 #19 #20
+0.72
+0.74
+0.76
+0.78
+0.80
+0.82
+0.84
+average group accuracy
+validation data
+test data
+uncorrected model
+uncorrected model
+(a) RR-ClArC correction on Follicles with true confounder labels
+#1
+#2
+#3
+#4
+#5
+#6
+#7
+#8
+#9
+#10 #11 #12 #13 #14 #15 #16 #17 #18 #19 #20
+0.60
+0.65
+0.70
+0.75
+0.80
+average group accuracy
+validation data
+test data
+uncorrected model
+uncorrected model
+(b) RR-ClArC correction on Follicles with SpRAy confounder labels
+Figure 24: Comparison of the validation and test AGAs on Follicles for the top 20 models, which were
+selected from a grid search based on their validation performance. The results are shown for corrections
+using (a) true confounder labels and (b) confounder labels provided by SpRAy.
+46
+
+===== PAGE 47 =====
+undermined by the primary challenge of unreliable model selection. This limitation makes RR-ClArC difficult
+to apply with confidence in scenarios defined by scarce data and extreme minority group underrepresentation,
+which were central to this study. Although Group DRO and DFR were also tuned using validation AGA
+and faced the same challenge, they circumvented this problem due to their simpler hyperparameter spaces,
+which did not require extensive grid searching. In other words, with fewer configurations to choose from, the
+probability of selecting a model that coincidentally fits the few minority samples in the validation set while
+still exhibiting severe Clever Hans behavior was significantly reduced. This probably helped Group DRO in
+particular to produce much more consistent results.
+Once again, the decision boundaries of the Squares models after correction with RR-ClArC are visualized in
+Figure 25. The plots clearly show that RR-ClArC provides a more effective correction than the previously
+examined methods, with a larger portion of minority group samples now being correctly classified. Similar
+to P-ClArC, this is achieved without compromising the model’s performance on majority groups. Notably,
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(a) symmetric Squares with true confounder labels
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(b) symmetric Squares with confounder labels provided by
+SpRAy
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(c) asymmetric Squares with true confounder labels
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(d) asymmetric Squares with confounder labels provided
+by SpRAy
+Figure 25: Decision boundaries and confidence regions for Squares after applying RR-ClArC to the students.
+The optimal decision boundary corresponds to a vertical line at 0.5 foreground intensity. Panels (a) and (b)
+depict results for symmetric Squares using true confounder labels and SpRAy labels, respectively. Panels (c)
+and (d) show the corresponding results for asymmetric Squares.
+47
+
+===== PAGE 48 =====
+the decision boundary is also visibly smoother, and the regions of low model confidence are smaller and
+more constrained compared to the other methods. For the asymmetric case in particular, the corrected
+model’s decision boundary nearly follows the theoretical optimum. This result again highlights RR-ClArC’s
+potential, although it should be noted that asymmetric Squares was a dataset on which RR-ClArC performed
+particularly well (cf. Tables 2 and 3).
+4.6
+CFKD
+Of all the correction methods evaluated, both XAI-based and non-XAI-based, CFKD most consistently
+delivered the best results.
+Specifically, for six of the nine datasets used in our experiments, the model
+corrected with CFKD achieved the highest average group accuracy. In two of the remaining three cases, it
+ranked second-best. And while it achieved the largest improvements on the simple Squares, it also produced
+high-quality results on the more complex Follicles dataset and even on CelebA Blond, where all other methods
+failed to achieve significant improvements over the uncorrected student (cf. Tables 2 and 3). This success
+highlights the advantage of CFKD’s data augmentation strategy.
+By directly increasing the number of
+minority group samples, it strengthened model generalization to a degree the other approaches often could
+not match.
+However, there is one notable outlier: for the asymmetric version of the Camelyon17 dataset, the corrected
+model achieved the lowest average group accuracy, with a test AGA that is (after rounding) identical to the
+uncorrected student. This is somewhat surprising given its otherwise strong results, as CFKD significantly
+improved generalization for symmetric Camelyon17. In general, a plausible explanation for CFKD might fail
+is a poor quality of the generated counterfactual explanations, as the subsequent fine-tuning on the augmented
+dataset is relatively trivial, with not much potential to fail. However, without expert-level domain knowledge,
+Camelyon17 is arguably the most difficult dataset for which to judge whether a generated counterfactual lies
+within the data distribution and whether the student and oracle models have classified it correctly. There is
+no ground-truth information available about what a specific counterfactual should ideally look like, or what
+its real class label would be. This ambiguity makes it difficult to diagnose the precise reason for CFKD’s
+failure and, consequently, to find a solution.
+Figure 26 shows a selection of counterfactual explanations for the asymmetric Camelyon17 samples. Visually,
+they seem to resemble original examples and could plausibly belong to the original data distribution. We
+(a) No Tumor to Tumor
+(b) Tumor to No Tumor
+Figure 26: A selection of counterfactual explanations generated during the CFKD process for asymmetric
+Camelyon17. From left to right, each group shows the original image, its corresponding counterfactual, and
+the pixel-wise difference between the two. Panel (a) shows samples where the original was classified as No
+Tumor and the counterfactual as Tumor by the student, while panel (b) shows the reverse case.
+48
+
+===== PAGE 49 =====
+can identify cases where the actual cell structure appears modified (true counterfactuals) and others where
+the changes primarily affect the color cast (false counterfactuals). While some changes are subtle and almost
+invisible to the human eye, these do not appear to be adversarial examples; the pixel-wise difference maps
+show targeted adaptations to the space between cells rather than seemingly random noise. It was therefore
+not possible for us to determine what might be wrong with the generated counterfactuals, leaving no clear
+path for hyperparameter tuning.
+This challenge exemplifies a key drawback of CFKD: generating minimal yet meaningful counterfactuals
+is a non-trivial task. The absence of a ground truth for what an ideal counterfactual should be makes it
+difficult to judge their quality, a problem that is particularly acute in specialized domains like histopathology.
+Consequently, while CFKD performed well in most of our tests using default settings, resolving a failure case
+could require exhaustive and computationally expensive trial and error. This is further complicated by the
+vast hyperparameter space of the underlying counterfactual explainer (in this case, SCE) and the high cost of
+generating numerous explanations to uncover failure modes. For these reasons, even though we tried several
+different hyperparameter configurations, conducting an extensive grid search to find optimal values (as was
+done for P-ClArC and RR-ClArC) was not feasible.
+As for the other methods, we again visualize the decision boundary and confidence scores for the Squares
+models after they have been corrected with CFKD (Figure 27). The visualizations align well with the results
+from Table 2, demonstrating that CFKD effectively eliminates the Clever Hans effect for both symmetric
+and asymmetric Squares, with decision boundaries that closely approximate the theoretical optimum. And
+while RR-CIArC yielded a slightly higher AGA and WGA for asymmetric Squares, CFKD, in turn, led to an
+even smoother decision boundary with smaller regions of low confidence (cf. Figures 27b and 25c). CFKD
+heavily benefits from augmenting its training dataset with counterfactuals. Increasing the minority group
+population with false counterfactuals not only mitigated the spurious correlation but also helped prevent
+overfitting and visibly promoted a more well-shaped decision boundary.
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(a) symmetric Squares with true confounder labels
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(b) symmetric Squares with confounder labels provided by
+SpRAy
+Figure 27: Decision boundaries and confidence regions for Squares after applying CFKD to the students.
+The optimal decision boundary corresponds to a vertical line at 0.5 foreground intensity. Panels (a) and (b)
+depict results for symmetric and asymmetric Squares, respectively.
+49
+
+===== PAGE 50 =====
+5
+Conclusion and Outlook
+This reproducibility study presented a comparative analysis of state-of-the-art methods designed to correct
+Clever Hans behavior in image classifiers, specifically under challenging conditions of limited data and severe
+spurious correlations. Our study centered on the recently proposed XAI-based correction methods P-ClArC,
+RR-ClArC, and CFKD, which have not yet been extensively and independently evaluated. We also included
+the well-established non-XAI methods DFR and Group DRO as baselines, whose effectiveness has already
+been demonstrated in more favorable settings with greater data availability and better minority group
+coverage. By evaluating both XAI-based and non-XAI-based approaches under these demanding conditions,
+this work offers insights into their practical effectiveness and inherent limitations.
+A primary finding of our evaluation is that correction methods rooted in XAI generally outperformed the
+non-XAI baselines in mitigating model bias. Among them, CFKD proved to be the most consistently effec-
+tive approach, achieving the highest AGA on the majority of datasets, even those with complex confounding
+features where other methods struggled. RR-CIArC also demonstrated strong potential, though its perfor-
+mance exhibited higher variance. In comparison, the non-XAI baselines, while simpler to implement, were
+typically unable to match the performance gains of the XAI techniques. Of the two, Group DRO was gen-
+erally preferable to DFR, as its ability to use the entire training set and update all model parameters led to
+more substantial improvements, although this came at the cost of longer convergence times. Furthermore,
+our work again confirmed the inadequacy of empirical accuracy as a performance metric in the presence
+of strong dataset biases. Adopting group-aware metrics like AGA and WGA was essential for accurately
+diagnosing the Clever Hans effect and assessing correction quality.
+Across our experiments, two central challenges consistently surfaced: the dependency on group labels and
+the instability of model selection in data-scarce environments. Many correction techniques, including DFR,
+Group DRO, and the ClArC family, require the availability of labels that identify the presence of confounding
+features in training and validation samples. Our attempt to automatically obtain group labels with SpRAy
+revealed its limitations.
+While effective for simple, salient confounders, SpRAy was unreliable for more
+complex features, often demanding extensive hyperparameter tuning, manual examination of the computed
+solution, and even manual clustering with the help of Virelay to yield usable results. In some cases, we were
+not able to produce usable results with SpRAy at all. The dependency on group labels thus represents a
+major hurdle to the practical deployment of these methods.
+This difficulty was intensified by data scarcity, as our experimental design intentionally limited minority
+groups to only a few samples. The large size differences of the distinct data groups further impeded SpRAy’s
+ability to accurately create clusters according to the different decision strategies. Moreover, with only a few
+minority instances in the validation set, the AGA became a high-variance and unreliable estimator for test
+performance, making the selection of the best model susceptible to chance and overfitting. This was especially
+evident after large hyperparameter searches for P-ClArC and RR-CIArC. However, the underrepresentation
+of minority groups in the training and validation data also limited the performance of Group DRO and, in
+particular, DFR. In this context, the typically superior performance of CFKD becomes understandable, as
+it avoids these problems by not requiring group labels and by creating additional minority group samples
+through counterfactual explanations.
+Our experiments uncovered several other method-specific challenges. High-variance methods like RR-CIArC,
+for instance, suffer from questionable reproducibility, as their performance was extremely sensitive to hyper-
+parameter configurations. Especially the choice of network layer l strongly influenced the performance of
+P-ClArC, RR-ClArC, and SpRAy, with no one-size-fits-all solution for where to best extract feature repre-
+sentations or compute attribution maps. While the optimal layer was generally linked to the complexity of
+the confounding feature, it could still vary even between the two versions of the same dataset.
+DFR, on the other hand, was often rendered inert by accuracy saturation. Here, the model had already
+overfitted the small fine-tuning set drawn from the training data, resulting in a negligible loss signal for
+correction. This highlights that DFR struggles to improve model behavior when no additional held-out data
+is available.
+50
+
+===== PAGE 51 =====
+There also seems to be a trade-off between a method’s performance and its computational complexity, as the
+top-performing method, CFKD, was also the most computationally expensive. And while its performance
+was generally stable, its failure on asymmetric Camelyon17 proved difficult to diagnose, because assessing the
+quality of the counterfactuals it relies on can be difficult, or even impossible, without deep domain expertise.
+The findings of this study point to several promising avenues for future research to build more robust and
+practical solutions for correcting Clever Hans models. A critical area is the improvement of automated group
+discovery, either by further refining SpRAy or by developing alternative methods. Overcoming SpRAy’s
+current limitations, particularly the need for extensive manual tuning and domain expertise, would broaden
+the applicability of many correction techniques. Another key direction is the development of more robust
+model selection criteria, as validation AGA proved unreliable in data-scarce settings. Specifically, metrics
+that are less sensitive to the small sample sizes of minority groups could be beneficial to increase the potential
+of existing correction methods.
+Another possibility for improving current methods might be to explore their synergistic potential.
+For
+example, the fine-tuning stages of P-ClArC and RR-ClArC could be enhanced by incorporating Group
+DRO, especially since the necessary group labels already need to be available. Finally, a crucial direction
+is to develop methods that can detect and correct biases with minimal human supervision. All evaluated
+methods require an expert in the loop, either for interpreting SpRAy’s outputs or for acting as a teacher
+in the CFKD framework. Future research that reduces this dependency could improve both scalability and
+ease of use.
+Despite the comprehensive scope of this analysis, several limitations must be acknowledged, which offer
+additional next steps for future research. The datasets used in this study were intentionally small to em-
+ulate realistic data scarcity in high-stakes domains, which enabled controlled experimentation but reduced
+the statistical robustness of the results. Furthermore, the evaluation was restricted to image-based binary
+classification tasks, so the generalizability of the findings to other modalities (e.g. tabular or textual data)
+or multi-class problems remains uncertain. For methods requiring group labels, automatic clustering with
+SpRAy frequently failed, making manual clustering with ViRelAy necessary. This reliance on human judg-
+ment introduced a degree of subjectivity that may limit reproducibility. Moreover, all experiments were
+conducted using a single model architecture (ResNet-18), and a different architecture might have led to
+different results. Finally, each dataset contained only one confounding factor, whereas real-world scenarios
+often involve multiple interacting confounders. It remains an open question how this would have affected
+correction quality. Consequently, the reported results should be interpreted as indicative of practical trends
+rather than as absolute performance rankings.
+Nevertheless, while significant challenges remain, the rapid evolution of methods to mitigate Clever Hans is
+highly encouraging. Continued progress in this field is an essential step toward the trustworthy deployment
+of machine learning in safety-critical domains, where robust, reliable, and interpretable models can provide
+substantial value to society.
+References
+Reduan Achtibat, Maximilian Dreyer, Ilona Eisenbraun, Sebastian Bosse, Thomas Wiegand, Wojciech
+Samek, and Sebastian Lapuschkin.
+From attribution maps to human-understandable explanations
+through Concept Relevance Propagation.
+Nature Machine Intelligence, 5:1006–1019, 09 2023.
+doi:
+10.1038/s42256-023-00711-8.
+Luttfi A. Al-Haddad, Wojciech Giernacki, Ali Basem, Zeashan Hameed Khan, Alaa Abdulhady Jaber, and
+Sinan A. Al-Haddad.
+Uav propeller fault diagnosis using deep learning of non-traditional χ2-selected
+taguchi method-tested lempel–ziv complexity and teager–kaiser energy features. Scientific Reports, 14
+(1):18599, 2024. ISSN 2045-2322. doi: 10.1038/s41598-024-69462-9. URL https://doi.org/10.1038/
+s41598-024-69462-9.
+Christopher J. Anders, Leander Weber, David Neumann, Wojciech Samek, Klaus-Robert Müller, and Sebas-
+tian Lapuschkin. Finding and removing Clever Hans: Using explanation methods to debug and improve
+51
+
+===== PAGE 52 =====
+deep models. Information Fusion, 77:261–295, 2022. ISSN 1566-2535. doi: https://doi.org/10.1016/j.inffus.
+2021.07.015. URL https://www.sciencedirect.com/science/article/pii/S1566253521001573.
+Christopher J. Anders, David Neumann, Wojciech Samek, Klaus-Robert Müller, and Sebastian Lapuschkin.
+Software for Dataset-wide XAI: From Local Explanations to Global Insights with Zennit, CoRelAy, and
+ViRelAy. PloS One, 2026.
+Toshiba Ansari, Harjit Singh Dhillon, and Monika Singh. Machine learning model to predict results of law
+cases. In 2024 Fourth International Conference on Advances in Electrical, Computing, Communication
+and Sustainable Technologies (ICAECT), 2024. doi: 10.1109/ICAECT60202.2024.10468789.
+Martin Arjovsky, Léon Bottou, Ishaan Gulrajani, and David Lopez-Paz. Invariant risk minimization, 2020.
+URL https://arxiv.org/abs/1907.02893.
+M. Sami Ataa, Eman E. Sanad, and Reda A. El-khoribi. Intrusion detection in software defined network
+using deep learning approaches. Scientific Reports, 14(1):29159, 2024. ISSN 2045-2322. doi: 10.1038/
+s41598-024-79001-1. URL https://doi.org/10.1038/s41598-024-79001-1.
+Maximilian Augustin, Valentyn Boreiko, Francesco Croce, and Matthias Hein. Diffusion visual counterfac-
+tual explanations. In Proceedings of the 36th International Conference on Neural Information Processing
+Systems, NIPS ’22, Red Hook, NY, USA, 2022. Curran Associates Inc. ISBN 9781713871088.
+Sebastian Bach, Alexander Binder, Grégoire Montavon, Frederick Klauschen, Klaus-Robert Müller, and
+Wojciech Samek. On Pixel-Wise Explanations for Non-Linear Classifier Decisions by Layer-Wise Relevance
+Propagation. PLoS ONE, 10(7), 07 2015. doi: 10.1371/journal.pone.0130140.
+Marcus A. Badgeley, John R. Zech, Luke Oakden-Rayner, Benjamin S. Glicksberg, Manway Liu, William
+Gale, Michael V. McConnell, Bethany Percha, Thomas M. Snyder, and Joel T. Dudley. Deep learning
+predicts hip fracture using confounding patient and healthcare variables. NPJ Digital Medicine, 2:31, 2019.
+ISSN 2398-6352. doi: 10.1038/s41746-019-0105-1. URL https://doi.org/10.1038/s41746-019-0105-1.
+Alexei Baevski, Yuhao Zhou, Abdelrahman Mohamed, and Michael Auli. wav2vec 2.0: A framework for
+self-supervised learning of speech representations. In H. Larochelle, M. Ranzato, R. Hadsell, M.F. Balcan,
+and H. Lin (eds.), Advances in Neural Information Processing Systems, volume 33, pp. 12449–12460. Cur-
+ran Associates, Inc., 2020. URL https://proceedings.neurips.cc/paper_files/paper/2020/file/
+92d1e1eb1cd6f9fba3227870bb6d7f07-Paper.pdf.
+Imon Banerjee, Kamanasish Bhattacharjee, John L. Burns, Hari Trivedi, Saptarshi Purkayastha, Laleh
+Seyyed-Kalantari, Bhavik N. Patel, Rakesh Shiradkar, and Judy Gichoya. "shortcuts" causing bias in
+radiology artificial intelligence: Causes, evaluation, and mitigation. Journal of the American College of
+Radiology, 20(9):842–851, 2023. ISSN 1546-1440. doi: 10.1016/j.jacr.2023.06.025. URL https://doi.
+org/10.1016/j.jacr.2023.06.025.
+Dilyara Bareeva, Maximilian Dreyer, Frederik Pahde, Wojciech Samek, and Sebastian Lapuschkin. Reactive
+Model Correction: Mitigating Harm to Task-Relevant Features via Conditional Bias Suppression.
+In
+2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), pp.
+3532–3541, 2024. doi: 10.1109/CVPRW63382.2024.00357.
+David Bau, Bolei Zhou, Aditya Khosla, Aude Oliva, and Antonio Torralba. Network dissection: Quantifying
+interpretability of deep visual representations. In 2017 IEEE Conference on Computer Vision and Pattern
+Recognition (CVPR), pp. 3319–3327, 2017.
+David Bau, Jun-Yan Zhu, Hendrik Strobelt, Agata Lapedriza, Bolei Zhou, and Antonio Torralba. Under-
+standing the role of individual units in a deep neural network. Proceedings of the National Academy of
+Sciences, 117(48):30071–30078, 2020. doi: 10.1073/pnas.1907375117. URL https://www.pnas.org/doi/
+abs/10.1073/pnas.1907375117.
+David Bechtoldt and Sidney Bender. Graph diffusion counterfactual explanation. ESANN, 2026.
+52
+
+===== PAGE 53 =====
+Sara Beery, Grant Van Horn, and Pietro Perona. Recognition in terra incognita. In Vittorio Ferrari, Martial
+Hebert, Cristian Sminchisescu, and Yair Weiss (eds.), Computer Vision – ECCV 2018, pp. 472–489, Cham,
+2018. Springer International Publishing. ISBN 978-3-030-01270-0.
+Aharon Ben-Tal and Arkadi Nemirovski. Robust truss topology design via semidefinite programming. SIAM
+journal on optimization, 7(4):991–1016, 1997.
+Aharon Ben-Tal and Arkadi Nemirovski. Robust convex optimization. Mathematics of operations research,
+23(4):769–805, 1998.
+Aharon Ben-Tal, Dick Den Hertog, Anja De Waegenaere, Bertrand Melenberg, and Gijs Rennen. Robust
+solutions of optimization problems affected by uncertain probabilities. Management Science, 59(2):341–
+357, 2013.
+Sidney Bender and Marco Morik. Visual disentangled diffusion autoencoders: Scalable counterfactual gen-
+eration for foundation models. ICLR 2026 Trustworthy AI workshop, 2026.
+Sidney Bender, Christopher J. Anders, Pattarawatt Chormai, Heike Marxfeld, Jan Herrmann, and Grégoire
+Montavon. Towards fixing clever-hans predictors with counterfactual knowledge distillation. In Proceedings
+of the IEEE/CVF International Conference on Computer Vision (ICCV), pp. 2607–2615, 2023.
+Sidney Bender, Ole Delzer, Jan Herrmann, Heike Antje Marxfeld, Klaus-Robert Müller, and Grégoire Mon-
+tavon. Mitigating clever hans strategies in image classifiers through generating counterexamples. arXiv
+preprint arXiv:2510.17524, 2025.
+Sidney Bender, Jan Herrmann, Klaus-Robert Müller, and Grégoire Montavon. Towards desiderata-driven
+design of visual counterfactual explainers. In Pattern Recognition, 2026.
+Zhuo Cao, Xuan Zhao, Lena Krieger, Hanno Scharr, and Ira Assent. Leapfactual: Reliable visual counter-
+factual explanation using conditional flow matching. NeurIPS, 2025.
+Jialin Chen, Shirley Wu, Abhijit Gupta, and Rex Ying. D4explainer: In-distribution explanations of graph
+neural network via discrete denoising diffusion. Advances in Neural Information Processing Systems, 36:
+78964–78986, 2023.
+Bowen Cheng, Ishan Misra, Alexander G. Schwing, Alexander Kirillov, and Rohit Girdhar. Masked-attention
+mask transformer for universal image segmentation. In 2022 IEEE/CVF Conference on Computer Vision
+and Pattern Recognition (CVPR), pp. 1280–1289, 2022. doi: 10.1109/CVPR52688.2022.00135.
+Dawei Cheng, Yao Zou, Sheng Xiang, and Changjun Jiang.
+Graph neural networks for financial fraud
+detection: a review. Frontiers of Computer Science, 19(9):199609, 2025. ISSN 2095-2236. doi: 10.1007/
+s11704-024-40474-y. URL https://doi.org/10.1007/s11704-024-40474-y.
+Joseph Paul Cohen, Louis Blankemeier, and Akshay Chaudhari.
+Identifying spurious correlations using
+counterfactual alignment. arXiv preprint arXiv:2312.02186, 2023.
+Marta R. Costa-jussà, James Cross, Onur Çelebi, Maha Elbayad, Kenneth Heafield, Kevin Heffernan, Elahe
+Kalbassi, Janice Lam, Daniel Licht, Jean Maillard, Anna Sun, Skyler Wang, Guillaume Wenzek, Al Young-
+blood, Bapi Akula, Loic Barrault, Gabriel Mejia Gonzalez, Prangthip Hansanti, John Hoffman, Semarley
+Jarrett, Kaushik Ram Sadagopan, Dirk Rowe, Shannon Spruit, Chau Tran, Pierre Andrews, Necip Fazil
+Ayan, Shruti Bhosale, Sergey Edunov, Angela Fan, Cynthia Gao, Vedanuj Goswami, Francisco Guzmán,
+Philipp Koehn, Alexandre Mourachko, Christophe Ropers, Safiyyah Saleem, Holger Schwenk, Jeff Wang,
+and NLLB Team. Scaling neural machine translation to 200 languages. Nature, 630(8018):841–846, 2024.
+ISSN 1476-4687. doi: 10.1038/s41586-024-07335-x.
+Nikolay Dagaev, Brett D Roads, Xiaoliang Luo, Daniel N Barry, Kaustubh R Patil, and Bradley C Love. A
+too-good-to-be-true prior to reduce shortcut reliance. Pattern recognition letters, 166:164–171, 2023.
+Erick Delage and Yinyu Ye. Distributionally robust optimization under moment uncertainty with application
+to data-driven problems. Operations Research, 58(3):595–612, 2010. doi: 10.1287/opre.1090.0741.
+53
+
+===== PAGE 54 =====
+Ann-Kathrin Dombrowski, Jan E Gerken, Klaus-Robert Müller, and Pan Kessel. Diffeomorphic counter-
+factuals with generative models. IEEE Transactions on Pattern Recognition and Machine Intelligence,
+2024.
+Maximilian Dreyer, Frederik Pahde, Christopher J. Anders, Wojciech Samek, and Sebastian Lapuschkin.
+From Hope to Safety: Unlearning Biases of Deep Models via Gradient Penalization in Latent Space. In
+Proceedings of the Thirty-Eighth AAAI Conference on Artificial Intelligence and Thirty-Sixth Conference
+on Innovative Applications of Artificial Intelligence and Fourteenth Symposium on Educational Advances
+in Artificial Intelligence, AAAI’24/IAAI’24/EAAI’24. AAAI Press, 2024. ISBN 978-1-57735-887-9. doi:
+10.1609/aaai.v38i19.30096. URL https://doi.org/10.1609/aaai.v38i19.30096.
+Zhuoming Du, Jiaxuan Wu, Yuanfei Leng, and Sebastian Wandelt. Ai4atm: A review on how artificial
+intelligence paves the way towards autonomous air traffic management.
+Journal of the Air Transport
+Research Society, 5:100077, 2025.
+ISSN 2941-198X.
+doi: https://doi.org/10.1016/j.jatrs.2025.100077.
+URL https://www.sciencedirect.com/science/article/pii/S2941198X25000211.
+John Duchi and Hongseok Namkoong. Variance-based regularization with convex objectives. Journal of
+Machine Learning Research, 20(68):1–55, 2019.
+John C Duchi and Hongseok Namkoong. Learning models with uniform performance via distributionally
+robust optimization. The Annals of Statistics, 49(3):1378–1406, 2021.
+John C Duchi, Peter W Glynn, and Hongseok Namkoong. Statistics of robust optimization: A generalized
+empirical likelihood approach. Mathematics of Operations Research, 46(3):946–969, 2021.
+Laurent El Ghaoui and Hervé Lebret. Robust solutions to least-squares problems with uncertain data. SIAM
+Journal on matrix analysis and applications, 18(4):1035–1064, 1997.
+Laurent El Ghaoui, Francois Oustry, and Hervé Lebret. Robust solutions to uncertain semidefinite programs.
+SIAM journal on optimization, 9(1):33–52, 1998.
+Dumitru Erhan, Y. Bengio, Aaron Courville, and Pascal Vincent. Visualizing higher-layer features of a deep
+network. Technical Report, Univeristé de Montréal, 01 2009.
+Andre Esteva, Brett Kuprel, Roberto A. Novoa, Justin Ko, Susan M. Swetter, Helen M. Blau, and Sebastian
+Thrun. Dermatologist-level classification of skin cancer with deep neural networks. Nature, 542(7639):115–
+118, 2017. ISSN 0028-0836. doi: 10.1038/nature21056. URL https://doi.org/10.1038/nature21056.
+Rui Gao and Anton Kleywegt. Distributionally robust stochastic optimization with wasserstein distance.
+Mathematics of Operations Research, 48(2):603–655, 2023.
+Robert Geirhos, Jörn-Henrik Jacobsen, Claudio Michaelis, Richard Zemel, Wieland Brendel, Matthias
+Bethge, and Felix A Wichmann. Shortcut learning in deep neural networks. Nature Machine Intelli-
+gence, 2(11):665–673, 2020.
+Anmol Gulati, James Qin, Chung-Cheng Chiu, Niki Parmar, Yu Zhang, Jiahui Yu, Wei Han, Shibo Wang,
+Zhengdong Zhang, Yonghui Wu, and Ruoming Pang. Conformer: Convolution-augmented transformer for
+speech recognition. In Interspeech 2020, pp. 5036–5040, 2020. doi: 10.21437/Interspeech.2020-3015.
+Ishaan Gulrajani and David Lopez-Paz. In search of lost domain generalization. In International Conference
+on Learning Representations, 2021. URL https://openreview.net/forum?id=lQdXeXDoWtI.
+Trung Duc Ha and Sidney Bender. Diffusion counterfactuals for image regressors. In World Conference on
+Explainable Artificial Intelligence, pp. 112–134. Springer, 2025.
+Jakob Hackstein and Sidney Bender. Imbalanced classification through the lens of spurious correlations.
+arXiv preprint arXiv:2510.27650, 2025.
+54
+
+===== PAGE 55 =====
+Tatsunori Hashimoto, Megha Srivastava, Hongseok Namkoong, and Percy Liang. Fairness without demo-
+graphics in repeated loss minimization. In International Conference on Machine Learning, pp. 1929–1938.
+PMLR, 2018.
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In
+2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pp. 770–778, 2016a. doi:
+10.1109/CVPR.2016.90.
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep Residual Learning for Image Recognition.
+In 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pp. 770–778, 2016b. doi:
+10.1109/CVPR.2016.90.
+Pengcheng He, Jianfeng Gao, and Weizhu Chen. DeBERTav3: Improving deBERTa using ELECTRA-style
+pre-training with gradient-disentangled embedding sharing. In The Eleventh International Conference on
+Learning Representations, 2023.
+Jonathan Ho, Ajay Jain, and Pieter Abbeel. Denoising diffusion probabilistic models. In Proceedings of the
+34th International Conference on Neural Information Processing Systems, NIPS ’20, Red Hook, NY, USA,
+2020. Curran Associates Inc. ISBN 9781713829546.
+Weihua Hu, Gang Niu, Issei Sato, and Masashi Sugiyama. Does distributionally robust supervised learning
+give robust classifiers? In Proceedings of the 35th International Conference on Machine Learning, 2018.
+Yihan Hu, Jiazhi Yang, Li Chen, Keyu Li, Chonghao Sima, Xizhou Zhu, Siqi Chai, Senyao Du, Tian-
+wei Lin, Wenhai Wang, Lewei Lu, Xiaosong Jia, Qiang Liu, Jifeng Dai, Yu Qiao, and Hongyang Li.
+Planning-oriented autonomous driving. In 2023 IEEE/CVF Conference on Computer Vision and Pattern
+Recognition (CVPR), pp. 17853–17862, 2023. doi: 10.1109/CVPR52729.2023.01712.
+Pavel Izmailov, Polina Kirichenko, Nate Gruver, and Andrew G Wilson. On feature learning in the presence
+of spurious correlations. Advances in Neural Information Processing Systems, 35:38516–38532, 2022.
+Guillaume Jeanneret, Loïc Simon, and Frédéric Jurie. Diffusion models for counterfactual explanations. In
+Computer Vision – ACCV 2022: 16th Asian Conference on Computer Vision, Macao, China, December
+4–8, 2022, Proceedings, Part VII, pp. 219–237, Berlin, Heidelberg, 2022. Springer-Verlag. ISBN 978-3-031-
+26292-0. doi: 10.1007/978-3-031-26293-7_14. URL https://doi.org/10.1007/978-3-031-26293-7_14.
+Guillaume Jeanneret, Loïc Simon, and Frédéric Jurie. Adversarial counterfactual visual explanations. In
+Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 16425–16435,
+2023.
+Jikai Jin, Bohang Zhang, Haiyang Wang, and Liwei Wang. Non-convex distributionally robust optimiza-
+tion: Non-asymptotic analysis. In M. Ranzato, A. Beygelzimer, Y. Dauphin, P.S. Liang, and J. Wortman
+Vaughan (eds.), Advances in Neural Information Processing Systems, volume 34, pp. 2771–2782. Cur-
+ran Associates, Inc., 2021. URL https://proceedings.neurips.cc/paper_files/paper/2021/file/
+164bf317ea19ccfd9e97853edc2389f4-Paper.pdf.
+Harry Miles Johnson. Clever Hans (the Horse of Mr. von Osten): A Contribution to Experimental, Animal,
+and Human Psychology. The Journal of Philosophy, Psychology and Scientific Methods, 8(24):663–666,
+1911.
+Amir-Hossein Karimi, Gilles Barthe, Borja Balle, and Isabel Valera. Model-agnostic counterfactual expla-
+nations for consequential decisions. In Silvia Chiappa and Roberto Calandra (eds.), Proceedings of the
+Twenty Third International Conference on Artificial Intelligence and Statistics, volume 108 of Proceedings
+of Machine Learning Research, pp. 895–905. PMLR, 08 2020.
+Christopher J. Kelly, Alan Karthikesalingam, Mustafa Suleyman, Greg Corrado, and Dominic King. Key
+challenges for delivering clinical impact with artificial intelligence. BMC Medicine, 17(1):195, 2019. ISSN
+1741-7015. doi: 10.1186/s12916-019-1426-2.
+55

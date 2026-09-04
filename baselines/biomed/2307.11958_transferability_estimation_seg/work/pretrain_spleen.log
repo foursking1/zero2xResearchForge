@@ -1,0 +1,64 @@
+[pretrain] spleen_l16_s1_pretrained: ntrain=255 params=318929 lr=0.0003
+    ep1/25 loss=1.4458 dice=0.1990
+    ep6/25 loss=1.0610 dice=0.3288
+    ep11/25 loss=0.8843 dice=0.3985
+    ep16/25 loss=0.7287 dice=0.4723
+    ep21/25 loss=0.5777 dice=0.5592
+    ep25/25 loss=0.4718 dice=0.6288
+[pretrain] spleen_l16_s1_pretrained: final_traj_dice=0.5941 wall=138.6s
+[pretrain] spleen_l08_s1_pretrained: ntrain=255 params=80233 lr=0.0003
+    ep1/30 loss=1.5766 dice=0.1828
+    ep6/30 loss=1.2244 dice=0.2819
+    ep11/30 loss=1.0974 dice=0.3217
+    ep16/30 loss=0.9833 dice=0.3597
+    ep21/30 loss=0.8681 dice=0.4059
+    ep26/30 loss=0.7667 dice=0.4535
+    ep30/30 loss=0.6686 dice=0.5049
+[pretrain] spleen_l08_s1_pretrained: final_traj_dice=0.4738 wall=59.1s
+[pretrain] spleen_l16_s2_pretrained: ntrain=255 params=318929 lr=0.0003
+    ep1/25 loss=1.5274 dice=0.2218
+    ep6/25 loss=1.1561 dice=0.3076
+    ep11/25 loss=0.9993 dice=0.3554
+    ep16/25 loss=0.8295 dice=0.4240
+    ep21/25 loss=0.6705 dice=0.5043
+    ep25/25 loss=0.5512 dice=0.5764
+[pretrain] spleen_l16_s2_pretrained: final_traj_dice=0.5404 wall=181.3s
+[pretrain] spleen_l16_short_pretrained: ntrain=255 params=318929 lr=0.0003
+    ep1/12 loss=1.4458 dice=0.1990
+    ep6/12 loss=1.0610 dice=0.3288
+    ep11/12 loss=0.8843 dice=0.3985
+    ep12/12 loss=0.8573 dice=0.4093
+[pretrain] spleen_l16_short_pretrained: final_traj_dice=0.4023 wall=56.0s
+[pretrain] spleen_scratch_pretrained: random-init saved (no pretraining)
+[pretrain] summary -> /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/code/work/pretrain_spleen.json [
+  {
+    "id": "l16_s1",
+    "epochs": 25,
+    "final_step_dice": 0.5941081637516618,
+    "source": "spleen"
+  },
+  {
+    "id": "l08_s1",
+    "epochs": 30,
+    "final_step_dice": 0.4738222579471767,
+    "source": "spleen"
+  },
+  {
+    "id": "l16_s2",
+    "epochs": 25,
+    "final_step_dice": 0.5403865477070212,
+    "source": "spleen"
+  },
+  {
+    "id": "l16_short",
+    "epochs": 12,
+    "final_step_dice": 0.4022742105942023,
+    "source": "spleen"
+  },
+  {
+    "id": "scratch",
+    "epochs": 0,
+    "random_init": true,
+    "source": "spleen"
+  }
+]

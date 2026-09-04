@@ -1,0 +1,29 @@
+[data] clean rows 24570, SEP 74
+[split 0] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8568 HSS=0.0497 AUC=0.9414 tp=21 fn=1 fp=718 tn=6631 thr=0.279 [18.0s]
+    Committee TSS=0.8804 HSS=0.0661 AUC=0.9744 tp=21 fn=1 fp=545 tn=6804 thr=0.502 [74.8s]
+    RH_v1     TSS=0.8670 HSS=0.1090 AUC=0.9848 tp=20 fn=2 fp=309 tn=7040 thr=0.520 [168.7s]
+    RH_v2     TSS=0.8676 HSS=0.1103 AUC=0.9787 tp=20 fn=2 fp=305 tn=7044 thr=0.451 [125.0s]
+[split 1] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8578 HSS=0.0903 AUC=0.9370 tp=20 fn=2 fp=377 tn=6972 thr=0.452 [3.5s]
+    Committee TSS=0.8045 HSS=0.0438 AUC=0.9504 tp=20 fn=2 fp=769 tn=6580 thr=0.493 [43.7s]
+    RH_v1     TSS=0.8567 HSS=0.0885 AUC=0.9873 tp=20 fn=2 fp=385 tn=6964 thr=0.553 [190.8s]
+    RH_v2     TSS=0.8666 HSS=0.1080 AUC=0.9849 tp=20 fn=2 fp=312 tn=7037 thr=0.503 [109.1s]
+[split 2] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8696 HSS=0.0575 AUC=0.9347 tp=21 fn=1 fp=624 tn=6725 thr=1.000 [8.3s]
+    Committee TSS=0.8909 HSS=0.0769 AUC=0.9827 tp=21 fn=1 fp=468 tn=6881 thr=0.659 [76.2s]
+    RH_v1     TSS=0.9057 HSS=0.0994 AUC=0.9905 tp=21 fn=1 fp=359 tn=6990 thr=0.532 [174.0s]
+    RH_v2     TSS=0.8759 HSS=0.1351 AUC=0.9918 tp=20 fn=2 fp=244 tn=7105 thr=0.592 [123.1s]
+[split 3] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.7795 HSS=0.0522 AUC=0.9382 tp=19 fn=3 fp=618 tn=6731 thr=0.381 [7.0s]
+    Committee TSS=0.7451 HSS=0.0361 AUC=0.9523 tp=19 fn=3 fp=871 tn=6478 thr=0.353 [77.0s]
+    RH_v1     TSS=0.8442 HSS=0.0718 AUC=0.9825 tp=20 fn=2 fp=477 tn=6872 thr=0.432 [176.9s]
+    RH_v2     TSS=0.8332 HSS=0.0613 AUC=0.9798 tp=20 fn=2 fp=558 tn=6791 thr=0.393 [108.9s]
+[split 4] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.7485 HSS=0.0598 AUC=0.9252 tp=18 fn=4 fp=512 tn=6837 thr=1.000 [2.6s]
+    Committee TSS=0.9049 HSS=0.0537 AUC=0.9855 tp=22 fn=0 fp=699 tn=6650 thr=0.442 [67.7s]
+    RH_v1     TSS=0.9090 HSS=0.1061 AUC=0.9871 tp=21 fn=1 fp=335 tn=7014 thr=0.488 [137.6s]
+    RH_v2     TSS=0.9124 HSS=0.1140 AUC=0.9884 tp=21 fn=1 fp=310 tn=7039 thr=0.509 [125.5s]
+[split 5] train 17199 test 7371 SEP_test 22
+    CoNN      TSS=0.8080 HSS=0.0318 AUC=0.9345 tp=21 fn=1 fp=1077 tn=6272 thr=0.521 [4.0s]
+    Committee TSS=0.8607 HSS=0.0518 AUC=0.9829 tp=21 fn=1 fp=690 tn=6659 thr=0.532 [61.6s]

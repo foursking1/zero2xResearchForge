@@ -1,0 +1,970 @@
+
+===== PAGE 30 =====
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(a) symmetric Squares
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(b) asymmetric Squares
+Figure 13: Decision boundaries and confidence regions of the uncorrected student models trained on (a)
+symmetric and (b) asymmetric Squares. Training samples from Class A with low foreground intensity are
+depicted as red triangles, training samples from Class B with high foreground intensity as blue triangles.
+Likewise, new data in the red area is classified as Class A, and in the blue area as Class B. Color saturation
+reflects the model’s confidence.
+A perfect decision boundary would be a vertical line at 0.5 foreground
+intensity, as that would separate the two classes by the true causal feature, rendering the model completely
+insensible towards the confounder (the background intensity).
+Due to Clever Hans, the actual decision
+boundaries deviate heavily from the perfect solution in both cases.
+confounder gender. RR-ClArC performed second best overall and surpassed CFKD on two datasets. Both
+RR-ClArC and CFKD, however, failed to mitigate Clever Hans behavior on asymmetric Camelyon17, making
+P-ClArC the only XAI-based method that improved performance on every dataset. The poor performance of
+the XAI-based methods for asymmetric Camelyon17 led to DFR ranking best here, albeit its AGA increase
+is smaller than for the symmetric version. DFR also performed relatively well on Follicles, likely due to the
+larger size of the fine-tuning set.
+The WGA results largely confirmed the findings for AGA. Again, XAI-based methods on average achieved
+the highest scores, with CFKD ranking first and RR-ClArC second. P-ClArC and Group DRO were more
+competitive in WGA than in AGA, but since model selection was based on AGA, this remains the primary
+evaluation metric. We still report WGA for completeness, as an increase in AGA may occur without a
+corresponding improvement in minority group performance or even with a decline. For example, applying
+DFR to the student trained on symmetric CelebA Blond increased AGA but slightly reduced WGA. Because
+no group was considered more important than another, an overall increase in mean group accuracy was
+still regarded as an improvement.
+In most cases, however, enhancements in AGA and WGA occurred
+simultaneously.
+Moreover, no clear pattern emerged to suggest that some correction methods perform systematically better
+on either the symmetric or asymmetric dataset variants.
+The effectiveness of each method varied, with
+examples of stronger performance on both versions. Overall, the magnitude of improvement was largely
+consistent between the two configurations. Although the final AGA for asymmetric datasets was typically
+higher, this was proportional to the higher baseline AGA of the uncorrected student, resulting in a similar
+net performance gain.
+We conducted the same experiments again with group labels provided by SpRAy to assess how label quality
+influences the correction performance, determining the robustness of each method to imperfect supervision.
+The corresponding results are summarized in Table 3.
+We do not report results for symmetric CelebA
+Smiling, both symmetric and asymmetric CelebA Blond, as well as symmetric Camelyon17, because for
+30
+
+===== PAGE 31 =====
+Table 2: Average group accuracies (AGAs) and worst group accuracies (WGAs) on unseen test data before
+and after applying various correction methods, using ground-truth group labels for DFR, Group DRO,
+P-ClArC, and RR-ClArC. Model selection was based on validation AGA.
+Dataset
+Uncorrected
+DFR
+Group DRO
+P-ClArC
+RR-ClArC
+CFKD
+average group accuracy (AGA)
+Squares symmetric
+51.1
+52.1
+61.3
+78.6
+79.6
+94.5
+Squares asymmetric
+68.1
+73.9
+77.1
+85.2
+92.4
+91.5
+Smiling symmetric
+51.3
+57.5
+56.3
+65.9
+68.7
+79.6
+Smiling asymmetric
+59.4
+58.2
+64.0
+65.6
+80.5
+86.6
+Blond symmetric
+72.7
+73.1
+73.0
+74.4
+74.5
+79.1
+Blond asymmetric
+76.2
+76.9
+77.2
+77.1
+78.6
+87.2
+Camelyon17 symmetric
+55.3
+63.2
+72.6
+72.1
+81.3
+78.7
+Camelyon17 asymmetric
+75.4
+81.8
+81.0
+81.5
+75.1
+75.4
+Follicles
+72.5
+82.7
+79.2
+76.6
+79.8
+83.9
+worst group accuracy (WGA)
+Squares symmetric
+1.8
+4.8
+50.3
+37.3
+53.6
+88.3
+Squares asymmetric
+12.0
+50.0
+58.8
+63.0
+81.0
+78.0
+Smiling symmetric
+7.3
+34.1
+4.8
+27.6
+32.6
+51.2
+Smiling asymmetric
+1.0
+1.5
+42.7
+14.3
+65.4
+84.4
+Blond symmetric
+38.2
+35.8
+39.4
+38.8
+55.8
+52.1
+Blond asymmetric
+40.6
+41.8
+43.0
+55.8
+66.1
+67.9
+Camelyon17 symmetric
+9.2
+23.0
+53.9
+62.6
+68.7
+45.9
+Camelyon17 asymmetric
+42.1
+60.5
+75.6
+65.3
+54.9
+36.2
+Follicles
+48.1
+70.8
+66.7
+66.7
+66.7
+66.7
+these datasets, we were not able to acquire SpRAy labels of sufficiently high quality. In general, both AGA
+and WGA scores were lower compared to results obtained with ground-truth labels, which is expected due
+to the presence of label noise in the SpRAy-derived annotations. This further highlights the comparative
+advantage of CFKD, which does not rely on group labels at all.
+However, in some cases, performance
+improved compared to the runs with ground-truth labels, e.g. for Group DRO on symmetric Squares and
+symmetric CelebA Smiling, or P-ClArC on Follicles. These fluctuations suggest a lack of robustness, most
+likely because the validation splits contained only two samples per minority group, rendering model selection
+based on validation AGA inherently unreliable.
+Table 3: Average group accuracies (AGA) and worst group accuracies (WGA) on unseen test data before
+and after applying various correction methods, using group labels provided by SpRAy for DFR, Group
+DRO, P-ClArC, and RR-ClArC. Datasets for which SpRAy did not yield labels of sufficient quality to
+conduct experiments are omitted. Test metrics were computed using ground-truth labels. Model selection
+was based on validation AGA.
+Dataset
+Uncorrected
+DFR
+Group DRO
+P-ClArC
+RR-ClArC
+CFKD
+average group accuracy (AGA)
+Squares symmetric
+51.1
+52.1
+64.2
+76.1
+86.8
+94.5
+Squares asymmetric
+68.1
+68.8
+76.8
+76.2
+90.4
+91.5
+Smiling symmetric
+51.3
+54.0
+59.6
+64.6
+57.0
+79.6
+Camelyon17 asymmetric
+75.4
+77.5
+77.0
+76.5
+75.8
+75.4
+Follicles
+72.5
+76.1
+73.5
+78.3
+68.8
+83.9
+worst group accuracy (WGA)
+Squares symmetric
+1.8
+5.0
+49.0
+39.7
+75.2
+88.3
+Squares asymmetric
+12.0
+45.2
+56.0
+32.2
+73.8
+78.0
+Smiling symmetric
+7.3
+18.8
+40.8
+34.6
+12.6
+51.2
+Camelyon17 asymmetric
+42.1
+57.5
+38.6
+32.2
+34.7
+36.2
+Follicles
+48.1
+66.7
+59.3
+66.7
+45.8
+66.7
+31
+
+===== PAGE 32 =====
+Among all methods, the largest deviations between results obtained with true and SpRAy-derived labels oc-
+curred for RR-ClArC, where performance differences exceeded 10 percentage points in some cases. Although
+RR-ClArC generally performed well relative to the other methods, this lack of robustness is concerning and
+cannot be solely attributed to label noise, since P-ClArC (which uses the same CAV) did not exhibit such
+large discrepancies. Moreover, even when the SpRAy labels were nearly identical to the ground truth, as for
+the symmetric Squares dataset, RR-ClArC’s performance still diverged notably.
+The following subsections provide a detailed discussion about the performance of the individual correction
+methods. We also include a description of our experience with SpRAy and quantify SpRAy label quality,
+providing additional context for the results in Table 3.
+4.1
+SpRAy
+Many correction methods, including DFR, Group DRO, and the ClArC family, require that group labels
+are available for at least a representative subset of samples. Although these methods typically assume that
+group labels are known beforehand, such annotations are rarely available in practice. Manually identifying
+and labeling distinct data groups quickly becomes infeasible for larger datasets. Consequently, even though
+these methods do not formally depend on SpRAy, it effectively becomes a prerequisite for their practical use
+to obtain group labels at scale. To the best of our knowledge, there appears to be no broadly applicable
+alternative to SpRAy for this purpose. Because the downstream correction performance crucially depends
+on the label quality, we first discuss SpRAy’s reliability and limitations.
+Table 4 summarizes the quality of the group labels generated by SpRAy. For each dataset, the table lists
+the true group sizes, the sizes of the groups identified by SpRAy, and the alignment between SpRAy labels
+and ground-truth labels. These results show that the label quality quickly deteriorated as the confounding
+feature became more complex. The most accurate labels were obtained for Squares, where the confounder
+(background brightness) is simple and visually salient.
+In contrast, for CelebA Blond with a far more
+complex confounder gender, we could not derive any reliable SpRAy labels, neither for the symmetric nor
+the asymmetric version. While simpler than gender, the confounders in CelebA Smiling, Camelyon17, and
+Follicles are still more complex than the background intensity in Squares: For Camelyon17, the color-
+cast confounder is conceptually simple, but often subtle; for Follicles, the confounder (follicle size) can be
+ambiguous for irregular shapes, with many images lying close to the threshold between small (q = 0) and
+large (q = 1); and for CelebA Smiling, the watermark opacity occupies only a small image region and may
+blend with background textures, especially when more transparent. Nevertheless, we were able to acquire
+group labels for at least one version of these datasets, although with considerably lower accuracy than for
+Squares. In particular, label accuracy for minority groups was often poor, reaching as low as 20% in the
+worst case. These findings explain several of the performance declines observed in Table 3, where methods
+using SpRAy labels usually showed weaker correction compared to those using ground-truth annotations.
+Table 4: Quality of the confounder labels generated by SpRAy. For each dataset, the table lists the true
+group sizes, the corresponding group sizes identified by SpRAy, and the alignment between SpRAy-derived
+and ground-truth labels. The reported SpRAy Label Accuracy denotes the proportion of samples within
+each group (as identified by SpRAy) whose SpRAy-assigned confounder label matches the true confounder
+label. Within each cell, values from left to right refer to the data groups A−, A+, B−, B+.
+Dataset
+True Group Sizes
+SpRAy Group Sizes
+SpRAy Group Label Accuracy
+Squares symmetric
+490/10/10/490
+490/10/11/489
+100.0/100.0/81.8/99.8
+Squares asymmetric
+250/250/490/10
+248/252/491/9
+99.2/98.4/99.8/100.0
+Smiling symmetric
+490/10/10/490
+470/30/12/488
+99.1/20.0/58.3/99.4
+Smiling asymmetric
+250/250/490/10
+—
+—
+Blond symmetric
+490/10/10/490
+—
+—
+Blond asymmetric
+250/250/490/10
+—
+—
+Camelyon17 symmetric
+490/10/10/490
+—/—/11/489
+—/—/72.7/99.6
+Camelyon17 asymmetric
+250/250/490/10
+195/299/489/11
+71.3/64.5/99.8/81.8
+Follicles
+401/125/114/660
+434/92/145/629
+87.3/76.1/63.4/96.5
+32
+
+===== PAGE 33 =====
+Overall, the results in Table 4 illustrate that SpRAy performs reliably only when the confounding feature
+is conceptually simple and clearly separable in the relevance space. As soon as the confounder becomes
+more complex or less distinct, label quality declines sharply. This pattern is consistent across datasets and
+highlights SpRAy’s sensitivity to both feature complexity and data scarcity.
+Especially for CelebA Smiling, we expected to achieve better results, considering that in the original SpRAy
+paper (Lapuschkin et al., 2019), a watermark confounder was used as a demonstrative example. However, in
+our setting, the watermark is not a discrete feature that is either present or absent. Instead, it is present in
+every single sample, but with varying opacity along a continuous range. While this increases the complexity
+of the task, such poor label accuracy was still surprising. Of course, there are additional factors that might
+also have contributed to the low quality, most importantly, the extremely small number of elements in the
+minority groups. This size might be sufficient for the simple Squares dataset. But in more complex datasets,
+the few minority samples may have been too heterogeneous for SpRAy to identify consistent attribution
+patterns between them that also clearly distinguish them from the majority group. Using continuous instead
+of discrete confounders potentially made this problem even more severe. The large difference in group sizes
+also increases the risk that SpRAy captures unintended confounding features that arise by chance.
+An example of this can be observed in Figure 14a: a small number of Camelyon17 samples from Hospital
+A contain an artifact in the form of a black bar that covers part of the image. In symmetric Camelyon17,
+Hospital A samples form the majority group in Class A and the minority group in Class B, leading to a higher
+probability for the artifact to appear in Class A. In fact, it exclusively appeared in Class A images in our
+experiment, and hence became strongly correlated with the corresponding class label. The artifact images
+stand out more prominently than genuine minority-group samples and can therefore "distract" SpRAy, which
+prevented the identification of the actual confounding pattern based on color cast.
+A similar problem occurred in CelebA Blond: instead of clustering the samples by the designated confounder
+(gender), visualizations of the Spectral Embedding often showed them grouped by their background color
+(Figure 14b). This suggests that the background was spuriously correlated with the class labels Blond and
+Not Blond in our subsampled dataset.
+While conducting experiments with these newly identified confounding features might have been interesting,
+such analyses are beyond the scope of this study. Moreover, no ground-truth labels are available for these
+(a) symmetric Camelyon17 - Class A (No Tumor)
+(b) symmetric CelebA Blond - Class A (Not Blond)
+Figure 14: Examples of SpRAy clustering samples by unintended concepts. (a) In Camelyon17, SpRAy
+grouped images by the presence of an image artifact rather than by color cast. (b) In CelebA Blond, SpRAy
+clustered samples according to background color instead of gender.
+33
+
+===== PAGE 34 =====
+features, which prevents a reliable evaluation of performance within individual data groups as done for
+the designated confounders. For them, SpRAy often produced unsatisfactory results. Even after extensive
+hyperparameter tuning and manual inspection of numerous spectral embeddings, Squares remained the only
+dataset for which SpRAy consistently generated accurate group labels. In the following, we provide additional
+insights into our experience with SpRAy.
+Automatic Clustering versus Virelay.
+We obtained the SpRAy labels by computing the Spectral Em-
+bedding with varying hyperparameters, visualizing the result with t-SNE and UMAP, and then manually
+delineating clusters with Virelay (Anders et al., 2026). Notably, automatic clustering of the Spectral Embed-
+ding using algorithms such as k-Means, Agglomerative Clustering, DBSCAN, or HDBSCAN almost never
+produced usable labels. Their alignment with the ground truth was too poor to support subsequent cor-
+rection. A possible explanation is that the clustering algorithms struggle to cope with the extreme size
+differences between the data groups.
+In contrast, visually inspecting the Spectral Embedding and then
+manually clustering the samples with Virelay proved far more reliable. Among the automatic methods, only
+DBSCAN occasionally produced acceptable results, as illustrated in Figure 15.
+(a) Agglomerative Cluster-
+ing
+(b) K-Means
+(c) DBSCAN
+(d) HDBSCAN
+Figure 15: T-SNE visualizations of the Spectral Embedding for Class B of symmetric Squares. The circled
+clusters correspond to those manually identified with ViRelAy and used for the results reported in Table 4.
+Data points are colored according to cluster assignments obtained through (a) Agglomerative Clustering,
+(b) K-Means, (c) DBSCAN, and (d) HDBSCAN. Except for DBSCAN, the automatically derived clusters
+align poorly with the true confounder labels, whereas the manually identified clusters match them almost
+perfectly.
+Visualization techniques.
+As automatic clustering frequently failed, we had to rely on manual cluster-
+ing with Virelay, which can only be successful with faithful visualization of the Spectral Embedding. We
+generated these visualizations using both t-SNE and UMAP.
+We obtained the best results for perplexity values between 10 and 70 with t-SNE and a number of neighbors
+value between 5 and 60 with UMAP. Within these hyperparameter ranges, both techniques often yielded
+comparable outcomes: when the groups were clearly separated in one visualization, they were usually also
+separated in the others. Nevertheless, computing multiple visualizations with varying hyperparameter set-
+tings was helpful for identifying the different decision-making strategies. UMAP generally produced sharper
+separations between groups, which often facilitated the identification of distinct decision strategies. However,
+UMAP also tended to fragment the majority group into several subclusters. This can potentially be mis-
+34
+
+===== PAGE 35 =====
+leading, especially in settings where it is unknown how many distinct decision strategies can be expected to
+be found. In contrast, t-SNE visualizations were typically smoother, often showing a continuous alignment
+of samples according to the confounder value rather than sharply delineated groups.
+Figure 16 illustrates the differences between the two techniques. Overall, neither method was universally
+superior. We found that computing several visualizations and examining them jointly provided the most
+robust basis for identifying distinct decision strategies.
+(a) t-SNE visualization
+(b) UMAP visualization
+Figure 16: Comparison of (a) t-SNE and (b) UMAP visualizations of the Spectral Embedding for Class
+B of symmetric Squares. With UMAP, the two groups tend to appear more distinctly separated, but the
+majority group often is more fractured.
+In contrast, t-SNE typically yields smoother, more continuous
+alignments of samples by confounder value, but the two groups are less clearly delineated. Both techniques
+provide complementary perspectives, and exploring multiple visualizations proved beneficial for reliable
+manual clustering with Virelay.
+Choosing the optimal layer.
+Among all SpRAy hyperparameters, the choice of the layer l from which
+attribution scores are computed had the strongest impact on label quality. Intuitively, selecting a deeper
+layer (such as the penultimate layer) often seems advantageous because high-level, human-interpretable
+concepts tend to be better captured there. However, for simple confounders, we found that intermediate
+layers closer to the input layer frequently yielded clearer and more stable results. For example, Figure 17
+compares the two-dimensional visualizations of the spectral embeddings obtained for the symmetric Squares
+dataset when attribution maps were computed at layer 6 and at the penultimate layer 12 (See Appendix A
+for a detailed overview of the model architecture).
+When using layer 6, samples are well aligned along
+the confounding dimension (background brightness), with bright and dark samples forming two separated
+clusters. In contrast, the embedding derived from layer 12 exhibits greater fragmentation of the majority
+group and weaker alignment with the confounder. This suggests that the background-intensity feature is
+more distinctly represented in earlier layers of the model.
+For the other datasets (Follicles, symmetric CelebA Smiling, and asymmetric Camelyon17), we usually
+obtained the best results from the penultimate or second-to-last layer. Determining the most suitable layer,
+however, required considerable trial and error and visual examination of each Spectral Embedding. This
+manual exploration became even more time-consuming when also tuning additional hyperparameters.
+Other considerations.
+The performance of SpRAy is dependent upon a wide array of hyperparameters
+beyond the selection of a specific network layer l.
+Each of the underlying clustering algorithms applied
+35
+
+===== PAGE 36 =====
+(a) SpRAy applied at intermediate layer (layer 6)
+(b) SpRAy applied at penultimate layer (layer 12)
+Figure 17: t-SNE visualizations of the spectral embeddings obtained by applying SpRAy to Class B samples
+of the symmetric Squares dataset using attribution maps from (a) an intermediate layer (layer 6) and (b) the
+penultimate layer (layer 12) of the biased model. Using layer 6 attribution maps leads to a better alignment
+of the Spectral Embedding with the confounder values.
+to the spectral embedding (k-Means, Agglomerative Clustering, DBSCAN, or HDBSCAN) introduces its
+own set of parameters. Furthermore, the dimensionality of the spectral representation, determined by the
+number of eigenvectors k, is a critical factor.
+A lower value for k might effectively isolate a singular,
+dominant confounder, but may prove insufficient for capturing more complex, multifaceted confounders that
+are composed of multiple features.
+In addition to these factors, the choice of the XAI technique and its own configuration for generating
+attribution maps is paramount. For instance, the zennit library offers numerous customizable components,
+including contributors, composites, and canonizers, each with their own hyperparameters. Although we tried
+several configurations, the relationship between the quality of the attribution maps and the final efficacy
+of SpRAy did not seem to be direct. While investigating the CelebA dataset, we observed that visually
+interpretable heatmaps did not necessarily yield successful SpRAy outcomes. Conversely, on the Squares
+dataset, attribution maps of lower visual quality often produced highly effective spectral embeddings. This
+suggests that the ultimate success of SpRAy hinges less on the absolute quality of individual attribution
+maps and more on a crucial condition: the consistency of attribution patterns within a group and the
+distinctiveness of these patterns between different groups. Likely, the low number of minority group samples
+in our setting made it, in some cases, impossible for SpRAy to identify these patterns.
+Consequently, achieving usable results with SpRAy presented a significant challenge in our experimental
+work. The method’s success was highly sensitive not only to the choice of hyperparameters, but also to
+the inherent properties of the dataset. However, the difficulty of this task is contextualized by the notable
+absence of alternative approaches for obtaining group labels besides manual annotation. The scarcity of such
+methods underscores the inherent complexity of the problem, even though group labels are a prerequisite
+for many common correction methods.
+4.2
+DFR
+Among all examined correction methods, DFR was the easiest to implement and the fastest to converge.
+As it introduces no additional hyperparameters compared to a standard training regime, it circumvents the
+36
+
+===== PAGE 37 =====
+need for extensive grid searches. However, DFR typically yielded only modest AGA improvements on the
+test data, particularly when compared to the XAI-based methods (cf. Table 2).
+Surprisingly, DFR was most effective on the more complex medical datasets, achieving the highest accuracy
+of all methods on asymmetric Camelyon17 and the second-highest on Follicles. In contrast, its impact was
+minimal or even detrimental on datasets with simpler confounders, such as Squares and asymmetric CelebA
+Smiling. One plausible explanation for this pattern lies in DFR’s architectural restriction: it always splits
+the model at the penultimate layer and only fine-tunes the final fully connected layer. This design can be
+advantageous when the confounding and causal features are complex and thus well captured in the deepest
+layers of the network. However, for datasets where the confounder and causal feature are simple, such as
+the foreground and background intensities in Squares, the relevant information may be better disentangled
+earlier in the network. In such cases, fine-tuning only the last layer may not suffice to remove the bias,
+limiting DFR’s correction effect.
+CelebA Blond presents an apparent exception to this pattern. While its causal feature, i.e. whether the hair
+of the depicted person is blond, is relatively simple, its confounder gender is arguably the most complex.
+Still, applying DFR did not notably improve the student. This outcome is likely attributable to the severe
+scarcity of fine-tuning data, which is exacerbated by the dataset’s higher complexity.
+With only eight
+samples per group, it is improbable that such a small dataset could faithfully represent the distributions of
+each subgroup, rendering the optimization ineffective. This also further explains DFR’s strong performance
+on the Follicles dataset, where a more substantial fine-tuning set of 93 samples per group provided a more
+robust representation of the data, thereby enabling a notable correction of the model’s Clever Hans behavior.
+Another challenge limiting DFR’s efficacy is pre-fine-tuning accuracy saturation. In most cases, including
+for both symmetric and asymmetric CelebA Blond, the student model already achieved perfect accuracy
+on the 32 fine-tuning samples before DFR was applied. Consequently, the initial loss was negligible, which
+prevented meaningful updates to the final layer’s weights and rendered the fine-tuning process largely inert.
+This issue may be particularly acute for datasets with simpler features, such as Squares, where the model’s
+tendency to overfit on the few minority group samples during initial training is higher. This more severe
+overfitting results in an even lower starting loss when those same samples are used for fine-tuning. Follicles
+serves as a notable exception and reinforces this explanation, as it was the only dataset for which the student
+did not almost perfectly classify all fine-tuning samples already. In this case, the model’s initial accuracy
+on the fine-tuning data was a lower 81.6%, which provided a sufficient loss signal for the correction to be
+effective. Using a held-out dataset for fine-tuning, as originally recommended by Kirichenko et al. (2023),
+would likely have improved results, as this would have prevented the students from overfitting on the fine-
+tuning data. However, as we explained in Section 3.2, we intentionally chose to use a subset of the original
+training data to maintain comparability across all methods.
+Figure 18 illustrates the decision boundaries and the confidence regions after applying DFR to the models
+trained on symmetric and asymmetric Squares, both with true confounder labels and labels provided by
+SpRAy. Consistent with the negligible changes in AGA and WGA reported in Table 2 and 3 for symmetric
+Squares, the decision boundaries and confidence distributions (Figures 18a and 18b) remained virtually
+identical to those of the uncorrected models (Figure 13a). For the asymmetric variant, however, DFR led
+to some minor, yet visible improvements when using true group labels: While before correction nearly all
+minority group samples were wrongly classified, the corrected classifier is now accurate for a small portion of
+the minority group, and the overall decision boundary moved slightly closer to the theoretical optimum (cf.
+Figure 18c). Nevertheless, these improvements came at the expense of reduced confidence in some majority
+group regions, and even occasional misclassifications within the majority groups. When using SpRAy labels,
+similar changes were observed, although they were more pronounced, which led to the majority group A−
+becoming the weakest-generalizing group instead of the minority group B+ (Figure 18d). However, since the
+SpRAy labels for the Squares dataset are almost perfectly accurate, these deviations might simply be due to
+random variance during optimization.
+37
+
+===== PAGE 38 =====
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(a) symmetric Squares with true confounder labels
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(b) symmetric Squares with confounder labels provided by
+SpRAy
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(c) asymmetric Squares with true confounder labels
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(d) asymmetric Squares with confounder labels provided
+by SpRAy
+Figure 18: Decision boundaries and confidence regions for Squares after applying DFR to the student. The
+optimal decision boundary corresponds to a vertical line at 0.5 foreground intensity. Panels (a) and (b)
+depict results for symmetric Squares using true confounder labels and SpRAy-derived labels, respectively.
+Panels (c) and (d) show the corresponding results for asymmetric Squares.
+4.3
+Group DRO
+Group DRO generally achieved stronger corrections than DFR, yielding a noticeable improvement in average
+group accuracy for most datasets. Only for asymmetric CelebA Blond, asymmetric Camelyon17, and Follicles
+did DFR perform marginally better, with Follicles being the only case where the difference exceeded one
+percentage point.
+These gains over DFR came at the cost of longer convergence times.
+Whereas DFR
+typically converged within a few epochs, Group DRO often required several hundred, or sometimes even
+over one thousand, epochs to reach stability. Even when accounting for the time that could have been saved
+by using Group DRO directly for training from scratch, instead of first training a student with standard ERM,
+Group DRO would have remained more computationally expensive, as ERM training usually converged well
+before 300 epochs. Although each epoch is only slightly slower than standard ERM, the total training time
+increased substantially because of the greater number of required iterations. Nonetheless, even the longest
+38
+
+===== PAGE 39 =====
+runs never exceeded two hours on our hardware, given that each training set comprised only 800 samples
+(1205 for Follicles) and each Group DRO epoch was only slightly slower compared to ERM.
+One advantage of Group DRO, which it shares with DFR, is its simplicity in hyperparameter tuning. Since
+the weight decay factor λ was the only parameter requiring optimization, finding the best configuration
+was faster than for the XAI-based methods. But while Group DRO usually was able to outperform DFR,
+it generally produced smaller performance gains than RR-ClArC or CFKD. On average, these XAI-based
+methods achieved substantially higher improvements in both AGA and WGA scores.
+The two datasets
+where Group DRO matched or slightly exceeded their performance were again asymmetric Camelyon17 and
+Follicles, where RR-ClArC and CFKD performed below their usual level. Overall, Group DRO’s results were
+relatively stable across datasets, typically improving the biased student model by a consistent margin, while
+other correction methods, e.g. DFR and RR-ClArC, showed higher variance in their effectiveness.
+The advantage of Group DRO over DFR likely stemmed from the ability to update all model parameters,
+rather than being confined to adjusting only the weights of the final classification layer. Furthermore, Group
+DRO leveraged the entire training dataset, in contrast to DFR’s reliance on a small subset, although both
+sets include the same number of minority group samples. Despite this, given Group DRO’s prominence and
+its recognition as a SOTA correction technique, we would have anticipated more substantial performance im-
+provements. However, the method likely encountered similar problems as DFR: First, since Group DRO was
+applied post-hoc to an already trained classifier, the initial loss values were often already minimal, resulting
+in only negligible weight updates during optimization. Second, the limited number of samples available for
+the minority groups might be insufficient to accurately represent the underlying group distribution, especially
+for more complex data, thus imposing an upper bound on the achievable generalization capabilities.
+For the Squares dataset, Figure 19 visualizes the decision boundaries and confidence scores after correction
+with Group DRO. The corrected models show some improvements compared to the uncorrected students
+shown in Figure 13a. On the symmetric version, nearly all minority group samples were misclassified before
+correction, whereas after applying Group DRO, approximately half are now correctly classified (Figures 19a
+and 19b). However, this gain in minority group accuracy comes at the expense of lower confidence scores and
+even reduced accuracy for majority groups. In addition, the new decision boundary takes on a non-smooth,
+irregular shape.
+For the asymmetric version, the results are more favorable (Figures 19c and 19d).
+Here, Group DRO
+substantially increases the number of correctly classified minority samples while maintaining high accuracy
+for the majority groups, even though confidence scores are also lowered. The resulting decision boundary
+lies closer to the theoretical optimum compared to the uncorrected student, indicating that the model relies
+less on the confounding feature.
+Nevertheless, it should be noted that, for the asymmetric setting, the
+uncorrected Clever Hans decision boundary is already more similar to the optimal solution.
+Because the SpRAy-derived labels for the Squares dataset are almost perfectly accurate, the small deviations
+between results obtained with true labels and those using SpRAy labels are likely due to chance rather than
+label noise.
+4.4
+P-ClArC
+As indicated in Tables 2 and 3, P-ClArC demonstrated consistent and reliable performance, yielding a
+noticeable improvement over the uncorrected student model in all experiments. Although it was generally
+outperformed by RR-ClArC and CFKD, P-ClArC was the only XAI-based method by which an increase
+in AGA could be achieved on asymmetric Camelyon17. It also surpassed the non-XAI-based correction
+methods in most scenarios.
+P-ClArC’s primary advantage is its computational efficiency, positioning it as the least resource-intensive
+of the evaluated XAI-based approaches. Computing the CAV for the confounder took only seconds when
+using a P-CAV, even on a CPU. Training a linear SVM to use its weight vector as a CAV could take
+slightly longer, as the time it takes for the classifier to converge depends on the linear separability of the
+sample representations and the layer from which they are extracted. Activations from deeper model layers
+are usually lower-dimensional, so using them as latent representations can increase convergence speed. In
+39
+
+===== PAGE 40 =====
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(a) symmetric Squares with true confounder labels
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(b) symmetric Squares with confounder labels provided
+by SpRAy
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(c) asymmetric Squares with true confounder labels
+0.0
+0.5
+1.0
+Foreground Intensity
+0.0
+0.5
+1.0
+Background Intensity
+Confounding feature only
+True feature only
+Train Samples
+(d) asymmetric Squares with confounder labels provided
+by SpRAy
+Figure 19: Decision boundaries and confidence regions for Squares after applying Group DRO to the
+student. The optimal decision boundary corresponds to a vertical line at 0.5 foreground intensity. Panels
+(a) and (b) depict results for symmetric Squares using true confounder labels and SpRAy-derived labels,
+respectively. Panels (c) and (d) show the corresponding results for asymmetric Squares.
+our experiments, training the SVM was also completed in a few seconds in most cases. After the CAV
+was computed and the projection layer was integrated into the model, the final step involved fine-tuning to
+maximize the average group accuracy on the validation data. For our datasets, this process was quick as
+well, never taking more than 25 epochs and typically finishing in one to two minutes. The rapid convergence
+also allowed us to conduct extensive grid searches to identify the optimal hyperparameters within a practical
+timeframe. The hyperparameters we optimized included the projection layer l ∈{0, 1, . . . , 12}, the target
+class c = {A, B} from which samples are used to compute the CAV, and the CAV type, selecting between a
+linear SVM-based vector (vSVM) and a PCAV (vpat).
+As expected, PCAVs were superior to SVM-based CAVS most of the time. Regarding the CAV mode, we
+found that applying no reduction generally led to the largest improvements, although the difference to the re-
+sults acquired with max pooling or mean aggregation was usually insignificant. Among the hyperparameters,
+the choice of the projection layer l was the most important. Drawing a parallel with the observations from
+applying SpRAy, our intuition was that simpler confounders would be best addressed in shallower layers,
+40
+
+===== PAGE 41 =====
+whereas more complex concepts would require choosing deeper layers to achieve the best results. Figure 20
+illustrates the effect of the chosen layer l on the AGA of the corrected model, both for the validation and the
+test set. For this analysis, we fixed layer l and tuned the other hyperparameters, selecting the best model
+for each layer based on its performance on the validation data (see Appendix A for a layer overview). The
+results for the Squares dataset, which features the simplest confounder, support our assumption: for both
+the symmetric and asymmetric versions, optimal performance was achieved when setting l = 1, meaning the
+projection was most effective when applied directly after the first convolutional layer (cf. Figures 20a and
+20b).
+However, for CelebA Blond, the results did not align with the expectation that deeper layers would be
+optimal. In the symmetric version (Figure 20c), the AGA on the test data was relatively stable across most
+projection locations, with a notable performance drop at the shallowest (l = 1) and two deepest (l = 11,
+l = 12) layers. For the asymmetric version of CelebA Blond (Figure 20d), the test performance peaked
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+projection location
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+average group accuracy
+val data
+test data
+uncorrected model
+uncorrected model
+(a) symmetric Squares
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+projection location
+0.70
+0.75
+0.80
+0.85
+0.90
+0.95
+1.00
+average group accuracy
+val data
+test data
+uncorrected model
+uncorrected model
+(b) asymmetric Squares
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+projection location
+0.675
+0.700
+0.725
+0.750
+0.775
+0.800
+0.825
+0.850
+average group accuracy
+val data
+test data
+uncorrected model
+uncorrected model
+(c) symmetric CelebA Blond
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+projection location
+0.725
+0.750
+0.775
+0.800
+0.825
+0.850
+0.875
+0.900
+average group accuracy
+val data
+test data
+uncorrected model
+uncorrected model
+(d) asymmetric CelebA Blond
+Figure 20: Impact of projection location l on validation and test performance when correcting with P-ClArC.
+Each data point shows the validation and test AGA for the optimal model at a given layer l, selected based
+on the highest validation AGA. The layer l indicates where the projection was inserted into the architecture,
+with l = 0 signifying a projection directly on the input image. The charts highlight a significant divergence
+between validation and test AGA, demonstrating that validation performance is an unreliable estimator for
+true generalization in our setting.
+41
+
+===== PAGE 42 =====
+at an intermediate layer (l = 6) and was lowest when the projection was applied at the three deepest
+positions (l = 10, l = 11, l = 12). Figure 20 also reveals that the optimal projection location can differ
+substantially, even between dataset versions from the same domain with an identical confounder. While for
+symmetric CelebA Blond, the highest average group accuracy was achieved with the projection at l = 4,
+for the asymmetric version, the optimal location shifted to l = 6. Moreover, applying the projection at
+l = 1 yielded a small improvement for the asymmetric dataset but was the worst-performing option for the
+symmetric version, causing a noticeable AGA decrease.
+This analysis of the layer-wise correction performance indicates that finding the optimal layer l for computing
+the CAV and applying the projection remains challenging. Even with prior knowledge about the underlying
+dataset and the nature of the confounder, making educated guesses for finding a value for l is highly unreliable,
+making costly grid search unavoidable to exploit P-ClArC’s full potential.
+Furthermore, it becomes apparent that in our experimental setting, the AGA on the validation data serves
+as a poor estimator for the model’s true generalization ability on the test data.
+Across the board, the
+validation performance of the corrected models significantly overestimated the final test performance. Some
+degree of overestimation is expected, since we perform model selection based on validation AGA. Particularly
+for datasets with more complex confounders, however, the validation metric was not just optimistic, but
+sometimes even misleading about which hyperparameters were optimal. For asymmetric CelebA Blond, the
+test performance was highest at l = 6, but since the validation performance peaked at l = 1, our selection
+criteria led us to choose a sub-optimal model that generalized more poorly (see Figure 20d). In contrast, for
+the simpler Squares dataset, the validation AGA peaked at the same projection location as the test AGA
+(l = 1), allowing us to select the best model, as can be seen in Figures 20a and 20b.
+The discrepancy between validation and test performance likely stems from the extreme data scarcity in the
+validation set. For all datasets except Follicles, the minority groups are represented by only two samples.
+Such a small number is often insufficient to capture the full data distribution of a group, a challenge that
+intensifies with feature complexity and that we also observed for DFR and Group DRO. For a dataset like
+Squares, where features are simple, these two samples might offer a reasonable proxy for test performance,
+though they are unlikely to cover edge cases. However, for a complex confounder like gender in CelebA
+Blond, it is highly improbable that two examples can represent the diversity of relevant attributes. This
+sparsity also elevates the risk of overfitting during model selection. An extensive hyperparameter search may
+produce a model that correctly classifies the two minority samples purely by chance, leading to its selection
+despite poor generalization. Conversely, a genuinely robust model could be discarded for failing to classify
+one of these samples, which is especially likely if the respective sample is an outlier. Because the coverage of
+the minority groups within the validation set is so low, validation AGA becomes an unreliable performance
+metric, potentially leading to the selection of models that are poorly generalized.
+This issue of data scarcity also affects the computation of the CAV. P-ClArC’s success heavily relies on a
+precise CAV to isolate and suppress the confounding feature. For this, we assume that the confounder can
+be represented by a linear direction in the model’s latent space, orthogonal to causal concepts. While this
+assumption may not always hold in general, our setting makes it even more difficult to satisfy, since the CAV
+must be derived from only eight minority group samples in the training split. An unrepresentative sample
+set can produce an inaccurate CAV that is misaligned with the true confounder direction or even entangled
+with causal features. As a result, P-ClArC’s ability to neutralize the bias without corrupting important
+causal signals could be decreased.
+The described challenges are further intensified by potential mislabeling from SpRAy. Given the small size
+of the minority groups, each sample has considerable influence on the quality of the CAV, the average group
+accuracy, and, consequently, model selection. While the limited sample size already restricts the minority
+group’s representativeness, incorrect labels from SpRAy can render the samples highly unrepresentative of
+their respective data group. The combined effect of low representativeness and high impact on the selection
+metric makes it substantially harder to produce and identify a model that genuinely generalizes well. Because
+of that, it is surprising that even when using SpRAy labels that are partially highly inaccurate, P-ClArC still
+always led to an increased AGA compared to the uncorrected model. For Follicles, test performance using
+SpRAy labels even surpassed test performance using the true labels. This is likely due to the problems during
+42

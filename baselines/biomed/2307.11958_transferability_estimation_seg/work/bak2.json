@@ -1,0 +1,12 @@
+{
+  "pool": [
+    {"id": "l32_s1",  "base": 32, "seed": 1, "lr": 3e-4,  "pretrain_epochs": 20, "pretrained": true},
+    {"id": "l16_s1",  "base": 16, "seed": 1, "lr": 3e-4,  "pretrain_epochs": 25, "pretrained": true},
+    {"id": "l08_s1",  "base": 8,  "seed": 1, "lr": 3e-4,  "pretrain_epochs": 30, "pretrained": true},
+    {"id": "l16_s2",  "base": 16, "seed": 2, "lr": 3e-4,  "pretrain_epochs": 25, "pretrained": true},
+    {"id": "l16_short", "base": 16, "seed": 1, "lr": 3e-4, "pretrain_epochs": 10, "pretrained": true},
+    {"id": "scratch", "base": 16, "seed": 3, "lr": 3e-4,   "pretrain_epochs": 0,   "pretrained": false}
+  ],
+  "pretrain": {"batch_size": 8, "max_slices_per_case": 32, "size": 192, "device": "cpu"},
+  "finetune": {"batch_size": 8, "max_slices_per_case": 32, "size": 192, "device": "cpu"}
+}

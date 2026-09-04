@@ -1,0 +1,327 @@
+GPU available, ~16.0 GiB free, using cuda
+device: cuda
+normalization computed from TRAIN: {'bands': [0, 1, 2, 3, 'ndvi'], 'stat_split': 'train', 'mean': [124.22147617340086, 129.00288824081423, 121.40703894615177, 104.34519423484804, 17.986942882537853], 'std': [68.03518355478649, 61.86486282794694, 63.6574967492155, 47.66659503155293, 33.23498425598315]}
+model params: 14.39M
+class weights (train-only): {'building': np.float64(1.208), 'greenhouse': np.float64(1.208), 'swimming_pool': np.float64(1.208), 'impervious': np.float64(0.854), 'pervious': np.float64(0.885), 'bare_soil': np.float64(0.456), 'water': np.float64(1.208), 'snow': np.float64(0.614), 'herbaceous': np.float64(0.757), 'agricultural': np.float64(1.124), 'plowed': np.float64(1.208), 'vineyard': np.float64(1.208), 'deciduous': np.float64(0.648), 'coniferous': np.float64(1.208), 'brushwood': np.float64(1.208)}
+  [ep 1/100] it 0/33 loss 2.7901 (1.34s/it)
+  [ep 1/100] it 20/33 loss 2.6335 (0.26s/it)
+EPOCH 1: loss=2.6777 val_mIoU=7.43 val_OA=17.21 time=11.0s
+  ** saved best val mIoU 7.43
+  [ep 2/100] it 0/33 loss 2.4716 (0.67s/it)
+  [ep 2/100] it 20/33 loss 2.2849 (0.24s/it)
+EPOCH 2: loss=2.4126 val_mIoU=16.33 val_OA=49.54 time=8.8s
+  ** saved best val mIoU 16.33
+  [ep 3/100] it 0/33 loss 2.3642 (0.72s/it)
+  [ep 3/100] it 20/33 loss 2.1062 (0.23s/it)
+EPOCH 3: loss=2.2279 val_mIoU=21.16 val_OA=60.56 time=8.5s
+  ** saved best val mIoU 21.16
+  [ep 4/100] it 0/33 loss 2.2117 (0.67s/it)
+  [ep 4/100] it 20/33 loss 2.4754 (0.23s/it)
+EPOCH 4: loss=2.1108 val_mIoU=24.09 val_OA=65.50 time=8.7s
+  ** saved best val mIoU 24.09
+  [ep 5/100] it 0/33 loss 1.9228 (0.66s/it)
+  [ep 5/100] it 20/33 loss 2.0846 (0.31s/it)
+EPOCH 5: loss=2.0550 val_mIoU=30.22 val_OA=69.66 time=10.3s
+  ** saved best val mIoU 30.22
+  [ep 6/100] it 0/33 loss 1.8864 (0.70s/it)
+  [ep 6/100] it 20/33 loss 1.8497 (0.24s/it)
+EPOCH 6: loss=2.0548 val_mIoU=30.66 val_OA=69.52 time=8.9s
+  ** saved best val mIoU 30.66
+  [ep 7/100] it 0/33 loss 1.7464 (0.69s/it)
+  [ep 7/100] it 20/33 loss 1.7537 (0.23s/it)
+EPOCH 7: loss=1.9283 val_mIoU=33.37 val_OA=73.68 time=8.4s
+  ** saved best val mIoU 33.37
+  [ep 8/100] it 0/33 loss 1.8796 (0.67s/it)
+  [ep 8/100] it 20/33 loss 2.2352 (0.24s/it)
+EPOCH 8: loss=1.8616 val_mIoU=31.87 val_OA=71.22 time=8.8s
+  [ep 9/100] it 0/33 loss 2.0203 (0.66s/it)
+  [ep 9/100] it 20/33 loss 1.9075 (0.32s/it)
+EPOCH 9: loss=1.8404 val_mIoU=33.86 val_OA=73.19 time=10.4s
+  ** saved best val mIoU 33.86
+  [ep 10/100] it 0/33 loss 1.7646 (0.68s/it)
+  [ep 10/100] it 20/33 loss 1.6780 (0.24s/it)
+EPOCH 10: loss=1.8233 val_mIoU=35.00 val_OA=74.55 time=8.9s
+  ** saved best val mIoU 35.00
+  [ep 11/100] it 0/33 loss 1.9967 (0.67s/it)
+  [ep 11/100] it 20/33 loss 1.6829 (0.23s/it)
+EPOCH 11: loss=1.8281 val_mIoU=35.35 val_OA=74.67 time=8.5s
+  ** saved best val mIoU 35.35
+  [ep 12/100] it 0/33 loss 1.8694 (0.69s/it)
+  [ep 12/100] it 20/33 loss 2.0841 (0.24s/it)
+EPOCH 12: loss=1.8047 val_mIoU=36.09 val_OA=75.34 time=10.7s
+  ** saved best val mIoU 36.09
+  [ep 13/100] it 0/33 loss 1.8199 (0.69s/it)
+  [ep 13/100] it 20/33 loss 1.6164 (0.23s/it)
+EPOCH 13: loss=1.7451 val_mIoU=35.98 val_OA=75.47 time=8.5s
+  [ep 14/100] it 0/33 loss 1.6454 (0.70s/it)
+  [ep 14/100] it 20/33 loss 1.5291 (0.24s/it)
+EPOCH 14: loss=1.7109 val_mIoU=34.56 val_OA=73.29 time=8.8s
+  [ep 15/100] it 0/33 loss 1.4759 (0.68s/it)
+  [ep 15/100] it 20/33 loss 1.8948 (0.23s/it)
+EPOCH 15: loss=1.6984 val_mIoU=35.29 val_OA=73.47 time=8.4s
+  [ep 16/100] it 0/33 loss 1.8619 (0.66s/it)
+  [ep 16/100] it 20/33 loss 1.5592 (0.23s/it)
+EPOCH 16: loss=1.6753 val_mIoU=34.20 val_OA=73.00 time=10.6s
+  [ep 17/100] it 0/33 loss 1.6546 (0.65s/it)
+  [ep 17/100] it 20/33 loss 1.5598 (0.23s/it)
+EPOCH 17: loss=1.6539 val_mIoU=34.95 val_OA=74.00 time=8.4s
+  [ep 18/100] it 0/33 loss 1.7936 (0.67s/it)
+  [ep 18/100] it 20/33 loss 1.5806 (0.23s/it)
+EPOCH 18: loss=1.6430 val_mIoU=35.80 val_OA=75.22 time=8.7s
+  [ep 19/100] it 0/33 loss 2.0081 (0.65s/it)
+  [ep 19/100] it 20/33 loss 1.5729 (0.22s/it)
+EPOCH 19: loss=1.6189 val_mIoU=35.85 val_OA=73.84 time=8.4s
+  [ep 20/100] it 0/33 loss 1.5041 (0.66s/it)
+  [ep 20/100] it 20/33 loss 1.3336 (0.32s/it)
+EPOCH 20: loss=1.6097 val_mIoU=35.84 val_OA=74.62 time=10.6s
+  [ep 21/100] it 0/33 loss 1.7793 (0.71s/it)
+  [ep 21/100] it 20/33 loss 1.7327 (0.23s/it)
+EPOCH 21: loss=1.6237 val_mIoU=36.85 val_OA=75.86 time=8.4s
+  ** saved best val mIoU 36.85
+  [ep 22/100] it 0/33 loss 1.7623 (0.69s/it)
+  [ep 22/100] it 20/33 loss 1.7560 (0.23s/it)
+EPOCH 22: loss=1.5981 val_mIoU=36.64 val_OA=75.27 time=8.6s
+  [ep 23/100] it 0/33 loss 1.7077 (0.67s/it)
+  [ep 23/100] it 20/33 loss 1.5584 (0.22s/it)
+EPOCH 23: loss=1.5596 val_mIoU=35.98 val_OA=73.96 time=8.4s
+  [ep 24/100] it 0/33 loss 1.5532 (0.64s/it)
+  [ep 24/100] it 20/33 loss 1.8884 (0.32s/it)
+EPOCH 24: loss=1.5241 val_mIoU=35.92 val_OA=75.51 time=10.6s
+  [ep 25/100] it 0/33 loss 1.5031 (0.66s/it)
+  [ep 25/100] it 20/33 loss 1.4490 (0.22s/it)
+EPOCH 25: loss=1.5002 val_mIoU=36.56 val_OA=76.01 time=8.3s
+  [ep 26/100] it 0/33 loss 1.7267 (0.67s/it)
+  [ep 26/100] it 20/33 loss 1.3597 (0.22s/it)
+EPOCH 26: loss=1.4765 val_mIoU=37.85 val_OA=77.29 time=8.4s
+  ** saved best val mIoU 37.85
+  [ep 27/100] it 0/33 loss 1.9204 (0.70s/it)
+  [ep 27/100] it 20/33 loss 1.4106 (0.23s/it)
+EPOCH 27: loss=1.5338 val_mIoU=37.03 val_OA=73.79 time=10.5s
+  [ep 28/100] it 0/33 loss 1.2718 (0.67s/it)
+  [ep 28/100] it 20/33 loss 1.3554 (0.23s/it)
+EPOCH 28: loss=1.4760 val_mIoU=38.01 val_OA=75.51 time=8.5s
+  ** saved best val mIoU 38.01
+  [ep 29/100] it 0/33 loss 1.5027 (0.64s/it)
+  [ep 29/100] it 20/33 loss 1.4088 (0.22s/it)
+EPOCH 29: loss=1.4526 val_mIoU=38.03 val_OA=76.62 time=8.3s
+  ** saved best val mIoU 38.03
+  [ep 30/100] it 0/33 loss 1.5471 (0.64s/it)
+  [ep 30/100] it 20/33 loss 1.4471 (0.22s/it)
+EPOCH 30: loss=1.4382 val_mIoU=37.36 val_OA=75.47 time=8.5s
+  [ep 31/100] it 0/33 loss 1.6334 (0.69s/it)
+  [ep 31/100] it 20/33 loss 1.3120 (0.23s/it)
+EPOCH 31: loss=1.3910 val_mIoU=38.97 val_OA=77.24 time=10.7s
+  ** saved best val mIoU 38.97
+  [ep 32/100] it 0/33 loss 1.4956 (0.66s/it)
+  [ep 32/100] it 20/33 loss 1.3706 (0.23s/it)
+EPOCH 32: loss=1.4600 val_mIoU=37.73 val_OA=75.67 time=8.5s
+  [ep 33/100] it 0/33 loss 1.2046 (0.67s/it)
+  [ep 33/100] it 20/33 loss 1.1513 (0.23s/it)
+EPOCH 33: loss=1.3823 val_mIoU=39.11 val_OA=76.62 time=8.4s
+  ** saved best val mIoU 39.11
+  [ep 34/100] it 0/33 loss 1.5441 (0.65s/it)
+  [ep 34/100] it 20/33 loss 1.2433 (0.23s/it)
+EPOCH 34: loss=1.3975 val_mIoU=36.73 val_OA=75.74 time=8.5s
+  [ep 35/100] it 0/33 loss 1.6496 (0.68s/it)
+  [ep 35/100] it 20/33 loss 1.2328 (0.33s/it)
+EPOCH 35: loss=1.4419 val_mIoU=39.62 val_OA=77.93 time=10.7s
+  ** saved best val mIoU 39.62
+  [ep 36/100] it 0/33 loss 1.2015 (0.69s/it)
+  [ep 36/100] it 20/33 loss 1.7168 (0.22s/it)
+EPOCH 36: loss=1.3704 val_mIoU=38.18 val_OA=75.33 time=8.3s
+  [ep 37/100] it 0/33 loss 1.3786 (0.65s/it)
+  [ep 37/100] it 20/33 loss 1.3841 (0.23s/it)
+EPOCH 37: loss=1.3971 val_mIoU=38.45 val_OA=76.27 time=8.6s
+  [ep 38/100] it 0/33 loss 1.5627 (0.69s/it)
+  [ep 38/100] it 20/33 loss 1.2116 (0.23s/it)
+EPOCH 38: loss=1.3115 val_mIoU=38.19 val_OA=76.07 time=8.5s
+  [ep 39/100] it 0/33 loss 1.3903 (0.71s/it)
+  [ep 39/100] it 20/33 loss 0.9654 (0.33s/it)
+EPOCH 39: loss=1.3366 val_mIoU=38.10 val_OA=75.90 time=10.7s
+  [ep 40/100] it 0/33 loss 1.3148 (0.67s/it)
+  [ep 40/100] it 20/33 loss 1.1929 (0.22s/it)
+EPOCH 40: loss=1.3079 val_mIoU=38.58 val_OA=76.68 time=8.3s
+  [ep 41/100] it 0/33 loss 1.2740 (0.67s/it)
+  [ep 41/100] it 20/33 loss 1.2899 (0.23s/it)
+EPOCH 41: loss=1.3199 val_mIoU=39.84 val_OA=78.12 time=8.6s
+  ** saved best val mIoU 39.84
+  [ep 42/100] it 0/33 loss 1.1939 (0.66s/it)
+  [ep 42/100] it 20/33 loss 1.5982 (0.23s/it)
+EPOCH 42: loss=1.3651 val_mIoU=39.46 val_OA=76.80 time=8.6s
+  [ep 43/100] it 0/33 loss 1.3794 (2.79s/it)
+  [ep 43/100] it 20/33 loss 1.3978 (0.34s/it)
+EPOCH 43: loss=1.2855 val_mIoU=38.76 val_OA=76.46 time=10.6s
+  [ep 44/100] it 0/33 loss 1.3798 (0.64s/it)
+  [ep 44/100] it 20/33 loss 1.2432 (0.22s/it)
+EPOCH 44: loss=1.2839 val_mIoU=38.98 val_OA=74.55 time=8.2s
+  [ep 45/100] it 0/33 loss 1.4416 (0.68s/it)
+  [ep 45/100] it 20/33 loss 1.4663 (0.24s/it)
+EPOCH 45: loss=1.3053 val_mIoU=36.98 val_OA=74.76 time=8.7s
+  [ep 46/100] it 0/33 loss 1.4978 (0.67s/it)
+  [ep 46/100] it 20/33 loss 1.3044 (0.23s/it)
+EPOCH 46: loss=1.2993 val_mIoU=39.14 val_OA=75.66 time=10.9s
+  [ep 47/100] it 0/33 loss 1.2797 (0.70s/it)
+  [ep 47/100] it 20/33 loss 1.2042 (0.24s/it)
+EPOCH 47: loss=1.3139 val_mIoU=37.81 val_OA=77.02 time=8.7s
+  [ep 48/100] it 0/33 loss 1.5372 (0.69s/it)
+  [ep 48/100] it 20/33 loss 1.2698 (0.22s/it)
+EPOCH 48: loss=1.2417 val_mIoU=38.55 val_OA=75.47 time=8.3s
+  [ep 49/100] it 0/33 loss 1.2461 (0.65s/it)
+  [ep 49/100] it 20/33 loss 1.1208 (0.24s/it)
+EPOCH 49: loss=1.2129 val_mIoU=38.70 val_OA=76.85 time=8.9s
+  [ep 50/100] it 0/33 loss 1.7978 (0.67s/it)
+  [ep 50/100] it 20/33 loss 1.1454 (0.24s/it)
+EPOCH 50: loss=1.2920 val_mIoU=37.62 val_OA=76.27 time=10.8s
+  [ep 51/100] it 0/33 loss 1.3783 (0.68s/it)
+  [ep 51/100] it 20/33 loss 1.2912 (0.23s/it)
+EPOCH 51: loss=1.2180 val_mIoU=36.68 val_OA=74.20 time=8.5s
+  [ep 52/100] it 0/33 loss 1.2821 (0.70s/it)
+  [ep 52/100] it 20/33 loss 1.0609 (0.23s/it)
+EPOCH 52: loss=1.2242 val_mIoU=36.92 val_OA=75.51 time=8.5s
+  [ep 53/100] it 0/33 loss 1.3370 (0.69s/it)
+  [ep 53/100] it 20/33 loss 0.9939 (0.24s/it)
+EPOCH 53: loss=1.2111 val_mIoU=36.17 val_OA=75.69 time=9.2s
+  [ep 54/100] it 0/33 loss 1.3377 (0.70s/it)
+  [ep 54/100] it 20/33 loss 1.3044 (0.33s/it)
+EPOCH 54: loss=1.1819 val_mIoU=37.59 val_OA=75.81 time=10.5s
+  [ep 55/100] it 0/33 loss 1.4846 (0.69s/it)
+  [ep 55/100] it 20/33 loss 1.3415 (0.23s/it)
+EPOCH 55: loss=1.1981 val_mIoU=37.54 val_OA=75.50 time=8.6s
+  [ep 56/100] it 0/33 loss 1.0917 (0.66s/it)
+  [ep 56/100] it 20/33 loss 1.1676 (0.22s/it)
+EPOCH 56: loss=1.2220 val_mIoU=39.44 val_OA=77.27 time=8.5s
+  [ep 57/100] it 0/33 loss 1.3692 (0.67s/it)
+  [ep 57/100] it 20/33 loss 1.2542 (0.24s/it)
+EPOCH 57: loss=1.2193 val_mIoU=38.11 val_OA=75.62 time=9.2s
+  [ep 58/100] it 0/33 loss 1.2051 (2.61s/it)
+  [ep 58/100] it 20/33 loss 1.0990 (0.32s/it)
+EPOCH 58: loss=1.1761 val_mIoU=36.60 val_OA=74.29 time=10.2s
+  [ep 59/100] it 0/33 loss 1.3203 (0.64s/it)
+  [ep 59/100] it 20/33 loss 1.4371 (0.22s/it)
+EPOCH 59: loss=1.2226 val_mIoU=37.69 val_OA=74.52 time=8.4s
+  [ep 60/100] it 0/33 loss 1.1351 (0.64s/it)
+  [ep 60/100] it 20/33 loss 0.8157 (0.23s/it)
+EPOCH 60: loss=1.1837 val_mIoU=38.85 val_OA=77.68 time=8.6s
+  [ep 61/100] it 0/33 loss 1.1595 (0.67s/it)
+  [ep 61/100] it 20/33 loss 0.9152 (0.23s/it)
+EPOCH 61: loss=1.1225 val_mIoU=40.32 val_OA=77.95 time=11.1s
+  ** saved best val mIoU 40.32
+  [ep 62/100] it 0/33 loss 1.2765 (0.65s/it)
+  [ep 62/100] it 20/33 loss 1.3169 (0.23s/it)
+EPOCH 62: loss=1.1528 val_mIoU=35.59 val_OA=75.29 time=8.5s
+  [ep 63/100] it 0/33 loss 1.1241 (0.68s/it)
+  [ep 63/100] it 20/33 loss 1.4187 (0.23s/it)
+EPOCH 63: loss=1.1848 val_mIoU=36.56 val_OA=76.03 time=8.7s
+  [ep 64/100] it 0/33 loss 1.2929 (0.68s/it)
+  [ep 64/100] it 20/33 loss 1.0599 (0.23s/it)
+EPOCH 64: loss=1.1474 val_mIoU=38.75 val_OA=77.29 time=8.5s
+  [ep 65/100] it 0/33 loss 1.1831 (0.70s/it)
+  [ep 65/100] it 20/33 loss 1.1651 (0.23s/it)
+EPOCH 65: loss=1.1192 val_mIoU=37.78 val_OA=74.64 time=10.6s
+  [ep 66/100] it 0/33 loss 1.1071 (0.70s/it)
+  [ep 66/100] it 20/33 loss 0.8638 (0.23s/it)
+EPOCH 66: loss=1.1227 val_mIoU=38.14 val_OA=75.55 time=8.5s
+  [ep 67/100] it 0/33 loss 1.1854 (0.69s/it)
+  [ep 67/100] it 20/33 loss 1.4695 (0.23s/it)
+EPOCH 67: loss=1.1427 val_mIoU=37.86 val_OA=75.65 time=8.6s
+  [ep 68/100] it 0/33 loss 1.0057 (0.70s/it)
+  [ep 68/100] it 20/33 loss 1.4904 (0.23s/it)
+EPOCH 68: loss=1.0926 val_mIoU=37.34 val_OA=76.29 time=8.6s
+  [ep 69/100] it 0/33 loss 1.0810 (0.71s/it)
+  [ep 69/100] it 20/33 loss 1.2055 (0.32s/it)
+EPOCH 69: loss=1.1197 val_mIoU=35.42 val_OA=72.70 time=10.6s
+  [ep 70/100] it 0/33 loss 1.3754 (0.67s/it)
+  [ep 70/100] it 20/33 loss 1.1845 (0.23s/it)
+EPOCH 70: loss=1.1263 val_mIoU=39.27 val_OA=77.30 time=8.6s
+  [ep 71/100] it 0/33 loss 0.8685 (0.67s/it)
+  [ep 71/100] it 20/33 loss 1.2168 (0.23s/it)
+EPOCH 71: loss=1.0730 val_mIoU=35.96 val_OA=73.30 time=8.6s
+  [ep 72/100] it 0/33 loss 1.4499 (0.69s/it)
+  [ep 72/100] it 20/33 loss 1.2309 (0.23s/it)
+EPOCH 72: loss=1.1212 val_mIoU=37.65 val_OA=75.36 time=8.6s
+  [ep 73/100] it 0/33 loss 1.1373 (0.67s/it)
+  [ep 73/100] it 20/33 loss 0.9588 (0.32s/it)
+EPOCH 73: loss=1.0798 val_mIoU=39.63 val_OA=76.29 time=10.6s
+  [ep 74/100] it 0/33 loss 1.1285 (0.67s/it)
+  [ep 74/100] it 20/33 loss 0.9827 (0.23s/it)
+EPOCH 74: loss=1.0599 val_mIoU=40.97 val_OA=78.63 time=8.5s
+  ** saved best val mIoU 40.97
+  [ep 75/100] it 0/33 loss 0.9898 (0.68s/it)
+  [ep 75/100] it 20/33 loss 1.0674 (0.23s/it)
+EPOCH 75: loss=1.0514 val_mIoU=39.63 val_OA=76.31 time=8.6s
+  [ep 76/100] it 0/33 loss 1.3806 (0.70s/it)
+  [ep 76/100] it 20/33 loss 1.1042 (0.23s/it)
+EPOCH 76: loss=1.0485 val_mIoU=38.20 val_OA=76.74 time=10.5s
+  [ep 77/100] it 0/33 loss 0.9667 (0.71s/it)
+  [ep 77/100] it 20/33 loss 1.0179 (0.23s/it)
+EPOCH 77: loss=1.1559 val_mIoU=37.93 val_OA=76.70 time=8.7s
+  [ep 78/100] it 0/33 loss 0.9346 (0.70s/it)
+  [ep 78/100] it 20/33 loss 1.0208 (0.23s/it)
+EPOCH 78: loss=1.0377 val_mIoU=35.57 val_OA=73.04 time=8.7s
+  [ep 79/100] it 0/33 loss 1.3230 (0.72s/it)
+  [ep 79/100] it 20/33 loss 1.0667 (0.23s/it)
+EPOCH 79: loss=1.0498 val_mIoU=34.92 val_OA=74.29 time=8.7s
+  [ep 80/100] it 0/33 loss 1.0797 (0.71s/it)
+  [ep 80/100] it 20/33 loss 0.8804 (0.23s/it)
+EPOCH 80: loss=1.0142 val_mIoU=35.34 val_OA=73.63 time=10.5s
+  [ep 81/100] it 0/33 loss 1.0731 (0.68s/it)
+  [ep 81/100] it 20/33 loss 0.9012 (0.23s/it)
+EPOCH 81: loss=1.0332 val_mIoU=37.27 val_OA=74.68 time=8.6s
+  [ep 82/100] it 0/33 loss 0.6955 (0.68s/it)
+  [ep 82/100] it 20/33 loss 1.0715 (0.24s/it)
+EPOCH 82: loss=0.9931 val_mIoU=35.60 val_OA=75.19 time=8.7s
+  [ep 83/100] it 0/33 loss 0.7064 (0.66s/it)
+  [ep 83/100] it 20/33 loss 1.2064 (0.23s/it)
+EPOCH 83: loss=1.0017 val_mIoU=37.39 val_OA=76.28 time=8.6s
+  [ep 84/100] it 0/33 loss 0.8153 (0.67s/it)
+  [ep 84/100] it 20/33 loss 1.1637 (0.32s/it)
+EPOCH 84: loss=0.9942 val_mIoU=36.84 val_OA=74.58 time=10.6s
+  [ep 85/100] it 0/33 loss 0.9923 (0.66s/it)
+  [ep 85/100] it 20/33 loss 0.8932 (0.23s/it)
+EPOCH 85: loss=1.0254 val_mIoU=35.52 val_OA=74.71 time=8.5s
+  [ep 86/100] it 0/33 loss 0.7759 (0.71s/it)
+  [ep 86/100] it 20/33 loss 1.1890 (0.24s/it)
+EPOCH 86: loss=1.0058 val_mIoU=40.12 val_OA=78.04 time=8.8s
+  [ep 87/100] it 0/33 loss 1.3813 (0.67s/it)
+  [ep 87/100] it 20/33 loss 0.8160 (0.23s/it)
+EPOCH 87: loss=0.9776 val_mIoU=39.09 val_OA=76.29 time=8.5s
+  [ep 88/100] it 0/33 loss 0.8267 (0.71s/it)
+  [ep 88/100] it 20/33 loss 1.0354 (0.33s/it)
+EPOCH 88: loss=0.9482 val_mIoU=39.03 val_OA=77.53 time=10.6s
+  [ep 89/100] it 0/33 loss 0.7001 (0.66s/it)
+  [ep 89/100] it 20/33 loss 1.2795 (0.23s/it)
+EPOCH 89: loss=0.9804 val_mIoU=38.30 val_OA=76.20 time=8.5s
+  [ep 90/100] it 0/33 loss 0.7537 (0.70s/it)
+  [ep 90/100] it 20/33 loss 0.9179 (0.24s/it)
+EPOCH 90: loss=0.9507 val_mIoU=37.29 val_OA=75.84 time=8.8s
+  [ep 91/100] it 0/33 loss 1.1231 (0.68s/it)
+  [ep 91/100] it 20/33 loss 1.1520 (0.23s/it)
+EPOCH 91: loss=0.9813 val_mIoU=33.71 val_OA=72.67 time=10.5s
+  [ep 92/100] it 0/33 loss 1.0842 (0.71s/it)
+  [ep 92/100] it 20/33 loss 0.9986 (0.24s/it)
+EPOCH 92: loss=0.9727 val_mIoU=33.01 val_OA=72.33 time=8.9s
+  [ep 93/100] it 0/33 loss 0.8739 (0.69s/it)
+  [ep 93/100] it 20/33 loss 0.9910 (0.23s/it)
+EPOCH 93: loss=0.9511 val_mIoU=39.09 val_OA=77.92 time=8.6s
+  [ep 94/100] it 0/33 loss 0.9518 (0.68s/it)
+  [ep 94/100] it 20/33 loss 0.9139 (0.24s/it)
+EPOCH 94: loss=0.9536 val_mIoU=37.98 val_OA=74.99 time=8.8s
+  [ep 95/100] it 0/33 loss 1.0229 (0.65s/it)
+  [ep 95/100] it 20/33 loss 0.9352 (0.23s/it)
+EPOCH 95: loss=0.9611 val_mIoU=37.18 val_OA=76.92 time=10.4s
+  [ep 96/100] it 0/33 loss 0.9982 (0.67s/it)
+  [ep 96/100] it 20/33 loss 0.8644 (0.24s/it)
+EPOCH 96: loss=0.9849 val_mIoU=35.36 val_OA=73.56 time=8.8s
+  [ep 97/100] it 0/33 loss 0.7033 (0.66s/it)
+  [ep 97/100] it 20/33 loss 1.0638 (0.23s/it)
+EPOCH 97: loss=0.9209 val_mIoU=37.84 val_OA=75.24 time=8.5s
+  [ep 98/100] it 0/33 loss 0.9947 (0.69s/it)
+  [ep 98/100] it 20/33 loss 1.1559 (0.24s/it)
+EPOCH 98: loss=0.9746 val_mIoU=35.92 val_OA=75.30 time=8.8s
+  [ep 99/100] it 0/33 loss 0.7873 (0.65s/it)
+  [ep 99/100] it 20/33 loss 0.8268 (0.32s/it)
+EPOCH 99: loss=0.9669 val_mIoU=37.47 val_OA=76.02 time=10.4s
+  [ep 100/100] it 0/33 loss 1.3386 (0.70s/it)
+  [ep 100/100] it 20/33 loss 1.0698 (0.24s/it)
+EPOCH 100: loss=0.9164 val_mIoU=36.44 val_OA=73.76 time=8.9s
+DONE. best val mIoU 40.97

@@ -1,0 +1,11 @@
+[gpu] devices=1 free_GB=15.8
+[device] cuda
+[split] train=6300 test=25200
+[seed 20260813 r0.20] ep   1 loss 1.486 trainOA 59.59 testOA 77.90 best 77.90@1 (24.0s)
+[seed 20260813 r0.20] ep   5 loss 0.170 trainOA 94.79 testOA 87.11 best 87.11@5 (95.5s)
+[seed 20260813 r0.20] ep  10 loss 0.048 trainOA 98.92 testOA 90.40 best 90.40@10 (194.5s)
+[seed 20260813 r0.20] ep  15 loss 0.024 trainOA 99.49 testOA 90.88 best 90.88@15 (299.5s)
+[seed 20260813 r0.20] ep  20 loss 0.010 trainOA 99.84 testOA 91.70 best 91.75@19 (392.9s)
+[seed 20260813 r0.20] ep  25 loss 0.008 trainOA 99.94 testOA 91.90 best 92.08@23 (488.5s)
+[seed 20260813 r0.20] ep  30 loss 0.005 trainOA 99.97 testOA 92.39 best 92.39@30 (605.6s)
+[seed 20260813 r0.20] ep  35 loss 0.004 trainOA 100.00 testOA 92.33 best 92.39@30 (710.7s)

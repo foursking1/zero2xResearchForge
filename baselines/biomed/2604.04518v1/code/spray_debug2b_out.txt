@@ -1,0 +1,9 @@
+=== layer 4 attr shape (1000, 64) ===
+Traceback (most recent call last):
+  File "D:\project\paper-bench\tasks_legacy\2604.04518v1\agent_solution\code\debug_spray2.py", line 119, in <module>
+    main()
+    ~~~~^^
+  File "D:\project\paper-bench\tasks_legacy\2604.04518v1\agent_solution\code\debug_spray2.py", line 90, in main
+    f"pred_acc={(preds[mask]==t[mask]).mean():.3f}", flush=True)
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: mean(): could not infer output dtype. Input dtype must be either a floating point or complex dtype. Got: Bool

@@ -1,0 +1,5 @@
+layer 6 attr (1000, 64)
+  class 0 kmeans: qacc=0.980 sizes=[209, 291]
+  class 0 spectral: qacc=0.980 sizes=[299, 201]
+  class 1 kmeans: qacc=0.980 sizes=[264, 236]
+  class 1 spectral: qacc=0.980 sizes=[352, 148]

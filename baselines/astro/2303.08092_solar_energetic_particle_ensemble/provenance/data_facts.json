@@ -1,0 +1,41 @@
+{
+  "task": "2303.08092_solar_energetic_particle_ensemble",
+  "data_file": "data/SEPTEBBS.json",
+  "data_bytes": 7499398,
+  "rows_frozen_full": 24797,
+  "seps_frozen_full": 76,
+  "rows_after_clean": 24570,
+  "seps_after_clean": 74,
+  "clean_criteria": "Tmax < 100 MK AND six time-offset fields + MinDur all non-negative (paper exclusion criteria)",
+  "paper_rows": 18311,
+  "paper_seps": 64,
+  "version_note": "Frozen portal data are an expanded version (24,797 rows incl. early-2018 flares and updated SEP associations) vs the paper's 18,311/64. Cleaned 24,570/74.",
+  "manifest": "data/MANIFEST.tsv (SHA-256 pinned, unchanged)",
+  "n_features": 12,
+  "feature_mapping": {
+    "MinDur": "MinDur",
+    "Tmax": "Tmax",
+    "EMmax": "EMmax",
+    "PrecisePeak": "SXRmax",
+    "StartToTmax": "StartToTmax",
+    "TmaxToEnd": "TmaxToEnd",
+    "StartToEMmax": "StartToEMmax",
+    "EMmaxToEnd": "EMmaxToEnd",
+    "StartToPeak": "StartToPeak",
+    "PeakToEnd": "PeakToEnd",
+    "XCtr": "XCtr",
+    "YCtr": "YCtr"
+  },
+  "protocol": {
+    "n_splits": 10,
+    "split": "random stratified 70/30, seed 20260817",
+    "base_epochs": 150,
+    "paper_base_epochs": 500,
+    "rh_epoch_scale": "12/n_selected (RH v1 x3 = 450, RH v2 x2 = 300)",
+    "optimizer": "Adam lr=1e-3 (RH lr scaled by 12/n_sel)",
+    "balanced_loss": "BCEWithLogitsLoss pos_weight = n_neg/n_pos ~ 780",
+    "threshold": "Youden-J on training split",
+    "estimators": 10,
+    "network": "input->10 dense (ReLU)->dropout 0.2->1 logistic"
+  }
+}

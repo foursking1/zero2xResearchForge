@@ -1,0 +1,93 @@
+[dir liver2spleen] 5 models, ft_dice: [0.827, 0.777, 0.617, 0.859, 0.751]
+    ccfv: pearson=0.3198 tau=0.4000 top1_hit=0
+    logme: pearson=0.1207 tau=0.6000 top1_hit=1
+    leep: pearson=0.1499 tau=0.2000 top1_hit=0
+    gbc: pearson=0.1229 tau=0.0000 top1_hit=0
+
+=== summary ===
+{
+  "ccfv": {
+    "per_direction": {
+      "liver2spleen": {
+        "pearson": 0.3197506769569128,
+        "w_kendall_tau": 0.4,
+        "top1_hit": 0
+      }
+    },
+    "mean_pearson": 0.3197506769569128,
+    "mean_w_kendall_tau": 0.4,
+    "top1_hits": [
+      0
+    ],
+    "all_top1_hit": false,
+    "pearson_pooled": 0.3197506769569128,
+    "paper_anchor": {
+      "pearson": 0.7003,
+      "tau": 0.4986,
+      "src": "arXiv:2307.11958 Table 1 (5-task mean)"
+    }
+  },
+  "logme": {
+    "per_direction": {
+      "liver2spleen": {
+        "pearson": 0.12066136613710415,
+        "w_kendall_tau": 0.6,
+        "top1_hit": 1
+      }
+    },
+    "mean_pearson": 0.12066136613710415,
+    "mean_w_kendall_tau": 0.6,
+    "top1_hits": [
+      1
+    ],
+    "all_top1_hit": true,
+    "pearson_pooled": 0.12066136613710415,
+    "paper_anchor": {
+      "pearson": 0.2082,
+      "tau": 0.0218,
+      "src": "arXiv:2307.11958 Table 1"
+    }
+  },
+  "leep": {
+    "per_direction": {
+      "liver2spleen": {
+        "pearson": 0.14990828338700182,
+        "w_kendall_tau": 0.2,
+        "top1_hit": 0
+      }
+    },
+    "mean_pearson": 0.14990828338700182,
+    "mean_w_kendall_tau": 0.2,
+    "top1_hits": [
+      0
+    ],
+    "all_top1_hit": false,
+    "pearson_pooled": 0.14990828338700182,
+    "paper_anchor": {}
+  },
+  "gbc": {
+    "per_direction": {
+      "liver2spleen": {
+        "pearson": 0.12286637780574966,
+        "w_kendall_tau": 0.0,
+        "top1_hit": 0
+      }
+    },
+    "mean_pearson": 0.12286637780574966,
+    "mean_w_kendall_tau": 0.0,
+    "top1_hits": [
+      0
+    ],
+    "all_top1_hit": false,
+    "pearson_pooled": 0.12286637780574966,
+    "paper_anchor": {
+      "pearson": 0.3317,
+      "tau": 0.4111,
+      "src": "arXiv:2307.11958 Table 1"
+    }
+  }
+}
+CONCLUSION: partially_supported
+/home/dministrator/.local/lib/python3.12/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+figures saved to /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/evidence

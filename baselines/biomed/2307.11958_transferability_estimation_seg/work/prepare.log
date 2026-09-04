@@ -1,0 +1,43 @@
+DATA_ROOT = /mnt/f/dataset/biomed/2307.11958_transferability_estimation_seg
+  [spleen] spleen_10: usable 55/55 slices, img_complete=True lab_complete=True
+  [spleen] spleen_12: usable 168/168 slices, img_complete=True lab_complete=True
+  [spleen] spleen_13: usable 77/77 slices, img_complete=True lab_complete=True
+  [spleen] spleen_14: usable 54/54 slices, img_complete=True lab_complete=True
+  [spleen] spleen_16: usable 61/61 slices, img_complete=True lab_complete=True
+  [spleen] spleen_17: usable 95/95 slices, img_complete=True lab_complete=True
+  [spleen] spleen_18: usable 164/164 slices, img_complete=True lab_complete=True
+  [spleen] spleen_19: usable 51/51 slices, img_complete=True lab_complete=True
+  [spleen] spleen_21: usable 89/89 slices, img_complete=True lab_complete=True
+  [spleen] spleen_22: usable 148/148 slices, img_complete=True lab_complete=True
+  [liver] liver_0: usable 75/75 slices, img_complete=True lab_complete=True
+  [liver] liver_1: usable 99/99 slices, img_complete=False lab_complete=True
+  [liver] liver_10: usable 98/98 slices, img_complete=False lab_complete=True
+  [liver] liver_11: usable 68/68 slices, img_complete=False lab_complete=True
+  [liver] liver_12: usable 72/72 slices, img_complete=False lab_complete=True
+  [liver] liver_13: usable 122/122 slices, img_complete=False lab_complete=True
+  [liver] liver_14: usable 127/127 slices, img_complete=False lab_complete=True
+  [liver] liver_15: usable 119/119 slices, img_complete=False lab_complete=True
+  [liver] liver_16: usable 138/138 slices, img_complete=False lab_complete=True
+  [liver] liver_17: usable 143/143 slices, img_complete=False lab_complete=True
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_10.npz  imgs(40, 128, 128) fg%=0.031
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_12.npz  imgs(40, 128, 128) fg%=0.088
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_13.npz  imgs(40, 128, 128) fg%=0.074
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_14.npz  imgs(40, 128, 128) fg%=0.052
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_16.npz  imgs(40, 128, 128) fg%=0.020
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_17.npz  imgs(40, 128, 128) fg%=0.070
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_18.npz  imgs(40, 128, 128) fg%=0.052
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_19.npz  imgs(40, 128, 128) fg%=0.043
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_21.npz  imgs(40, 128, 128) fg%=0.063
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/spleen_spleen_22.npz  imgs(40, 128, 128) fg%=0.067
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_0.npz  imgs(40, 128, 128) fg%=0.203
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_1.npz  imgs(40, 128, 128) fg%=0.234
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_10.npz  imgs(40, 128, 128) fg%=0.000
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_11.npz  imgs(40, 128, 128) fg%=0.000
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_12.npz  imgs(40, 128, 128) fg%=0.000
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_13.npz  imgs(40, 128, 128) fg%=0.000
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_14.npz  imgs(40, 128, 128) fg%=0.000
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_15.npz  imgs(40, 128, 128) fg%=0.000
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_16.npz  imgs(40, 128, 128) fg%=0.000
+  cached /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/work/cache/liver_liver_17.npz  imgs(40, 128, 128) fg%=0.000
+saved /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/results/data_inventory.json
+saved /mnt/d/project/paper-bench/tasks/biomed/2307.11958_transferability_estimation_seg/agent_solution/results/splits.json
